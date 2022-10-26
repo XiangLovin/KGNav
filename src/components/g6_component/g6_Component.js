@@ -2679,6 +2679,7 @@ export default {
         true,
       );
       const nodeToolTip = new G6.Tooltip({
+        className:'G6tooltip',
         offsetX: 0,
         offsetY: 50,
         itemTypes: ['node'],
@@ -2701,6 +2702,7 @@ export default {
       })
 
       const tooltip = new G6.Tooltip({
+        className:'G6tooltip',
         trigger:'click',
         offsetX: 26,
         offsetY: 0,
@@ -2727,6 +2729,7 @@ export default {
       });
 
       const contextMenu = new G6.Menu({
+        className:'G6Meum',
         shouldBegin(evt) {
           if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) return true;
           if (evt.item) return true;

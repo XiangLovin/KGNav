@@ -8,38 +8,7 @@
 
 }
 
-.g6-component-contextmenu {
-  position: absolute;
-  z-index: 2;
-  list-style-type: none;
-  background-color: #363b40;
-  border-radius: 10px;
-  font-size: 14px;
-  color: hsla(0, 0%, 100%, .85);
-  width: fit-content;
-  transition: opacity .2s;
-  text-align: center;
-  padding: 0px 20px 0px 20px;
-  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.6);
-  border: 0px;
-}
 
-.g6-component-contextmenu ul {
-  padding-left: 0px;
-  margin: 0;
-}
-
-.g6-component-contextmenu li {
-  cursor: pointer;
-  list-style-type: none;
-  list-style: none;
-  margin-left: 0;
-  line-height: 38px;
-}
-
-.g6-component-contextmenu li:hover {
-  color: #aaaaaa;
-}
 .meumFont{
   font-size:18px;
   color: #e2e2e2;
@@ -54,34 +23,7 @@
   background: rgba(255, 255, 255, 0.0);
   float: left;
 }
-#InfoTitle{
-  border-radius: 20px;
-  width: 100%;
-  display: block;
-}
-.InfoTitle-item{
-  text-align: center;
-  width: 50%;
-}
-.InfoMeum{
-  border-radius: 20px;
-  float: right;
-  width: 100%;
-  height: calc(100% - 48px);
-  display: block;
-}
-.Info{
-  margin: 30px 30px 0 0 ;
-  background-color: rgba(255, 255, 255);
-  border-radius: 10px;
 
-}
-.SearchPage{
-  margin: 30px  0 0 30px ;
-  background-color: rgba(255, 255, 255);
-  border-radius: 10px;
-
-}
 #backBtn{
   float: left;
   margin: 10px;
@@ -237,7 +179,7 @@
 }
 
 
-.g6-component-tooltip {
+.G6tooltip {
   max-height: 150px;
   width: 200px;
   font-size: 12px;
@@ -250,7 +192,7 @@
   border-radius: 10px;
 }
 
-.g6-component-tooltip .tooltip-title {
+.G6tooltip .tooltip-title {
   text-align: left;
   border-radius: 15px;
   width:200px;
@@ -262,20 +204,20 @@
   background-color: rgba(255, 255, 255);
   border: 1px solid #e3e3e3;
 }
-.g6-component-tooltip .tooltip-content {
+.G6tooltip .tooltip-content {
   width: 100%;
   word-wrap: break-word;
   word-break: break-all;
 }
 
-.g6-component-tooltip .tooltip-content p {
+.G6tooltip .tooltip-content p {
   width: 100%;
   border: 1px solid #e3e3e3;
   padding: 5px 10px;
   margin: -1px;
 }
 
-.g6-component-tooltip .tooltip-content p:hover {
+.G6tooltip .tooltip-content p:hover {
   box-shadow: #cfcfcf 0px 0px 10px;
   padding: 10px;
   font-size: 14px;
@@ -405,6 +347,38 @@
 .ant-modal-confirm .ant-modal-confirm-btns{
   margin-top:10px;
 }
+.ant-layout-sider{
+  background:white;
+}
+.SearchPage{
+  margin: 30px  0 0 30px ;
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+}
+
+#InfoTitle{
+  border-radius: 20px;
+  width: 100%;
+  display: block;
+}
+.InfoTitle-item{
+  text-align: center;
+  width: 50%;
+}
+.InfoMeum{
+  border-radius: 20px;
+  float: right;
+  width: 100%;
+  height: calc(100% - 48px);
+  display: block;
+}
+.Info{
+  margin: 30px 30px 0 0 ;
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+
+}
+
 #minimap{
 
   float:left;
@@ -415,4 +389,37 @@
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.39);
   bottom: 85px;
   margin-left: 15px;
+}
+/* contextmeum */
+.G6Meum {
+  position: absolute;
+  z-index: 2;
+  list-style-type: none;
+  background-color: #363b40;
+  border-radius: 10px;
+  font-size: 14px;
+  color: hsla(0, 0%, 100%, .85);
+  width: fit-content;
+  transition: opacity .2s;
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.6);
+  border: 0px;
+}
+
+.G6Meum ul {
+  padding-left: 0px;
+  margin: 0;
+}
+
+.G6Meum li {
+  cursor: pointer;
+  list-style-type: none;
+  list-style: none;
+  margin-left: 0;
+  line-height: 38px;
+}
+
+.G6Meum li:hover {
+  color: #aaaaaa;
 }
