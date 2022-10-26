@@ -1,21 +1,38 @@
-# kgnav
+# KGNav
 
-> A Vue.js project
+A Knowledge Graph Navigational Visual Query System, using Vue as the framework, [AntV G6](https://g6.antv.vision/en/) and [Ant Design Vue](https://1x.antdv.com/docs/vue/introduce/) as the component library.
 
-## Build Setup
+ 
+## How to start
 
-``` bash
-# install dependencies
+### The frontend
+
+1. Install [node.js](https://nodejs.org/en/download/).
+
+2. Download dependencies.
+```
 npm install
+```
+3. Execute the Vue project with the following instruction.
+```
+ng run dev
+```
+4. The web page can be viewed using any browser.
 
-# serve with hot reload at localhost:8080
-npm run dev
+     [http://localhost:8080](http://localhost:8080)
 
-# build for production with minification
-npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+
+
+### The backend
+
+1. Go to the project directory of KGNav and execute the following command
+```
+java -jar kgnav-0.0.1-SNAPSHOT.jar
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Preview Address : [http://152.136.45.252/#/](http://152.136.45.252/#/)
+
+
+
+
