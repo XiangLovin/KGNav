@@ -1,0 +1,1317 @@
+{
+    "nodes": [
+        {
+            "id":"1",
+            "value":"node-1"
+        },
+        {
+            "id":"2",
+            "value":"node-2"
+        },
+        {
+            "id":"3",
+            "value":"node-3"
+        },
+        {
+            "id":"4",
+            "value":"node-4"
+        },
+        {
+            "id":"5",
+            "value":"node-5"
+        },
+        {
+            "id":"6",
+            "value":"node-6"
+        },
+        {
+            "id":"7",
+            "value":"node-7"
+        },
+        {
+            "id":"8",
+            "value":"node-8"
+        },
+        {
+            "id":"9",
+            "value":"node-9"
+        },
+        {
+            "id":"10",
+            "value":"node-10"
+        },
+        {
+            "id":"11",
+            "value":"node-11"
+        },
+        {
+            "id":"12",
+            "value":"node-12"
+        },
+        {
+            "id":"13",
+            "value":"node-13"
+        },
+        {
+            "id":"14",
+            "value":"node-14"
+        },
+        {
+            "id":"15",
+            "value":"node-15"
+        },
+        {
+            "id":"16",
+            "value":"node-16"
+        },
+        {
+            "id":"17",
+            "value":"node-17"
+        },
+        {
+            "id":"18",
+            "value":"node-18"
+        },
+        {
+            "id":"19",
+            "value":"node-19"
+        },
+        {
+            "id":"20",
+            "value":"node-20"
+        }
+
+    ],
+    "edges": [
+        {
+            "source":"1",
+            "target":"2",
+            "value":"e1"
+        },
+        {
+            "source":"3",
+            "target":"16",
+            "value":"e2"
+        },
+        {
+            "source":"1",
+            "target":"5",
+            "value":"e3"
+        },
+        {
+            "source":"3",
+            "target":"7",
+            "value":"e4"
+        },
+        {
+            "source":"2",
+            "target":"8",
+            "value":"e5"
+        },
+        {
+            "source":"7",
+            "target":"1",
+            "value":"e6"
+        },
+        {
+            "source":"6",
+            "target":"7",
+            "value":"e7"
+        },
+        {
+            "source":"16",
+            "target":"14",
+            "value":"e8"
+        },
+        {
+            "source":"13",
+            "target":"7",
+            "value":"e9"
+        },
+        {
+            "source":"24",
+            "target":"7",
+            "value":"e10"
+        },
+        {
+            "source":"1",
+            "target":"19",
+            "value":"e11"
+        },
+        {
+            "source":"20",
+            "target":"21",
+            "value":"e12"
+        },
+        {
+            "source":"22",
+            "target":"19",
+            "value":"e13"
+        },
+        {
+            "source":"23",
+            "target":"3",
+            "value":"e14"
+        },
+        {
+            "source":"3",
+            "target":"6",
+            "value":"e15"
+        },
+        {
+            "source":"3",
+            "target":"22",
+            "value":"e16"
+        },
+        {
+            "source":"11",
+            "target":"25",
+            "value":"e17"
+        },
+        {
+            "source":"16",
+            "target":"20",
+            "value":"e18"
+        },
+        {
+            "source":"10",
+            "target":"5",
+            "value":"e19"
+        },
+        {
+            "source":"7",
+            "target":"23",
+            "value":"e20"
+        },
+        {
+            "source":"17",
+            "target":"3",
+            "value":"e21"
+        },
+        {
+            "source":"5",
+            "target":"18",
+            "value":"e22"
+        },
+        {
+            "source":"16",
+            "target":"15",
+            "value":"e23"
+        },
+        {
+            "source":"4",
+            "target":"7",
+            "value":"e24"
+        },
+        {
+            "source":"8",
+            "target":"7",
+            "value":"e25"
+        }
+        
+    ],
+    "clusters": [
+        {
+            "id": "h-1",
+            "value":"cluster1",
+            "nodes": [
+                {
+                    "id": "1",
+                    "value":"node-1"
+                },
+                {
+                    "id": "2",
+                    "value":"node-2"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-2",
+            "value":"cluster2",
+            "nodes": [
+                {
+                    "id": "3",
+                    "value":"node-3"
+                },
+                {
+                    "id": "4",
+                    "value":"node-4"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-3",
+            "value":"cluster3",
+            "nodes": [
+                {
+                    "id": "5",
+                    "value":"node-5"
+                },
+                {
+                    "id": "6",
+                    "value":"node-6"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-4",
+            "value":"cluster4",
+            "nodes": [
+                {
+                    "id": "7",
+                    "value":"node-7"
+                },
+                {
+                    "id": "8",
+                    "value":"node-8"
+                },
+                {
+                    "id": "9",
+                    "value":"node-9"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-5",
+            "value":"cluster5",
+            "nodes": [
+                {
+                    "id": "10",
+                    "value":"node-10"
+                },
+                {
+                    "id": "11",
+                    "value":"node-11"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-6",
+            "value":"cluster6",
+            "nodes": [
+                {
+                    "id": "12",
+                    "value":"node-12"
+                },
+                {
+                    "id": "13",
+                    "value":"node-13"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-7",
+            "value":"cluster7",
+            "nodes": [
+                {
+                    "id": "14",
+                    "value":"node-14"
+                },
+                {
+                    "id": "15",
+                    "value":"node-15"
+                },
+                {
+                    "id": "16",
+                    "value":"node-16"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-8",
+            "value":"cluster8",
+            "nodes": [
+                {
+                    "id": "17",
+                    "value":"node-17"
+                },
+                {
+                    "id": "18",
+                    "value":"node-18"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-9",
+            "value":"cluster9",
+            "nodes": [
+                {
+                    "id": "19",
+                    "value":"node-19"
+                },
+                {
+                    "id": "20",
+                    "value":"node-20"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-10",
+            "value":"cluster10",
+            "nodes": [
+                {
+                    "id": "21",
+                    "value":"node-21"
+                },
+                {
+                    "id": "22",
+                    "value":"node-22"
+                },
+                {
+                    "id": "23",
+                    "value":"node-23"
+                }
+            ],
+            "level":0
+        },
+        {
+            "id": "h-11",
+            "value":"cluster11",
+            "nodes": [
+                {
+                    "id": "h-1",
+                    "value":"cluster1",
+                    "nodes": [
+                        {
+                            "id": "1",
+                            "value":"node-1"
+                        },
+                        {
+                            "id": "2",
+                            "value":"node-2"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-2",
+                    "value":"cluster2",
+                    "nodes": [
+                        {
+                            "id": "3",
+                            "value":"node-3"
+                        },
+                        {
+                            "id": "4",
+                            "value":"node-4"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "24",
+                    "value":"node-24"
+                }
+            ],
+            "level":1
+        },
+        {
+            "id": "h-12",
+            "value":"cluster12",
+            "nodes": [
+                {
+                    "id": "h-3",
+                    "value":"cluster3",
+                    "nodes": [
+                        {
+                            "id": "5",
+                            "value":"node-5"
+                        },
+                        {
+                            "id": "6",
+                            "value":"node-6"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-4",
+                    "value":"cluster4",
+                    "nodes": [
+                        {
+                            "id": "7",
+                            "value":"node-7"
+                        },
+                        {
+                            "id": "8",
+                            "value":"node-8"
+                        },
+                        {
+                            "id": "9",
+                            "value":"node-9"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "25",
+                    "value":"node-25"
+                }
+            ],
+            "level":1
+        },
+        {
+            "id": "h-13",
+            "value":"cluster13",
+            "nodes": [
+                {
+                    "id": "h-5",
+                    "value":"cluster5",
+                    "nodes": [
+                        {
+                            "id": "10",
+                            "value":"node-10"
+                        },
+                        {
+                            "id": "11",
+                            "value":"node-11"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-6",
+                    "value":"cluster6",
+                    "nodes": [
+                        {
+                            "id": "12",
+                            "value":"node-12"
+                        },
+                        {
+                            "id": "13",
+                            "value":"node-13"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-7",
+                    "value":"cluster7",
+                    "nodes": [
+                        {
+                            "id": "14",
+                            "value":"node-14"
+                        },
+                        {
+                            "id": "15",
+                            "value":"node-15"
+                        },
+                        {
+                            "id": "16",
+                            "value":"node-16"
+                        }
+                    ],
+                    "level":0
+                }
+            ],
+            "level":1
+        },
+        {
+            "id": "h-14",
+            "value":"cluster14",
+            "nodes": [
+                {
+                    "id": "h-8",
+                    "value":"cluster8",
+                    "nodes": [
+                        {
+                            "id": "17",
+                            "value":"node-17"
+                        },
+                        {
+                            "id": "18",
+                            "value":"node-18"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-9",
+                    "value":"cluster9",
+                    "nodes": [
+                        {
+                            "id": "19",
+                            "value":"node-19"
+                        },
+                        {
+                            "id": "20",
+                            "value":"node-20"
+                        }
+                    ],
+                    "level":0
+                },
+                {
+                    "id": "h-10",
+                    "value":"cluster10",
+                    "nodes": [
+                        {
+                            "id": "21",
+                            "value":"node-21"
+                        },
+                        {
+                            "id": "22",
+                            "value":"node-22"
+                        },
+                        {
+                            "id": "23",
+                            "value":"node-23"
+                        }
+                    ],
+                    "level":0
+                }
+            ],
+            "level":1
+        },
+        {
+            "id": "h-15",
+            "value":"cluster15",
+            "nodes": [
+                {
+                    "id": "h-11",
+                    "value":"cluster11",
+                    "nodes": [
+                        {
+                            "id": "h-1",
+                            "value":"cluster1",
+                            "nodes": [
+                                {
+                                    "id": "1",
+                                    "value":"node-1"
+                                },
+                                {
+                                    "id": "2",
+                                    "value":"node-2"
+                                }
+                            ],
+                            "level":0
+                        },
+                        {
+                            "id": "h-2",
+                            "value":"cluster2",
+                            "nodes": [
+                                {
+                                    "id": "3",
+                                    "value":"node-3"
+                                },
+                                {
+                                    "id": "4",
+                                    "value":"node-4"
+                                }
+                            ],
+                            "level":0
+                        },
+                        {
+                            "id": "24",
+                            "value":"node-24"
+                        }
+                    ],
+                    "level":1
+                },
+                {
+                    "id": "h-12",
+                    "value":"cluster12",
+                    "nodes": [
+                        {
+                            "id": "h-3",
+                            "value":"cluster3",
+                            "nodes": [
+                                {
+                                    "id": "5",
+                                    "value":"node-5"
+                                },
+                                {
+                                    "id": "6",
+                                    "value":"node-6"
+                                }
+                            ],
+                            "level":0
+                        },
+                        {
+                            "id": "h-4",
+                            "value":"cluster4",
+                            "nodes": [
+                                {
+                                    "id": "7",
+                                    "value":"node-7"
+                                },
+                                {
+                                    "id": "8",
+                                    "value":"node-8"
+                                },
+                                {
+                                    "id": "9",
+                                    "value":"node-9"
+                                }
+                            ],
+                            "level":0
+                        },
+                        {
+                            "id": "25",
+                            "value":"node-25"
+                        }
+                    ],
+                    "level":1
+                }
+            ],
+            "level":2
+        }
+    ]
+},
+{
+    "nodes": [
+        {
+            "id": "1",
+            "value": "Doja Cat",
+            "parents": [
+                "h-3",
+                "h-2"
+            ]
+        },
+        {
+            "id": "2",
+            "value": "Lady Gaga",
+            "parents": [
+                "h-3",
+                "h-1",
+                "h-2"
+            ]
+        },
+        {
+            "id": "3",
+            "value": "You Right",
+            "parents": [
+                "h-6",
+                "h-4"
+            ]
+        },
+        {
+            "id": "4",
+            "value": "Telephone",
+            "parents": [
+                "h-6",
+                "h-5"
+            ]
+        },
+        {
+            "id": "5",
+            "value": "House of Gucci",
+            "parents": [
+                "h-7"
+            ]
+        },
+        {
+            "id": "6",
+            "value": "Kiss Me More",
+            "parents": [
+                "h-6",
+                "h-5"
+            ]
+        },
+        {
+            "id": "7",
+            "value": "Grammy Award for Best Pop Duo/Group Performance",
+            "parents": [
+                "h-9",
+                "h-8"
+            ]
+        },
+        {
+            "id": "8",
+            "value": "The Weekend",
+            "parents": [
+                "h-3",
+                "h-2"
+            ]
+        },
+        {
+            "id": "27",
+            "value": "1995",
+            "parents": [
+                "h-10",
+                "h-19",
+                "h-18",
+                "h-17"
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "target": "3",
+            "value": "sings"
+        },
+        {
+            "source": "1",
+            "target": "6",
+            "value": "sings"
+        },
+        {
+            "source": "1",
+            "target": "7",
+            "value": "won"
+        },
+        {
+            "source": "2",
+            "target": "4",
+            "value": "sings"
+        },
+        {
+            "source": "2",
+            "target": "5",
+            "value": "stars"
+        },
+        {
+            "source": "6",
+            "target": "7",
+            "value": "won"
+        },
+        {
+            "source": "1",
+            "target": "8",
+            "value": "cooperate"
+        },
+        {
+            "source": "8",
+            "target": "3",
+            "value": "write"
+        },
+        {
+            "source": "1",
+            "target": "27",
+            "value": "birth"
+        }
+    ],
+    "clusters": [
+        {
+            "id": "h-3",
+            "value": "human",
+            "nodes": [
+                {
+                    "id": "h-1",
+                    "value": "actor",
+                    "nodes": [
+                        {
+                            "id": "2",
+                            "value": "Lady Gaga",
+                            "level": 0
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": "h-2",
+                    "value": "singer",
+                    "nodes": [
+                        {
+                            "id": "2",
+                            "value": "Lady Gaga",
+                            "level": 0
+                        },
+                        {
+                            "id": "1",
+                            "value": "Doja Cat",
+                            "level": 0
+                        },
+                        {
+                            "id": "8",
+                            "value": "The Weeknd",
+                            "level": 0
+                        }
+                    ],
+                    "level": 1
+                }
+            ],
+            "level": 2
+        },
+        {
+            "id": "h-6",
+            "value": "songs",
+            "nodes": [
+                {
+                    "id": "h-4",
+                    "value": "R&B",
+                    "nodes": [
+                        {
+                            "id": "3",
+                            "value": "You Right",
+                            "level": 0
+                        }
+                    ],
+                    "level": 1
+                },
+                {
+                    "id": "h-5",
+                    "value": "pop",
+                    "nodes": [
+                        {
+                            "id": "4",
+                            "value": "Telephone",
+                            "level": 0
+                        },
+                        {
+                            "id": "6",
+                            "value": "Kiss Me More",
+                            "level": 0
+                        }
+                    ],
+                    "level": 1
+                }
+            ],
+            "level": 2
+        },
+        {
+            "id": "h-7",
+            "value": "Movies",
+            "nodes": [
+                {
+                    "id": "5",
+                    "value": "House of Gucci",
+                    "level": 0
+                }
+            ],
+            "level": 1
+        },
+        {
+            "id": "h-9",
+            "value": "Awards",
+            "nodes": [
+                {
+                    "id": "h-8",
+                    "value": "Grammy",
+                    "nodes": [
+                        {
+                            "id": "7",
+                            "value": "Grammy Award for Best Pop Duo/Group Performance",
+                            "level": 0
+                        }
+                    ],
+                    "level": 1
+                }
+            ],
+            "level": 2
+        },
+        {
+            "id": "h-10",
+            "value": "Data",
+            "nodes": [
+                {
+                    "id": "27",
+                    "value": "1995",
+                    "level": 0
+                }
+            ],
+            "level": 1
+        },
+        {
+            "id": "h-19",
+            "value": "Test1",
+            "nodes": [
+                {
+                    "id": "h-18",
+                    "value": "Test0",
+                    "nodes": [
+                        {
+                            "id": "h-17",
+                            "value": "Test",
+                            "nodes": [
+                                {
+                                    "id": "27",
+                                    "value": "Grammy Award for Best Pop Duo/Group Performance",
+                                    "level": 0
+                                }
+                            ],
+                            "level": 1
+                        }
+                    ],
+                    "level": 2
+                }
+            ],
+            "level": 3
+        }
+    ],
+    "clusterEdges": [
+        {
+            "source": "h-2",
+            "target": "h-4",
+            "value": [
+                "sing",
+                "write"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-6",
+            "value": [
+                "sing",
+                "write"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-4",
+            "value": [
+                "sing",
+                "write"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-6",
+            "value": [
+                "sing",
+                "write"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-5",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-6",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-5",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-1",
+            "target": "h-7",
+            "value": [
+                "stars"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-7",
+            "value": [
+                "stars"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-3",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-2",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-5",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-5",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-6",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-6",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-10",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-10",
+            "value": [
+                "birth"
+            ]
+        }
+    ],
+    "clusterEdges2": [
+        {
+            "source": "h-3",
+            "target": "h-6",
+            "value": [
+                "sings",
+                "write"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-4",
+            "value": [
+                "sings",
+                "write"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-6",
+            "value": [
+                "sings",
+                "write"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-4",
+            "value": [
+                "sings",
+                "write"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-5",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-5",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-1",
+            "target": "h-6",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-1",
+            "target": "h-5",
+            "value": [
+                "sings"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-7",
+            "value": [
+                "stars"
+            ]
+        },
+        {
+            "source": "h-1",
+            "target": "h-7",
+            "value": [
+                "stars"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-7",
+            "value": [
+                "stars"
+            ]
+        },
+        {
+            "source": "h-6",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-6",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-5",
+            "target": "h-9",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-5",
+            "target": "h-8",
+            "value": [
+                "won"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-3",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-2",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-3",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-2",
+            "value": [
+                "cooperate"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-10",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-19",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-18",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-3",
+            "target": "h-17",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-10",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-19",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-18",
+            "value": [
+                "birth"
+            ]
+        },
+        {
+            "source": "h-2",
+            "target": "h-17",
+            "value": [
+                "birth"
+            ]
+        }
+    ]
+}

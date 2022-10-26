@@ -1,0 +1,1530 @@
+<kgnav:Q16938408> <property:inception> "2012-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0y6qy0f";
+	 <property:name> "MTV Europe Music Award for Best US Act".
+<kgnav:Q65> <property:IdRef_ID> "027447278";
+	 <property:Bibliothèque_nationale_de_France_ID> "11948658k";
+	 <property:Commons_category> "Los Angeles";
+	 <property:postal_code> "90099";
+	 <property:OpenStreetMap_relation_ID> "207359";
+	 <property:NDL_Authority_ID> "00629461";
+	 <property:coordinate_location> "Point(-118.24368 34.05223)";
+	 <property:Libraries_Australia_ID> "35705896";
+	 <property:Freebase_ID> "/m/030qb3t";
+	 <property:MeSH_tree_code> "Z01.107.567.875.580.200.450";
+	 <property:local_dialing_code> "310";
+	 <property:name> "Los Angeles".
+<kgnav:Q5383> <property:IdRef_ID> "026748363";
+	 <property:Bibliothèque_nationale_de_France_ID> "11893660s";
+	 <property:Great_Russian_Encyclopedia_Online_ID> "4564816";
+	 <property:WikiTree_person_ID> "Jones-27942";
+	 <property:SoundCloud_ID> "davidbowieofficial";
+	 <property:Rolling_Stone_artist_ID> "david-bowie";
+	 <property:Goodreads_author_ID> "10360";
+	 <property:TCM_Movie_Database_person_ID> "20269";
+	 <property:RERO_ID> "02-A003034556";
+	 <property:ISzDb_person_ID> "15854";
+	 <property:Guardian_topic_ID> "music/davidbowie";
+	 <property:name> "David Bowie".
+<kgnav:Q105487> <property:Bibliothèque_nationale_de_France_ID> "13895592w";
+	 <property:IdRef_ID> "035758996";
+	 <property:Libraries_Australia_ID> "35650278";
+	 <property:MusicBrainz_artist_ID> "05d4d95c-8803-450f-80c2-7ea606e6f78b";
+	 <property:IMDb_ID> "nm0003574";
+	 <property:CiNii_Books_author_ID> "DA12239443";
+	 <property:date_of_birth> "1924-09-13T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "214006417";
+	 <property:NKCR_AUT_ID> "xx0069995";
+	 <property:date_of_death> "2009-03-28T00:00:00Z";
+	 <property:GND_ID> "123531624";
+	 <property:name> "Maurice Jarre".
+<kgnav:Q25094849> <property:inception> "1955-01-01T00:00:00Z";
+	 <property:MusicBrainz_genre_ID> "930ef127-3653-4677-9b95-ecc90c7c1a14";
+	 <property:Every_Noise_at_Once_ID> "artpop";
+	 <property:KBpedia_ID> "ArtPop";
+	 <property:Rate_Your_Music_genre_ID> "art-pop";
+	 <property:Google_Knowledge_Graph_ID> "/g/1hb_fc26t";
+	 <property:name> "art pop".
+<kgnav:Q15273731> <property:Commons_category> "ArtRave: The Artpop Ball";
+	 <property:start_time> "2014-05-04T00:00:00Z";
+	 <property:end_time> "2014-11-24T00:00:00Z";
+	 <property:Freebase_ID> "/m/0zmzvgf";
+	 <property:MusicBrainz_series_ID> "c9579180-de4f-4740-aa73-dea34b6cff8a";
+	 <property:name> "ArtRave: The Artpop Ball".
+<kgnav:Q94557088> <property:VIAF_ID> "3902163411735700360004";
+	 <property:MusicBrainz_release_group_ID> "06c74f2f-e1ee-4c32-aee0-3bbbbb02bd11";
+	 <property:MusicBrainz_work_ID> "0d7a6bf0-9a91-46d4-b1df-10e84601a1dd";
+	 <property:publication_date> "2020-05-22T00:00:00Z";
+	 <property:title> "Rain on Me";
+	 <property:YouTube_video_ID> "AoAm4om0wTs";
+	 <property:Discogs_master_ID> "1742623";
+	 <property:British_Phonographic_Industry_ID> "16483-5283-1";
+	 <property:TikTok_music_ID> "6829505139569608705";
+	 <property:duration> "182";
+	 <property:AllMusic_album_ID> "mw0003393254";
+	 <property:name> "Rain on Me".
+<kgnav:Q2976730> <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02v1m7";
+	 <property:name> "Grammy Award for Best Music Video".
+<kgnav:Q3841601> <property:Freebase_ID> "/m/09gqnp3";
+	 <property:name> "MTV Europe Music Award for Best Artist".
+<kgnav:Q406497> <property:IMDb_ID> "tt0403832";
+	 <property:start_time> "1972-12-31T00:00:00Z";
+	 <property:Freebase_ID> "/m/06gfbw";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/New-Years-Rockin-Eve";
+	 <property:short_name> "NYRE";
+	 <property:Instagram_username> "officialnyre";
+	 <property:number_of_episodes> "44";
+	 <property:Twitter_username> "NYRE";
+	 <property:Facebook_ID> "NewYearsRockinEve";
+	 <property:duration> "100";
+	 <property:name> "Dick Clark's New Year's Rockin' Eve";
+	 <property:name> "Dick Clark's New Year's Rockin' Eve".
+<kgnav:Q11299> <property:Library_of_Congress_authority_ID> "n80118393";
+	 <property:VIAF_ID> "148388212";
+	 <property:GND_ID> "4101161-2";
+	 <property:Commons_category> "Manhattan, New York City";
+	 <property:postal_code> "10084";
+	 <property:OpenStreetMap_relation_ID> "8398124";
+	 <property:local_dialing_code> "917";
+	 <property:Bibliothèque_nationale_de_France_ID> "11951495r";
+	 <property:inception> "1624-01-01T00:00:00Z";
+	 <property:GNIS_ID> "971945";
+	 <property:coordinate_location> "Point(-73.994166666 40.728333333)";
+	 <property:name> "Manhattan".
+<kgnav:Q95681662> <property:MusicBrainz_release_group_ID> "904ee5cb-dd35-49c9-9dc3-4d3a4170f917";
+	 <property:publication_date> "2020-05-28T00:00:00Z";
+	 <property:title> "Sour Candy";
+	 <property:YouTube_video_ID> "fnPn6At3v28";
+	 <property:duration> "157";
+	 <property:Google_Knowledge_Graph_ID> "/g/11fw7lbwfb";
+	 <property:name> "Sour Candy".
+<kgnav:Q372123> <relation:winner> <kgnav:Q42455>, <kgnav:Q19848>, <kgnav:Q396>, <kgnav:Q2831>, <kgnav:Q1744>, <kgnav:Q22151>, <kgnav:Q11036>, <kgnav:Q19004>, <kgnav:Q34086>, <kgnav:Q15935>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f72n";
+	 <property:name> "MTV Video Music Award for Best Visual Effects".
+<kgnav:Q1472235> <property:Freebase_ID> "/m/054ks3";
+	 <property:Commons_category> "Golden Globe Award for Original Song";
+	 <property:name> "Golden Globe Award for Best Original Song".
+<kgnav:Q2743297> <property:Freebase_ID> "/m/0w7mgvh";
+	 <property:MusicBrainz_release_group_ID> "73c7822d-892d-46c1-8535-9ce2c758c77f";
+	 <property:publication_date> "2013-11-06T00:00:00Z";
+	 <property:AllMusic_album_ID> "mw0002573777";
+	 <property:Metacritic_ID> "music/artpop/lady-gaga";
+	 <property:Discogs_master_ID> "616094";
+	 <property:duration> "3544";
+	 <property:Spotify_album_ID> "2eRJUtI7nXrQ5uYQ7tzTo9";
+	 <property:Deezer_album_ID> "86712972";
+	 <property:BabelNet_ID> "17303919n";
+	 <property:British_Phonographic_Industry_ID> "12649-2312-2";
+	 <property:name> "Artpop".
+<kgnav:Q473206> <property:Commons_category> "The Monster Ball Tour";
+	 <property:Freebase_ID> "/m/07k5yb0";
+	 <property:end_time> "2011-05-06T00:00:00Z";
+	 <property:start_time> "2009-11-27T00:00:00Z";
+	 <property:number_of_representations> "203";
+	 <property:Quora_topic_ID> "The-Monster-Ball-Tour";
+	 <property:MusicBrainz_series_ID> "15bedc19-a997-4428-879d-575a2bd6e0d3";
+	 <property:name> "The Monster Ball".
+<kgnav:Q1298934> <property:Library_of_Congress_authority_ID> "sh2010009077";
+	 <property:inception> "1972-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0y3_8";
+	 <property:Commons_category> "Synth-pop";
+	 <property:native_label> "Synthpop";
+	 <property:NE.se_ID> "syntpop";
+	 <property:Library_of_Congress_Genre/Form_Terms_ID> "gf2014027122";
+	 <property:Cultureel_Woordenboek_ID> "populaire-muziek/synthipop";
+	 <property:Latvian_National_Encyclopedia_Online_ID> "99648";
+	 <property:Every_Noise_at_Once_ID> "synthpop";
+	 <property:AllMusic_genre/style_ID> "ma0000002887";
+	 <property:name> "synth-pop".
+<kgnav:Q72646> <property:MusicBrainz_work_ID> "a0dceb22-ad31-46fc-a42c-07828dad322d";
+	 <property:MetroLyrics_ID> "edge-of-glory-lyrics-lady-gaga";
+	 <property:YouTube_video_ID> "QeWBS0JBNzQ";
+	 <property:MusicBrainz_release_group_ID> "353e50e2-c301-414f-8b39-7de2e9ad5999";
+	 <property:beats_per_minute> "128";
+	 <property:Freebase_ID> "/m/0gmdx8s";
+	 <property:publication_date> "2011-05-09T00:00:00Z";
+	 <property:name> "The Edge of Glory".
+<kgnav:Q1027891> <property:inception> "1958-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/03qbnj";
+	 <property:MusicBrainz_series_ID> "96eef69c-02a8-4e07-8b0d-cc56a184bd1f";
+	 <property:native_label> "Grammy Award for Best Pop Vocal Album";
+	 <property:KBpedia_ID> "GrammyAward-BestPopVocalAlbum";
+	 <property:name> "Grammy Award for Best Pop Vocal Album".
+<kgnav:Q1542147> <property:inception> "2005-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/056jm_";
+	 <property:native_label> "Grammy Award for Best Dance/Electronic Album";
+	 <property:MusicBrainz_series_ID> "292ebdfe-efab-4e6d-8cbb-5ba1f3bb67ee";
+	 <property:name> "Grammy Award for Best Dance/Electronic Album".
+<kgnav:Q22151> <property:GND_ID> "10112234-2";
+	 <property:Library_of_Congress_authority_ID> "no99089194";
+	 <property:Bibliothèque_nationale_de_France_ID> "140286628";
+	 <property:VIAF_ID> "139880120";
+	 <property:Commons_category> "Muse (musical group)";
+	 <property:IMDb_ID> "nm0615614";
+	 <property:MusicBrainz_artist_ID> "9c9f1380-2516-4fc9-a3e6-f9f61941d090";
+	 <property:inception> "1994-01-01T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0031781";
+	 <property:Freebase_ID> "/m/0187x8";
+	 <property:NORAF_ID> "5068652";
+	 <property:name> "Muse".
+<kgnav:Q5608> <property:IMDb_ID> "nm0004896";
+	 <property:IdRef_ID> "085188867";
+	 <property:Bibliothèque_nationale_de_France_ID> "14025304j";
+	 <property:MusicBrainz_artist_ID> "b95ce3ff-3d05-4e87-9e01-c97b66af13d4";
+	 <property:NDL_Authority_ID> "00933178";
+	 <property:Commons_category> "Eminem";
+	 <property:date_of_birth> "1972-10-17T00:00:00Z";
+	 <property:Freebase_ID> "/m/01vsgrn";
+	 <property:NUKAT_ID> "n02060614";
+	 <property:Tidal_artist_ID> "17275";
+	 <property:Billboard_artist_ID> "eminem";
+	 <property:name> "Eminem".
+<kgnav:Q5121453> <property:ISNI> "0000 0004 4675 6524";
+	 <property:postal_code> "10019-6795";
+	 <property:coordinate_location> "Point(-73.9844 40.7622)";
+	 <property:Freebase_ID> "/m/0bf2_0";
+	 <property:GRID_ID> "grid.468700.d";
+	 <property:Integrated_Postsecondary_Education_Data_System_ID> "190008";
+	 <property:street_address> "1633 Broadway, New York, NY, 10019-6795";
+	 <property:Ringgold_ID> "420843";
+	 <property:ROR_ID> "0186tvr04";
+	 <property:name> "Circle in the Square Theatre School".
+<kgnav:Q796480> <property:ISNI> "0000 0004 0410 9089";
+	 <property:Commons_category> "Convent of the Sacred Heart";
+	 <property:inception> "1881-01-01T00:00:00Z";
+	 <property:coordinate_location> "Point(-73.9575 40.7847)";
+	 <property:Freebase_ID> "/m/0264vs7";
+	 <property:CEEB_K-12_school_code> "333575";
+	 <property:Quora_topic_ID> "Convent-of-the-Sacred-Heart";
+	 <property:Ringgold_ID> "146047";
+	 <property:archINFORM_project_ID> "74557";
+	 <property:name> "Convent of the Sacred Heart".
+<kgnav:Q787098> <relation:winner> <kgnav:Q214665>, <kgnav:Q151976>, <kgnav:Q131285>, <kgnav:Q111074>, <kgnav:Q189729>, <kgnav:Q155124>, <kgnav:Q105487>, <kgnav:Q23848>, <kgnav:Q212762>, <kgnav:Q108560>;
+	 <property:Freebase_ID> "/m/02qvyrt";
+	 <property:name> "BAFTA Award for Best Original Music".
+<kgnav:Q44190> <property:Library_of_Congress_authority_ID> "no97045991";
+	 <property:ISNI> "0000 0001 1547 5162";
+	 <property:VIAF_ID> "141028845";
+	 <property:GND_ID> "1707341-8";
+	 <property:Bibliothèque_nationale_de_France_ID> "139551041";
+	 <property:IdRef_ID> "069877327";
+	 <property:Commons_category> "Radiohead";
+	 <property:MusicBrainz_artist_ID> "a74b1b7f-71a5-4011-9441-d0b5e4122711";
+	 <property:Freebase_ID> "/m/09jm8";
+	 <property:IMDb_ID> "nm1955602";
+	 <property:NKCR_AUT_ID> "xx0019211";
+	 <property:name> "Radiohead".
+<kgnav:Q130742> <property:IMDb_ID> "nm0001551";
+	 <property:IdRef_ID> "162353383";
+	 <property:Bibliothèque_nationale_de_France_ID> "13990435r";
+	 <property:Commons_category> "Alanis Morissette";
+	 <property:MusicBrainz_artist_ID> "4bdcee62-4902-4773-8cd1-e252e2e31225";
+	 <property:date_of_birth> "1974-06-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0gdh5";
+	 <property:NKCR_AUT_ID> "js20020429013";
+	 <property:Open_Library_ID> "OL2741436A";
+	 <property:Commons_gallery> "Alanis Morissette";
+	 <property:GND_ID> "119537494";
+	 <property:name> "Alanis Morissette".
+<kgnav:Q544554> <property:IMDb_ID> "tt1843961";
+	 <property:publication_date> "2011-05-07T00:00:00Z";
+	 <property:start_time> "2011-05-07T00:00:00Z";
+	 <property:Freebase_ID> "/m/0gywhhq";
+	 <property:MusicBrainz_release_group_ID> "ca6a7b12-b97d-4ea7-8024-593c765f89ff";
+	 <property:TMDb_movie_ID> "63513";
+	 <property:title> "Lady Gaga Presents the Monster Ball Tour: At Madison Square Garden";
+	 <property:Rotten_Tomatoes_ID> "m/lady_gaga_presents_the_monster_ball_tour";
+	 <property:ČSFD_film_ID> "155875";
+	 <property:Kinopoisk_film_ID> "581774";
+	 <property:name> "Lady Gaga Presents the Monster Ball Tour: At Madison Square Garden".
+<kgnav:Q938810> <property:ISNI> "0000 0000 8396 9407";
+	 <property:VIAF_ID> "79169269";
+	 <property:GND_ID> "134551028";
+	 <property:Library_of_Congress_authority_ID> "n81048007";
+	 <property:Bibliothèque_nationale_de_France_ID> "139392354";
+	 <property:IdRef_ID> "15744256X";
+	 <property:IMDb_ID> "nm0912851";
+	 <property:Commons_category> "Harry Warren";
+	 <property:date_of_birth> "1893-12-24T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "1821";
+	 <property:MusicBrainz_artist_ID> "7a9390eb-76ea-4d3a-a786-7fd09c8ae291";
+	 <property:name> "Harry Warren".
+<kgnav:Q966018> <property:ISNI> "0000 0000 8118 776X";
+	 <property:IMDb_ID> "nm0004230";
+	 <property:IdRef_ID> "068728239";
+	 <property:VIAF_ID> "39567135";
+	 <property:NDL_Authority_ID> "001151704";
+	 <property:SBN_author_ID> "CUBV092303";
+	 <property:date_of_birth> "1910-06-29T00:00:00Z";
+	 <property:date_of_death> "1969-07-28T00:00:00Z";
+	 <property:MusicBrainz_artist_ID> "0a0688ca-72c2-46d6-a3b9-b297e7dad6dc";
+	 <property:GND_ID> "119181029";
+	 <property:Open_Library_ID> "OL1377637A";
+	 <property:name> "Frank Loesser".
+<kgnav:Q23215> <property:IMDb_ID> "nm2233157";
+	 <property:IdRef_ID> "157759938";
+	 <property:Bibliothèque_nationale_de_France_ID> "15749533d";
+	 <property:Libraries_Australia_ID> "57437286";
+	 <property:MusicBrainz_artist_ID> "cc2c9c3c-b7bc-4b8b-84d8-4fbd8779e493";
+	 <property:Commons_category> "Adele (vocalist)";
+	 <property:date_of_birth> "1988-05-05T00:00:00Z";
+	 <property:Freebase_ID> "/m/02z4b_8";
+	 <property:Nationale_Thesaurus_voor_Auteurs_ID> "307916901";
+	 <property:CANTIC_ID_(former_scheme)> "a11706351";
+	 <property:NORAF_ID> "12046547";
+	 <property:name> "Adele".
+<kgnav:Q851213> <property:Commons_category> "Dance";
+	 <property:Library_of_Congress_authority_ID> "sh00000588";
+	 <property:inception> "1980-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/08cyft";
+	 <property:NKCR_AUT_ID> "ph114446";
+	 <property:LNB_ID> "000160559";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/electronic-dance-music";
+	 <property:GTAA_ID> "262868";
+	 <property:short_name> "EDM";
+	 <property:FAST_ID> "1160932";
+	 <property:YSO_ID> "29932";
+	 <property:name> "electronic dance music".
+<kgnav:Q7542> <property:IdRef_ID> "027754596";
+	 <property:Bibliothèque_nationale_de_France_ID> "13898683x";
+	 <property:IMDb_ID> "nm0002239";
+	 <property:CiNii_Books_author_ID> "DA11755130";
+	 <property:Commons_category> "Prince (musician)";
+	 <property:NDL_Authority_ID> "00621318";
+	 <property:MusicBrainz_artist_ID> "070d193a-845c-479f-980e-bef15710653e";
+	 <property:SBN_author_ID> "LO1V028378";
+	 <property:Libraries_Australia_ID> "35700807";
+	 <property:Find_a_Grave_memorial_ID> "161442923";
+	 <property:date_of_birth> "1958-06-07T00:00:00Z";
+	 <property:name> "Prince".
+<kgnav:Q42493> <property:SNAC_ARK_ID> "w6bg3m44";
+	 <property:Songkick_artist_ID> "1134363";
+	 <property:Omni_topic_ID> "1bb1e0ba7018400c68001a083628818b834f6b84";
+	 <property:Musiikkituottajat_artist_ID_(certification)> "katy perry";
+	 <property:Music_Canada_artist_ID> "Katy Perry";
+	 <property:SNEP_artist_ID> "Katy_Perry";
+	 <property:IMVDb_artist_ID> "katy-perry";
+	 <property:Napster_artist_ID_(U.S._version)> "katy-perry";
+	 <property:IFPI_Austria_artist_ID> "Katy Perry";
+	 <property:hitparade.ch_artist_(certification)_ID> "Katy_Perry";
+	 <property:IdRef_ID> "163234108";
+	 <property:name> "Katy Perry".
+<kgnav:Q847813> <relation:winner> <kgnav:Q23215>, <kgnav:Q43432>, <kgnav:Q105875>, <kgnav:Q19848>, <kgnav:Q1744>, <kgnav:Q16414>, <kgnav:Q36153>, <kgnav:Q47871>, <kgnav:Q11901>, <kgnav:Q5608>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f73b";
+	 <property:name> "MTV Video Music Award for Best Editing".
+<kgnav:Q1161114> <property:inception> "1999-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/03cc09m";
+	 <property:name> "MTV Video Music Award for Best Collaboration".
+<kgnav:Q1065651> <relation:winner> <kgnav:Q43432>, <kgnav:Q4235>, <kgnav:Q11975>, <kgnav:Q19848>, <kgnav:Q1744>, <kgnav:Q50040>, <kgnav:Q5608>, <kgnav:Q42493>, <kgnav:Q633>, <kgnav:Q41594>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f5qb";
+	 <property:name> "MTV Video Music Award for Video of the Year".
+<kgnav:Q1542213> <property:VIAF_ID> "234145542798496641980";
+	 <property:Library_of_Congress_authority_ID> "n2016004589";
+	 <property:Commons_category> "Lee Strasberg Theatre and Film Institute";
+	 <property:inception> "1969-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/026gvfj";
+	 <property:native_label> "Lee Strasberg Theatre and Film Institute";
+	 <property:Twitter_username> "lstfiNY";
+	 <property:Quora_topic_ID> "Lee-Strasberg-Theatre-and-Film-Institute";
+	 <property:social_media_followers> "3902";
+	 <property:WorldCat_Identities_ID> "lccn-n2016004589";
+	 <property:name> "Lee Strasberg Theatre and Film Institute".
+<kgnav:Q319693> <property:Bibliothèque_nationale_de_France_ID> "13894931j";
+	 <property:IdRef_ID> "070202877";
+	 <property:IMDb_ID> "nm0358564";
+	 <property:CiNii_Books_author_ID> "DA05276290";
+	 <property:Commons_category> "Oscar Hammerstein II";
+	 <property:Libraries_Australia_ID> "35217377";
+	 <property:MusicBrainz_artist_ID> "a383f062-e527-4a57-98b0-9205b2f8f171";
+	 <property:date_of_birth> "1895-07-12T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "2664";
+	 <property:NDL_Authority_ID> "001152149";
+	 <property:date_of_death> "1960-08-23T00:00:00Z";
+	 <property:name> "Oscar Hammerstein II".
+<kgnav:Q429687> <property:VIAF_ID> "135042435";
+	 <property:Library_of_Congress_authority_ID> "n97037083";
+	 <property:postal_code> "10024";
+	 <property:Commons_category> "Upper West Side";
+	 <property:coordinate_location> "Point(-73.9754 40.787)";
+	 <property:Freebase_ID> "/m/01w9hg";
+	 <property:population> "214744";
+	 <property:MusicBrainz_area_ID> "aaef6ccc-52fb-4add-ae99-aded66a0b170";
+	 <property:GeoNames_ID> "5142036";
+	 <property:Quora_topic_ID> "Upper-West-Side-New-York-City-Neighborhood";
+	 <property:National_Library_of_Israel_J9U_ID> "987007542758205171";
+	 <property:name> "Upper West Side".
+<kgnav:Q37073> <property:BNCF_Thesaurus_ID> "2201";
+	 <property:inception> "1950-01-01T00:00:00Z";
+	 <property:Bibliothèque_nationale_de_France_ID> "11957141f";
+	 <property:Freebase_ID> "/m/064t9";
+	 <property:NKCR_AUT_ID> "ph124352";
+	 <property:GND_ID> "4046781-8";
+	 <property:native_label> "Pop-music";
+	 <property:HDS_ID> "024568";
+	 <property:Great_Russian_Encyclopedia_Online_ID> "3158646";
+	 <property:YSO_ID> "2969";
+	 <property:SoundCloud_ID> "tags/pop";
+	 <property:name> "pop music".
+<kgnav:Q62766> <property:IdRef_ID> "157227340";
+	 <property:Bibliothèque_nationale_de_France_ID> "140030500";
+	 <property:MusicBrainz_artist_ID> "f82bcf78-5b69-4622-a5ef-73800768d9ac";
+	 <property:IMDb_ID> "nm0419650";
+	 <property:NKCR_AUT_ID> "xx0052452";
+	 <property:Freebase_ID> "/m/01vw20h";
+	 <property:date_of_birth> "1969-12-04T00:00:00Z";
+	 <property:pseudonym> "Hov";
+	 <property:Commons_gallery> "Jay-Z";
+	 <property:Commons_category> "Jay-Z";
+	 <property:Nationale_Thesaurus_voor_Auteurs_ID> "265455057";
+	 <property:name> "Jay-Z".
+<kgnav:Q862515> <property:IMDb_ID> "tt2106296";
+	 <property:publication_date> "2011-11-24T00:00:00Z";
+	 <property:start_time> "2011-11-24T00:00:00Z";
+	 <property:Freebase_ID> "/m/0hn8nvn";
+	 <property:Douban_film_ID> "7001285";
+	 <property:TMDb_movie_ID> "93897";
+	 <property:Letterboxd_film_ID> "a-very-gaga-thanksgiving";
+	 <property:Kinopoisk_film_ID> "647630";
+	 <property:name> "A Very Gaga Thanksgiving".
+<kgnav:Q23848> <property:IdRef_ID> "077447115";
+	 <property:Bibliothèque_nationale_de_France_ID> "13897728t";
+	 <property:Commons_category> "Ennio Morricone";
+	 <property:NDL_Authority_ID> "00924752";
+	 <property:ISNI> "0000 0001 2122 5602";
+	 <property:Libraries_Australia_ID> "35230098";
+	 <property:SBN_author_ID> "CFIV005318";
+	 <property:VIAF_ID> "17408291";
+	 <property:Library_of_Congress_authority_ID> "n80158240";
+	 <property:IMDb_ID> "nm0001553";
+	 <property:CiNii_Books_author_ID> "DA07879989";
+	 <property:name> "Ennio Morricone".
+<kgnav:Q189007> <property:Encyclopædia_Britannica_Online_ID> "topic/Just-Dance";
+	 <property:AllMusic_album_ID> "mw0000804167";
+	 <property:British_Phonographic_Industry_ID> "8552-2312-1";
+	 <property:Musik-Sammler.de_artist_ID> "149225";
+	 <property:MetroLyrics_ID> "just-dance-lyrics-lady-gaga";
+	 <property:YouTube_video_ID> "2Abk1jAONjw";
+	 <property:beats_per_minute> "119";
+	 <property:MusicBrainz_release_group_ID> "e6c495af-96ff-3162-9a0a-a6f815ef1bd6";
+	 <property:MusicBrainz_work_ID> "31c68d30-dc50-3268-a8d5-188d2811f7c7";
+	 <property:publication_date> "2008-04-08T00:00:00Z";
+	 <property:Freebase_ID> "/m/04cvnj2";
+	 <property:name> "Just Dance".
+<kgnav:Q83287> <property:ISNI> "0000 0000 7827 0714";
+	 <property:VIAF_ID> "103237722";
+	 <property:Commons_category> "Selena Gomez";
+	 <property:IdRef_ID> "163709319";
+	 <property:Bibliothèque_nationale_de_France_ID> "16164744x";
+	 <property:Library_of_Congress_authority_ID> "n2008039026";
+	 <property:MusicBrainz_artist_ID> "e4bc69e2-a064-4f93-ada1-f7f209cc1cc3";
+	 <property:date_of_birth> "1992-07-22T00:00:00Z";
+	 <property:GND_ID> "14108135X";
+	 <property:IMDb_ID> "nm1411125";
+	 <property:Freebase_ID> "/m/0gs6vr";
+	 <property:name> "Selena Gomez".
+<kgnav:Q153064> <property:publication_date> "2009-10-25T00:00:00Z";
+	 <property:Freebase_ID> "/m/0807c3_";
+	 <property:MusicBrainz_release_group_ID> "4535cbfb-a9a8-49ac-ac19-8f64d7af3bc7";
+	 <property:MusicBrainz_work_ID> "45c75efc-1d86-3cf6-868c-76fbcd940a76";
+	 <property:title> "Bad Romance";
+	 <property:Genius_song_ID> "Lady-gaga-bad-romance-lyrics";
+	 <property:duration> "294";
+	 <property:MetroLyrics_ID> "bad-romance-lyrics-lady-gaga";
+	 <property:YouTube_video_ID> "qrO4YZeyl0I";
+	 <property:beats_per_minute> "119";
+	 <property:name> "Bad Romance".
+<kgnav:Q889643> <property:VIAF_ID> "774150869792422190005";
+	 <property:Library_of_Congress_authority_ID> "n95062284";
+	 <property:Commons_category> "Lollapalooza";
+	 <property:inception> "1991-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/01nv25";
+	 <property:MusicBrainz_series_ID> "afc2837f-4c7b-48fb-85f5-ccafaecaeeb6";
+	 <property:Encyclopædia_Britannica_Online_ID> "art/Lollapalooza";
+	 <property:Discogs_label_ID> "363900";
+	 <property:Twitter_username> "lollapalooza";
+	 <property:FAST_ID> "1408498";
+	 <property:New_York_Times_topic_ID> "subject/lollapalooza-music-festival";
+	 <property:name> "Lollapalooza".
+<kgnav:Q41594> <property:IdRef_ID> "080712827";
+	 <property:Bibliothèque_nationale_de_France_ID> "14027364w";
+	 <property:Songkick_artist_ID> "246366";
+	 <property:Zhihu_topic_ID> "20015056";
+	 <property:Cultureel_Woordenboek_ID> "populaire-muziek/christina-aguilera";
+	 <property:Jaxsta_profile_ID> "00cf7811-b635-4cb0-9634-68a95203d16f";
+	 <property:Musixmatch_writer_ID> "Aguilera-Christina";
+	 <property:TikTok_username> "xtina";
+	 <property:Qobuz_artist_ID> "christina-aguilera";
+	 <property:Acharts.co_artist_ID> "christina_aguilera";
+	 <property:MOOMA_artist_ID> "135";
+	 <property:name> "Christina Aguilera".
+<kgnav:Q387047> <property:VIAF_ID> "150881891";
+	 <property:postal_code> "90265";
+	 <property:OpenStreetMap_relation_ID> "3492156";
+	 <property:Commons_category> "Malibu, California";
+	 <property:inception> "1991-01-01T00:00:00Z";
+	 <property:NKCR_AUT_ID> "ge134350";
+	 <property:Freebase_ID> "/m/0r0m6";
+	 <property:GNIS_ID> "2410913";
+	 <property:FIPS_55-3_(locations_in_the_US)> "06-45246";
+	 <property:coordinate_location> "Point(-118.695 34.035)";
+	 <property:Curlie_ID> "Regional/North_America/United_States/California/Localities/M/Malibu/";
+	 <property:name> "Malibu".
+<kgnav:Q56770393> <property:MusicBrainz_release_group_ID> "a8dbba8b-0c37-4352-8e88-0c5a01e1fe0c";
+	 <property:publication_date> "2018-09-27T00:00:00Z";
+	 <property:title> "Shallow";
+	 <property:YouTube_video_ID> "bo_efYhYU2A";
+	 <property:AllMusic_album_ID> "mw0003213731";
+	 <property:Discogs_master_ID> "1434179";
+	 <property:Spotify_album_ID> "708nDu1WADpksUOEGQ4Qny";
+	 <property:Genius_song_ID> "Lady-gaga-and-bradley-cooper-shallow-lyrics";
+	 <property:Deezer_track_ID> "561856742";
+	 <property:Last.fm_ID> "Lady+Gaga/_/Shallow";
+	 <property:British_Phonographic_Industry_ID> "15265-4792-1";
+	 <property:name> "Shallow".
+<kgnav:Q121507> <property:Jaxsta_profile_ID> "2f09de32-290c-4ce8-ae65-b2637e1e6973";
+	 <property:Musixmatch_writer_ID> "Alicia-Augello-Cook";
+	 <property:TikTok_username> "aliciakeys";
+	 <property:Album_of_the_Year_artist_ID> "830";
+	 <property:Qobuz_artist_ID> "alicia-keys";
+	 <property:Tumblr_username> "thekeysofalicia";
+	 <property:subreddit> "AliciaKeys";
+	 <property:MOOMA_artist_ID> "6288";
+	 <property:MobyGames_developer_ID> "159688";
+	 <property:Cinema.de_ID> "1547244";
+	 <property:TV_Guide_person_ID_(former_scheme)> "3030390435";
+	 <property:name> "Alicia Keys".
+<kgnav:Q15935> <property:IdRef_ID> "162075693";
+	 <property:Bibliothèque_nationale_de_France_ID> "14585619h";
+	 <property:IMDb_ID> "nm1577190";
+	 <property:Commons_category> "Kanye West";
+	 <property:MusicBrainz_artist_ID> "164f0d73-1234-4e2c-8743-d77bf2191051";
+	 <property:date_of_birth> "1977-06-08T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0021159";
+	 <property:Open_Library_ID> "OL6851790A";
+	 <property:pseudonym> "Saint Pablo";
+	 <property:Freebase_ID> "/m/02l840";
+	 <property:Nationale_Thesaurus_voor_Auteurs_ID> "339149094";
+	 <property:name> "Kanye West".
+<kgnav:Q617869> <relation:winner> <kgnav:Q83287>, <kgnav:Q43432>, <kgnav:Q26876>, <kgnav:Q11975>, <kgnav:Q19848>, <kgnav:Q128799>, <kgnav:Q483507>, <kgnav:Q43259>, <kgnav:Q146027>, <kgnav:Q151892>;
+	 <property:inception> "1999-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f77y";
+	 <property:name> "MTV Video Music Award for Best Pop Video".
+<kgnav:Q1412129> <property:ISNI> "0000 0000 8125 7609";
+	 <property:VIAF_ID> "47029472";
+	 <property:GND_ID> "139661816";
+	 <property:Library_of_Congress_authority_ID> "n88132373";
+	 <property:Bibliothèque_nationale_de_France_ID> "148436876";
+	 <property:IdRef_ID> "084618108";
+	 <property:IMDb_ID> "nm0943034";
+	 <property:MusicBrainz_artist_ID> "191034d6-cfca-4e50-b8cb-3016441e2cc3";
+	 <property:date_of_birth> "1905-01-15T00:00:00Z";
+	 <property:date_of_death> "1973-12-13T00:00:00Z";
+	 <property:Freebase_ID> "/m/0d4553";
+	 <property:name> "Allie Wrubel".
+<kgnav:Q191070> <property:Freebase_ID> "/m/05b6vcx";
+	 <property:publication_date> "2009-01-10T00:00:00Z";
+	 <property:MusicBrainz_release_group_ID> "7438e6a8-1bc3-38dd-9ec7-92e306e9afa0";
+	 <property:MusicBrainz_work_ID> "e6ec46d5-ed14-48d7-994f-611b4186744d";
+	 <property:MetroLyrics_ID> "eh-eh-lyrics-lady-gaga";
+	 <property:BabelNet_ID> "01334237n";
+	 <property:YouTube_video_ID> "mVEG793G3N4";
+	 <property:ISWC> "T-901.037.218-6";
+	 <property:Discogs_master_ID> "77389";
+	 <property:name> "Eh, Eh (Nothing Else I Can Say)".
+<kgnav:Q633> <property:IdRef_ID> "035136782";
+	 <property:Bibliothèque_nationale_de_France_ID> "13901347v";
+	 <property:NDL_Authority_ID> "00477649";
+	 <property:Commons_category> "Neil Young";
+	 <property:IMDb_ID> "nm0949918";
+	 <property:CiNii_Books_author_ID> "DA12052996";
+	 <property:pseudonym> "Bernard Shakey";
+	 <property:Freebase_ID> "/m/0m2l9";
+	 <property:SELIBR_ID> "170643";
+	 <property:GND_ID> "119133695";
+	 <property:Libraries_Australia_ID> "35988322";
+	 <property:name> "Neil Young".
+<kgnav:Q83412033> <property:MusicBrainz_release_group_ID> "a6ba6fde-4699-49fb-841d-2c826f5cf05e";
+	 <property:title> "Stupid Love";
+	 <property:publication_date> "2020-02-28T00:00:00Z";
+	 <property:Discogs_master_ID> "1691089";
+	 <property:duration> "193";
+	 <property:British_Phonographic_Industry_ID> "16395-2312-1";
+	 <property:LyricsTranslate_ID> "lady-gaga-stupid-love-lyrics.html";
+	 <property:YouTube_video_ID> "5L6xyaeiV58";
+	 <property:AllMusic_album_ID> "mw0003364521";
+	 <property:Google_Knowledge_Graph_ID> "/g/11frph1nfv";
+	 <property:Genius_song_ID> "Lady-gaga-stupid-love-lyrics";
+	 <property:name> "Stupid Love".
+<kgnav:Q600236> <property:GND_ID> "4075664-6";
+	 <property:Library_of_Congress_authority_ID> "sh85095018";
+	 <property:NDL_Authority_ID> "00572479";
+	 <property:NKCR_AUT_ID> "ph388494";
+	 <property:LNB_ID> "000175197";
+	 <property:WordNet_3.1_Synset_ID> "00672594-n";
+	 <property:French_Vikidia_ID> "Opération_chirurgicale";
+	 <property:Store_medisinske_leksikon_ID> "operasjon_-_kirurgi";
+	 <property:National_Library_of_Israel_J9U_ID> "987007548425605171";
+	 <property:Google_Knowledge_Graph_ID> "/g/1237282v";
+	 <property:NALT_ID> "8137";
+	 <property:name> "surgical operation".
+<kgnav:Q19848> <relation:genre> <kgnav:Q851213>, <kgnav:Q211756>, <kgnav:Q188450>, <kgnav:Q1298934>, <kgnav:Q37073>, <kgnav:Q25094849>;
+	 <relation:residence> <kgnav:Q387047>, <kgnav:Q11299>, <kgnav:Q7338894>, <kgnav:Q128114>, <kgnav:Q429687>, <kgnav:Q65>;
+	 <relation:award_received> <kgnav:Q595693>, <kgnav:Q847054>, <kgnav:Q112243>, <kgnav:Q6718939>, <kgnav:Q787098>, <kgnav:Q617869>, <kgnav:Q13582570>, <kgnav:Q1027891>, <kgnav:Q16938408>, <kgnav:Q849435>, <kgnav:Q372123>, <kgnav:Q2976730>, <kgnav:Q5593866>, <kgnav:Q1027880>, <kgnav:Q1472235>, <kgnav:Q1542147>, <kgnav:Q1441929>, <kgnav:Q86660430>, <kgnav:Q1065651>, <kgnav:Q4835475>, <kgnav:Q3841601>, <kgnav:Q1161114>, <kgnav:Q1091031>, <kgnav:Q428808>, <kgnav:Q915665>, <kgnav:Q673229>, <kgnav:Q935283>, <kgnav:Q740968>, <kgnav:Q280481>, <kgnav:Q847813>, <kgnav:Q7759814>, <kgnav:Q917698>;
+	 <relation:participant_in> <kgnav:Q406497>, <kgnav:Q3300629>, <kgnav:Q3632246>, <kgnav:Q889643>, <kgnav:Q13979>;
+	 <relation:educated_at> <kgnav:Q5059890>, <kgnav:Q796480>, <kgnav:Q5121453>, <kgnav:Q861418>, <kgnav:Q1542213>, <kgnav:Q797078>;
+	 <relation:instrument> <kgnav:Q17172850>, <kgnav:Q5994>;
+	 <relation:significant_event> <kgnav:Q72758>, <kgnav:Q15273731>, <kgnav:Q428476>, <kgnav:Q600236>, <kgnav:Q473206>, <kgnav:Q13563471>;
+	 <relation:influenced_by> <kgnav:Q15862>, <kgnav:Q1744>, <kgnav:Q5383>;
+	 <relation:ethnic_group> <kgnav:Q857880>, <kgnav:Q974693>;
+	 <relation:notable_work> <kgnav:Q164646>, <kgnav:Q15077646>, <kgnav:Q27113998>, <kgnav:Q56770393>, <kgnav:Q189002>, <kgnav:Q131182>, <kgnav:Q862515>, <kgnav:Q861409>, <kgnav:Q725885>, <kgnav:Q95681662>, <kgnav:Q1025916>, <kgnav:Q164621>, <kgnav:Q153044>, <kgnav:Q94557088>, <kgnav:Q1940239>, <kgnav:Q544554>, <kgnav:Q188766>, <kgnav:Q72646>, <kgnav:Q14344806>, <kgnav:Q188770>, <kgnav:Q83412033>, <kgnav:Q191070>, <kgnav:Q189007>, <kgnav:Q153029>, <kgnav:Q2743297>, <kgnav:Q3286391>, <kgnav:Q153064>;
+	 <property:IdRef_ID> "162075545";
+	 <property:Bibliothèque_nationale_de_France_ID> "157535900";
+	 <property:hitparade.ch_artist_ID> "Lady_GaGa";
+	 <property:Equipboard_artist_ID> "lady-gaga";
+	 <property:NicoNicoPedia_ID> "lady gaga";
+	 <property:Juno_Download_artist_ID> "Lady+Gaga";
+	 <property:Moov_artist_ID> "00075210";
+	 <property:Gaana_artist_ID> "lady-gaga";
+	 <property:NME_artist_ID> "lady-gaga";
+	 <property:EDb_person_ID> "n0021515";
+	 <property:Last.fm_ID> "Lady+Gaga";
+	 <property:name> "Lady Gaga".
+<kgnav:Q861418> <property:Freebase_ID> "/m/09v31hx";
+	 <property:name> "Collaborative Arts Project 21".
+<kgnav:Q189729> <property:IdRef_ID> "034623124";
+	 <property:Bibliothèque_nationale_de_France_ID> "13894531f";
+	 <property:IMDb_ID> "nm0001275";
+	 <property:CiNii_Books_author_ID> "DA03008450";
+	 <property:NDL_Authority_ID> "01064332";
+	 <property:Commons_category> "Philip Glass";
+	 <property:MusicBrainz_artist_ID> "5ae54dee-4dba-49c0-802a-a3b3b3adfe9b";
+	 <property:SBN_author_ID> "TO0V074230";
+	 <property:date_of_birth> "1937-01-31T00:00:00Z";
+	 <property:Freebase_ID> "/m/06449";
+	 <property:RKDartists_ID> "250903";
+	 <property:name> "Philip Glass".
+<kgnav:Q106350730> <property:name> "Ralph Rainger and Leo Robin".<kgnav:Q13979> <property:Commons_category> "Saturday Night Live";
+	 <property:start_time> "1975-10-11T00:00:00Z";
+	 <property:IMDb_ID> "tt0072562";
+	 <property:Commons_gallery> "Saturday Night Live";
+	 <property:number_of_episodes> "914";
+	 <property:Freebase_ID> "/m/039cq4";
+	 <property:PORT_film_ID> "173966";
+	 <property:Rotten_Tomatoes_ID> "tv/saturday-night-live";
+	 <property:Twitter_username> "nbcsnl";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/Saturday-Night-Live";
+	 <property:Metacritic_ID> "tv/saturday-night-live";
+	 <property:name> "Saturday Night Live".
+<kgnav:Q673229> <property:inception> "1962-03-05T00:00:00Z";
+	 <property:Freebase_ID> "/m/011b1hvq";
+	 <property:name> "Golden Globe Award for Best Actress – Miniseries or Television Film".
+<kgnav:Q19004> <property:IdRef_ID> "181641437";
+	 <property:Bibliothèque_nationale_de_France_ID> "16544674v";
+	 <property:IMDb_ID> "nm4776432";
+	 <property:MusicBrainz_artist_ID> "ae002c5d-aac6-490b-a39a-30aa9e2edf2b";
+	 <property:Commons_category> "Skrillex";
+	 <property:date_of_birth> "1988-01-15T00:00:00Z";
+	 <property:Freebase_ID> "/m/0462ph1";
+	 <property:NKCR_AUT_ID> "xx0148572";
+	 <property:pseudonym> "Skrillex";
+	 <property:VIAF_ID> "11146153191605252774";
+	 <property:Musik-Sammler.de_artist_ID> "268702";
+	 <property:name> "Skrillex".
+<kgnav:Q151892> <property:subreddit> "ArianaGrande";
+	 <property:Giphy_username> "arianagrande";
+	 <property:CineMagia_person_ID> "564869";
+	 <property:Tidal_artist_ID> "4332277";
+	 <property:The_Numbers_person_ID> "921500401";
+	 <property:Prisma_ID> "3074621";
+	 <property:Melon_artist_ID> "597451";
+	 <property:Wolfram_Language_entity_code> "Entity["MusicAct", "ArianaGrande::852g6"]";
+	 <property:Amazon_author_ID> "B00D8LQL6U";
+	 <property:IdRef_ID> "244858926";
+	 <property:Bibliothèque_nationale_de_France_ID> "16941154t";
+	 <property:name> "Ariana Grande".
+<kgnav:Q36153> <property:Library_of_Congress_authority_ID> "no00017294";
+	 <property:GND_ID> "129053813";
+	 <property:Prabook_ID> "467075";
+	 <property:Treccani_ID> "beyonce";
+	 <property:IdRef_ID> "078777828";
+	 <property:Bibliothèque_nationale_de_France_ID> "14055288r";
+	 <property:LittleSis_people_ID> "159484";
+	 <property:BoF_person_ID> "beyonce-knowles";
+	 <property:DBC_author_ID> "87097969387829";
+	 <property:Elle.fr_person_ID> "Beyonce";
+	 <property:TV_Guide_person_ID_(former_scheme)> "141903";
+	 <property:name> "Beyoncé".
+<kgnav:Q151976> <property:IdRef_ID> "027159116";
+	 <property:Bibliothèque_nationale_de_France_ID> "139003797";
+	 <property:Libraries_Australia_ID> "36549132";
+	 <property:SBN_author_ID> "DDSV000481";
+	 <property:IMDb_ID> "nm0006319";
+	 <property:CiNii_Books_author_ID> "DA05553743";
+	 <property:MusicBrainz_artist_ID> "83970769-d8ea-434b-8734-88899213c922";
+	 <property:Freebase_ID> "/m/03h_jn3";
+	 <property:Open_Library_ID> "OL80037A";
+	 <property:date_of_birth> "1925-07-29T00:00:00Z";
+	 <property:NDL_Authority_ID> "00458552";
+	 <property:name> "Mikis Theodorakis".
+<kgnav:Q849435> <relation:winner> <kgnav:Q2831>, <kgnav:Q3308450>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f71y";
+	 <property:name> "MTV Video Music Award for Best Choreography".
+<kgnav:Q47871> <property:Library_of_Congress_authority_ID> "no95037164";
+	 <property:Bibliothèque_nationale_de_France_ID> "139688386";
+	 <property:IdRef_ID> "084288795";
+	 <property:IMDb_ID> "nm1554564";
+	 <property:MusicBrainz_artist_ID> "084308bd-1654-436f-ba03-df6697104e19";
+	 <property:inception> "1987-01-01T00:00:00Z";
+	 <property:NDL_Authority_ID> "01039929";
+	 <property:Guardian_topic_ID> "music/greenday";
+	 <property:Rock_and_Roll_Hall_of_Fame_ID> "green-day";
+	 <property:VK_ID> "greenday";
+	 <property:NORAF_ID> "5073649";
+	 <property:name> "Green Day".
+<kgnav:Q725885> <property:MusicBrainz_release_group_ID> "e7a595f0-0e24-47f2-b000-130726a67292";
+	 <property:publication_date> "2010-03-03T00:00:00Z";
+	 <property:Freebase_ID> "/m/0ft9y3t";
+	 <property:title> "The Remix";
+	 <property:Metacritic_ID> "music/the-remix/lady-gaga";
+	 <property:AllMusic_album_ID> "mw0001963573";
+	 <property:Discogs_master_ID> "245419";
+	 <property:duration> "4635";
+	 <property:number_of_parts_of_this_work> "17";
+	 <property:Spotify_album_ID> "1cYse7L4pszuJPF6me5tQC";
+	 <property:British_Phonographic_Industry_ID> "10851-2312-2";
+	 <property:name> "The Remix".
+<kgnav:Q1091031> <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f6ym";
+	 <property:name> "MTV Video Music Award for Best Female Video".
+<kgnav:Q165911> <property:IdRef_ID> "082334226";
+	 <property:Bibliothèque_nationale_de_France_ID> "14010332c";
+	 <property:Commons_category> "Usher Raymond";
+	 <property:IMDb_ID> "nm0713378";
+	 <property:date_of_birth> "1978-10-14T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0021245";
+	 <property:Freebase_ID> "/m/01trhmt";
+	 <property:ISNI> "0000 0000 5490 3863";
+	 <property:VIAF_ID> "45154400";
+	 <property:MusicBrainz_artist_ID> "3414d446-735a-443c-931f-10634f57e5b9";
+	 <property:KANTO_ID> "000183957";
+	 <property:name> "Usher".
+<kgnav:Q7338894> <property:coordinate_location> "Point(-73.9899 40.7205)";
+	 <property:Freebase_ID> "/m/05c4pgw";
+	 <property:date_of_official_opening> "1880-03-01T00:00:00Z";
+	 <property:date_of_official_closure> "1942-06-13T00:00:00Z";
+	 <property:name> "Rivington Street".
+<kgnav:Q10708> <property:name> "Red Hot Chili Peppers".<kgnav:Q164621> <property:MusicBrainz_release_group_ID> "20b4c8b3-e922-44a3-90e8-fa00acad8ed4";
+	 <property:publication_date> "2009-11-18T00:00:00Z";
+	 <property:Freebase_ID> "/m/09gd42w";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/The-Fame-Monster";
+	 <property:title> "The Fame Monster";
+	 <property:AllMusic_album_ID> "mw0001947970";
+	 <property:Metacritic_ID> "music/the-fame-monster/lady-gaga";
+	 <property:Discogs_master_ID> "201057";
+	 <property:duration> "2055";
+	 <property:Apple_Music_album_ID_(U.S._version)> "1440814077";
+	 <property:Spotify_album_ID> "67j3NJodNRI8USUwKwTZA6";
+	 <property:name> "The Fame Monster".
+<kgnav:Q14344806> <property:MusicBrainz_work_ID> "b04fa311-9059-41be-9ddd-789bd265bc9c";
+	 <property:MusicBrainz_release_group_ID> "162ae3ad-5593-4a40-b856-d1e7081ba1e3";
+	 <property:publication_date> "2013-08-12T00:00:00Z";
+	 <property:Freebase_ID> "/m/0wdvpx8";
+	 <property:MetroLyrics_ID> "applause-lyrics-lady-gaga";
+	 <property:beats_per_minute> "14";
+	 <property:YouTube_video_ID> "pco91kroVgQ";
+	 <property:Quora_topic_ID> "Applause-Lady-Gaga-song";
+	 <property:name> "Applause".
+<kgnav:Q857880> <property:Commons_category> "French Canadians";
+	 <property:Library_of_Congress_authority_ID> "sh85051781";
+	 <property:Freebase_ID> "/m/012c1l";
+	 <property:NKCR_AUT_ID> "ph496684";
+	 <property:population> "7892195";
+	 <property:Art_&_Architecture_Thesaurus_ID> "300386120";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/French-Canadian";
+	 <property:Quora_topic_ID> "French-Canadian";
+	 <property:Library_of_Congress_Children's_Subject_Headings_ID> "sj96005556";
+	 <property:ASCCEG_2019_ID> "8104";
+	 <property:Library_of_Congress_Demographic_Group_Terms_ID> "dg2016060404";
+	 <property:name> "French Canadians".
+<kgnav:Q1027880> <property:MusicBrainz_series_ID> "751db902-9a7f-466b-80a5-ed6690f7a5ad";
+	 <property:inception> "2012-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0gk_nx3";
+	 <property:name> "Grammy Award for Best Pop Duo/Group Performance".
+<kgnav:Q86660430> <property:Google_Knowledge_Graph_ID> "/g/11fxwq52kb";
+	 <property:name> "MTV Video Music Awards/Artist of the Year".
+<kgnav:Q917698> <relation:winner> <kgnav:Q42455>, <kgnav:Q10708>, <kgnav:Q23215>, <kgnav:Q19848>, <kgnav:Q44190>, <kgnav:Q11649>, <kgnav:Q2831>, <kgnav:Q1744>, <kgnav:Q11901>, <kgnav:Q6096>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f72_";
+	 <property:name> "MTV Video Music Award for Best Art Direction".
+<kgnav:Q111074> <property:IdRef_ID> "080783775";
+	 <property:Bibliothèque_nationale_de_France_ID> "138911904";
+	 <property:IMDb_ID> "nm0000290";
+	 <property:SBN_author_ID> "MILV101604";
+	 <property:Libraries_Australia_ID> "35802952";
+	 <property:MusicBrainz_artist_ID> "661e20c8-3d82-4da2-94a2-97d9e11691c0";
+	 <property:date_of_birth> "1933-11-03T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "64946018";
+	 <property:NKCR_AUT_ID> "xx0008135";
+	 <property:Commons_category> "John Barry (composer)";
+	 <property:NDL_Authority_ID> "001153112";
+	 <property:name> "John Barry".
+<kgnav:Q428476> <property:end_time> "2009-09-29T00:00:00Z";
+	 <property:Freebase_ID> "/m/05bzjbp";
+	 <property:Commons_category> "The Fame Ball Tour";
+	 <property:MusicBrainz_series_ID> "9522f4c0-240e-48c2-92c0-4cbf9838fd8a";
+	 <property:start_time> "2009-03-12T00:00:00Z";
+	 <property:number_of_representations> "83";
+	 <property:Quora_topic_ID> "The-Fame-Ball-Tour";
+	 <property:name> "The Fame Ball Tour".
+<kgnav:Q214665> <property:Bibliothèque_nationale_de_France_ID> "13899216x";
+	 <property:IdRef_ID> "027990028";
+	 <property:IMDb_ID> "nm0000065";
+	 <property:CiNii_Books_author_ID> "DA1061886X";
+	 <property:Libraries_Australia_ID> "35940298";
+	 <property:SBN_author_ID> "CFIV031517";
+	 <property:date_of_death> "1979-04-10T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "54844322";
+	 <property:date_of_birth> "1911-12-03T00:00:00Z";
+	 <property:Commons_category> "Nino Rota";
+	 <property:MusicBrainz_artist_ID> "d52ac009-4ed5-4d01-97d5-8280bb7dd460";
+	 <property:name> "Nino Rota".
+<kgnav:Q2831> <property:PORT_person_ID> "15645";
+	 <property:YouTube_channel_ID> "UC5OrDvL9DscpcAstz7JnQGA";
+	 <property:IdRef_ID> "027644693";
+	 <property:Bibliothèque_nationale_de_France_ID> "12088047p";
+	 <property:Fandom_article_ID> "music:Michael_Jackson";
+	 <property:Ultimate_Guitar_artist_ID> "michael_jackson_10582";
+	 <property:Larousse_ID> "personnage/wd/155320";
+	 <property:Disney_A_to_Z_ID> "jackson-michael";
+	 <property:BBC_News_topic_ID> "cy0njmygkryt";
+	 <property:Deezer_artist_ID> "259";
+	 <property:Google+_ID> "+MichaelJackson";
+	 <property:name> "Michael Jackson".
+<kgnav:Q740968> <property:inception> "1998-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02g3gj";
+	 <property:MusicBrainz_series_ID> "5dc3275e-ac47-4391-9550-a4d469a97cec";
+	 <property:KBpedia_ID> "GrammyAward-BestDanceRecording";
+	 <property:name> "Grammy Award for Best Dance/Electronic Recording".
+<kgnav:Q108560> <property:ISNI> "0000 0001 2282 595X";
+	 <property:Library_of_Congress_authority_ID> "n89264325";
+	 <property:GND_ID> "13426570X";
+	 <property:VIAF_ID> "85829979";
+	 <property:Bibliothèque_nationale_de_France_ID> "14007114c";
+	 <property:IMDb_ID> "nm0006246";
+	 <property:IdRef_ID> "071504982";
+	 <property:Commons_category> "A. R. Rahman";
+	 <property:MusicBrainz_artist_ID> "e0bba708-bdd3-478d-84ea-c706413bedab";
+	 <property:Freebase_ID> "/m/01gg59";
+	 <property:date_of_birth> "1966-01-06T00:00:00Z";
+	 <property:name> "A. R. Rahman".
+<kgnav:Q211756> <property:inception> "1980-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02lnbg";
+	 <property:Quora_topic_ID> "Dance-pop";
+	 <property:MusicBrainz_genre_ID> "b739a895-85ed-4ad3-8717-4e9ef5387dd8";
+	 <property:Every_Noise_at_Once_ID> "dancepop";
+	 <property:AllMusic_genre/style_ID> "ma0000004548";
+	 <property:Rate_Your_Music_genre_ID> "dance-pop";
+	 <property:Discogs_style_ID> "dance-pop";
+	 <property:name> "dance-pop".
+<kgnav:Q45188> <property:IMDb_ID> "nm1095892";
+	 <property:IdRef_ID> "086228749";
+	 <property:Bibliothèque_nationale_de_France_ID> "140349761";
+	 <property:MusicBrainz_artist_ID> "cc197bad-dc9c-440d-a5b5-d52ba2e14234";
+	 <property:VIAF_ID> "157712849";
+	 <property:ISNI> "0000 0001 1551 394X";
+	 <property:NKCR_AUT_ID> "mzk2003193017";
+	 <property:Open_Library_ID> "OL2741867A";
+	 <property:Commons_category> "Coldplay";
+	 <property:inception> "1996-01-01T00:00:00Z";
+	 <property:Namuwiki_ID> "콜드플레이";
+	 <property:name> "Coldplay".
+<kgnav:Q40715> <property:Ciné-Ressources_person_ID> "102581";
+	 <property:Last.fm_ID> "Jennifer+Lopez";
+	 <property:VK_ID> "id547264441";
+	 <property:Djshop_artist_ID> "amVubmlmZXIgbG9wZXo";
+	 <property:Beatport_artist_ID> "208769";
+	 <property:hitparade.ch_artist_ID> "Jennifer_Lopez";
+	 <property:Equipboard_artist_ID> "jennifer-lopez";
+	 <property:Dutch_Charts_artist_ID> "Jennifer Lopez";
+	 <property:Gaana_artist_ID> "jennifer-lopez";
+	 <property:Charts_in_France_artist_ID> "Jennifer-Lopez";
+	 <property:IdRef_ID> "077446992";
+	 <property:name> "Jennifer Lopez".
+<kgnav:Q134969> <property:ISNI> "0000 0001 2151 5044";
+	 <property:VIAF_ID> "125165162";
+	 <property:GND_ID> "1224460-0";
+	 <property:Library_of_Congress_authority_ID> "n89673788";
+	 <property:Bibliothèque_nationale_de_France_ID> "13906118x";
+	 <property:IdRef_ID> "069737967";
+	 <property:IMDb_ID> "nm1032121";
+	 <property:Commons_category> "R.E.M.";
+	 <property:MusicBrainz_artist_ID> "ea4dfa26-f633-4da6-a52a-f49ea4897b58";
+	 <property:inception> "1980-01-01T00:00:00Z";
+	 <property:dissolved,_abolished_or_demolished_date> "2011-09-21T00:00:00Z";
+	 <property:name> "R.E.M.".
+<kgnav:Q595693> <relation:winner> <kgnav:Q156305>, <kgnav:Q5608>, <kgnav:Q121507>, <kgnav:Q19848>, <kgnav:Q130742>, <kgnav:Q11649>, <kgnav:Q30449>, <kgnav:Q6060>, <kgnav:Q34086>, <kgnav:Q11895>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f705";
+	 <property:name> "MTV Video Music Award for Best New Artist".
+<kgnav:Q188450> <property:Commons_category> "Electropop";
+	 <property:inception> "1978-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0122042b";
+	 <property:Quora_topic_ID> "Electropop";
+	 <property:MusicBrainz_genre_ID> "3f3388b4-e36a-4bf8-a0be-66b10d92aaa4";
+	 <property:Every_Noise_at_Once_ID> "electropop";
+	 <property:Rate_Your_Music_genre_ID> "electropop";
+	 <property:name> "electropop".
+<kgnav:Q3286391> <property:Library_of_Congress_authority_ID> "no2018139772";
+	 <property:IMDb_ID> "tt1517451";
+	 <property:Commons_category> "A Star Is Born (2018 film)";
+	 <property:review_score> "90%";
+	 <property:FilmAffinity_ID> "684177";
+	 <property:publication_date> "2018-10-04T00:00:00Z";
+	 <property:Freebase_ID> "/m/0g9t50b";
+	 <property:PORT_film_ID> "204597";
+	 <property:Box_Office_Mojo_film_ID_(former_scheme)> "astarisborn2018";
+	 <property:Rotten_Tomatoes_ID> "m/a_star_is_born_2018";
+	 <property:AlloCiné_film_ID> "173109";
+	 <property:name> "A Star Is Born".
+<kgnav:Q43259> <property:VIAF_ID> "2266145856972722920598";
+	 <property:ISNI> "0000 0001 2369 9887";
+	 <property:GND_ID> "5525641-7";
+	 <property:Library_of_Congress_authority_ID> "n97071733";
+	 <property:IdRef_ID> "07806953X";
+	 <property:Bibliothèque_nationale_de_France_ID> "139929228";
+	 <property:IMDb_ID> "nm1202490";
+	 <property:Commons_category> "No Doubt";
+	 <property:MusicBrainz_artist_ID> "fbd2a255-1d57-4d31-ac11-65b671c19958";
+	 <property:inception> "1986-01-01T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0017825";
+	 <property:name> "No Doubt".
+<kgnav:Q11975> <property:IdRef_ID> "083986677";
+	 <property:Bibliothèque_nationale_de_France_ID> "13753469m";
+	 <property:Myspace_ID> "britney";
+	 <property:Kvikmyndir_person_ID> "17903";
+	 <property:National_Library_of_Greece_ID> "175710";
+	 <property:Musiikkituottajat_artist_ID_(certification)> "britney spears";
+	 <property:Music_Canada_artist_ID> "Britney Spears";
+	 <property:SNEP_artist_ID> "Britney_Spears";
+	 <property:Album_of_the_Year_artist_ID> "886";
+	 <property:National_Library_of_Russia_ID> "7762192";
+	 <property:IFPI_Austria_artist_ID> "Britney Spears";
+	 <property:name> "Britney Spears".
+<kgnav:Q128799> <property:IdRef_ID> "052512053";
+	 <property:Bibliothèque_nationale_de_France_ID> "140005661";
+	 <property:IMDb_ID> "nm0005193";
+	 <property:NDL_Authority_ID> "00835027";
+	 <property:Commons_category> "Ricky Martin";
+	 <property:MusicBrainz_artist_ID> "70ea63ea-70dc-4b63-951a-2c249d2b3b0a";
+	 <property:NKCR_AUT_ID> "jn20000701169";
+	 <property:date_of_birth> "1971-12-24T00:00:00Z";
+	 <property:Freebase_ID> "/m/01w61th";
+	 <property:MYmovies_person_ID> "35069";
+	 <property:Commons_gallery> "Ricky Martín";
+	 <property:name> "Ricky Martin".
+<kgnav:Q131285> <property:IdRef_ID> "088522598";
+	 <property:Bibliothèque_nationale_de_France_ID> "13901190f";
+	 <property:Libraries_Australia_ID> "35362853";
+	 <property:MusicBrainz_artist_ID> "53b106e7-0cc6-42cc-ac95-ed8d30a3a98e";
+	 <property:IMDb_ID> "nm0002354";
+	 <property:CiNii_Books_author_ID> "DA06236666";
+	 <property:Freebase_ID> "/m/0146pg";
+	 <property:date_of_birth> "1932-02-08T00:00:00Z";
+	 <property:NKCR_AUT_ID> "ola2002158074";
+	 <property:NDL_Authority_ID> "00840807";
+	 <property:Biblioteca_Nacional_de_España_ID> "XX1190804";
+	 <property:name> "John Williams".
+<kgnav:Q72758> <property:Commons_category> "Born This Way Ball";
+	 <property:start_time> "2012-04-27T00:00:00Z";
+	 <property:end_time> "2013-02-11T00:00:00Z";
+	 <property:Freebase_ID> "/m/0h_98q9";
+	 <property:number_of_representations> "98";
+	 <property:MusicBrainz_series_ID> "7f4bbcd9-ec20-46d3-9710-f637490924a1";
+	 <property:name> "Born This Way Ball".
+<kgnav:Q861409> <property:publication_date> "2008-12-16T00:00:00Z";
+	 <property:MusicBrainz_work_ID> "9849c8d4-73e6-4fd0-8c89-1a5f0a44f90e";
+	 <property:Freebase_ID> "/m/09ghhbr";
+	 <property:MetroLyrics_ID> "christmas-tree-lyrics-lady-gaga";
+	 <property:name> "Christmas Tree".
+<kgnav:Q5994> <property:GND_ID> "4030982-4";
+	 <property:Library_of_Congress_authority_ID> "sh85101722";
+	 <property:Bibliothèque_nationale_de_France_ID> "11932961n";
+	 <property:Commons_category> "Pianos";
+	 <property:NDL_Authority_ID> "00569107";
+	 <property:BNCF_Thesaurus_ID> "2237";
+	 <property:inception> "1720-01-01T00:00:00Z";
+	 <property:time_of_discovery_or_invention> "1700-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/05r5c";
+	 <property:NKCR_AUT_ID> "ph121605";
+	 <property:Commons_gallery> "Piano";
+	 <property:name> "piano".
+<kgnav:Q269094> <property:Bibliothèque_nationale_de_France_ID> "13899099w";
+	 <property:IdRef_ID> "069801606";
+	 <property:IMDb_ID> "nm0006256";
+	 <property:CiNii_Books_author_ID> "DA07865714";
+	 <property:Commons_category> "Richard Rodgers";
+	 <property:NDL_Authority_ID> "00454469";
+	 <property:date_of_birth> "1902-06-28T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "891";
+	 <property:Libraries_Australia_ID> "35615794";
+	 <property:ISNI> "0000 0001 2148 2043";
+	 <property:WorldCat_Identities_ID> "lccn-n50048058";
+	 <property:name> "Richard Rodgers".
+<kgnav:Q3300629> <property:Commons_category> "Royal Variety Performance";
+	 <property:Freebase_ID> "/m/02l6ky";
+	 <property:number_of_episodes> "85";
+	 <property:name> "Royal Variety Performance".
+<kgnav:Q974693> <property:name> "Italian Americans".<kgnav:Q164646> <property:MusicBrainz_release_group_ID> "2e3b231b-ab9f-4d85-950a-48708a1cc2fb";
+	 <property:review_score> "4";
+	 <property:publication_date> "2011-05-23T00:00:00Z";
+	 <property:Freebase_ID> "/m/0g55020";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/Born-This-Way";
+	 <property:title> "Born This Way";
+	 <property:AllMusic_album_ID> "mw0002132518";
+	 <property:Metacritic_ID> "music/born-this-way/lady-gaga";
+	 <property:Discogs_master_ID> "338175";
+	 <property:Spotify_album_ID> "6LY3AerY6KNGOPsNPL63Kk";
+	 <property:YouTube_playlist_ID> "OLAK5uy_krJW3wTYOxXhBKsdW8TWgVl-Gn2K9TdXc";
+	 <property:name> "Born This Way".
+<kgnav:Q743229> <property:VIAF_ID> "76583294";
+	 <property:GND_ID> "102085412X";
+	 <property:ISNI> "0000 0000 7140 0010";
+	 <property:Library_of_Congress_authority_ID> "no89004670";
+	 <property:Bibliothèque_nationale_de_France_ID> "148427966";
+	 <property:IMDb_ID> "nm0121741";
+	 <property:MusicBrainz_artist_ID> "c9b9ec99-b592-4556-aa0b-8825529afd5d";
+	 <property:date_of_birth> "1908-10-03T00:00:00Z";
+	 <property:Freebase_ID> "/m/03301k";
+	 <property:NKCR_AUT_ID> "xx0086921";
+	 <property:date_of_death> "1964-02-25T00:00:00Z";
+	 <property:name> "Johnny Burke".
+<kgnav:Q7759814> <property:inception> "1998-01-01T00:00:00Z";
+	 <property:name> "The Record of the Year";
+	 <property:name> "The Record of the Year".
+<kgnav:Q188766> <property:VIAF_ID> "2843162844757073240000";
+	 <property:publication_date> "2011-04-19T00:00:00Z";
+	 <property:Freebase_ID> "/m/0glq7y9";
+	 <property:MusicBrainz_release_group_ID> "cfe310b9-2511-4199-95b7-aabba0dc3f51";
+	 <property:MusicBrainz_work_ID> "bbf6d9d8-a17f-46bb-9b3d-69a56cb34fd5";
+	 <property:title> "Judas";
+	 <property:YouTube_video_ID> "wagn8Wrmzuc";
+	 <property:beats_per_minute> "131";
+	 <property:MetroLyrics_ID> "judas-lyrics-lady-gaga";
+	 <property:British_Phonographic_Industry_ID> "10853-2312-1";
+	 <property:Discogs_master_ID> "334051";
+	 <property:name> "Judas".
+<kgnav:Q915665> <relation:winner> <kgnav:Q10708>, <kgnav:Q43432>, <kgnav:Q45188>, <kgnav:Q19848>, <kgnav:Q134969>, <kgnav:Q62766>, <kgnav:Q1744>, <kgnav:Q47871>, <kgnav:Q11901>, <kgnav:Q5608>;
+	 <property:inception> "1984-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f716";
+	 <property:name> "MTV Video Music Award for Best Direction".
+<kgnav:Q1441929> <property:inception> "1974-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0cjw69";
+	 <property:name> "American Music Award for Favorite Pop/Rock Female Artist".
+<kgnav:Q55641> <property:IdRef_ID> "035087323";
+	 <property:Bibliothèque_nationale_de_France_ID> "13997674w";
+	 <property:IMDb_ID> "nm1381694";
+	 <property:MusicBrainz_artist_ID> "bf0caafc-2b20-4e07-ab85-87e14ff430ce";
+	 <property:ISNI> "0000 0001 0943 361X";
+	 <property:VIAF_ID> "138678843";
+	 <property:inception> "1994-01-01T00:00:00Z";
+	 <property:GND_ID> "2163761-1";
+	 <property:Library_of_Congress_authority_ID> "no97036726";
+	 <property:Commons_category> "Spice Girls";
+	 <property:Djshop_artist_ID> "U3BpY2UgR2lybHM";
+	 <property:name> "Spice Girls".
+<kgnav:Q131182> <property:MusicBrainz_release_group_ID> "e5495719-b3ad-3eea-a533-fb70af43c23d";
+	 <property:publication_date> "2008-08-19T00:00:00Z";
+	 <property:Freebase_ID> "/m/0fq_6vw";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/The-Fame";
+	 <property:title> "The Fame";
+	 <property:AllMusic_album_ID> "mw0001327294";
+	 <property:Metacritic_ID> "music/the-fame";
+	 <property:Discogs_master_ID> "11126";
+	 <property:duration> "3020";
+	 <property:Quora_topic_ID> "The-Fame-album";
+	 <property:BabelNet_ID> "01272885n";
+	 <property:name> "The Fame".
+<kgnav:Q396> <property:IdRef_ID> "02938530X";
+	 <property:Bibliothèque_nationale_de_France_ID> "13907265z";
+	 <property:IMDb_ID> "nm1277752";
+	 <property:CiNii_Books_author_ID> "DA18020507";
+	 <property:Commons_category> "U2 (musical group)";
+	 <property:NDL_Authority_ID> "00308170";
+	 <property:MusicBrainz_artist_ID> "a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432";
+	 <property:Libraries_Australia_ID> "35820260";
+	 <property:SBN_author_ID> "CFIV035466";
+	 <property:ISNI> "0000 0001 2150 5903";
+	 <property:GND_ID> "5122685-6";
+	 <property:name> "U2".
+<kgnav:Q5593866> <property:inception> "2012-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0gl00mt";
+	 <property:MusicBrainz_series_ID> "6102cfa9-39b4-4f54-bc71-c1b4e4778dbf";
+	 <property:name> "Grammy Award for Best Pop Solo Performance".
+<kgnav:Q128114> <property:VIAF_ID> "167400207";
+	 <property:GND_ID> "4457662-6";
+	 <property:IdRef_ID> "122995031";
+	 <property:Commons_category> "Yonkers, New York";
+	 <property:Library_of_Congress_authority_ID> "n81117279";
+	 <property:local_dialing_code> "914";
+	 <property:inception> "1646-01-01T00:00:00Z";
+	 <property:GNIS_ID> "979660";
+	 <property:coordinate_location> "Point(-73.864444444 40.941388888)";
+	 <property:Freebase_ID> "/m/0n6dc";
+	 <property:FIPS_55-3_(locations_in_the_US)> "36-84000";
+	 <property:name> "Yonkers".
+<kgnav:Q3632246> <property:edition_number> "30";
+	 <property:Freebase_ID> "/m/0y4hm46";
+	 <property:point_in_time> "2010-01-01T00:00:00Z";
+	 <property:MusicBrainz_event_ID> "7f2d3cd9-c2e1-4adc-841f-dab3de070a75";
+	 <property:name> "Brit Awards 2010".
+<kgnav:Q106354104> <property:name> "Leigh Harline and Ned Washington".<kgnav:Q30449> <property:Interia_Muzyka_artist_ID> "56";
+	 <property:eska.pl_topic_ID> "avril-lavigne,tg-DvEY-BDPh-CqSW";
+	 <property:Plus_Music_artist_ID> "999868";
+	 <property:Jango_artist_ID> "Avril Lavigne";
+	 <property:LiveXLive_artist_ID> "avril-lavigne";
+	 <property:The_Top_Tens_ID> "643";
+	 <property:Fandom_wiki_ID> "avrillavigne";
+	 <property:IdRef_ID> "077720563";
+	 <property:MOOMA_artist_ID> "23945";
+	 <property:MobyGames_developer_ID> "182930";
+	 <property:Bibliothèque_nationale_de_France_ID> "14447249t";
+	 <property:name> "Avril Lavigne".
+<kgnav:Q428808> <property:Commons_category> "Grammy Award for Best Song Written for Visual Media";
+	 <property:Freebase_ID> "/m/025m8l";
+	 <property:inception> "1988-01-01T00:00:00Z";
+	 <property:name> "Grammy Award for Best Song Written for Visual Media".
+<kgnav:Q1940239> <property:review_score> "3";
+	 <property:MusicBrainz_release_group_ID> "b1fe7431-82b6-49fa-a80e-a2f29120c782";
+	 <property:publication_date> "2011-11-22T00:00:00Z";
+	 <property:title> "A Very Gaga Holiday";
+	 <property:Freebase_ID> "/m/0jkxzjh";
+	 <property:number_of_parts_of_this_work> "4";
+	 <property:Discogs_master_ID> "418510";
+	 <property:AllMusic_album_ID> "mw0002282192";
+	 <property:name> "A Very Gaga Holiday".
+<kgnav:Q1025916> <property:publication_date> "2008-01-01T00:00:00Z";
+	 <property:MusicBrainz_work_ID> "68a61002-fbe4-30cd-88f2-2e9280a1fa57";
+	 <property:title> "Paparazzi";
+	 <property:ISWC> "T-901.750.270-4";
+	 <property:YouTube_video_ID> "d2smz_1L2_0";
+	 <property:Freebase_ID> "/m/05t10tl";
+	 <property:SecondHandSongs_work_ID> "117831";
+	 <property:ACE_Repertory_work_ID> "460780503";
+	 <property:name> "Paparazzi".
+<kgnav:Q13582570> <property:Freebase_ID> "/m/0t53zw6";
+	 <property:inception> "2002-01-01T00:00:00Z";
+	 <property:name> "LennonOno Grant for Peace".
+<kgnav:Q105875> <property:IdRef_ID> "034859896";
+	 <property:Bibliothèque_nationale_de_France_ID> "13894938z";
+	 <property:IMDb_ID> "nm0359372";
+	 <property:CiNii_Books_author_ID> "DA05411942";
+	 <property:Libraries_Australia_ID> "36188306";
+	 <property:SBN_author_ID> "RAVV091374";
+	 <property:MusicBrainz_artist_ID> "27613b78-1b9d-4ec3-9db5-fa0743465fdd";
+	 <property:Freebase_ID> "/m/09hnb";
+	 <property:NKCR_AUT_ID> "ola2002159313";
+	 <property:NDL_Authority_ID> "00920360";
+	 <property:Commons_category> "Herbie Hancock";
+	 <property:name> "Herbie Hancock".
+<kgnav:Q11895> <property:Library_of_Congress_authority_ID> "n90633346";
+	 <property:IdRef_ID> "03459910X";
+	 <property:ISNI> "0000 0001 2158 9641";
+	 <property:IMDb_ID> "nm1655276";
+	 <property:Bibliothèque_nationale_de_France_ID> "139038362";
+	 <property:Commons_category> "Guns N' Roses";
+	 <property:MusicBrainz_artist_ID> "eeb1195b-f213-4ce1-b28c-8565211f8e43";
+	 <property:VIAF_ID> "131481965";
+	 <property:Freebase_ID> "/m/081wh1";
+	 <property:inception> "1985-01-01T00:00:00Z";
+	 <property:GND_ID> "5230389-5";
+	 <property:name> "Guns N’ Roses".
+<kgnav:Q27113998> <property:MusicBrainz_work_ID> "4414adfc-27bf-4457-931c-baf2f2e88581";
+	 <property:MusicBrainz_release_group_ID> "debcbf71-2714-4d75-9756-5fef232d3731";
+	 <property:publication_date> "2016-11-08T00:00:00Z";
+	 <property:YouTube_video_ID> "en2D_5TzXCA";
+	 <property:British_Phonographic_Industry_ID> "14500-2312-1";
+	 <property:Discogs_master_ID> "1084286";
+	 <property:beats_per_minute> "64";
+	 <property:MetroLyrics_ID> "million-reasons-lyrics-lady-gaga";
+	 <property:Google_Knowledge_Graph_ID> "/g/11c1v8fcht";
+	 <property:name> "Million Reasons".
+<kgnav:Q6718939> <property:inception> "2011-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/0lwrf26";
+	 <property:name> "MTV Video Music Award for Best Video with a Social Message".
+<kgnav:Q797078> <property:VIAF_ID> "141970449";
+	 <property:ISNI> "0000 0001 2172 1366";
+	 <property:Library_of_Congress_authority_ID> "n85322615";
+	 <property:inception> "1965-01-01T00:00:00Z";
+	 <property:Commons_category> "Tisch School of the Arts";
+	 <property:start_time> "1965-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/04b_46";
+	 <property:coordinate_location> "Point(-73.99377778 40.72922222)";
+	 <property:short_name> "TSoA";
+	 <property:employees> "216";
+	 <property:Twitter_username> "nyugamecenter";
+	 <property:name> "New York University Tisch School of the Arts".
+<kgnav:Q188770> <property:MusicBrainz_release_group_ID> "047d10e0-c2dc-4eb3-a4a7-e8f6ac75d256";
+	 <property:MusicBrainz_work_ID> "075ea905-6ca2-35c6-86c4-e44cfa0231fa";
+	 <property:publication_date> "2010-02-15T00:00:00Z";
+	 <property:Freebase_ID> "/m/09gmrt9";
+	 <property:YouTube_video_ID> "EVBsypHzF3U";
+	 <property:Encyclopædia_Britannica_Online_ID> "topic/Telephone-song-by-Lady-Gaga";
+	 <property:Discogs_master_ID> "234339";
+	 <property:Genius_song_ID> "Lady-gaga-telephone-lyrics";
+	 <property:name> "Telephone".
+<kgnav:Q3308450> <property:ISNI> "0000 0001 2277 2819";
+	 <property:Library_of_Congress_authority_ID> "n85151656";
+	 <property:VIAF_ID> "21117760";
+	 <property:MusicBrainz_artist_ID> "16c2bbfd-6722-452f-b99e-9da78e3efc2f";
+	 <property:Bibliothèque_nationale_de_France_ID> "14127831g";
+	 <property:IdRef_ID> "148955096";
+	 <property:IMDb_ID> "nm0676592";
+	 <property:Freebase_ID> "/m/05f56g";
+	 <property:date_of_death> "1994-08-29T00:00:00Z";
+	 <property:date_of_birth> "1948-08-06T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "10066363";
+	 <property:name> "Michael Peters".
+<kgnav:Q4235> <property:Tumblr_username> "mileycyrus";
+	 <property:DBC_author_ID> "87097919153274";
+	 <property:Cinema.de_ID> "3284418";
+	 <property:IdRef_ID> "158366883";
+	 <property:Bibliothèque_nationale_de_France_ID> "15526545x";
+	 <property:Babelio_author_ID> "79727";
+	 <property:Cultureel_Woordenboek_ID> "populaire-muziek/miley-cyrus";
+	 <property:Elle.fr_person_ID> "Miley-Cyrus";
+	 <property:TV_Guide_person_ID_(former_scheme)> "259138";
+	 <property:IMDb_ID> "nm1415323";
+	 <property:BFI_Films,_TV_and_people_ID> "4ce2bd9ad70ae";
+	 <property:name> "Miley Cyrus".
+<kgnav:Q189002> <property:publication_date> "2010-02-01T00:00:00Z";
+	 <property:MusicBrainz_work_ID> "c2b27b3d-4fe7-3daa-ad38-147936522869";
+	 <property:Freebase_ID> "/m/0g9_5g1";
+	 <property:title> "Born This Way";
+	 <property:ISWC> "T-913.910.411-3";
+	 <property:SecondHandSongs_work_ID> "121464";
+	 <property:Quora_topic_ID> "Born-This-Way-song";
+	 <property:name> "Born This Way".
+<kgnav:Q11036> <property:IdRef_ID> "029185149";
+	 <property:Bibliothèque_nationale_de_France_ID> "13906219j";
+	 <property:NDL_Authority_ID> "00629452";
+	 <property:Commons_category> "The Rolling Stones";
+	 <property:IMDb_ID> "nm1213869";
+	 <property:CiNii_Books_author_ID> "DA08855829";
+	 <property:ISNI> "0000 0001 2192 4040";
+	 <property:Golden_ID> "The_Rolling_Stones-PBRAV";
+	 <property:Online_PWN_Encyclopedia_ID> "3968566";
+	 <property:Grammy_Awards_artist_ID> "rolling-stones/8331";
+	 <property:National_Library_of_Chile_ID> "000014423";
+	 <property:name> "The Rolling Stones".
+<kgnav:Q483507> <property:Bibliothèque_nationale_de_France_ID> "14642113p";
+	 <property:IMDb_ID> "nm1225628";
+	 <property:Commons_category> "Kelly Clarkson";
+	 <property:Freebase_ID> "/m/025ldg";
+	 <property:MusicBrainz_artist_ID> "d339efbb-77b9-4147-ba9e-59f2f24550b2";
+	 <property:NKCR_AUT_ID> "xx0043602";
+	 <property:date_of_birth> "1982-04-24T00:00:00Z";
+	 <property:Commons_gallery> "Kelly Clarkson";
+	 <property:Nationale_Thesaurus_voor_Auteurs_ID> "292377347";
+	 <property:National_Library_of_Israel_ID_(old)> "004967265";
+	 <property:VIAF_ID> "5188462";
+	 <property:name> "Kelly Clarkson".
+<kgnav:Q153029> <property:MusicBrainz_work_ID> "9f6363b8-7df7-3732-b2b6-94c0f02e0bde";
+	 <property:publication_date> "2008-09-29T00:00:00Z";
+	 <property:MusicBrainz_release_group_ID> "df1e409f-5fc6-3235-a509-dbee65ed6e23";
+	 <property:Freebase_ID> "/m/04ld8y3";
+	 <property:AllMusic_song_ID> "mt0044615015";
+	 <property:beats_per_minute> "120";
+	 <property:AllMusic_album_ID> "mw0000799749";
+	 <property:ISWC> "T-901.751.548-9";
+	 <property:Discogs_master_ID> "77387";
+	 <property:Shazam_track_ID> "48210019";
+	 <property:Melon_track_ID> "2056690";
+	 <property:name> "Poker Face".
+<kgnav:Q6096> <property:IMDb_ID> "nm0004879";
+	 <property:IdRef_ID> "078051975";
+	 <property:Bibliothèque_nationale_de_France_ID> "13963226b";
+	 <property:Libraries_Australia_ID> "40580112";
+	 <property:MusicBrainz_artist_ID> "960db060-0ba8-4f6c-9770-49b81dc6e5ea";
+	 <property:date_of_birth> "1971-10-20T00:00:00Z";
+	 <property:Commons_category> "Snoop Dogg";
+	 <property:Freebase_ID> "/m/01vw8mh";
+	 <property:NKCR_AUT_ID> "ola2002153057";
+	 <property:pseudonym> "Snoop Lion";
+	 <property:Giant_Bomb_ID> "3040-89945";
+	 <property:name> "Snoop Dogg".
+<kgnav:Q847054> <relation:winner> <kgnav:Q55641>, <kgnav:Q21088>, <kgnav:Q43432>, <kgnav:Q19848>, <kgnav:Q7542>, <kgnav:Q2831>, <kgnav:Q165911>, <kgnav:Q6096>, <kgnav:Q160009>, <kgnav:Q40715>;
+	 <property:inception> "1989-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02f777";
+	 <property:name> "MTV Video Music Award for Best Dance Video".
+<kgnav:Q11649> <property:Library_of_Congress_authority_ID> "n92011111";
+	 <property:Bibliothèque_nationale_de_France_ID> "13944446b";
+	 <property:IdRef_ID> "033595739";
+	 <property:IMDb_ID> "nm1110321";
+	 <property:NKCR_AUT_ID> "kn20030215074";
+	 <property:work_period_(start)> "1987-01-01T00:00:00Z";
+	 <property:work_period_(end)> "1994-01-01T00:00:00Z";
+	 <property:Spotify_artist_ID> "6olE6TJLqED3rqDCT0FyPh";
+	 <property:Commons_category> "Nirvana (musical group)";
+	 <property:Biblioteca_Nacional_de_España_ID> "XX144348";
+	 <property:Billboard_artist_ID> "nirvana";
+	 <property:name> "Nirvana".
+<kgnav:Q21088> <property:VIAF_ID> "291818389";
+	 <property:GND_ID> "1030592160";
+	 <property:Library_of_Congress_authority_ID> "no2012146197";
+	 <property:IMDb_ID> "nm5809970";
+	 <property:Bibliothèque_nationale_de_France_ID> "16705806p";
+	 <property:Commons_category> "Zedd";
+	 <property:date_of_birth> "1989-09-02T00:00:00Z";
+	 <property:MusicBrainz_artist_ID> "56c4b861-0922-4c3a-a9b9-3bfcb00f8274";
+	 <property:NKCR_AUT_ID> "xx0196417";
+	 <property:Freebase_ID> "/m/0h52ky4";
+	 <property:pseudonym> "Zedd";
+	 <property:name> "Zedd".
+<kgnav:Q4835475> <property:inception> "2001-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/02rr2j2";
+	 <property:name> "BET Award for Video of the Year".
+<kgnav:Q43432> <property:IdRef_ID> "077442156";
+	 <property:Bibliothèque_nationale_de_France_ID> "144472501";
+	 <property:IMDb_ID> "nm0005493";
+	 <property:Libraries_Australia_ID> "42513016";
+	 <property:MusicBrainz_artist_ID> "596ffa74-3d08-44ef-b113-765d43d12738";
+	 <property:Freebase_ID> "/m/0j1yf";
+	 <property:Commons_category> "Justin Timberlake";
+	 <property:NKCR_AUT_ID> "xx0034267";
+	 <property:Biblioteca_Nacional_de_España_ID> "XX1762682";
+	 <property:National_Library_of_Israel_ID_(old)> "004652774";
+	 <property:date_of_birth> "1981-01-31T00:00:00Z";
+	 <property:name> "Justin Timberlake".
+<kgnav:Q1744> <property:SongMeanings_artist_ID> "37";
+	 <property:Eiga.com_person_ID> "70073";
+	 <property:GreatSong_artist_ID> "MADONNA,2193";
+	 <property:LyricsTranslate_ID> "madonna-lyrics.html";
+	 <property:SoundHound_artist_ID> "200020168866030872";
+	 <property:musica.com_artist_ID> "245";
+	 <property:RauteMusik_artist_ID> "Madonna";
+	 <property:AZLyrics.com_artist_ID> "m/madonna";
+	 <property:Lyrics007_artist_ID> "T0RrPQ";
+	 <property:jog.fm_artist_ID> "madonna";
+	 <property:Allcinema_person_ID> "5604";
+	 <property:name> "Madonna".
+<kgnav:Q160009> <property:IdRef_ID> "084121610";
+	 <property:Bibliothèque_nationale_de_France_ID> "14051699j";
+	 <property:IMDb_ID> "nm0600877";
+	 <property:Commons_category> "Pink (singer)";
+	 <property:Libraries_Australia_ID> "41405736";
+	 <property:Freebase_ID> "/m/01vrt_c";
+	 <property:MusicBrainz_artist_ID> "f4d5cc07-3bc9-4836-9b15-88a08359bc63";
+	 <property:date_of_birth> "1979-09-08T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0014757";
+	 <property:Library_of_Congress_authority_ID> "no2001005090";
+	 <property:pseudonym> "Pink";
+	 <property:name> "Pink".
+<kgnav:Q17172850> <property:GND_ID> "4156941-6";
+	 <property:YSO_ID> "37850";
+	 <property:Personality_Database_profile_ID> "188196";
+	 <property:Google_Knowledge_Graph_ID> "/g/1225dybm";
+	 <property:name> "voice".
+<kgnav:Q153044> <property:publication_date> "2010-04-20T00:00:00Z";
+	 <property:MusicBrainz_work_ID> "ac8daee0-b538-428d-bf39-63f519ee7536";
+	 <property:MusicBrainz_release_group_ID> "31a4ab78-2eb5-481f-8b4d-38bd9e5094b5";
+	 <property:Freebase_ID> "/m/0b6hb0r";
+	 <property:Discogs_master_ID> "256023";
+	 <property:beats_per_minute> "99";
+	 <property:YouTube_video_ID> "niqrrmev4mA";
+	 <property:MetroLyrics_ID> "alejandro-lyrics-lady-gaga";
+	 <property:British_Phonographic_Industry_ID> "10852-2312-1";
+	 <property:Songfacts_song_ID> "lady-gaga/alejandro";
+	 <property:name> "Alejandro".
+<kgnav:Q128746> <property:IdRef_ID> "03314981X";
+	 <property:Bibliothèque_nationale_de_France_ID> "13891411t";
+	 <property:IMDb_ID> "nm0000927";
+	 <property:CiNii_Books_author_ID> "DA09678343";
+	 <property:Libraries_Australia_ID> "36549184";
+	 <property:MusicBrainz_artist_ID> "5e645519-a175-4fe0-9a9b-eb9dc9f506b5";
+	 <property:Commons_category> "Irving Berlin";
+	 <property:NDL_Authority_ID> "00958475";
+	 <property:date_of_death> "1989-09-22T00:00:00Z";
+	 <property:Find_a_Grave_memorial_ID> "88";
+	 <property:NKCR_AUT_ID> "jn19990000722";
+	 <property:name> "Irving Berlin".
+<kgnav:Q26876> <property:IdRef_ID> "171403037";
+	 <property:Bibliothèque_nationale_de_France_ID> "16020410t";
+	 <property:Prabook_ID> "342960";
+	 <property:Treccani_ID> "taylor-alison-swift";
+	 <property:VG-lista_artist_ID> "taylor-swift";
+	 <property:El_portal_de_Música_artist_ID> "Taylor Swift";
+	 <property:Metro_topic_ID> "taylor-swift";
+	 <property:IMVDb_artist_ID> "taylor-swift";
+	 <property:Nederlandse_Top_40_artist_ID> "taylor-swift";
+	 <property:NME_artist_ID> "taylor-swift";
+	 <property:Quora_topic_ID> "Taylor-Swift-musician";
+	 <property:name> "Taylor Swift".
+<kgnav:Q42455> <property:IdRef_ID> "05953978X";
+	 <property:Bibliothèque_nationale_de_France_ID> "13193587m";
+	 <property:Commons_category> "Björk";
+	 <property:IMDb_ID> "nm0001951";
+	 <property:CiNii_Books_author_ID> "DA13199333";
+	 <property:Libraries_Australia_ID> "41697182";
+	 <property:Freebase_ID> "/m/01vrqtm";
+	 <property:MusicBrainz_artist_ID> "87c5dedd-371d-4a53-9f7f-80522fb7f3cb";
+	 <property:NKCR_AUT_ID> "js20020211007";
+	 <property:date_of_birth> "1965-11-21T00:00:00Z";
+	 <property:NDL_Authority_ID> "00890337";
+	 <property:name> "Björk".
+<kgnav:Q15862> <property:IdRef_ID> "033171254";
+	 <property:Bibliothèque_nationale_de_France_ID> "13905983b";
+	 <property:NDL_Authority_ID> "00628432";
+	 <property:ISNI> "0000 0001 1526 5309";
+	 <property:IMDb_ID> "nm1277102";
+	 <property:CiNii_Books_author_ID> "DA11173055";
+	 <property:GND_ID> "1216393-4";
+	 <property:Commons_category> "Queen (musical group)";
+	 <property:Library_of_Congress_authority_ID> "n81144041";
+	 <property:Freebase_ID> "/m/0bk1p";
+	 <property:MusicBrainz_artist_ID> "0383dadf-2a4e-4d10-a46a-e9e041da8eb3";
+	 <property:name> "Queen".
+<kgnav:Q16414> <property:VIAF_ID> "157451609";
+	 <property:ISNI> "0000 0001 2155 2654";
+	 <property:GND_ID> "16175647-5";
+	 <property:Library_of_Congress_authority_ID> "no2003095159";
+	 <property:IMDb_ID> "nm1939424";
+	 <property:IdRef_ID> "160841178";
+	 <property:Bibliothèque_nationale_de_France_ID> "14633351t";
+	 <property:MusicBrainz_artist_ID> "0039c7ae-e1a7-4a7d-9b49-0cbc716821a6";
+	 <property:Commons_category> "Death Cab for Cutie";
+	 <property:Freebase_ID> "/m/02tjm_";
+	 <property:inception> "1997-01-01T00:00:00Z";
+	 <property:name> "Death Cab for Cutie".
+<kgnav:Q155124> <property:ISNI> "0000 0000 5515 7540";
+	 <property:VIAF_ID> "7608781";
+	 <property:Library_of_Congress_authority_ID> "no2005030177";
+	 <property:GND_ID> "135345553";
+	 <property:IdRef_ID> "084289066";
+	 <property:IMDb_ID> "nm0315974";
+	 <property:Bibliothèque_nationale_de_France_ID> "14449287v";
+	 <property:MusicBrainz_artist_ID> "150e14bd-915d-4574-b574-f77dd7ea72ad";
+	 <property:Commons_category> "Michael Giacchino";
+	 <property:date_of_birth> "1967-10-10T00:00:00Z";
+	 <property:NKCR_AUT_ID> "xx0029831";
+	 <property:name> "Michael Giacchino".
+<kgnav:Q106350766> <property:name> "Harold Arlen and Yip Harburg".<kgnav:Q280481> <property:inception> "1992-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/03tk6z";
+	 <property:KBpedia_ID> "GrammyAward-BestTraditionalPopVocalAlbum";
+	 <property:native_label> "Grammy Award for Best Traditional Pop Vocal Album";
+	 <property:MusicBrainz_series_ID> "759d5a0d-6f19-4666-b1b5-4fb42fd1dc84";
+	 <property:name> "Grammy Award for Best Traditional Pop Vocal Album".
+<kgnav:Q156305> <property:VIAF_ID> "124960419";
+	 <property:GND_ID> "1212624-X";
+	 <property:ISNI> "0000 0001 2264 530X";
+	 <property:Library_of_Congress_authority_ID> "n92032286";
+	 <property:IdRef_ID> "052587738";
+	 <property:IMDb_ID> "nm2165250";
+	 <property:Bibliothèque_nationale_de_France_ID> "13901518t";
+	 <property:Commons_category> "A-ha";
+	 <property:Libraries_Australia_ID> "35963591";
+	 <property:MusicBrainz_artist_ID> "7364dea6-ca9a-48e3-be01-b44ad0d19897";
+	 <property:NKCR_AUT_ID> "mzk2003193015";
+	 <property:name> "A-ha".
+<kgnav:Q146027> <property:Library_of_Congress_authority_ID> "no2011153486";
+	 <property:ISNI> "0000 0004 7035 041X";
+	 <property:VIAF_ID> "250413045";
+	 <property:Bibliothèque_nationale_de_France_ID> "16599012w";
+	 <property:IMDb_ID> "nm4108424";
+	 <property:GND_ID> "1021845329";
+	 <property:Commons_category> "One Direction";
+	 <property:Libraries_Australia_ID> "50077917";
+	 <property:MusicBrainz_artist_ID> "1a425bbd-cca4-4b2c-aeb7-71cb176c828a";
+	 <property:inception> "2010-07-23T00:00:00Z";
+	 <property:Freebase_ID> "/m/0fqqnpw";
+	 <property:name> "One Direction".
+<kgnav:Q935283> <property:inception> "1959-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/01c99j";
+	 <property:native_label> "Grammy Award for Best Female Pop Vocal Performance";
+	 <property:name> "Grammy Award for Best Female Pop Vocal Performance".
+<kgnav:Q34086> <property:IdRef_ID> "171449444";
+	 <property:Bibliothèque_nationale_de_France_ID> "16209403n";
+	 <property:IMDb_ID> "nm3595501";
+	 <property:NDL_Authority_ID> "01215947";
+	 <property:Commons_category> "Justin Bieber";
+	 <property:MusicBrainz_artist_ID> "e0140a67-e4d1-4f13-8a01-364355bee46e";
+	 <property:NKCR_AUT_ID> "xx0118129";
+	 <property:Open_Library_ID> "OL6832375A";
+	 <property:Freebase_ID> "/m/06w2sn5";
+	 <property:date_of_birth> "1994-03-01T00:00:00Z";
+	 <property:pseudonym> "Biebs, Bizzle, Bieb, JB, RickTheSizzler";
+	 <property:name> "Justin Bieber".
+<kgnav:Q6060> <property:IdRef_ID> "084287284";
+	 <property:Bibliothèque_nationale_de_France_ID> "140364586";
+	 <property:Libraries_Australia_ID> "40579969";
+	 <property:IMDb_ID> "nm1265067";
+	 <property:Commons_category> "50 Cent";
+	 <property:VIAF_ID> "121771548";
+	 <property:MusicBrainz_artist_ID> "8e68819d-71be-4e7d-b41d-f1df81b01d3f";
+	 <property:date_of_birth> "1975-07-06T00:00:00Z";
+	 <property:SELIBR_ID> "295451";
+	 <property:Flemish_Public_Libraries_ID> "000026744";
+	 <property:TikTok_username> "50cent";
+	 <property:name> "50 Cent".
+<kgnav:Q5059890> <property:Quora_topic_ID> "Center-for-Talented-Youth-1";
+	 <property:inception> "1979-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/01nw5d";
+	 <property:name> "Johns Hopkins Center for Talented Youth".
+<kgnav:Q15077646> <property:MusicBrainz_work_ID> "19dbf679-484e-4955-b6ed-f47e78eb35a9";
+	 <property:MusicBrainz_release_group_ID> "19d836a6-2f82-427e-a05b-717776b8c648";
+	 <property:publication_date> "2013-10-21T00:00:00Z";
+	 <property:Freebase_ID> "/m/0yp28c7";
+	 <property:British_Phonographic_Industry_ID> "12742-3865-1";
+	 <property:YouTube_video_ID> "A3jzMyYgPQs";
+	 <property:beats_per_minute> "96";
+	 <property:name> "Do What U Want".
+<kgnav:Q112243> <relation:winner> <kgnav:Q938810>, <kgnav:Q269094>, <kgnav:Q1412129>, <kgnav:Q319693>, <kgnav:Q966018>, <kgnav:Q743229>, <kgnav:Q106350730>, <kgnav:Q128746>, <kgnav:Q106354104>, <kgnav:Q106350766>;
+	 <property:Commons_category> "Winners of Academy Award for Best Original Song";
+	 <property:Freebase_ID> "/m/0gqz2";
+	 <property:MusicBrainz_series_ID> "ed125246-035a-4849-955e-385fc8210116";
+	 <property:Fandom_article_ID> "oscars:Best_Original_Song";
+	 <property:name> "Academy Award for Best Original Song".
+<kgnav:Q212762> <property:IdRef_ID> "070356661";
+	 <property:Bibliothèque_nationale_de_France_ID> "13930110b";
+	 <property:Commons_category> "Burt Bacharach";
+	 <property:IMDb_ID> "nm0000820";
+	 <property:CiNii_Books_author_ID> "DA1254358X";
+	 <property:NDL_Authority_ID> "00910157";
+	 <property:date_of_birth> "1928-05-12T00:00:00Z";
+	 <property:NKCR_AUT_ID> "ola2003193738";
+	 <property:Freebase_ID> "/m/018gqj";
+	 <property:SBN_author_ID> "RAVV092866";
+	 <property:Libraries_Australia_ID> "35703574";
+	 <property:name> "Burt Bacharach".
+<kgnav:Q50040> <property:ISNI> "0000 0001 2323 4879";
+	 <property:VIAF_ID> "129023585";
+	 <property:Library_of_Congress_authority_ID> "n82031097";
+	 <property:Bibliothèque_nationale_de_France_ID> "13902968q";
+	 <property:GND_ID> "5066864-X";
+	 <property:IMDb_ID> "nm1275382";
+	 <property:IdRef_ID> "027954358";
+	 <property:Commons_category> "Dire Straits";
+	 <property:MusicBrainz_artist_ID> "614e3804-7d34-41ba-857f-811bad7c2b7a";
+	 <property:inception> "1977-01-01T00:00:00Z";
+	 <property:Freebase_ID> "/m/017959";
+	 <property:name> "Dire Straits".
+<kgnav:Q11901> <property:GND_ID> "122659686";
+	 <property:VIAF_ID> "119844730";
+	 <property:ISNI> "0000 0000 8188 8304";
+	 <property:NDL_Authority_ID> "00731204";
+	 <property:Commons_category> "Beck (singer)";
+	 <property:Freebase_ID> "/m/0137g1";
+	 <property:RKDartists_ID> "217063";
+	 <property:Bibliothèque_nationale_de_France_ID> "139685460";
+	 <property:Libraries_Australia_ID> "61289254";
+	 <property:NKCR_AUT_ID> "xx0018892";
+	 <property:Biblioteca_Nacional_de_España_ID> "XX1023808";
+	 <property:name> "Beck".
+<kgnav:Q13563471> <property:start_time> "2009-01-18T00:00:00Z";
+	 <property:Freebase_ID> "/m/04n5ycl";
+	 <property:end_time> "2009-07-31T00:00:00Z";
+	 <property:MusicBrainz_series_ID> "3b5c09c5-afbc-4193-a123-8e3a4f684327";
+	 <property:name> "Doll Domination Tour".
