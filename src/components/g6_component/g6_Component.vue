@@ -53,7 +53,7 @@
         </a-menu>
       </a-layout-header>
       <a-layout>
-        <a-layout-sider class="SearchPage" :width="FilterWidth">
+        <a-layout-sider class="SearchPage" :width="FilterWidth"  theme="light">
           <!--右侧搜索框-->
 
           <div class="InfoMeum" id="filter">
@@ -218,7 +218,7 @@
           <div id="minimap" style="display:none"></div>
         </a-layout-content>
 
-        <a-layout-sider class="Info" width="300">
+        <a-layout-sider class="Info" width="300" theme="light">
           <!--右侧搜索框-->
           <!-- <a-menu id="InfoTitle"
             v-model="current"
