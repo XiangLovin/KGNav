@@ -1,5 +1,7 @@
-package chen.kgnav;
+package chen.kgnav.controller;
 
+import chen.kgnav.entity.AtomicGraph;
+import chen.kgnav.entity.Hypernodes;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.jena.query.ReadWrite;
@@ -12,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+
+import static java.util.stream.Collectors.toList;
 
 
 @RestController
@@ -31,9 +35,84 @@ public class JenaController {
     // DataProperty
     Property dataName = tempModel.createProperty("property:", "name");
 
+    //获取底层原子图
+    public static AtomicGraph getAtomicGraph(String Id) {
+        List<String> inlabels = new ArrayList<>();
+        List<String> outlabels = new ArrayList<>();
+        try (RDFConnection conn = RDFConnectionFuseki.create().destination(fusekiServerURL).build()) {
+            conn.begin(ReadWrite.READ);
+            //get outlabels
+            try {
+                conn.querySelect("SELECT DISTINCT ?predicate ?object WHERE { <kgnav:" + Id + "> ?predicate ?object}", (qs) -> {
+                    Resource predicate = qs.getResource("predicate");
+                    List<String> split_relation = new ArrayList<>(Arrays.asList(predicate.toString().split(":")));
+                    if (split_relation.get(0).equals("relation"))
+                        outlabels.add(split_relation.get(1));
+                });
+                conn.commit();
+            } finally {
+                conn.end();
+            }
+            //get inlabels
+            try {
+                conn.querySelect("SELECT DISTINCT ?predicate WHERE { ?subject ?predicate <kgnav:" + Id + "> }", (qs) -> {
+                    Resource predicate = qs.getResource("predicate");
+                    List<String> split_relation = new ArrayList<>(Arrays.asList(predicate.toString().split(":")));
+                    if (split_relation.get(0).equals("relation"))
+                        inlabels.add(split_relation.get(1));
+                });
+                conn.commit();
+            } finally {
+                conn.end();
+            }
+        }
+        return new AtomicGraph(Id,inlabels,outlabels);
+    }
+    public static double calculateSimilarity(AtomicGraph atomic1,AtomicGraph atomic2){
+        List<String> In1 = atomic1.getInLabels();
+        List<String> In2 = atomic2.getInLabels();
+        List<String> Out1 = atomic1.getOutLabels();
+        List<String> Out2 = atomic2.getOutLabels();
+        List<String> interIn = In1.stream().filter(item -> In2.contains(item)).collect(toList());
+        List<String> interOut = Out1.stream().filter(item -> Out2.contains(item)).collect(toList());
+        int maxIn = Math.max(In1.size(),In2.size());
+        int maxOut = Math.max(Out1.size(),Out2.size());
+        return (interIn.size() + interOut.size())/(maxIn + maxOut);
+    }
+    //cluster生成
+    public static Map<String, Object> clustersGenerator(List<Map<String, Object>> nodes,List<Map<String, Object>> edges ) throws IOException {
+        int nodeNumber = nodes.size();
+        boolean changeNum = true;
+        //相似性矩阵
+        Double[][] similarity = new Double[nodeNumber][nodeNumber];
+        List<Hypernodes> hypernodes = new ArrayList();
+        Map<String,AtomicGraph> nodeMap = new HashMap<>();
+        //init
+        for (Map<String, Object> node:nodes) {
+            Hypernodes hyper = new Hypernodes(node.get("id").toString(),node.get("value").toString());
+            hyper.setNodes(new HashMap<>());
+            hypernodes.add(hyper);
+            nodeMap.put(node.get("id").toString(),getAtomicGraph(node.get("id").toString()));
+        }
+        //计算矩阵
+        for(int i = 0;i<nodeNumber;i++){
+            for(int j = i+1;j<nodeNumber;j++){
+                int simi = calculateSimilarity(nodeMap.get(nodes[i].get("id")))
+            }
+        }
+        while(changeNum){
+
+
+
+
+        }
+        Map<String,Object> clusters = new HashMap<>();
+        return clusters;
+    }
+
 
     public static Map<String, Object> getClusters() throws IOException {
-        File file = new File("/Users/chenzirui/Desktop/data.json");
+        File file = new File("../data.json");
         String content = FileUtils.readFileToString(file,"UTF-8");
 
         JSONObject jsonObject = JSONObject.parseObject(content);
@@ -48,6 +127,7 @@ public class JenaController {
     @CrossOrigin
     @GetMapping("/browse")
     public Map<String, Object> getMajorGraph() {
+        System.out.println("22222111111111111");
 
         Map<String, Object> majorGraph = new HashMap();
 
@@ -84,7 +164,8 @@ public class JenaController {
                 majorGraph.put("code", "200");
                 majorGraph.put("nodes", nodes);
                 majorGraph.put("edges", edges);
-                Map<String, Object> clusters = getClusters();
+                //Map<String, Object> clusters = getClusters();
+                Map<String, Object> clusters = clustersGenerator(nodes,edges);
                 majorGraph.put("clusters", clusters.get("clusters"));
                 conn.commit();
             } catch (IOException e) {

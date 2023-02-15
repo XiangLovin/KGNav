@@ -78,9 +78,12 @@ const global = {
   },
 };
 let opColotSets = {};
+//全部入边出边
 let allInOption = [];
 let allOutOption = [];
+//展开节点数组
 let expandArray = [];
+//是否按左键
 let shiftKeydown = false;
 
 const duration = 1000;
@@ -92,6 +95,8 @@ let selectedNum = 0;
 let selectedNode1={},selectedNode2={};
 let selectListIndex = -1;
 const renameKey = 'updatable';
+let inLabelId = 1;
+let outLabelId = 1;
 
 export default {
   name: "G6Componanet",
@@ -117,8 +122,30 @@ export default {
       rename:'',
       conditionIntro:"Satisfy all the inedge and outedge labels",
       nodeCates: [],
-      IndegreeItems: [],
-      OutdegreeItems: [],
+      conditiondata:[],
+      // inOprator: '',
+      // outOprator: '',
+
+      //conditionValueInStr:[""],
+      //conditionValueOutStr:[""],
+      //选了哪些
+      IndegreeItems: [{
+        label:undefined,
+        op:undefined,
+        value:undefined
+      }],
+      OutdegreeItems: [{
+        label:undefined,
+        op:undefined,
+        value:undefined
+      }],
+      //每次可选的
+      InOption : [],
+      OutOption: [],
+      //每条一个列表
+      InOptionList : [],
+      OutOptionList: [],
+      
 
       unionUrl: 'unable',
       interUrl: 'unable',
@@ -126,10 +153,7 @@ export default {
       isDisable: true,
 
       oridata:{},
-      conditiondata:[],
-      InOption : [],
-      OutOption: [],
-
+      
       //
       entityInfoShow: 0,
       entityInfo: {
@@ -137,22 +161,24 @@ export default {
         imgUrl: '',
         link: '',
         properties:[],
-      }
+      },
+
     }
   },
-  computed: {
-    filteredInOptions() {
-      return this.InOption.filter(o => !this.IndegreeItems.includes(o));
-    },
-    filteredOutOptions() {
-      return this.OutOption.filter(o => !this.OutdegreeItems.includes(o));
-    },
-  },
+
   watch: {
     openKeys(val) {
       //console.log('展开列表', val);
       //console.log(this.openKeys)
     },
+  },
+  //label
+  beforeCreate() {
+    this.inform = this.$form.createForm(this, { name: 'Condition_form_in' });
+    this.inform.getFieldDecorator('inKeys', { initialValue: [0], preserve: true });
+
+    this.outform = this.$form.createForm(this, { name: 'Condition_form_out' });
+    this.outform.getFieldDecorator('outKeys', { initialValue: [0], preserve: true });
   },
   methods:{
 
@@ -375,6 +401,7 @@ export default {
 
     //条件筛选处理
     handleTypeChange(selectedItems) {
+      
       this.InOption = [];
       this.OutOption = [];
       graph.getEdges().forEach((edge) => {
@@ -398,27 +425,101 @@ export default {
       });
       this.InOption = Array.from(new Set(this.InOption));
       this.OutOption = Array.from(new Set(this.OutOption));
-      if(this.region!="none"){
-        //document.getElementById('typesection').style.display='block';
-        this.IndegreeItems=[];
-        this.OutdegreeItems=[];
-      }else{
-        //document.getElementById('typesection').style.display='block';
-        this.onClean();
+      this.InOptionList = [];
+      this.OutOptionList = [];
+      this.IndegreeItems =[];
+      this.OutdegreeItems = [];
+      for(let i=0;i<this.inform.getFieldValue('inKeys').length;i++){
+        this.InOptionList = [...this.InOptionList,this.InOption];
+        this.IndegreeItems.push({
+          label:undefined,
+          op:undefined,
+          value:undefined
+        })
       }
-      //this.onClean();
-      this.changeItemHeight();
+      for(let i=0;i<this.outform.getFieldValue('outKeys').length;i++){
+        this.OutOptionList = [...this.OutOptionList,this.OutOption];
+        this.OutdegreeItems.push({
+          label:undefined,
+          op:undefined,
+          value:undefined
+        })
+      }
+    },
+    addInCond() {
+      const { inform } = this;
+      const inKeys = inform.getFieldValue('inKeys');
+      const nextKeys = inKeys.concat(inLabelId++);
+      inform.setFieldsValue({
+        inKeys: nextKeys,
+      });
+      this.InOptionList = [...this.InOptionList,this.InOption]
+      this.IndegreeItems.push({
+          label:undefined,
+          op:undefined,
+          value:undefined
+        })
+      console.log(this.InOptionList)
+      console.log(inform.getFieldValue('inKeys'))
+    },
+
+    removeInCond(index) {
+      const { inform } = this;
+      const inKeys = inform.getFieldValue('inKeys');
+      if (inKeys.length === 1) {return;}
+
+      inform.setFieldsValue({
+        inKeys: inKeys.filter((key,k) => index !== k),
+      });
+      this.IndegreeItems.splice(index,1)
+      this.InOptionList.splice(index,1)
+      console.log(this.IndegreeItems,inform.getFieldValue('inKeys'))
+    },
+
+    addOutCond() {
+      const { outform } = this;
+      const outKeys = outform.getFieldValue('outKeys');
+      const nextKeys = outKeys.concat(outLabelId++);
+      outform.setFieldsValue({
+        outKeys: nextKeys,
+      });
+      this.OutOptionList = [...this.OutOptionList,this.OutOption]
+      this.OutdegreeItems.push({
+        label:undefined,
+        op:undefined,
+        value:undefined
+      })
+      console.log(this.OutOptionList)
+      console.log(outform.getFieldValue('outKeys'))
+    },
+    removeOutCond(index) {
+      const { outform } = this;
+      const outKeys = outform.getFieldValue('outKeys');
+      if (outKeys.length === 1) {
+        return;
+      }
+      this.OutdegreeItems.splice(index,1)
+      this.OutOptionList.splice(index,1)
+
+      outform.setFieldsValue({
+        outKeys: outKeys.filter((key,k) => index !== k),
+      });
+      console.log(outform.getFieldValue('outKeys'))
     },
     handleInChange(selectedItems) {
-      this.IndegreeItems = selectedItems;
-      this.changeItemHeight();
+      //this.IndegreeItems.label = selectedItems;
+      console.log(this.IndegreeItems)
     },
-    handleOutChange(selectedItems) {
-      this.OutdegreeItems = selectedItems;
-      this.changeItemHeight();
-    },
+    // handleOutChange(selectedItems) {
+    //   this.OutdegreeItems = selectedItems;
+    // },
+    // handleInOprator(index,selectedItems) {
+    //   this.IndegreeItems.op = selectedItems;
+    // },
+    // handleOutOprator(selectedItems) {
+    //   this.outOprator = selectedItems;
+    // },
     changeIntro(){
-      this.changeItemHeight();
       this.conditionIntro = (this.conditionLevel == 'strong')?
       "Satisfy all the inedge and outedge labels":
       "Satisfy at least one of inedge and outedge labels"
@@ -444,14 +545,10 @@ export default {
       allOutOption = Array.from(new Set(allOutOption));
       this.InOption = allInOption;
       this.OutOption = allOutOption;
+      this.InOptionList = [allInOption];
+      this.OutOptionList = [allInOption];
     },
 
-    changeItemHeight(){
-      const searchList2 = document.getElementById("searchList-2");
-      const filterSelector = document.getElementById("filterSelector");
-      //searchList2.style.height = CANVAS_HEIGHT-filterSelector.clientHeight-80+"px";
-      //searchList2.style.maxHeight = 500 +'px';
-    },
     openNotificationWithIcon(type) {
       if(type == 'success'){
         this.$notification[type]({
@@ -469,7 +566,6 @@ export default {
       }
     },
     onSubmit() {
-      //this.changeItemHeight();
       document.getElementById('searchList-2').style.display='block';
       this.conditiondata=[];
       //console.log("oridata",this.oridata.nodes,"aggregatedData",aggregatedData.nodes,"cateNode",this.nodeCates);
@@ -488,11 +584,11 @@ export default {
         let outs = [...node.outLabel].filter(obj => this.OutdegreeItems.indexOf(obj)!=-1);
         if(level == 'strong' && ins.length == this.IndegreeItems.length && outs.length == this.OutdegreeItems.length){
           this.conditiondata.push(node);
-          console.log("强加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
+          //console.log("强加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
         }
         else if(level == 'weak'&& (ins.length > 0 || this.IndegreeItems.length == 0)&& (outs.length > 0||this.OutdegreeItems.length == 0)){
           this.conditiondata.push(node);
-          console.log("弱加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
+          //console.log("弱加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
         }
       });
       //console.log(type,ins,outs,level);
@@ -508,10 +604,28 @@ export default {
       this.region='none';
       this.OutOption=allOutOption;
       this.InOption=allInOption;
+      this.InOptionList = [allInOption];
+      this.OutOptionList = [allInOption];
       //document.getElementById('typesection').style.display='none';
       document.getElementById('searchList-2').style.display='none';
-      this.IndegreeItems=[];
-      this.OutdegreeItems=[];
+      this.IndegreeItems=[{
+        label:undefined,
+        op:undefined,
+        value:undefined
+      }];
+      this.OutdegreeItems=[{
+        label:undefined,
+        op:undefined,
+        value:undefined
+      }];
+      inLabelId = 1;
+      outLabelId = 1;
+      this.inform.setFieldsValue({
+        inKeys: [0],
+      });
+      this.outform.setFieldsValue({
+        outKeys:[0],
+      })
     },
 
     //通用函数
@@ -818,6 +932,7 @@ export default {
         reId+=node2.id;
         reLabel+=node2.value;
       }
+      reLabel = 'Query1'
       return{reId,reLabel}
     },
 
@@ -1236,17 +1351,6 @@ export default {
           targetNode.y = manipulatePosition.y + 30 * Math.sin(Math.random() * Math.PI * 2);
         }
       });
-    
-      // descreteNodeCenter = {
-      //   x: width - paddingLeft,
-      //   y: height - paddingTop,
-      // };
-      // descreteNodes.forEach((node) => {
-      //   if (!node.x && !node.y) {
-      //     node.x = descreteNodeCenter.x + 30 * Math.cos(Math.random() * Math.PI * 2);
-      //     node.y = descreteNodeCenter.y + 30 * Math.sin(Math.random() * Math.PI * 2);
-      //   }
-      // });
     
       G6.Util.processParallelEdges(edges, 20, 'custom-quadratic', 'custom-line');
       return {

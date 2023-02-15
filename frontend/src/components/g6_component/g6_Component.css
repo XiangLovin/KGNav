@@ -155,7 +155,7 @@
 
 ::-webkit-scrollbar {
   width: 5px;
-
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -333,6 +333,37 @@
   width: 132px;
   padding-top: 5px;
 }
+.labelControl .ant-form-item-label {
+  float: left;
+  /* width: 244px; */
+  padding-bottom: 0;
+}
+
+.labelIcon{
+  width: 21px;
+  height: 32px;
+  font-size: 16px;
+  padding: 8px 0px 0px 5px;
+  color: #777;
+}
+.labelIcon:hover{
+  color: red;
+}
+.labelAdd{
+  width:auto;
+  height: 29px;
+  padding-top: 4px;
+  color: rgb(0, 159, 238);
+}
+.labelAdd:hover{
+  padding-top: 3px;
+  color: rgb(139, 216, 255);
+}
+.condOp .ant-select-selection__rendered{
+  margin-left: 12px;
+  margin-right: 5px;
+}
+
 .ant-notification{
   width:280px;
   margin-left: 40px;
@@ -374,7 +405,7 @@
 }
 .Info{
   margin: 30px 30px 0 0 ;
-  background-color: rgba(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
 
 }
@@ -423,3 +454,4 @@
 .G6Meum li:hover {
   color: #aaaaaa;
 }
+

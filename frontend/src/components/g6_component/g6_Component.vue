@@ -54,8 +54,7 @@
       </a-layout-header>
       <a-layout>
         <a-layout-sider class="SearchPage" :width="FilterWidth"  theme="light">
-          <!--右侧搜索框-->
-
+          <!--左侧条件搜索-->
           <div class="InfoMeum" id="filter">
             <p class="filterTitle">Conditional Search
               <a-icon type="close" @click="closeFilter" style="float:right;position: relative;margin: 7px 7px 0 0;font-size: 15px;;" />
@@ -66,40 +65,140 @@
                   <a-form-item label="Node category" lable="select the category of nodes">
                     <a-select v-model="region" @change="handleTypeChange">
                       <a-select-option value="none">
-                        All
+                        singer
                       </a-select-option>
                       <a-select-option v-for="item in nodeCates" :key="item.id" :value="item.id">
                         {{ item.value }}
                       </a-select-option>
                     </a-select>
                   </a-form-item>
+
                   <div id="typesection">
-                    <a-form-item label="Incoming Eage Labels">
-                      <a-select
-                        mode="multiple"
-                        placeholder="Please select incoming edge labels"
-                        :value="IndegreeItems"
-                        style="width: 100%"
-                        @change="handleInChange"
-                      >
-                        <a-select-option v-for="inItem in filteredInOptions" :key="inItem" :value="inItem">
-                          {{ inItem }}
-                        </a-select-option>
-                      </a-select>
+                    <a-form-item class="labelControl" id="inlabels" label="Incoming Edge Label" style="height:29px;">
+                      <a-tooltip class="labelIcon labelAdd" placement="right" title="
+                      Only the label or the complete triplet (label, oprator, value) is considered valid, and the rest are not processed.">
+                        <a-icon type="question-circle" style="color:rgb(255,123,0);padding-left: 10px;"/>
+                      </a-tooltip>
+                      <a-icon class="labelIcon labelAdd" type="plus-circle" @click="addInCond"/>
                     </a-form-item>
-                    <a-form-item id="outtype" class="hidden" label="Outgoing Edge Labels">
-                      <a-select
-                        mode="multiple"
-                        placeholder="Please select outgoing edge labels"
+                    <a-form-item
+                      v-for="(k, index) in inform.getFieldValue('inKeys')"
+                      :key="index"                     
+                      :required="false"
+                    >
+                      <a-input-group
+                      v-decorator="[`IndegreeItems[${index}]`,{}]"
+                      compact style="width:244px;">
+                        <a-select
+                        style="width: 50%"
+                        placeholder="Label"
+                        v-model="IndegreeItems[index].label">
+                          <a-select-option v-for="(inItem, inIndex) in InOptionList[index]" :key="inIndex" :value="inItem">
+                            {{ inItem }}
+                          </a-select-option>
+                        </a-select>
+                        
+                        <a-select class="condOp" :showArrow="false" placeholder="op" v-model="IndegreeItems[index].op" style="width: 19%;">
+                          <a-select-option value="equal">=</a-select-option>
+                          <a-select-option value="not equal">≠</a-select-option>
+                        </a-select>
+                        <a-input v-model="IndegreeItems[index].value" placeholder="Value" style="width: 31%;"/>
+                      </a-input-group>
+                      <a-icon
+                        class="dynamic-delete-button labelIcon"
+                        type="minus-circle-o"
+                        :disabled="inform.getFieldValue('inKeys').length === 1"
+                        @click="() => removeInCond(index)"
+                      />
+                    </a-form-item>
+
+                    <a-form-item class="labelControl" id="outlabels" label="Outcoming Edge Label" style="height:29px;">
+                      <a-tooltip class="labelIcon labelAdd" placement="right" title="
+                      Only the label or the complete triplet (label, oprator, value) is considered valid, and the rest are not processed.">
+                        <a-icon type="question-circle" style="color:rgb(255,123,0);padding-left: 10px;"/>
+                      </a-tooltip>
+                      <a-icon class="labelIcon labelAdd" type="plus-circle" @click="addOutCond"/>
+                    </a-form-item>
+                    <a-form-item
+                      v-for="(k, index) in outform.getFieldValue('outKeys')"
+                      :key="index"                     
+                      :required="false"
+                    >
+                      <a-input-group
+                      v-decorator="[`OutdegreeItems[${index}]`,{}]"
+                      compact style="width:244px;">
+                        <a-select
+                        style="width: 50%"
+                        placeholder="Label"
+                        v-model="OutdegreeItems[index].label">
+        <a-select-option value="birthyear">
+        birthYear
+      </a-select-option>
+                          <a-select-option v-for="(outItem, outIndex) in OutOptionList[index]" :key="outIndex" :value="outItem">
+                            {{ outItem }}
+                          </a-select-option>
+                        </a-select>
+                        
+                        <a-select class="condOp" :showArrow="false" placeholder="op" v-model="OutdegreeItems[index].op" style="width: 19%;">
+                          <a-select-option value="equal">=</a-select-option>
+                          <a-select-option value="not equal">≠</a-select-option>
+                          <a-select-option value="big">＞</a-select-option>
+                          <a-select-option value="big or equal">≥</a-select-option>
+                          <a-select-option value="small">＜</a-select-option>
+                          <a-select-option value="small or equal">≤</a-select-option>
+                        </a-select>
+                        <a-input v-model="OutdegreeItems[index].value" placeholder="Value" style="width: 31%;"/>
+                      </a-input-group>
+                      <a-icon
+                        class="dynamic-delete-button labelIcon"
+                        type="minus-circle-o"
+                        :disabled="outform.getFieldValue('outKeys').length === 1"
+                        @click="() => removeOutCond(index)"
+                      />
+                    </a-form-item>
+                    <!-- <a-form-item
+                      v-for="(k, index) in outform.getFieldValue('outKeys')"
+                      :key="index+100"                     
+                      :required="false"
+                    >
+                      <a-input-group
+                      v-decorator="[`OutdegreeItems[${index}]`,{}]"
+                      compact style="width:244px;">
+                        <a-select
                         :value="OutdegreeItems"
-                        style="width: 100%"
-                        @change="handleOutChange"
-                      >
-                        <a-select-option v-for="outItem in filteredOutOptions" :key="outItem" :value="outItem">
-                          {{ outItem }}
-                        </a-select-option>
-                      </a-select>
-                    </a-form-item>
+                        style="width: 50%"
+                        placeholder="Label"
+                        @change="handleOutChange">
+
+                          <a-select-option v-for="(outItem, Outindex) in OutOptionList[index]" :key="Outindex" :value="outItem">
+                            {{ outItem }}
+                          </a-select-option>
+
+                        </a-select>
+                        <a-select
+                        :value="outOprator"
+                        placeholder="Op"
+                        style="width: 20%"
+                        @change="handleOutOprator"
+                        >
+                          <a-select-option value="equal">=</a-select-option>
+                          <a-select-option value="not equal">≠</a-select-option>
+                          <a-select-option value="big">＞</a-select-option>
+                          <a-select-option value="small">＜</a-select-option>
+                          <a-select-option value="big or equal">≥</a-select-option>
+                          <a-select-option value="small or equal">≤</a-select-option>
+                        </a-select>
+                        <a-input v-model="conditionValueOutStr[index]" placeholder="Value" style="width: 30%"/>
+                      </a-input-group>
+                      <a-icon
+                        v-if="outform.getFieldValue('outKeys').length > 0"
+                        class="dynamic-delete-button labelIcon"
+                        type="minus-circle-o"
+                        :disabled="outform.getFieldValue('outKeys').length === 1"
+                        @click="() => removeOutCond(k)"
+                      />
+                    </a-form-item> -->
+
                   </div>
                   <a-form-item label="Intensity" class="intensity">
                     <div>
@@ -121,7 +220,9 @@
                   </a-form-item>
                 </a-form>
               </div>
+
               <a-divider style="margin:0px;">Result</a-divider>
+
               <div id="searchList-2" style="display:none">
                 <a-menu
                   mode="inline"

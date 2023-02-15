@@ -15,7 +15,7 @@ npm install
 ```
 3. Execute the Vue project with the following instruction.
 ```
-ng run dev
+npm run dev
 ```
 4. The web page can be viewed using any browser.
 
