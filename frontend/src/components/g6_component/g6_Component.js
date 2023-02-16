@@ -123,6 +123,8 @@ export default {
       conditionIntro:"Satisfy all the inedge and outedge labels",
       nodeCates: [],
       conditiondata:[],
+      valueList:[],
+      valueAllList:[[]],
       // inOprator: '',
       // outOprator: '',
 
@@ -308,7 +310,6 @@ export default {
         this.curSel = '';
         return;
       }
-      if(this.searchStr=="")return;
       this.oridata.nodes.forEach((node)=>{
         if(node.value == this.searchStr){
           node.parents.forEach((e)=>{
@@ -401,7 +402,6 @@ export default {
 
     //条件筛选处理
     handleTypeChange(selectedItems) {
-      
       this.InOption = [];
       this.OutOption = [];
       graph.getEdges().forEach((edge) => {
@@ -459,21 +459,21 @@ export default {
           op:undefined,
           value:undefined
         })
-      console.log(this.InOptionList)
-      console.log(inform.getFieldValue('inKeys'))
     },
 
     removeInCond(index) {
       const { inform } = this;
       const inKeys = inform.getFieldValue('inKeys');
-      if (inKeys.length === 1) {return;}
-
+      if(inKeys.length===2)document.getElementsByClassName('labelIn')[0].style.cursor='not-allowed';
+      if (inKeys.length === 1) {
+        return;
+      }
+      
       inform.setFieldsValue({
         inKeys: inKeys.filter((key,k) => index !== k),
       });
       this.IndegreeItems.splice(index,1)
-      this.InOptionList.splice(index,1)
-      console.log(this.IndegreeItems,inform.getFieldValue('inKeys'))
+      this.InOptionList.splice(index,1);
     },
 
     addOutCond() {
@@ -489,36 +489,50 @@ export default {
         op:undefined,
         value:undefined
       })
-      console.log(this.OutOptionList)
-      console.log(outform.getFieldValue('outKeys'))
     },
     removeOutCond(index) {
       const { outform } = this;
       const outKeys = outform.getFieldValue('outKeys');
+      if(outKeys.length===2)document.getElementsByClassName('labelOut')[0].style.cursor='not-allowed';
       if (outKeys.length === 1) {
         return;
       }
       this.OutdegreeItems.splice(index,1)
       this.OutOptionList.splice(index,1)
-
       outform.setFieldsValue({
         outKeys: outKeys.filter((key,k) => index !== k),
       });
-      console.log(outform.getFieldValue('outKeys'))
     },
-    handleInChange(selectedItems) {
-      //this.IndegreeItems.label = selectedItems;
-      console.log(this.IndegreeItems)
+    changeCondDisable(){
+      let innum = this.inform.getFieldValue('inKeys').length;
+      let outnum = this.outform.getFieldValue('outKeys').length;
+
+      if(innum===1)document.getElementsByClassName('labelIn')[0].style.cursor='not-allowed';
+      else document.getElementsByClassName('labelIn')[0].style.cursor='';
+      if(outnum===1)document.getElementsByClassName('labelOut')[0].style.cursor='not-allowed';
+      else document.getElementsByClassName('labelOut')[0].style.cursor='';
     },
-    // handleOutChange(selectedItems) {
-    //   this.OutdegreeItems = selectedItems;
-    // },
-    // handleInOprator(index,selectedItems) {
-    //   this.IndegreeItems.op = selectedItems;
-    // },
-    // handleOutOprator(selectedItems) {
-    //   this.outOprator = selectedItems;
-    // },
+    candidateCondValue() {
+      this.valueList = []
+      this.oridata.nodes.forEach((node)=>{
+        let str = ['',...this.searchStr,''].join('.*');
+        let reg = new RegExp(str,'ig');
+        if(reg.test(node.value)){
+          this.valueList.push(node.value);
+        }
+      })
+      document.getElementById("condforhide").style.visibility = "visible"
+      // });
+    },
+    timeflasCond() {
+      var timer = null;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        this.candidateCondValue()
+      }, 500);
+      document.getElementById("condforhide").style.visibility = "visible"// 显示列表
+    },
+
     changeIntro(){
       this.conditionIntro = (this.conditionLevel == 'strong')?
       "Satisfy all the inedge and outedge labels":

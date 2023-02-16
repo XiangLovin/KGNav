@@ -22,8 +22,6 @@ npm run dev
      [http://localhost:8080](http://localhost:8080)
 
 
-
-
 ### The backend
 
 1. Go to the project directory of KGNav and execute the following command

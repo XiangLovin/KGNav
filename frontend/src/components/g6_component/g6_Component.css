@@ -346,6 +346,13 @@
   padding: 8px 0px 0px 5px;
   color: #777;
 }
+.labelIconNohover{
+  width: 21px;
+  height: 32px;
+  font-size: 16px;
+  padding: 8px 0px 0px 5px;
+  color: #2bff00;
+}
 .labelIcon:hover{
   color: red;
 }
