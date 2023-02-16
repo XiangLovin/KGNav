@@ -1,15 +1,16 @@
-package chen.kgnav;
+package chen.kgnav.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+import lombok.Data;
+@Data
 public class AtomicGraph {
+    String Id;
     private List<String> inLabels;
     private List<String> outLabels;
-    private String Id;
 
-    public AtomicGraph(List<String> inLabels, List<String> outLabels, String id) {
+    public AtomicGraph(String id,  List<String> inLabels, List<String> outLabels) {
         this.inLabels = inLabels;
         this.outLabels = outLabels;
         Id = id;
