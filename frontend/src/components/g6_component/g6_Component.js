@@ -1,4 +1,4 @@
-import G6 from '@antv/g6';
+import G6, { registerBehavior } from '@antv/g6';
 import { clone, isString,isNumber, isArray } from '@antv/util';
 import {getEntityInfo, getEntityImgUrl} from '../../request/api.js'
 let graph = null;
@@ -98,6 +98,7 @@ const renameKey = 'updatable';
 let inLabelId = 1;
 let outLabelId = 1;
 
+
 export default {
   name: "G6Componanet",
   components: {},
@@ -123,11 +124,8 @@ export default {
       conditionIntro:"Satisfy all the inedge and outedge labels",
       nodeCates: [],
       conditiondata:[],
-      valueList:[],
-      valueAllList:[[]],
       // inOprator: '',
       // outOprator: '',
-
       //conditionValueInStr:[""],
       //conditionValueOutStr:[""],
       //选了哪些
@@ -147,7 +145,9 @@ export default {
       //每条一个列表
       InOptionList : [],
       OutOptionList: [],
-      
+      valueInList:[[]],
+      valueOutList:[],
+
 
       unionUrl: 'unable',
       interUrl: 'unable',
@@ -459,6 +459,7 @@ export default {
           op:undefined,
           value:undefined
         })
+      this.valueInList.push([])
     },
 
     removeInCond(index) {
@@ -474,6 +475,7 @@ export default {
       });
       this.IndegreeItems.splice(index,1)
       this.InOptionList.splice(index,1);
+      this.valueInList.splice(index,1);
     },
 
     addOutCond() {
@@ -489,6 +491,7 @@ export default {
         op:undefined,
         value:undefined
       })
+  
     },
     removeOutCond(index) {
       const { outform } = this;
@@ -512,26 +515,24 @@ export default {
       if(outnum===1)document.getElementsByClassName('labelOut')[0].style.cursor='not-allowed';
       else document.getElementsByClassName('labelOut')[0].style.cursor='';
     },
-    candidateCondValue() {
-      this.valueList = []
+    candidateCondValue(index) {
+      var valueIn = [];
       this.oridata.nodes.forEach((node)=>{
-        let str = ['',...this.searchStr,''].join('.*');
+        let str = ['',...this.IndegreeItems[index].value,''].join('.*');
         let reg = new RegExp(str,'ig');
         if(reg.test(node.value)){
-          this.valueList.push(node.value);
+          valueIn.push(node.value);
         }
       })
-      document.getElementById("condforhide").style.visibility = "visible"
-      // });
+      this.valueInList[index] = valueIn;
+      console.log(this.valueInList)
     },
-    timeflasCond() {
-      var timer = null;
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        this.candidateCondValue()
-      }, 500);
-      document.getElementById("condforhide").style.visibility = "visible"// 显示列表
+    timeflashCond(value,index) {
+      this.IndegreeItems[index].value = value;
+      console.log(index,this.IndegreeItems)
+      this.candidateCondValue(index)
     },
+
 
     changeIntro(){
       this.conditionIntro = (this.conditionLevel == 'strong')?

@@ -106,7 +106,32 @@
                             <a-select-option value="equal">=</a-select-option>
                             <a-select-option value="not equal">≠</a-select-option>
                           </a-select>
-                          <a-input v-model="IndegreeItems[index].value" placeholder="Value" style="width: 31%;"/>
+                          <div class="valueDropdownItem" style="width: 31%;">
+                            <a-select
+                              show-search 
+                              :showArrow="false" 
+                              placeholder="Value" 
+                              v-model="IndegreeItems[index].value"
+                              style="width: 100%;"
+                              :default-active-first-option="false"
+                              :not-found-content="null"
+                              @search="(val)=>timeflashCond(val,index)"
+                              @change="(val)=>timeflashCond(val,index)"
+                              @blur="(val)=>timeflashCond(val,index)"
+                              >
+                                <a-select-option v-for="(inItem, inIndex) in valueInList[index]" 
+                                :key="inIndex" :value="inItem">
+                                  <a-tooltip placement="topLeft">
+                                    <template slot="title">
+                                      <span>{{ inItem }}</span>
+                                    </template>
+                                    {{ inItem }}
+                                  </a-tooltip>
+                              </a-select-option> 
+                            </a-select>
+                          </div>
+                        
+                          <!-- <a-input v-model="IndegreeItems[index].value" placeholder="Value" style="width: 31%;"/> -->
                         </a-input-group>
                         <a-icon 
                           class="dynamic-delete-button labelIcon labelIn"
