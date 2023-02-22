@@ -3057,7 +3057,7 @@ export default {
           const { item } = evt;          
           if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
             return `<ul>
-            <li id='rename'>Rename the Node</li>
+            <li id='rename'>Rename</li>
             <li id='show'>Show all Hidden Items</li>
             <li id='collapseAll'>Collapse all Items</li>
           </ul>`;
@@ -3069,14 +3069,14 @@ export default {
               if (model.level > 1) {
                 if(model.isTop){
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
@@ -3085,13 +3085,13 @@ export default {
               } else {
                 if(model.isTop){
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
@@ -3099,7 +3099,7 @@ export default {
               }
             } else {
               return `<ul>
-              <li id='rename'>Rename the Node</li>
+              <li id='rename'>Rename</li>
               <li id='hide'>Hide the Edge</li>
             </ul>`;
             }
