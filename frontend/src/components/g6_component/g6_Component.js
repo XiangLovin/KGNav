@@ -1661,9 +1661,8 @@ export default {
         }, 500);
       }
     },
+
     renameNode(model){
-      // console.log(model)
-      // console.log("修改前", aggregatedData, aggregatedNodeMap);
       let that = this;
       this.$confirm({
         title: 'RENAME',
@@ -1679,6 +1678,11 @@ export default {
             model.value = name;
             let labelNum = (model.count>1) ? '('+model.count+')':'';
             model.label = name + labelNum
+            model.oriLabel = model.label
+            that.changeLabel(model.id,model.label,that.oridata.clusters)
+            
+
+
             let renameNode = graph.findById(model.id);
             graph.updateItem(renameNode, model)
             // graph.refreshItem(renameNode)
@@ -1689,7 +1693,17 @@ export default {
         },
         onCancel() {},
       });
-      
+    },
+
+    changeLabel(id, newLabel, tree){
+      for (let i = 0; i < tree.length; i++){
+        if(tree[i].id == id){
+          tree[i].value = newLabel;
+          break;
+        } else if(tree[i].hasOwnProperty("nodes")){
+          this.changeLabel(id, newLabel, tree[i].nodes)
+        }
+      }
     },
     
     handleRefreshGraph(
@@ -1955,6 +1969,7 @@ export default {
         item.toFront();
       });
     
+
       graph.on('node:mouseleave', (evt) => {
         const { item } = evt;
         const model = item.getModel();
