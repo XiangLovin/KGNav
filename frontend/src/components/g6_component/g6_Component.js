@@ -1493,19 +1493,20 @@ export default {
           if(name == ''){
             that.$message.warning('Please enter a new name.');
           }else{
+            // 修改 value
             model.value = name;
+            // 获取 数量
             let labelNum = (model.count>1) ? '('+model.count+')':'';
-            model.label = name + labelNum
-            model.oriLabel = model.label
-            that.changeLabel(model.id,model.label,that.oridata.clusters)
-            
-
-
+            // 记录 源标签
+            model.oriLabel = name + labelNum
+            // 标签缩写格式化
+            model.label = (model.level> 0 ? that.formatText(model.value, labelMaxLength-3, '...') + labelNum:that.formatText(model.value, labelMaxLength, '...'));
+            // 修改右侧树目录数据
+            that.changeLabel(model.id,name,that.oridata.clusters)
+            // 更新图数据
             let renameNode = graph.findById(model.id);
             graph.updateItem(renameNode, model)
-            // graph.refreshItem(renameNode)
-            
-            // console.log("修改后", nodeMap, aggregatedData);
+            // 弹出提示
             that.$message.success({ content: 'Successful!',renameKey, duration: 2 });
           }
         },
