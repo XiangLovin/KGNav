@@ -1662,7 +1662,8 @@ export default {
       }
     },
     renameNode(model){
-      console.log(model)
+      // console.log(model)
+      // console.log("修改前", aggregatedData, aggregatedNodeMap);
       let that = this;
       this.$confirm({
         title: 'RENAME',
@@ -1673,17 +1674,18 @@ export default {
         onOk() {
           let name = document.getElementById('renameInput').value;
           if(name == ''){
-            that.$message.warning('Do not input anything');
+            that.$message.warning('Please enter a new name.');
           }else{
-            that.$message.loading({ content: 'Wait a moment...', renameKey,duration: 1});
-            setTimeout(() => {
-              that.$message.success({ content: 'Successful!',renameKey, duration: 2 });
-            }, 1000);
-            console.log(name);
+            model.value = name;
+            let labelNum = (model.count>1) ? '('+model.count+')':'';
+            model.label = name + labelNum
+            let renameNode = graph.findById(model.id);
+            graph.updateItem(renameNode, model)
+            // graph.refreshItem(renameNode)
+            
+            // console.log("修改后", nodeMap, aggregatedData);
+            that.$message.success({ content: 'Successful!',renameKey, duration: 2 });
           }
-          return new Promise((resolve, reject) => {
-            setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-          }).catch(() => {});
         },
         onCancel() {},
       });
@@ -1943,12 +1945,12 @@ export default {
       graph.on('node:mouseenter', (evt) => {
         const { item } = evt;
         const model = item.getModel();
-        const currentLabel = model.label;   
+        const currentLabel = model.label; 
         item.update({
           label: model.oriLabel,
         });
         model.oriLabel = currentLabel;
-
+        
         graph.setItemState(item, 'hover', true);
         item.toFront();
       });
@@ -3037,9 +3039,10 @@ export default {
           return false;
         },
         getContent(evt) {
-          const { item } = evt;
+          const { item } = evt;          
           if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
             return `<ul>
+            <li id='rename'>Rename the Node</li>
             <li id='show'>Show all Hidden Items</li>
             <li id='collapseAll'>Collapse all Items</li>
           </ul>`;
@@ -3051,12 +3054,14 @@ export default {
               if (model.level > 1) {
                 if(model.isTop){
                   return `<ul>
+                    <li id='rename'>Rename the Node</li>
                     <li id='expand'>Expand</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
+                    <li id='rename'>Rename the Node</li>
                     <li id='expand'>Expand</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
@@ -3065,11 +3070,13 @@ export default {
               } else {
                 if(model.isTop){
                   return `<ul>
+                    <li id='rename'>Rename the Node</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
+                    <li id='rename'>Rename the Node</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
@@ -3077,6 +3084,7 @@ export default {
               }
             } else {
               return `<ul>
+              <li id='rename'>Rename the Node</li>
               <li id='hide'>Hide the Edge</li>
             </ul>`;
             }
