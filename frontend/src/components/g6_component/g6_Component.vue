@@ -74,11 +74,12 @@
                       </a-select-option>
                     </a-select>
                   </a-form-item>
+
                   <!--label处理-->
                   <div id="typesection">
                     <!--Inlabel选择-->
                     <div id="inCondPanel">
-                      <a-form-item class="labelControl" id="inlabels" label="Incoming Edge Label" style="height:29px;">
+                      <a-form-item class="labelControl" id="inlabels" label="Incoming Edges" style="height:29px;">
                         <a-tooltip class="labelIcon labelAdd" placement="top" title="
                         Only the label or the complete triplet (label, oprator, value) is considered valid, and the rest are not processed.">
                           <a-icon type="question-circle" style="color:rgb(255,123,0);padding-left: 10px;"/>
@@ -93,14 +94,17 @@
                         <a-input-group
                         v-decorator="[`IndegreeItems[${index}]`,{}]"
                         compact style="width:244px;">
+                        <div style="width: 50%">
                           <a-select
-                          style="width: 50%"
+                          style="width: 100%"
                           placeholder="Label"
                           v-model="IndegreeItems[index].label">
-                            <a-select-option v-for="(inItem, inIndex) in InOptionList[index]" :key="inIndex" :value="inItem">
-                              {{ inItem }}
+                            <a-select-option v-for="(initem, inindex) in InOptionList[index]" :key="inindex" :value="initem">
+                              {{ initem }}
                             </a-select-option>
                           </a-select>
+                        </div>
+                          
                           
                           <a-select class="condOp" :showArrow="false" placeholder="op" v-model="IndegreeItems[index].op" style="width: 19%;">
                             <a-select-option value="equal">=</a-select-option>
@@ -112,12 +116,13 @@
                               :showArrow="false" 
                               placeholder="Value" 
                               v-model="IndegreeItems[index].value"
+                              v-decorator="[`valueInList[${index}]`,{}]"
                               style="width: 100%;"
                               :default-active-first-option="false"
                               :not-found-content="null"
-                              @search="(val)=>timeflashCond(val,index)"
-                              @change="(val)=>timeflashCond(val,index)"
-                              @blur="(val)=>timeflashCond(val,index)"
+                              @search="(val)=>timeflashCond(val,index,'in')"
+                              @change="(val)=>timeflashCond(val,index,'in')"
+                              @blur="(val)=>timeflashCond(val,index,'in')"
                               >
                                 <a-select-option v-for="(inItem, inIndex) in valueInList[index]" 
                                 :key="inIndex" :value="inItem">
@@ -144,7 +149,7 @@
                     </div>
                     <!--Outlabel选择-->
                     <div id="outCondPanel">
-                      <a-form-item class="labelControl" id="outlabels" label="Outcoming Edge Label" style="height:29px;">
+                      <a-form-item class="labelControl" id="outlabels" label="Outgoing Edges" style="height:29px;">
                         <a-tooltip class="labelIcon labelAdd" placement="top" title="
                         Only the label or the complete triplet (label, oprator, value) is considered valid, and the rest are not processed.">
                           <a-icon type="question-circle" style="color:rgb(255,123,0);padding-left: 10px;"/>
@@ -173,12 +178,37 @@
                           <a-select class="condOp" :showArrow="false" placeholder="op" v-model="OutdegreeItems[index].op" style="width: 19%;">
                             <a-select-option value="equal">=</a-select-option>
                             <a-select-option value="not equal">≠</a-select-option>
-                            <a-select-option value="big">＞</a-select-option>
+                            <!-- <a-select-option value="big">＞</a-select-option>
                             <a-select-option value="big or equal">≥</a-select-option>
                             <a-select-option value="small">＜</a-select-option>
-                            <a-select-option value="small or equal">≤</a-select-option>
+                            <a-select-option value="small or equal">≤</a-select-option> -->
                           </a-select>
-                          <a-input v-model="OutdegreeItems[index].value" placeholder="Value" style="width: 31%;"/>
+                          <div class="valueDropdownItem" style="width: 31%;">
+                            <a-select
+                              show-search 
+                              :showArrow="false" 
+                              placeholder="Value" 
+                              v-model="OutdegreeItems[index].value"
+                              v-decorator="[`valueInList[${index}]`,{}]"
+                              style="width: 100%;"
+                              :default-active-first-option="false"
+                              :not-found-content="null"
+                              @search="(val)=>timeflashCond(val,index,'out')"
+                              @change="(val)=>timeflashCond(val,index,'out')"
+                              @blur="(val)=>timeflashCond(val,index,'out')"
+                              >
+                                <a-select-option v-for="(outItem, outIndex) in valueOutList[index]" 
+                                :key="outIndex" :value="outItem">
+                                  <a-tooltip placement="topLeft">
+                                    <template slot="title">
+                                      <span>{{ outItem }}</span>
+                                    </template>
+                                    {{ outItem }}
+                                  </a-tooltip>
+                              </a-select-option> 
+                            </a-select>
+                          </div>
+                          <!-- <a-input v-model="OutdegreeItems[index].value" placeholder="Value" style="width: 31%;"/> -->
                         </a-input-group>
                         <a-icon
                           class="dynamic-delete-button labelIcon labelOut"
@@ -191,7 +221,7 @@
                     </div>
                   </div>
                   <!--条件强度选择-->
-                  <a-form-item label="Intensity" class="intensity">
+                  <a-form-item label="Combination" class="intensity">
                     <div>
                       <a-radio-group v-model="conditionLevel" @change="changeIntro">
                         <a-radio-button value="strong">
