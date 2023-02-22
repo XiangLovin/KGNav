@@ -145,9 +145,10 @@ export default {
       //每条一个列表
       InOptionList : [],
       OutOptionList: [],
+      
       valueInList:[[]],
-      valueOutList:[],
-
+      valueOutList:[[]],
+      conditionSearchNum:0,
 
       unionUrl: 'unable',
       interUrl: 'unable',
@@ -429,6 +430,8 @@ export default {
       this.OutOptionList = [];
       this.IndegreeItems =[];
       this.OutdegreeItems = [];
+      this.valueInList = [];
+      this.valueOutList = [];
       for(let i=0;i<this.inform.getFieldValue('inKeys').length;i++){
         this.InOptionList = [...this.InOptionList,this.InOption];
         this.IndegreeItems.push({
@@ -436,6 +439,7 @@ export default {
           op:undefined,
           value:undefined
         })
+        this.valueInList.push([])
       }
       for(let i=0;i<this.outform.getFieldValue('outKeys').length;i++){
         this.OutOptionList = [...this.OutOptionList,this.OutOption];
@@ -444,6 +448,7 @@ export default {
           op:undefined,
           value:undefined
         })
+        this.valueOutList.push([])
       }
     },
     addInCond() {
@@ -491,7 +496,7 @@ export default {
         op:undefined,
         value:undefined
       })
-  
+      this.valueOutList.push([])
     },
     removeOutCond(index) {
       const { outform } = this;
@@ -502,6 +507,7 @@ export default {
       }
       this.OutdegreeItems.splice(index,1)
       this.OutOptionList.splice(index,1)
+      this.valueOutList.splice(index,1);
       outform.setFieldsValue({
         outKeys: outKeys.filter((key,k) => index !== k),
       });
@@ -515,29 +521,45 @@ export default {
       if(outnum===1)document.getElementsByClassName('labelOut')[0].style.cursor='not-allowed';
       else document.getElementsByClassName('labelOut')[0].style.cursor='';
     },
-    candidateCondValue(index) {
-      var valueIn = [];
-      this.oridata.nodes.forEach((node)=>{
-        let str = ['',...this.IndegreeItems[index].value,''].join('.*');
-        let reg = new RegExp(str,'ig');
-        if(reg.test(node.value)){
-          valueIn.push(node.value);
-        }
-      })
-      this.valueInList[index] = valueIn;
-      console.log(this.valueInList)
+    candidateCondValue(index,flag) {
+      if(flag == 'in'){
+        var valueIn = [];
+        let str = '.*'+this.IndegreeItems[index].value+'.*';
+        this.oridata.nodes.forEach((node)=>{
+          let reg = new RegExp(str,'ig');
+          if(reg.test(node.value)){
+            valueIn.push(node.value);
+          }
+        })
+        this.valueInList[index] = valueIn;
+      }else if(flag == 'out'){
+        var valueOut = [];
+        let str = '.*'+this.OutdegreeItems[index].value+'.*';
+        this.oridata.nodes.forEach((node)=>{
+          let reg = new RegExp(str,'ig');
+          if(reg.test(node.value)){
+            valueOut.push(node.value);
+          }
+        })
+        this.valueOutList[index] = valueOut;
+      }
+      
     },
-    timeflashCond(value,index) {
-      this.IndegreeItems[index].value = value;
-      console.log(index,this.IndegreeItems)
-      this.candidateCondValue(index)
+    timeflashCond(value,index,flag) {
+      if(flag == 'in')
+        this.IndegreeItems[index].value = value;
+      else if(flag == 'out')
+        this.OutdegreeItems[index].value = value;
+      
+      this.candidateCondValue(index,flag)
+      
     },
 
 
     changeIntro(){
       this.conditionIntro = (this.conditionLevel == 'strong')?
-      "Satisfy all the inedge and outedge labels":
-      "Satisfy at least one of inedge and outedge labels"
+      "Satisfy all conditions":
+      "Satisfy at least one of incoming and outgoing edges respectively"
     },
     updateCate(){
       this.nodeCates=[];
@@ -580,13 +602,110 @@ export default {
         });
       }
     },
+    deleteRepeatObject(arr) {//对象数组去重
+      arr = arr.map(item => {
+        return JSON.stringify(item);
+      });//转成字符串
+      arr = Array.from(new Set(arr))
+      return arr.map(item => {
+        return JSON.parse(item);
+      });
+    },
+
+    dealwithValidCond(){
+      let validInCond = [];
+      let validOutCond = [];
+      let condInMap = {}
+      let condOutMap = {};
+      this.IndegreeItems.forEach((obj)=>{
+        if(obj.label == undefined)
+          return;
+        else{
+          if((obj.op == undefined && (obj.value == undefined || obj.value == ""))
+          ||(obj.op != undefined && obj.value != undefined && obj.value != "")){
+            validInCond.push(obj);
+            condInMap[JSON.stringify(obj)] = 0;
+          }
+        }
+      });
+      this.OutdegreeItems.forEach((obj)=>{
+        if(obj.label == undefined)
+          return;
+        else{
+          if((obj.op == undefined && (obj.value == undefined || obj.value == ""))
+          ||(obj.op != undefined && obj.value != undefined && obj.value != "")){
+            validOutCond.push(obj);
+            condOutMap[JSON.stringify(obj)] =0;
+          }
+        }
+      })
+      //额外添加去重功能
+      validInCond= this.deleteRepeatObject(validInCond);
+      validOutCond = this.deleteRepeatObject(validOutCond)
+
+      //console.log(validInCond,validOutCond,condInMap,condOutMap)
+      return {validInCond,validOutCond,condInMap,condOutMap}
+    },
+    addResultNode(queryNode){
+      let cnode = {};
+      this.conditionSearchNum++;
+      let hyperNodes = [];
+      queryNode.forEach((node)=>{
+        const newnode = {
+          ...node,
+          clusterId:'Q'+this.conditionSearchNum,
+        };
+        hyperNodes.push(newnode)
+      })
+      let maxlevel=0;
+      hyperNodes.forEach((node)=>{
+        if(node.level>maxlevel)maxlevel = node.level;
+      })
+      cnode = {
+        id:'Q'+this.conditionSearchNum,
+        value:'Query'+this.conditionSearchNum,
+        level:maxlevel+1,
+        type: 'aggregated-node',
+        nodes:hyperNodes,
+        count: hyperNodes.length,
+        colorSet: opColotSets[0],
+        isResult:true,
+        isTop:true,
+      };
+ 
+      aggregatedNodeMap[cnode.id] = cnode;
+      aggregatedData.nodes.push(cnode);
+      this.oridata.clusters.push(cnode);
+
+      this.findParents(this.oridata.clusters);
+      this.genClusterEdges(this.oridata.edges)
+      this.oridata.clusterEdges = clusterEdges;
+      let mixedGraphData = this.getMixedGraph(
+        aggregatedData,
+        this.oridata,
+        nodeMap,
+        aggregatedNodeMap,
+        expandArray,
+      );
+      this.handleRefreshGraph(
+        graph,
+        mixedGraphData,
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        largeGraphMode,
+        true,
+        false,
+      );
+    },
     onSubmit() {
       document.getElementById('searchList-2').style.display='block';
+      //该数组用于存放结果节点
       this.conditiondata=[];
-      //console.log("oridata",this.oridata.nodes,"aggregatedData",aggregatedData.nodes,"cateNode",this.nodeCates);
+
       let temparray1=[];
       let type = this.region;
       let level = this.conditionLevel;
+      //先对节点类型进行删选
       if(type == 'none')
         temparray1 = this.oridata.nodes;
       else{
@@ -594,19 +713,80 @@ export default {
           if(node.parents && node.parents.indexOf(type)!=-1 )temparray1.push(node)
         });
       }
+      //处理条件，除去不参与的条件
+      const {validInCond,validOutCond,condInMap,condOutMap} = this.dealwithValidCond();
+      //对每个点循环，加入符合的点
       temparray1.forEach((node)=>{
-        let ins = [...node.inLabel].filter(obj => this.IndegreeItems.indexOf(obj)!=-1);
-        let outs = [...node.outLabel].filter(obj => this.OutdegreeItems.indexOf(obj)!=-1);
-        if(level == 'strong' && ins.length == this.IndegreeItems.length && outs.length == this.OutdegreeItems.length){
+        //condMap
+        Object.keys(condInMap).forEach(key=>{condInMap[key]=0})
+        Object.keys(condOutMap).forEach(key=>{condOutMap[key]=0})
+
+        //分别判断符合条件的边
+        const inlabels = this.oridata.edges.filter(edge =>{
+          let flag = false;
+          validInCond.forEach(cond=>{
+            if(cond.label == edge.value && edge.target == node.id){
+              if(cond.op != undefined ){     
+                let source = realNodeMap[edge.source];
+                if((cond.op == 'equal' && cond.value == source.value)||
+                (cond.op == 'not equal' && cond.value != source.value)
+                ){
+                  condInMap[JSON.stringify(cond)]++;
+                  flag =  true;
+                }
+              }
+              else{
+                condInMap[JSON.stringify(cond)]++;
+                flag = true;
+              }
+            }
+          })
+          return flag;
+        });
+        const outlabels = this.oridata.edges.filter(edge =>{
+          let flag = false;
+          validOutCond.find(cond=>{
+            if(cond.label == edge.value && edge.source == node.id){
+              if(cond.op != undefined ){     
+                let target = realNodeMap[edge.target];
+                if((cond.op == 'equal' && cond.value == target.value)||
+                (cond.op == 'not equal' && cond.value != target.value)//不等于的判断条件可能还需要修改（应该是不能有这样的边）
+                ){
+                  condOutMap[JSON.stringify(cond)]++;
+                  flag = true;
+                }
+              }
+              else{
+                condOutMap[JSON.stringify(cond)]++;
+                flag = true;
+              }
+            }
+          })
+          return flag;
+        });
+        //对这些边进行归类计数
+        //if(node.id == 'Q19848')console.log(node,"------",condInMap,condOutMap,"------",inlabels,outlabels)
+        //记录满足了几个条件
+        let inflag = 0;
+        let outflag = 0;
+        Object.keys(condInMap).forEach(key=>{if(condInMap[key]>0)inflag++;})
+        Object.keys(condOutMap).forEach(key=>{if(condOutMap[key]>0)outflag++;})
+
+        if(node.id == 'Q19848')console.log(inflag,outflag)
+
+        if(level == 'strong' && validInCond.length == inflag && validOutCond.length == outflag){
           this.conditiondata.push(node);
-          //console.log("强加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
+          //console.log("强加入",node.value,"满足的标签有",inlabels,outlabels)
         }
-        else if(level == 'weak'&& (ins.length > 0 || this.IndegreeItems.length == 0)&& (outs.length > 0||this.OutdegreeItems.length == 0)){
+        else if(level == 'weak'
+        && ((inflag > 0 || validInCond.length == 0) 
+        || (outflag > 0|| validOutCond.length == 0))){
           this.conditiondata.push(node);
-          //console.log("弱加入",node.value,node.inLabel,node.outLabel,"满足的标签",ins,outs)
+          //console.log("弱加入",node.value,"满足的标签有",inlabels,outlabels)
         }
+        
       });
-      //console.log(type,ins,outs,level);
+      this.addResultNode(this.conditiondata);
       if(this.conditiondata.length == 0){
         this.openNotificationWithIcon('error');
       }
@@ -621,6 +801,8 @@ export default {
       this.InOption=allInOption;
       this.InOptionList = [allInOption];
       this.OutOptionList = [allInOption];
+      this.valueInList = [[]];
+      this.valueOutList = [[]];
       //document.getElementById('typesection').style.display='none';
       document.getElementById('searchList-2').style.display='none';
       this.IndegreeItems=[{
@@ -924,7 +1106,8 @@ export default {
           else hypernodes.push(node);
         });
       }
-      return realnodes;
+      //console.log(realnodes,this.deleteRepeatObject(realnodes))
+      return this.deleteRepeatObject(realnodes);
 
     },
     getRecursiveName(node1,node2,symbol){
@@ -947,7 +1130,6 @@ export default {
         reId+=node2.id;
         reLabel+=node2.value;
       }
-      reLabel = 'Query1'
       return{reId,reLabel}
     },
 
@@ -1860,7 +2042,7 @@ export default {
         }
         const { item } = evt;
         let model = item.getModel();
-        this.findRealData(model)
+        //this.findRealData(model)
         if(model.new == true)model.new = false;
         // highlight the clicked node, it is down by click-select
         graph.setItemState(item, 'focus', true);
@@ -2085,7 +2267,7 @@ export default {
                   //stroke: '#FFFFFF',
                 },
                 name: 'typeNode-tag-circle',
-              });
+              }); 
             }
             return keyShape;
           },
@@ -2876,7 +3058,7 @@ export default {
           const { item } = evt;          
           if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
             return `<ul>
-            <li id='rename'>Rename the Node</li>
+            <li id='rename'>Rename</li>
             <li id='show'>Show all Hidden Items</li>
             <li id='collapseAll'>Collapse all Items</li>
           </ul>`;
@@ -2888,14 +3070,14 @@ export default {
               if (model.level > 1) {
                 if(model.isTop){
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
@@ -2904,13 +3086,13 @@ export default {
               } else {
                 if(model.isTop){
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename the Node</li>
+                    <li id='rename'>Rename</li>
                     <li id='collapse'>Collapse</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
@@ -2918,7 +3100,7 @@ export default {
               }
             } else {
               return `<ul>
-              <li id='rename'>Rename the Node</li>
+              <li id='rename'>Rename</li>
               <li id='hide'>Hide the Edge</li>
             </ul>`;
             }

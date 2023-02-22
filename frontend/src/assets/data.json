@@ -525,10 +525,6 @@
             "value": "Miley Cyrus"
         },
         {
-            "id": "Q189002",
-            "value": "Born This Way"
-        },
-        {
             "id": "Q11036",
             "value": "The Rolling Stones"
         },
@@ -689,7 +685,7 @@
         },
         {
             "source": "Q19848",
-            "target": "Q189002",
+            "target": "Q164646",
             "value": "notable work"
         },
         {
@@ -3987,7 +3983,7 @@
                             "value": "popular music",
                             "nodes": [
                                 {
-                                    "id": "Q189002",
+                                    "id": "Q164646",
                                     "value": "Born This Way",
                                     "level": 0
                                 }
