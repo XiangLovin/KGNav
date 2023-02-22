@@ -252,7 +252,13 @@
                     <a-sub-menu v-if="item1.level != 0" :key="item1.id+'-l2'" @titleClick="ComboClick(item1)">
                       <span slot="title">
                         <a-icon type="golden" theme="filled" />
-                        {{item1.value}}
+                        <!-- {{item1.value}} -->
+                        <a-tooltip placement="topLeft">
+                          <template slot="title">
+                            <span>{{item1.value}}</span>
+                          </template>
+                          {{item1.value}}
+                        </a-tooltip>
                       </span>
 
                       <template v-for="item2 in item1.nodes" >
@@ -260,55 +266,115 @@
                         <a-sub-menu v-if="item2.level != 0" :key="item2.id+'-l2'" @titleClick="ComboClick(item2)">
                           <span slot="title">
                             <a-icon type="golden" theme="filled" />
-                            {{item2.value}}
+                            <!-- {{item2.value}} -->
+                            <a-tooltip placement="topLeft">
+                              <template slot="title">
+                                <span>{{item2.value}}</span>
+                              </template>
+                              {{item2.value}}
+                            </a-tooltip>
                           </span>
                           <template v-for="item3 in item2.nodes" >
                             <!-- 三级菜单 -->
                             <a-sub-menu v-if="item3.level != 0" :key="item3.id+'-l2'" @titleClick="ComboClick(item3)">
                               <span slot="title">
                                 <a-icon type="golden" theme="filled" />
-                                {{item3.value}}
+                                <!-- {{item3.value}} -->
+                                <a-tooltip placement="topLeft">
+                                    <template slot="title">
+                                      <span>{{item3.value}}</span>
+                                    </template>
+                                    {{item3.value}}
+                                  </a-tooltip>
                               </span>
                               <template v-for="item4 in item3.nodes" >
                                 <!-- 四级菜单 -->
                                 <a-sub-menu v-if="item4.level != 0" :key="item4.id+'-l2'" @titleClick="ComboClick(item4)">
                                   <span slot="title">
                                     <a-icon type="golden" theme="filled" />
-                                    {{item3.value}}
+                                    <!-- {{item4.value}} -->
+                                    <a-tooltip placement="topLeft">
+                                      <template slot="title">
+                                        <span>{{item4.value}}</span>
+                                      </template>
+                                      {{item4.value}}
+                                    </a-tooltip>
                                   </span>
                                   <template v-for="item5 in item4.nodes" >
                                     <!-- 五级菜单 -->
                                     <a-sub-menu v-if="item5.level != 0" :key="item5.id+'-l2'" @titleClick="ComboClick(item5)">
                                       <span slot="title">
                                         <a-icon type="golden" theme="filled" />
-                                        {{item5.value}}
+                                        <!-- {{item5.value}} -->
+                                        <a-tooltip placement="topLeft">
+                                          <template slot="title">
+                                            <span>{{item5.value}}</span>
+                                          </template>
+                                          {{item5.value}}
+                                        </a-tooltip>
                                       </span>
                                       <a-menu-item v-for="node in item5.nodes" :key="node.id+'-l2'" @click="NodeClick(node)">
-                                        {{node.value}}
+                                        <!-- {{node.value}} -->
+                                        <a-tooltip placement="topLeft">
+                                          <template slot="title">
+                                            <span>{{node.value}}</span>
+                                          </template>
+                                          {{node.value}}
+                                        </a-tooltip>
                                       </a-menu-item>
                                     </a-sub-menu>
                                     <a-menu-item v-if="item5.level == 0" :key="item5.id+'-l2'" @click="NodeClick(item5)">
-                                      {{item3.value}}
+                                      <!-- {{item5.value}} -->
+                                      <a-tooltip placement="topLeft">
+                                          <template slot="title">
+                                            <span>{{item5.value}}</span>
+                                          </template>
+                                          {{item5.value}}
+                                        </a-tooltip>
                                     </a-menu-item>
                                   </template>
                                 </a-sub-menu>
                                 <a-menu-item v-if="item4.level == 0" :key="item4.id+'-l2'" @click="NodeClick(item4)">
-                                  {{item3.value}}
+                                  <!-- {{item4.value}} -->
+                                  <a-tooltip placement="topLeft">
+                                    <template slot="title">
+                                      <span>{{item4.value}}</span>
+                                    </template>
+                                    {{item4.value}}
+                                  </a-tooltip>
                                 </a-menu-item>
                               </template>
                             </a-sub-menu>
                             <a-menu-item v-if="item3.level == 0" :key="item3.id+'-l2'" @click="NodeClick(item3)">
-                              {{item3.value}}
+                              <!-- {{item3.value}} -->
+                              <a-tooltip placement="topLeft">
+                                <template slot="title">
+                                  <span>{{item3.value}}</span>
+                                </template>
+                                {{item3.value}}
+                              </a-tooltip>
                             </a-menu-item>
                           </template>
                         </a-sub-menu>
                         <a-menu-item v-if="item2.level == 0" :key="item2.id+'-l2'" @click="NodeClick(item2)">
-                          {{item2.value}}
+                          <!-- {{item2.value}} -->
+                          <a-tooltip placement="topLeft">
+                            <template slot="title">
+                              <span>{{item2.value}}</span>
+                            </template>
+                            {{item2.value}}
+                          </a-tooltip>
                         </a-menu-item>
                       </template>
                     </a-sub-menu>
                     <a-menu-item v-if="item1.level == 0" :key="item1.id+'-l2'" @click="NodeClick(item1)">
-                      {{item1.value}}
+                      <!-- {{item1.value}} -->
+                      <a-tooltip placement="topLeft">
+                        <template slot="title">
+                          <span>{{item1.value}}</span>
+                        </template>
+                        {{item1.value}}
+                      </a-tooltip>
                     </a-menu-item>
                   </template>
                 </a-menu>
@@ -373,11 +439,21 @@
                   <a-sub-menu v-if="item1.level != 0" :key="item1.id" @titleClick="ComboClick(item1)">
                     <span v-if="!item1.isResult" slot="title">
                       <a-icon  type="golden" theme="filled" />
-                      {{item1.value}}
+                      <a-tooltip placement="topLeft">
+                          <template slot="title">
+                            <span>{{item1.value}}</span>
+                          </template>
+                          {{item1.value}}
+                        </a-tooltip>
                     </span>
                     <span v-else slot="title">
                       <a-icon type="tags" theme="filled" />
-                      {{item1.value}}
+                      <a-tooltip placement="topLeft">
+                          <template slot="title">
+                            <span>{{item1.value}}</span>
+                          </template>
+                          {{item1.value}}
+                        </a-tooltip>
                     </span>
 
                     <template v-for="item2 in item1.nodes" >
@@ -385,31 +461,114 @@
                       <a-sub-menu v-if="item2.level != 0" :key="item2.id" @titleClick="ComboClick(item2)">
                         <span slot="title">
                           <a-icon type="golden" theme="filled" />
-                          {{item2.value}}
+                          <!-- {{item2.value}} -->
+                          <a-tooltip placement="topLeft">
+                            <template slot="title">
+                              <span>{{item2.value}}</span>
+                            </template>
+                            {{item2.value}}
+                          </a-tooltip>
                         </span>
                         <template v-for="item3 in item2.nodes" >
                           <!-- 三级菜单 -->
                           <a-sub-menu v-if="item3.level != 0" :key="item3.id" @titleClick="ComboClick(item3)">
                             <span slot="title">
                               <a-icon type="golden" theme="filled" />
-                              {{item3.value}}
+                              <!-- {{item3.value}} -->
+                              <a-tooltip placement="topLeft">
+                                  <template slot="title">
+                                    <span>{{item3.value}}</span>
+                                  </template>
+                                  {{item3.value}}
+                                </a-tooltip>
                             </span>
-                            <a-menu-item v-for="node in item3.nodes" :key="node.id" @click="NodeClick(node)">
-                              {{node.value}}
-                            </a-menu-item>
+                            <template v-for="item4 in item3.nodes" >
+                              <!-- 四级菜单 -->
+                              <a-sub-menu v-if="item4.level != 0" :key="item4.id" @titleClick="ComboClick(item4)">
+                                <span slot="title">
+                                  <a-icon type="golden" theme="filled" />
+                                  <!-- {{item4.value}} -->
+                                  <a-tooltip placement="topLeft">
+                                    <template slot="title">
+                                      <span>{{item4.value}}</span>
+                                    </template>
+                                    {{item4.value}}
+                                  </a-tooltip>
+                                </span>
+                                <template v-for="item5 in item4.nodes" >
+                                  <!-- 五级菜单 -->
+                                  <a-sub-menu v-if="item5.level != 0" :key="item5.id" @titleClick="ComboClick(item5)">
+                                    <span slot="title">
+                                      <a-icon type="golden" theme="filled" />
+                                      <!-- {{item5.value}} -->
+                                      <a-tooltip placement="topLeft">
+                                        <template slot="title">
+                                          <span>{{item5.value}}</span>
+                                        </template>
+                                        {{item5.value}}
+                                      </a-tooltip>
+                                    </span>
+                                    <a-menu-item v-for="node in item5.nodes" :key="node.id" @click="NodeClick(node)">
+                                      <!-- {{node.value}} -->
+                                      <a-tooltip placement="topLeft">
+                                        <template slot="title">
+                                          <span>{{node.value}}</span>
+                                        </template>
+                                        {{node.value}}
+                                      </a-tooltip>
+                                    </a-menu-item>
+                                  </a-sub-menu>
+                                  <a-menu-item v-if="item5.level == 0" :key="item5.id" @click="NodeClick(item5)">
+                                    <!-- {{item5.value}} -->
+                                    <a-tooltip placement="topLeft">
+                                        <template slot="title">
+                                          <span>{{item5.value}}</span>
+                                        </template>
+                                        {{item5.value}}
+                                      </a-tooltip>
+                                  </a-menu-item>
+                                </template>
+                              </a-sub-menu>
+                              <a-menu-item v-if="item4.level == 0" :key="item4.id" @click="NodeClick(item4)">
+                                <!-- {{item4.value}} -->
+                                <a-tooltip placement="topLeft">
+                                  <template slot="title">
+                                    <span>{{item4.value}}</span>
+                                  </template>
+                                  {{item4.value}}
+                                </a-tooltip>
+                              </a-menu-item>
+                            </template>
                           </a-sub-menu>
                           <a-menu-item v-if="item3.level == 0" :key="item3.id" @click="NodeClick(item3)">
-                            {{item3.value}}
+                            <!-- {{item3.value}} -->
+                            <a-tooltip placement="topLeft">
+                              <template slot="title">
+                                <span>{{item3.value}}</span>
+                              </template>
+                              {{item3.value}}
+                            </a-tooltip>
                           </a-menu-item>
                         </template>
                       </a-sub-menu>
                       <a-menu-item v-if="item2.level == 0" :key="item2.id" @click="NodeClick(item2)">
-                        {{item2.value}}
+                        <!-- {{item2.value}} -->
+                        <a-tooltip placement="topLeft">
+                          <template slot="title">
+                            <span>{{item2.value}}</span>
+                          </template>
+                          {{item2.value}}
+                        </a-tooltip>
                       </a-menu-item>
                     </template>
                   </a-sub-menu>
                   <a-menu-item v-if="item1.level == 0" :key="item1.id" @click="NodeClick(item1)">
-                    {{item1.value}}
+                    <a-tooltip placement="topLeft">
+                      <template slot="title">
+                        <span>{{item1.value}}</span>
+                      </template>
+                      {{item1.value}}
+                    </a-tooltip>
                   </a-menu-item>
                 </template>
               </a-menu>

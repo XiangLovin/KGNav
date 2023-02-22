@@ -148,6 +148,7 @@ export default {
       
       valueInList:[[]],
       valueOutList:[[]],
+      conditionSearchNum:0,
 
       unionUrl: 'unable',
       interUrl: 'unable',
@@ -645,6 +646,57 @@ export default {
       //console.log(validInCond,validOutCond,condInMap,condOutMap)
       return {validInCond,validOutCond,condInMap,condOutMap}
     },
+    addResultNode(queryNode){
+      let cnode = {};
+      this.conditionSearchNum++;
+      let hyperNodes = [];
+      queryNode.forEach((node)=>{
+        const newnode = {
+          ...node,
+          clusterId:'Q'+this.conditionSearchNum,
+        };
+        hyperNodes.push(newnode)
+      })
+      let maxlevel=0;
+      hyperNodes.forEach((node)=>{
+        if(node.level>maxlevel)maxlevel = node.level;
+      })
+      cnode = {
+        id:'Q'+this.conditionSearchNum,
+        value:'Query'+this.conditionSearchNum,
+        level:maxlevel+1,
+        type: 'aggregated-node',
+        nodes:hyperNodes,
+        count: hyperNodes.length,
+        colorSet: opColotSets[0],
+        isResult:true,
+        isTop:true,
+      };
+ 
+      aggregatedNodeMap[cnode.id] = cnode;
+      aggregatedData.nodes.push(cnode);
+      this.oridata.clusters.push(cnode);
+
+      this.findParents(this.oridata.clusters);
+      this.genClusterEdges(this.oridata.edges)
+      this.oridata.clusterEdges = clusterEdges;
+      let mixedGraphData = this.getMixedGraph(
+        aggregatedData,
+        this.oridata,
+        nodeMap,
+        aggregatedNodeMap,
+        expandArray,
+      );
+      this.handleRefreshGraph(
+        graph,
+        mixedGraphData,
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        largeGraphMode,
+        true,
+        false,
+      );
+    },
     onSubmit() {
       document.getElementById('searchList-2').style.display='block';
       //该数组用于存放结果节点
@@ -732,8 +784,9 @@ export default {
           this.conditiondata.push(node);
           //console.log("弱加入",node.value,"满足的标签有",inlabels,outlabels)
         }
+        
       });
-
+      this.addResultNode(this.conditiondata);
       if(this.conditiondata.length == 0){
         this.openNotificationWithIcon('error');
       }
@@ -1053,7 +1106,8 @@ export default {
           else hypernodes.push(node);
         });
       }
-      return realnodes;
+      //console.log(realnodes,this.deleteRepeatObject(realnodes))
+      return this.deleteRepeatObject(realnodes);
 
     },
     getRecursiveName(node1,node2,symbol){
@@ -1970,7 +2024,7 @@ export default {
         }
         const { item } = evt;
         let model = item.getModel();
-        this.findRealData(model)
+        //this.findRealData(model)
         if(model.new == true)model.new = false;
         // highlight the clicked node, it is down by click-select
         graph.setItemState(item, 'focus', true);
