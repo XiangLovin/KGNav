@@ -16,7 +16,7 @@ const DEFAULTNODESIZE = 35;
 const DEFAULTAGGREGATEDNODESIZE = 30;
 // TODO: find a proper number for maximum node number on the canvas
 const NODE_LIMIT = 15;
-const EDGE_LIMIT = 15; 
+const EDGE_LIMIT = 30; 
 
 let nodeMap = {};
 let realNodeMap = {};
@@ -715,6 +715,7 @@ export default {
       }
       //处理条件，除去不参与的条件
       const {validInCond,validOutCond,condInMap,condOutMap} = this.dealwithValidCond();
+
       //对每个点循环，加入符合的点
       temparray1.forEach((node)=>{
         //condMap
@@ -722,76 +723,61 @@ export default {
         Object.keys(condOutMap).forEach(key=>{condOutMap[key]=0})
 
         //分别判断符合条件的边
-        const inlabels = this.oridata.edges.filter(edge =>{
-          let flag = false;
-          validInCond.forEach(cond=>{
-            if(cond.label == edge.value && edge.target == node.id){
-              if(cond.op != undefined ){     
-                let source = realNodeMap[edge.source];
-                if((cond.op == 'equal' && cond.value == source.value)||
-                (cond.op == 'not equal' && cond.value != source.value)
-                ){
-                  condInMap[JSON.stringify(cond)]++;
-                  flag =  true;
-                }
-              }
-              else{
-                condInMap[JSON.stringify(cond)]++;
-                flag = true;
-              }
+        validInCond.forEach(cond=>{
+          //先筛选出节点入边中满足当前条件标签的边
+          let innum = node.inLabel.filter(edge=>{return edge.value == cond.label})
+          if(cond.op != undefined ){    
+            //二次筛选满足value的边 
+            let innum2 = innum.filter(edge=>{return cond.value == realNodeMap[edge.source].value;})
+            if(cond.op == 'equal' && innum2.length > 0){
+              condInMap[JSON.stringify(cond)]+=innum2.length;
+            } 
+            else if(cond.op == 'not equal' && innum2.length == 0){
+              condInMap[JSON.stringify(cond)]++;
             }
-          })
-          return flag;
-        });
-        const outlabels = this.oridata.edges.filter(edge =>{
-          let flag = false;
-          validOutCond.find(cond=>{
-            if(cond.label == edge.value && edge.source == node.id){
-              if(cond.op != undefined ){     
-                let target = realNodeMap[edge.target];
-                if((cond.op == 'equal' && cond.value == target.value)||
-                (cond.op == 'not equal' && cond.value != target.value)//不等于的判断条件可能还需要修改（应该是不能有这样的边）
-                ){
-                  condOutMap[JSON.stringify(cond)]++;
-                  flag = true;
-                }
-              }
-              else{
-                condOutMap[JSON.stringify(cond)]++;
-                flag = true;
-              }
+          }
+          else
+            condInMap[JSON.stringify(cond)]+=innum.length; 
+        })
+        validOutCond.forEach(cond=>{
+          let outnum = node.outLabel.filter(edge=>{return edge.value == cond.label})
+          if(cond.op != undefined ){    
+            //二次筛选满足value的边 
+            let outnum2 = outnum.filter(edge=>{return cond.value == realNodeMap[edge.target].value;})
+            if(cond.op == 'equal' && outnum2.length > 0){
+              condOutMap[JSON.stringify(cond)]+=outnum2.length;
+            } 
+            else if(cond.op == 'not equal' && outnum2.length == 0){
+              condOutMap[JSON.stringify(cond)]++;
             }
-          })
-          return flag;
-        });
-        //对这些边进行归类计数
-        //if(node.id == 'Q19848')console.log(node,"------",condInMap,condOutMap,"------",inlabels,outlabels)
-        //记录满足了几个条件
+          }
+          else
+            condOutMap[JSON.stringify(cond)]+=outnum.length; 
+        })
         let inflag = 0;
         let outflag = 0;
         Object.keys(condInMap).forEach(key=>{if(condInMap[key]>0)inflag++;})
         Object.keys(condOutMap).forEach(key=>{if(condOutMap[key]>0)outflag++;})
 
-        if(node.id == 'Q19848')console.log(inflag,outflag)
-
         if(level == 'strong' && validInCond.length == inflag && validOutCond.length == outflag){
           this.conditiondata.push(node);
+          console.log(node,"------",condInMap,condOutMap)
           //console.log("强加入",node.value,"满足的标签有",inlabels,outlabels)
         }
         else if(level == 'weak'
-        && ((inflag > 0 || validInCond.length == 0) 
-        || (outflag > 0|| validOutCond.length == 0))){
+        && ((inflag > 0 || validInCond.length == 0) || (outflag > 0|| validOutCond.length == 0))){
           this.conditiondata.push(node);
           //console.log("弱加入",node.value,"满足的标签有",inlabels,outlabels)
         }
-        
       });
-      this.addResultNode(this.conditiondata);
+
       if(this.conditiondata.length == 0){
         this.openNotificationWithIcon('error');
       }
-      else
+      else{
+        this.addResultNode(this.conditiondata);
         this.openNotificationWithIcon('success');
+      }
     },
 
     onClean(){
@@ -2971,17 +2957,20 @@ export default {
       });
 
       data.nodes.forEach((node) => {
-        node.inLabel=new Set();
-        node.outLabel = new Set();
+        //直接节点保存每一个节点的入边和出边，避免因为循环导致的高复杂度
+        node.inLabel =[];
+        node.outLabel =[];
         node.level = 0;
         realNodeMap[node.id] = node;
+        
       });
 
       data.edges.forEach((edge) => {
         edge.label = edge.value;
         edge.id = `edge-${uniqueId()}`;
-        realNodeMap[edge.source].outLabel.add(edge.value);
-        realNodeMap[edge.target].inLabel.add(edge.value);
+        //console.log(realNodeMap[edge.source],edge,realNodeMap[edge.target].outLabel)
+        realNodeMap[edge.source].outLabel.push(edge);
+        realNodeMap[edge.target].inLabel.push(edge);
       });
 
       //console.log(realNodeMap)
@@ -3058,7 +3047,6 @@ export default {
           const { item } = evt;          
           if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
             return `<ul>
-            <li id='rename'>Rename</li>
             <li id='show'>Show all Hidden Items</li>
             <li id='collapseAll'>Collapse all Items</li>
           </ul>`;
@@ -3070,16 +3058,16 @@ export default {
               if (model.level > 1) {
                 if(model.isTop){
                   return `<ul>
-                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
+                    <li id='rename'>Rename</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename</li>
                     <li id='expand'>Expand</li>
                     <li id='collapse'>Collapse</li>
+                    <li id='rename'>Rename</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
@@ -3092,8 +3080,8 @@ export default {
                 }
                 else{
                   return `<ul>
-                    <li id='rename'>Rename</li>
                     <li id='collapse'>Collapse</li>
+                    <li id='rename'>Rename</li>
                     <li id='hide'>Hide the Node</li>
                   </ul>`;
                 }
