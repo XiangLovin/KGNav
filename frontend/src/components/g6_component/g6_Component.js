@@ -1951,6 +1951,15 @@ export default {
           label: model.oriLabel,
         });
         model.oriLabel = currentLabel;
+
+        const relatedEdges = item.getEdges();
+        relatedEdges.forEach((edge) => {
+          let sourceNode = edge.getSource()
+          let targetNode = edge.getTarget()
+          graph.setItemState(edge, 'hover', true);
+          graph.setItemState(sourceNode, 'hover', true);
+          graph.setItemState(targetNode, 'hover', true)
+        });
         
         graph.setItemState(item, 'hover', true);
         item.toFront();
@@ -1965,6 +1974,16 @@ export default {
           label: model.oriLabel,
         });
         model.oriLabel = currentLabel;
+
+        const relatedEdges = item.getEdges();
+        relatedEdges.forEach((edge) => {
+          let sourceNode = edge.getSource()
+          let targetNode = edge.getTarget()
+          graph.setItemState(edge, 'hover', false);
+          graph.setItemState(sourceNode, 'hover', false);
+          graph.setItemState(targetNode, 'hover', false)
+        });
+
         graph.setItemState(item, 'hover', false);
       });
     
@@ -2309,7 +2328,7 @@ export default {
         },
         'single-node',
       );
-
+      
       G6.registerEdge(
         'custom-quadratic',
         {
