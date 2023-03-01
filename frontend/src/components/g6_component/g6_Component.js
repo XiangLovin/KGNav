@@ -2034,7 +2034,6 @@ export default {
           graph.setItemState(sourceNode, 'hover', true);
           graph.setItemState(targetNode, 'hover', true)
         });
-        
         graph.setItemState(item, 'hover', true);
         item.toFront();
       });
@@ -2048,6 +2047,7 @@ export default {
         });
         model.oriLabel = currentLabel;
         const relatedEdges = item.getEdges();
+
         // 节点相关的边逐条处理
         relatedEdges.forEach((edge) => {
           let sourceNode = edge.getSource()
@@ -2105,9 +2105,10 @@ export default {
         //model.oriLabel = currentLabel;
         graph.setItemState(item.getSource(), 'hover', true);
         graph.setItemState(item.getTarget(), 'hover', true);
+        item.toFront();
         item.getSource().toFront();
         item.getTarget().toFront();
-        item.toFront();
+        
       });
       // 鼠标移出边
       graph.on('edge:mouseleave', (evt) => {
@@ -2176,7 +2177,7 @@ export default {
           keepHoverEdges = []
           keepHoverNodes = []
           relatedEdges.forEach((edge) => {
-            graph.setItemState(edge, 'hover', true);
+            graph.setItemState(edge, 'focus', true);
             const model = edge.getModel();
             if(model.state != 'click'){
               edge.update({
@@ -2185,7 +2186,7 @@ export default {
                   autoRotate: true,
                   refY:7,
                   style: {
-                    fill:'#363b40',
+                    fill:'#5F95FF',
                     fontSize: 16,
                     fontWeight:600,
                     opacity: 1,

@@ -2,7 +2,7 @@
   <div id="main">
     <a-layout id="components-layout-demo-top" class="layout">
       <a-layout-header>
-        <div class="logo">KGNav</div>
+        <div class="logo">ScheNav</div>
         <a-menu
           id="toolmeum"
           theme="dark"
