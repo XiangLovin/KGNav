@@ -29,6 +29,8 @@ let largeGraphMode = true;
 let cachePositions = {};
 let manipulatePosition = undefined;
 let LabelVisible = 1;
+let keepHoverNodes = [];
+let keepHoverEdges = [];
 
 // 用于存储节点的双亲结点
 let nodesParents;
@@ -93,6 +95,7 @@ const virtualEdgeOpacity = 0.6;
 const realEdgeOpacity = 0.6;
 let selectedNum = 0;
 let selectedNode1={},selectedNode2={};
+let selectedEdge;
 let selectListIndex = -1;
 const renameKey = 'updatable';
 let inLabelId = 1;
@@ -1312,6 +1315,7 @@ export default {
     
     // 清除图上所有边的 focus 状态及相应样式
     clearFocusEdgeState(graph){
+      selectedEdge = null;
       const focusEdges = graph.findAllByState('edge', 'focus');
       focusEdges.forEach((fedge) => {
         graph.setItemState(fedge, 'focus', false);
@@ -1331,6 +1335,53 @@ export default {
           }
         });
       });
+    },
+
+    // 清除图上所有节点的 hover 状态及相应样式
+    clearHoverNodeState(graph){
+      keepHoverNodes = []
+      const hoverNodes = graph.findAllByState('node', 'hover');
+      hoverNodes.forEach((hnode) => {
+        graph.setItemState(hnode, 'hover', false); // false
+      });
+    },
+    
+    // 清除图上所有边的 hover 状态及相应样式
+    clearHoverEdgeState(graph){
+      selectedEdge = null;
+      keepHoverEdges = []
+      let hoverEdges = graph.findAllByState('edge', 'hover');
+      hoverEdges.forEach((fedge) => {
+        graph.setItemState(fedge, 'hover', false);
+        fedge.update({
+          //label: model.oriLabel,
+          state:'',
+          labelCfg :{
+            autoRotate: true,
+            refY:7,
+            style: {
+              fill: global.edge.labelCfg.style.fill,
+              ineWidth: 4,
+              fontSize: 12,
+              fontWeight:400,
+              opacity: LabelVisible,
+            },
+          }
+        });
+      });
+    },
+    
+    // 取消所有点和边的悬浮状态
+    clearHoverItemState(graph){
+      this.clearHoverNodeState(graph)
+      this.clearHoverEdgeState(graph)
+    },
+
+    // 清除所有聚焦和悬浮
+    clearFocusAndHover(graph){
+      // 取消所有聚焦状态
+      this.clearFocusItemState(graph)
+      this.clearHoverItemState(graph)
     },
     
     // 截断长文本。length 为文本截断后长度，elipsis 是后缀
@@ -1943,6 +1994,8 @@ export default {
           shiftKeydown = false;
         }
       });
+
+      // 鼠标移入节点
       graph.on('node:mouseenter', (evt) => {
         const { item } = evt;
         const model = item.getModel();
@@ -1956,7 +2009,28 @@ export default {
         relatedEdges.forEach((edge) => {
           let sourceNode = edge.getSource()
           let targetNode = edge.getTarget()
-          graph.setItemState(edge, 'hover', true);
+          // graph.setItemState(edge, 'focus', false);
+          graph.setItemState(edge, 'hover', true);            
+          const model = edge.getModel();
+          if(relatedEdges.length <= 20 && model.state != 'click'){
+            edge.update({
+              //label: model.oriLabel,
+              labelCfg :{
+                autoRotate: true,
+                refY:7,
+                style: {
+                  fill:'#363b40',
+                  fontSize: 16,
+                  fontWeight:600,
+                  opacity: 1,
+                },
+              }
+            });
+          }
+          //model.oriLabel = currentLabel;
+          edge.toFront();
+          edge.getTarget().toFront();
+          edge.getSource().toFront();
           graph.setItemState(sourceNode, 'hover', true);
           graph.setItemState(targetNode, 'hover', true)
         });
@@ -1964,8 +2038,7 @@ export default {
         graph.setItemState(item, 'hover', true);
         item.toFront();
       });
-    
-
+      // 鼠标移出节点
       graph.on('node:mouseleave', (evt) => {
         const { item } = evt;
         const model = item.getModel();
@@ -1974,22 +2047,44 @@ export default {
           label: model.oriLabel,
         });
         model.oriLabel = currentLabel;
-
         const relatedEdges = item.getEdges();
+        // 节点相关的边逐条处理
         relatedEdges.forEach((edge) => {
           let sourceNode = edge.getSource()
           let targetNode = edge.getTarget()
-          graph.setItemState(edge, 'hover', false);
-          graph.setItemState(sourceNode, 'hover', false);
-          graph.setItemState(targetNode, 'hover', false)
+          
+          if (!keepHoverEdges.includes(edge._cfg.id)){
+            graph.setItemState(edge, 'hover', false);
+            // 恢复默认边标签样式
+            const model = edge.getModel();
+            if(model.state != 'click'){
+              edge.update({
+                //label: model.oriLabel,
+                state:'',
+                labelCfg : {
+                  autoRotate: true,
+                  refY:7,
+                  style: {
+                    fill:global.edge.labelCfg.style.fill,
+                    fontSize: 12,
+                    fontWeight:400,
+                    opacity: LabelVisible,
+                  },
+                },
+              });
+            }
+          }
+          if (!keepHoverNodes.includes(sourceNode._cfg.id)){
+            graph.setItemState(sourceNode, 'hover', false)
+          }
+          if (!keepHoverNodes.includes(targetNode._cfg.id)){
+            graph.setItemState(targetNode, 'hover', false)
+          }
         });
-
-        graph.setItemState(item, 'hover', false);
       });
-    
+      // 鼠标移入边
       graph.on('edge:mouseenter', (evt) => {
         graph.setItemState(evt.item, 'hover', true);
-        
         const { item } = evt;
         const model = item.getModel();
         if(model.state != 'click'){
@@ -2008,58 +2103,101 @@ export default {
           });
         }
         //model.oriLabel = currentLabel;
-        item.toFront();
+        graph.setItemState(item.getSource(), 'hover', true);
+        graph.setItemState(item.getTarget(), 'hover', true);
         item.getSource().toFront();
         item.getTarget().toFront();
+        item.toFront();
       });
-    
+      // 鼠标移出边
       graph.on('edge:mouseleave', (evt) => {
-        graph.setItemState(evt.item, 'hover', false);
         const { item } = evt;
-        const model = item.getModel();
-        const currentLabel = model.label;
-        if(model.state != 'click'){
-          item.update({
-            //label: model.oriLabel,
-            state:'',
-            labelCfg : {
-              autoRotate: true,
-              refY:7,
-              style: {
-                fill:global.edge.labelCfg.style.fill,
-                fontSize: 12,
-                fontWeight:400,
-                opacity: LabelVisible,
+        if (!keepHoverEdges.includes(item._cfg.id)){
+          graph.setItemState(item, 'hover', false);
+          // 恢复默认边标签样式
+          const model = item.getModel();
+          if(model.state != 'click'){
+            item.update({
+              //label: model.oriLabel,
+              state:'',
+              labelCfg : {
+                autoRotate: true,
+                refY:7,
+                style: {
+                  fill:global.edge.labelCfg.style.fill,
+                  fontSize: 12,
+                  fontWeight:400,
+                  opacity: LabelVisible,
+                },
               },
-            },
-          });
+            });
+          }
         }
-
+        if (!keepHoverNodes.includes(item.getSource()._cfg.id)){
+          graph.setItemState(item.getSource(), 'hover', false)
+        }
+        if (!keepHoverNodes.includes(item.getTarget()._cfg.id)){
+          graph.setItemState(item.getTarget(), 'hover', false)
+        }
+        
       });
-      // click node to show the detail drawer
+
+      // 点击节点
       graph.on('node:click', (evt) => {
         this.stopLayout();
-        
-        if (!shiftKeydown || selectedNum>=2)
-          this.clearFocusItemState(graph);
-        else {
-          this.clearFocusEdgeState(graph);
-        }
+        // 获取节点信息
         const { item } = evt;
         let model = item.getModel();
         //this.findRealData(model)
         if(model.new == true)model.new = false;
+
+        // shift 和 超过两点 判断
+        if (!shiftKeydown || selectedNum>=2){
+          // 此时只有一个点会处于选中状态，首先将所有选中状态清除
+          this.clearFocusAndHover(graph);
+          selectedNum = 1;
+          selectedNode1 = model;
+        }
+        else {
+          // 此时应该有两个点被选中，先将边选中清除
+          this.clearFocusEdgeState(graph);
+          this.clearHoverItemState(graph)
+          selectedNode2 = model;
+          selectedNum = 2;
+        }
+
         // highlight the clicked node, it is down by click-select
         graph.setItemState(item, 'focus', true);
-        if(!selectedNode1.id){
-          selectedNode1 = model;
-        }else selectedNode2 = model;
-        selectedNum++;
+
+        // 单独一个点被选中时
         if (selectedNum == 1) {
-          // 将相关边也高亮
+          // 将相关边及相关点也悬浮
           const relatedEdges = item.getEdges();
+          keepHoverEdges = []
+          keepHoverNodes = []
           relatedEdges.forEach((edge) => {
-            graph.setItemState(edge, 'focus', true);
+            graph.setItemState(edge, 'hover', true);
+            const model = edge.getModel();
+            if(model.state != 'click'){
+              edge.update({
+                //label: model.oriLabel,
+                labelCfg :{
+                  autoRotate: true,
+                  refY:7,
+                  style: {
+                    fill:'#363b40',
+                    fontSize: 16,
+                    fontWeight:600,
+                    opacity: 1,
+                  },
+                }
+              });
+            }
+            keepHoverEdges.push(edge._cfg.id)
+            graph.setItemState(edge.getSource(), 'hover', true);
+            graph.setItemState(edge.getTarget(), 'hover', true);
+            keepHoverNodes.push(edge.getSource()._cfg.id)
+            keepHoverNodes.push(edge.getTarget()._cfg.id)
           });
         }else if(selectedNum == 2){
           this.isDisable = false;
@@ -2069,13 +2207,18 @@ export default {
         };
       });
     
-      // click edge to show the detail of integrated edge drawer
+      // 点击边
       graph.on('edge:click', (evt) => {
         this.stopLayout();
-        this.clearFocusEdgeState(graph);
+        // 清空聚焦和悬浮信息
+        this.clearFocusAndHover(graph)
         const { item } = evt;
-        // highlight the clicked edge
+        selectedEdge = item
         graph.setItemState(item, 'focus', true);
+        graph.setItemState(item.getSource(), 'hover', true);
+        graph.setItemState(item.getTarget(), 'hover', true);
+        keepHoverNodes.push(item.getSource()._cfg.id)
+        keepHoverNodes.push(item.getTarget()._cfg.id)
         item.update({
           //label: model.oriLabel,
           state:'click',
@@ -2086,6 +2229,7 @@ export default {
               fill: '#5F95FF',
               fontSize: 16,
               opacity: 1,
+              fontWeight: 600
             },
           },
         });
@@ -2094,9 +2238,9 @@ export default {
         item.getTarget().toFront();
       });
     
-      // click canvas to cancel all the focus state
+      // 点击空白画布
       graph.on('canvas:click', (evt) => {
-        this.clearFocusItemState(graph);
+        this.clearFocusAndHover(graph)
       });
     },
     G6registor(){
@@ -2111,7 +2255,7 @@ export default {
             const style = cfg.style || {};
             const colorSet = cfg.colorSet || colorSets[0];
 
-            // focus stroke for hover
+            // 悬浮时节点样式
             group.addShape('rect', {
               attrs: {
                 x: -width * 0.54,
@@ -2131,7 +2275,7 @@ export default {
               name: 'hover-shape',
               visible: false,
             });
-
+            // 点击时节点样式
             group.addShape('rect', {
               attrs: {
                 x: -width * 0.54,
@@ -2143,7 +2287,6 @@ export default {
                 shadowColor: '#888',
                 shadowBlur: 4,
                 fill: colorSet.mainStroke, // || '#3B4043',
-
                 stroke: colorSet.mainFill,
                 lineWidth: 5,
                 cursor: 'pointer',
@@ -2328,7 +2471,7 @@ export default {
         },
         'single-node',
       );
-      
+
       G6.registerEdge(
         'custom-quadratic',
         {
