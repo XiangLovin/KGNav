@@ -1292,98 +1292,6 @@ export default {
       };
     },
     
-    clearFocusItemState(graph){
-      if (!graph) return;
-      selectedNum = 0;
-      selectedNode1 = {};
-      selectedNode2 = {};
-      this.isDisable = true;
-      this.unionUrl = 'unable';
-      this.interUrl = 'unable';
-      this.compUrl = 'unable';
-      this.clearFocusNodeState(graph);
-      this.clearFocusEdgeState(graph);
-    },
-    
-    // 清除图上所有节点的 focus 状态及相应样式
-    clearFocusNodeState(graph){
-      const focusNodes = graph.findAllByState('node', 'focus');
-      focusNodes.forEach((fnode) => {
-        graph.setItemState(fnode, 'focus', false); // false
-      });
-    },
-    
-    // 清除图上所有边的 focus 状态及相应样式
-    clearFocusEdgeState(graph){
-      selectedEdge = null;
-      const focusEdges = graph.findAllByState('edge', 'focus');
-      focusEdges.forEach((fedge) => {
-        graph.setItemState(fedge, 'focus', false);
-        fedge.update({
-          //label: model.oriLabel,
-          state:'',
-          labelCfg :{
-            autoRotate: true,
-            refY:7,
-            style: {
-              fill: global.edge.labelCfg.style.fill,
-              ineWidth: 4,
-              fontSize: 12,
-              fontWeight:400,
-              opacity: LabelVisible,
-            },
-          }
-        });
-      });
-    },
-
-    // 清除图上所有节点的 hover 状态及相应样式
-    clearHoverNodeState(graph){
-      keepHoverNodes = []
-      const hoverNodes = graph.findAllByState('node', 'hover');
-      hoverNodes.forEach((hnode) => {
-        graph.setItemState(hnode, 'hover', false); // false
-      });
-    },
-    
-    // 清除图上所有边的 hover 状态及相应样式
-    clearHoverEdgeState(graph){
-      selectedEdge = null;
-      keepHoverEdges = []
-      let hoverEdges = graph.findAllByState('edge', 'hover');
-      hoverEdges.forEach((fedge) => {
-        graph.setItemState(fedge, 'hover', false);
-        fedge.update({
-          //label: model.oriLabel,
-          state:'',
-          labelCfg :{
-            autoRotate: true,
-            refY:7,
-            style: {
-              fill: global.edge.labelCfg.style.fill,
-              ineWidth: 4,
-              fontSize: 12,
-              fontWeight:400,
-              opacity: LabelVisible,
-            },
-          }
-        });
-      });
-    },
-    
-    // 取消所有点和边的悬浮状态
-    clearHoverItemState(graph){
-      this.clearHoverNodeState(graph)
-      this.clearHoverEdgeState(graph)
-    },
-
-    // 清除所有聚焦和悬浮
-    clearFocusAndHover(graph){
-      // 取消所有聚焦状态
-      this.clearFocusItemState(graph)
-      this.clearHoverItemState(graph)
-    },
-    
     // 截断长文本。length 为文本截断后长度，elipsis 是后缀
     formatText(text, length = 5, elipsis = '...'){
       if (!text) return '';
@@ -1972,6 +1880,153 @@ export default {
       layout.instance.stop();
     },
 
+    clearItemState(graph,state){
+      if (!graph) return;
+      if(state == 'focus'){
+        selectedNum = 0;
+        selectedNode1 = {};
+        selectedNode2 = {};
+        this.isDisable = true;
+        this.unionUrl = 'unable';
+        this.interUrl = 'unable';
+        this.compUrl = 'unable';
+      }
+      this.clearNodeState(graph,state);
+      this.clearEdgeState(graph,state);
+    },
+
+    //取消所有点和边的悬浮状态
+    // clearFocusItemState(graph){
+    //   if (!graph) return;
+    //   selectedNum = 0;
+    //   selectedNode1 = {};
+    //   selectedNode2 = {};
+    //   this.isDisable = true;
+    //   this.unionUrl = 'unable';
+    //   this.interUrl = 'unable';
+    //   this.compUrl = 'unable';
+    //   this.clearFocusNodeState(graph);
+    //   this.clearFocusEdgeState(graph);
+    // },
+
+    // 取消所有点和边的悬浮状态
+    // clearHoverItemState(graph){
+    //   this.clearHoverNodeState(graph)
+    //   this.clearHoverEdgeState(graph)
+    // },
+
+
+    //清除图上所有节点的指定状态及相应样式
+    clearNodeState(graph,state){
+      if(state=='hover')keepHoverNodes = []
+      const stateNodes = graph.findAllByState('node', state);
+      stateNodes.forEach((fnode) => {
+        graph.setItemState(fnode, state, false); // false
+      });
+    },
+    
+    //清除图上所有边的指定状态及相应样式
+    clearEdgeState(graph,state){
+      if(state=='hover')keepHoverEdges = []
+      selectedEdge = null;
+      const stateEdges = graph.findAllByState('edge', state);
+      stateEdges.forEach((fedge) => {
+        graph.setItemState(fedge, state, false);
+        fedge.update({
+          //label: model.oriLabel,
+          state:'',
+          labelCfg :{
+            autoRotate: true,
+            refY:7,
+            style: {
+              fill: global.edge.labelCfg.style.fill,
+              ineWidth: 4,
+              fontSize: 12,
+              fontWeight:400,
+              opacity: LabelVisible,
+            },
+          }
+        });
+      });
+    },
+
+    // // 清除图上所有节点的 hover 状态及相应样式
+    // clearFocusNodeState(graph){
+    //   const focusNodes = graph.findAllByState('node', 'hover');
+    //   focusNodes.forEach((hnode) => {
+    //     graph.setItemState(hnode, 'hover', false); // false
+    //   });
+    // },
+    
+    // // 清除图上所有边的 hover 状态及相应样式
+    // clearFocusEdgeState(graph){
+    //   selectedEdge = null;
+    //   let focusEdges = graph.findAllByState('edge', 'focus');
+    //   focusEdges.forEach((fedge) => {
+    //     graph.setItemState(fedge, 'focus', false);
+    //     fedge.update({
+    //       //label: model.oriLabel,
+    //       state:'',
+    //       labelCfg :{
+    //         autoRotate: true,
+    //         refY:7,
+    //         style: {
+    //           fill: global.edge.labelCfg.style.fill,
+    //           ineWidth: 4,
+    //           fontSize: 12,
+    //           fontWeight:400,
+    //           opacity: LabelVisible,
+    //         },
+    //       }
+    //     });
+    //   });
+    // },
+
+    // // 清除图上所有节点的 hover 状态及相应样式
+    // clearHoverNodeState(graph){
+    //   keepHoverNodes = []
+    //   const hoverNodes = graph.findAllByState('node', 'hover');
+    //   hoverNodes.forEach((hnode) => {
+    //     graph.setItemState(hnode, 'hover', false); // false
+    //   });
+    // },
+    
+    // // 清除图上所有边的 hover 状态及相应样式
+    // clearHoverEdgeState(graph){
+    //   selectedEdge = null;
+    //   keepHoverEdges = []
+    //   let hoverEdges = graph.findAllByState('edge', 'hover');
+    //   hoverEdges.forEach((fedge) => {
+    //     graph.setItemState(fedge, 'hover', false);
+    //     fedge.update({
+    //       //label: model.oriLabel,
+    //       state:'',
+    //       labelCfg :{
+    //         autoRotate: true,
+    //         refY:7,
+    //         style: {
+    //           fill: global.edge.labelCfg.style.fill,
+    //           ineWidth: 4,
+    //           fontSize: 12,
+    //           fontWeight:400,
+    //           opacity: LabelVisible,
+    //         },
+    //       }
+    //     });
+    //   });
+    // },
+    
+
+    // 清除所有聚焦和悬浮
+    clearFocusAndHover(graph){
+      // 取消所有聚焦状态
+      this.clearItemState(graph,'focus')
+      this.clearItemState(graph,'hover')
+      this.clearItemState(graph,'related')
+      // this.clearFocusItemState(graph)
+      // this.clearHoverItemState(graph)
+    },
+    
     //G6相关功能
     bindListener(graph){
       graph.on('keydown', (evt) => {
@@ -2031,8 +2086,8 @@ export default {
           edge.toFront();
           edge.getTarget().toFront();
           edge.getSource().toFront();
-          graph.setItemState(sourceNode, 'hover', true);
-          graph.setItemState(targetNode, 'hover', true)
+          graph.setItemState(sourceNode, 'related', true);
+          graph.setItemState(targetNode, 'related', true)
         });
         graph.setItemState(item, 'hover', true);
         item.toFront();
@@ -2103,8 +2158,8 @@ export default {
           });
         }
         //model.oriLabel = currentLabel;
-        graph.setItemState(item.getSource(), 'hover', true);
-        graph.setItemState(item.getTarget(), 'hover', true);
+        graph.setItemState(item.getSource(), 'related', true);
+        graph.setItemState(item.getTarget(), 'related', true);
         item.toFront();
         item.getSource().toFront();
         item.getTarget().toFront();
@@ -2161,8 +2216,10 @@ export default {
         }
         else {
           // 此时应该有两个点被选中，先将边选中清除
-          this.clearFocusEdgeState(graph);
-          this.clearHoverItemState(graph)
+          // this.clearFocusEdgeState(graph);
+          // this.clearHoverItemState(graph);
+          this.clearEdgeState(graph,'focus');
+          this.clearItemState(graph,'hover');
           selectedNode2 = model;
           selectedNum = 2;
         }
@@ -2195,8 +2252,8 @@ export default {
               });
             }
             keepHoverEdges.push(edge._cfg.id)
-            graph.setItemState(edge.getSource(), 'hover', true);
-            graph.setItemState(edge.getTarget(), 'hover', true);
+            graph.setItemState(edge.getSource(), 'related', true);
+            graph.setItemState(edge.getTarget(), 'related', true);
             keepHoverNodes.push(edge.getSource()._cfg.id)
             keepHoverNodes.push(edge.getTarget()._cfg.id)
           });
@@ -2270,6 +2327,26 @@ export default {
                 fill: colorSet.mainFill, // '#3B4043',
                 stroke: colorSet.mainStroke,//'#AAB7C4',
                 lineWidth: 3,
+                lineOpacty: 0.6,
+                radius: (height / 2) * 1.3,
+              },
+              name: 'related-shape',
+              visible: false,
+            });
+            // 相关时节点样式
+            group.addShape('rect', {
+              attrs: {
+                x: -width * 0.54,
+                y: -height * 0.65,
+                width: width * 1.08,
+                height: height * 1.3,
+                shadowOffsetX: 2,
+                shadowOffsetY: 3,
+                shadowColor: '#888',
+                shadowBlur: 4,
+                fill: colorSet.mainStroke, 
+                stroke: colorSet.mainFill,
+                lineWidth: 5,
                 lineOpacty: 0.6,
                 radius: (height / 2) * 1.3,
               },
@@ -2353,6 +2430,30 @@ export default {
                 textBaseline: 'middle',
                 cursor: 'pointer',
                 fontSize: 18,
+                stroke:colorSet.mainStroke,
+                lineWidth:3,
+                shadowOffsetX: 1,
+                shadowOffsetY: 1,
+                shadowColor: colorSet.mainStroke,
+                shadowBlur: 3,
+                fill: 'white',
+                opacity: 0.85,
+                fontWeight: 550,
+              },
+              name: 'hover-text',
+              className: 'hover-text',
+              visible:false,
+              draggable: true,
+            });
+            group.addShape('text', {
+              attrs: {
+                text: cfg.label||`${cfg.count}`,
+                x: 0,
+                y: 2,
+                textAlign: 'center',
+                textBaseline: 'middle',
+                cursor: 'pointer',
+                fontSize: 18,
                 stroke:'white',
                 lineWidth:3,
                 shadowOffsetX: 1,
@@ -2363,8 +2464,8 @@ export default {
                 opacity: 0.85,
                 fontWeight: 550,
               },
-              name: 'hover-text',
-              className: 'hover-text',
+              name: 'related-text',
+              className: 'related-text',
               visible:false,
               draggable: true,
             });
