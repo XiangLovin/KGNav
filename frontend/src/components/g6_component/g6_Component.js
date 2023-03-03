@@ -159,6 +159,84 @@ export default {
       isDisable: true,
 
       oridata:{},
+
+      //triple专用数据
+      tripleData:[],
+      searchTripleText: '',
+      searchTripleInput: null,
+      tripleColumn: '',
+      columns: [
+        {
+          
+          width:'35%',
+          title: 'Subject',
+          dataIndex: 'subject',
+          key: 'subject',
+          scopedSlots: {
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender',
+          },
+          onFilter: (value, record) =>
+            record.subject
+              .toString()
+              .toLowerCase()
+              .includes(value.toLowerCase()),
+          onFilterDropdownVisibleChange: visible => {
+            if (visible) {
+              setTimeout(() => {
+                this.searchTripleInput.focus();
+              }, 0);
+            }
+          },
+        },
+        {
+          width:'30%',
+          title: 'Label',
+          dataIndex: 'label',
+          key: 'label',
+          scopedSlots: {
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender',
+          },
+          onFilter: (value, record) =>
+            record.label
+              .toString()
+              .toLowerCase()
+              .includes(value.toLowerCase()),
+          onFilterDropdownVisibleChange: visible => {
+            if (visible) {
+              setTimeout(() => {
+                this.searchTripleInput.focus();
+              });
+            }
+          },
+        },
+        {
+          width:'35%',
+          title: 'Object',
+          dataIndex: 'object',
+          key: 'object',
+          scopedSlots: {
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender',
+          },
+          onFilter: (value, record) =>
+            record.object
+              .toString()
+              .toLowerCase()
+              .includes(value.toLowerCase()),
+          onFilterDropdownVisibleChange: visible => {
+            if (visible) {
+              setTimeout(() => {
+                this.searchTripleInput.focus();
+              });
+            }
+          },
+        },
+      ],
       
       //
       entityInfoShow: 0,
@@ -187,7 +265,17 @@ export default {
     this.outform.getFieldDecorator('outKeys', { initialValue: [0], preserve: true });
   },
   methods:{
+    //三元组搜索
+    handleSearch(selectedKeys, confirm, dataIndex) {
+      confirm();
+      this.searchTripleText = selectedKeys[0];
+      this.tripleColumn = dataIndex;
+    },
 
+    handleReset(clearFilters) {
+      clearFilters();
+      this.searchTripleText = '';
+    },
     async NodeClick(e) {
       // 设置加载中
       this.entityInfoShow = 0
@@ -198,6 +286,43 @@ export default {
       meumEle.style.display='none';
       infoEle.style.display='block';
 
+      //填充三元组信息
+      this.tripleData = [];
+      let count = 1;
+
+      const node = realNodeMap[e.id]
+      console.log(e,node)
+      for(const edge of node.inLabel){
+        const triple = {
+          key: count++,
+          subject: realNodeMap[edge.source].value,
+          label: edge.value,
+          object: node.value,
+        };
+        this.tripleData.push(triple);
+      }
+      for(const edge of node.outLabel){
+        const triple = {
+          key: count++,
+          subject: node.value,
+          label: edge.value,
+          object: realNodeMap[edge.target].value,
+        };
+        this.tripleData.push(triple);
+      }
+      //高亮界面上全部包含该节点的节点
+      let parentmodel;
+      this.clearFocusAndHover(graph)
+      graph.getNodes().forEach((node) => {
+        let model = node.getModel();
+        let res = realNodeMap[e.id].parents.indexOf(model.id)
+        if(res!=-1){
+          console.log(model.id)
+          graph.setItemState(node, 'related', true);
+        }
+      });
+
+      //查找基本信息
       const entityImgUrl = await getEntityImgUrl(e.value).then((res)=>{
         if(res.data.hasOwnProperty('image')){
           return res.data.image
@@ -218,15 +343,6 @@ export default {
         return err.data
       })
       
-        
-      
-      // 展示数据    
-      let listEle = document.getElementById('infolist');
-      // listEle.innerHTML =`
-      // 这是节点:${entityInfo.name}
-      // // `
-      // this.entityInfo = entityData
-      // this.entityInfo.imgUrl = entityImgUrl
     },
     //非叶子节点处理
     ComboClick(e) {
@@ -306,6 +422,7 @@ export default {
       else if(this.current[0] == "conditional"){
         infoEle.style.display='none';
       }
+      this.clearFocusAndHover(graph)
     },
     onSearch() {
       this.searchDataList=[];
@@ -1662,7 +1779,7 @@ export default {
       isNewGraph,
     ){
       if (!graphData || !graph) return;
-      this.clearFocusItemState(graph);
+      this.clearItemState(graph,'focus');
       // reset the filtering
       graph.getNodes().forEach((node) => {
         if (!node.isVisible()) node.show();
@@ -2273,7 +2390,7 @@ export default {
         const { item } = evt;
         selectedEdge = item
         graph.setItemState(item, 'focus', true);
-        graph.setItemState(item.getSource(), 'hover', true);
+        graph.setItemState(item.getSource(), 'related', true);
         graph.setItemState(item.getTarget(), 'hover', true);
         keepHoverNodes.push(item.getSource()._cfg.id)
         keepHoverNodes.push(item.getTarget()._cfg.id)

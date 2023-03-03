@@ -463,4 +463,8 @@
 .G6Meum li:hover {
   color: #aaaaaa;
 }
+.highlight {
+  background-color: rgb(255, 192, 105);
+  padding: 0px;
+}
 
