@@ -161,7 +161,8 @@ export default {
       oridata:{},
 
       //triple专用数据
-      tripleData:[],
+      tripleData:[],//用于显示三元组
+      tripleRealData:{},//用于保存三元组实体
       searchTripleText: '',
       searchTripleInput: null,
       tripleColumn: '',
@@ -237,7 +238,6 @@ export default {
           },
         },
       ],
-      
       //
       entityInfoShow: 0,
       entityInfo: {
@@ -276,6 +276,68 @@ export default {
       clearFilters();
       this.searchTripleText = '';
     },
+    tripleSelection(record){
+      return {
+        on: { // 事件
+          click: () => {
+            this.clearFocusAndHover(graph)
+            graph.getEdges().forEach(edge=>{
+              edge.update({
+                //label: model.oriLabel,
+                state:'',
+                labelCfg : {
+                  autoRotate: true,
+                  refY:7,
+                  style: {
+                    fill:global.edge.labelCfg.style.fill,
+                    fontSize: 12,
+                    fontWeight:400,
+                    opacity: LabelVisible,
+                  },
+                },
+              });
+            })
+            
+            let data=this.tripleRealData[record.key];
+            let subject = data.subject;
+            let predicate = data.label;
+            let object = data.object;
+
+            graph.getEdges().forEach(edge=>{
+              let target = edge.getTarget();
+              let source = edge.getSource();
+              console.log(edge,target,source)
+              let isSource = subject.parents.indexOf(source.getModel().id)
+              let isLabel = edge.getModel().value.indexOf(predicate.value)
+              let isTarget = object.parents.indexOf(target.getModel().id)
+              if(isSource!=-1 && isLabel != -1 && isTarget != -1){
+                graph.setItemState(target, 'related', true);
+                graph.setItemState(source, 'related', true);
+                graph.setItemState(edge, 'related', true);
+                edge.update({
+                  //label: model.oriLabel,
+                  state:'click',
+                  labelCfg: {
+                    autoRotate: true,
+                    refY:7,
+                    style: {
+                      fill: '#5F95FF',//这里的颜色改为related的颜色
+                      fontSize: 16,
+                      opacity: 1,
+                      fontWeight: 600
+                    },
+                  },
+                });
+              }
+            })
+          },       // 点击行
+          mouseenter: () => {},  // 鼠标移入行
+          mouseleave: () => {}
+        },
+  
+      };
+    },
+
     async NodeClick(e) {
       // 设置加载中
       this.entityInfoShow = 0
@@ -286,38 +348,13 @@ export default {
       meumEle.style.display='none';
       infoEle.style.display='block';
 
-      //填充三元组信息
-      this.tripleData = [];
-      let count = 1;
-
-      const node = realNodeMap[e.id]
-      console.log(e,node)
-      for(const edge of node.inLabel){
-        const triple = {
-          key: count++,
-          subject: realNodeMap[edge.source].value,
-          label: edge.value,
-          object: node.value,
-        };
-        this.tripleData.push(triple);
-      }
-      for(const edge of node.outLabel){
-        const triple = {
-          key: count++,
-          subject: node.value,
-          label: edge.value,
-          object: realNodeMap[edge.target].value,
-        };
-        this.tripleData.push(triple);
-      }
+      
       //高亮界面上全部包含该节点的节点
-      let parentmodel;
       this.clearFocusAndHover(graph)
       graph.getNodes().forEach((node) => {
         let model = node.getModel();
         let res = realNodeMap[e.id].parents.indexOf(model.id)
         if(res!=-1){
-          console.log(model.id)
           graph.setItemState(node, 'related', true);
         }
       });
@@ -342,7 +379,41 @@ export default {
         this.entityInfoShow = 2
         return err.data
       })
-      
+
+      //填充三元组信息
+      this.tripleData = [];
+      this.tripleRealData = {};
+      let count = 1;
+
+      const node = realNodeMap[e.id]
+      //console.log(e,node)
+      for(const edge of node.inLabel){
+        this.tripleData.push({
+          key: count++,
+          subject: realNodeMap[edge.source].value,
+          label: edge.value,
+          object: node.value,
+        });
+        this.tripleRealData[count-1]={
+          subject: realNodeMap[edge.source],
+          label: edge,
+          object: node,
+        };
+      }
+      for(const edge of node.outLabel){
+        this.tripleData.push({
+          key: count++,
+          subject: node.value,
+          label: edge.value,
+          object: realNodeMap[edge.target].value,
+        });
+        this.tripleRealData[count-1]={
+          subject: node,
+          label: edge,
+          object: realNodeMap[edge.target],
+        };
+      }
+      console.log(this.tripleRealData)
     },
     //非叶子节点处理
     ComboClick(e) {

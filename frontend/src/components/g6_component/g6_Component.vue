@@ -610,10 +610,11 @@
                   </a-list>
                 </div>
               </div>
-              <div id="tripleINfo" style="margin:10px -7px 0px -7px;" table-layout="fixed">
+              <div id="tripleINfo" style="margin:20px -7px 0px -7px;" table-layout="fixed">
                 <a-table :data-source="tripleData" :columns="columns" 
                 bordered size="small"
                 :pagination="{ pageSize: 5 }"
+                :customRow="tripleSelection"
                 >
                   <div
                     slot="filterDropdown"
