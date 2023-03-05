@@ -319,17 +319,34 @@ export default {
                 graph.setItemState(target, 'related', true);
                 graph.setItemState(source, 'related', true);
                 graph.setItemState(edge, 'related', true);
+                keepRelatedNodes.push(target._cfg.id)
+                keepRelatedNodes.push(source._cfg.id)
+                keepRelatedEdges.push(edge._cfg.id)
+                // edge.update({
+                //   //label: model.oriLabel,
+                //   state:'click',
+                //   labelCfg: {
+                //     autoRotate: true,
+                //     refY:7,
+                //     style: {
+                //       fill: relatedEdgeColor,//这里的颜色改为related的颜色
+                //       fontSize: 16,
+                //       opacity: 1,
+                //       fontWeight: 600
+                //     },
+                //   },
+                // });
                 edge.update({
                   //label: model.oriLabel,
-                  state:'click',
-                  labelCfg: {
+                  state:'',
+                  labelCfg : {
                     autoRotate: true,
                     refY:7,
                     style: {
-                      fill: relatedEdgeColor,//这里的颜色改为related的颜色
+                      fill: relatedEdgeColor,
                       fontSize: 16,
-                      opacity: 1,
-                      fontWeight: 600
+                      fontWeight:600,
+                      opacity: LabelVisible,
                     },
                   },
                 });
@@ -361,6 +378,7 @@ export default {
         let res = realNodeMap[e.id].parents.indexOf(model.id)
         if(res!=-1){
           graph.setItemState(node, 'related', true);
+          keepRelatedNodes.push(node._cfg.id)
         }
       });
 
@@ -2338,6 +2356,7 @@ export default {
         let model = item.getModel();
         //this.findRealData(model)
         if(model.new == true)model.new = false;
+        let nowTwo = false;//如果点的是第二个点是时不执行高亮相关节点
 
         // selectedNum 为 0 时，无论是否按下 shift，都会选中一个点，selectedNum++
         if (selectedNum == 0){
@@ -2351,8 +2370,10 @@ export default {
             // 此时应该有两个点被选中，先将边选中清除
             this.clearEdgeState(graph,'focus');
             this.clearItemState(graph,'hover');
+            this.clearItemState(graph,'related');
             selectedNode2 = model;
             selectedNum = 2;
+            nowTwo = true;
           }
           // 不按 shift 为单选
           else {
@@ -2368,47 +2389,47 @@ export default {
           selectedNum = 1;
           selectedNode1 = model;
         }
-
         // highlight the clicked node, it is down by click-select
         graph.setItemState(item, 'focus', true);
-
-        
-        // 将相关边及相关点也 related
-        const relatedEdges = item.getEdges();
-        relatedEdges.forEach((edge) => {
-          graph.setItemState(edge, 'related', true);
-          const model = edge.getModel();
-          if(model.state != 'click'){
-            edge.update({
-              //label: model.oriLabel,
-              labelCfg :{
-                autoRotate: true,
-                refY:7,
-                style: {
-                  fill: relatedEdgeColor,
-                  fontSize: 16,
-                  fontWeight:600,
-                  opacity: 1,
-                },
-              }
-            });
-          }
-          keepRelatedEdges.push(edge._cfg.id)
-          if (item._cfg.id != edge.getSource()._cfg.id){
-            graph.setItemState(edge.getSource(), 'related', true);
-            keepRelatedNodes.push(edge.getSource()._cfg.id)
-          }
-          if (item._cfg.id != edge.getTarget()._cfg.id){
-            graph.setItemState(edge.getTarget(), 'related', true);
-            keepRelatedNodes.push(edge.getTarget()._cfg.id)
-          }
-        });
         if (selectedNum == 2) {
           this.isDisable = false;
           this.unionUrl = 'default';
           this.interUrl = 'default';
           this.compUrl = 'default';
-        };
+        }
+        else{
+          // 将相关边及相关点也 related
+          const relatedEdges = item.getEdges();
+          relatedEdges.forEach((edge) => {
+            graph.setItemState(edge, 'related', true);
+            const model = edge.getModel();
+            if(model.state != 'click'){
+              edge.update({
+                //label: model.oriLabel,
+                labelCfg :{
+                  autoRotate: true,
+                  refY:7,
+                  style: {
+                    fill: relatedEdgeColor,
+                    fontSize: 16,
+                    fontWeight:600,
+                    opacity: 1,
+                  },
+                }
+              });
+            }
+            keepRelatedEdges.push(edge._cfg.id)
+            if (item._cfg.id != edge.getSource()._cfg.id){
+              graph.setItemState(edge.getSource(), 'related', true);
+              keepRelatedNodes.push(edge.getSource()._cfg.id)
+            }
+            if (item._cfg.id != edge.getTarget()._cfg.id){
+              graph.setItemState(edge.getTarget(), 'related', true);
+              keepRelatedNodes.push(edge.getTarget()._cfg.id)
+            }
+          });
+        }
+        
       });
     
       // 点击边
@@ -2459,7 +2480,7 @@ export default {
             const style = cfg.style || {};
             const colorSet = cfg.colorSet || colorSets[0];
 
-            // 悬浮时节点样式
+            // 相关时点样式
             group.addShape('rect', {
               attrs: {
                 x: -width * 0.54,
@@ -2479,7 +2500,7 @@ export default {
               name: 'related-shape',
               visible: false,
             });
-            // 相关时节点样式
+            // 悬浮时节点样式
             group.addShape('rect', {
               attrs: {
                 x: -width * 0.54,
@@ -2682,21 +2703,25 @@ export default {
               const stroke = group.find((e) => e.get('name') === 'related-shape');
               const keyShape = item.getKeyShape();
               const colorSet = item.getModel().colorSet || colorSets[0];
+              console.log(colorSet)
               if (value) {
                 stroke && stroke.show();
                 text && text.hide();
                 htext && htext.show();
-                keyShape.hide();
-                keyShape.attr('fill', colorSet.selectedFill);
+                keyShape.attr('fill', colorSet.activeFill);
               } else {
                 stroke && stroke.hide();
                 text && text.show();
                 htext && htext.hide();
-                keyShape.show();
+
                 keyShape.attr('fill', colorSet.mainFill);
               }
             }
             else if (name === 'hover') {
+              let hasRelated = false;
+              if (item.hasState('related'))
+                //如果有related那么设置保留符
+                hasRelated = true;
               if (item.hasState('focus')) {
                 return;
               }
@@ -2715,6 +2740,15 @@ export default {
                 text && text.show();
                 htext && htext.hide();
                 keyShape.attr('fill', colorSet.mainFill);
+                if(hasRelated){
+                  const Rhalo = group.find((e) => e.get('name') === 'related-shape');//'halo-shape');
+                  const Rhtext = group.find((e) => e.get('name') === 'related-text');
+                  Rhalo && Rhalo.show();
+                  text && text.hide();
+                  Rhtext && Rhtext.show();
+                  keyShape.attr('fill', colorSet.activeFill);
+                }
+                
               }
             } 
             else if (name === 'focus') {
