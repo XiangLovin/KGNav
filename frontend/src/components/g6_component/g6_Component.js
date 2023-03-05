@@ -29,8 +29,8 @@ let largeGraphMode = true;
 let cachePositions = {};
 let manipulatePosition = undefined;
 let LabelVisible = 1;
-let keepHoverNodes = [];
-let keepHoverEdges = [];
+let keepRelatedNodes = [];
+let keepRelatedEdges = [];
 
 // 用于存储节点的双亲结点
 let nodesParents;
@@ -101,6 +101,11 @@ const renameKey = 'updatable';
 let inLabelId = 1;
 let outLabelId = 1;
 
+// 边颜色设置
+const defaultEdgeColor = '#acaeaf'
+const focusEdgeColor = '#fa8c45'
+const hoverEdgeColor = '#c93756'
+const relatedEdgeColor = '#4b5cc4'
 
 export default {
   name: "G6Componanet",
@@ -280,7 +285,7 @@ export default {
       return {
         on: { // 事件
           click: () => {
-            this.clearFocusAndHover(graph)
+            this.clearAllState(graph)
             graph.getEdges().forEach(edge=>{
               edge.update({
                 //label: model.oriLabel,
@@ -321,7 +326,7 @@ export default {
                     autoRotate: true,
                     refY:7,
                     style: {
-                      fill: '#5F95FF',//这里的颜色改为related的颜色
+                      fill: relatedEdgeColor,//这里的颜色改为related的颜色
                       fontSize: 16,
                       opacity: 1,
                       fontWeight: 600
@@ -350,7 +355,7 @@ export default {
 
       
       //高亮界面上全部包含该节点的节点
-      this.clearFocusAndHover(graph)
+      this.clearAllState(graph)
       graph.getNodes().forEach((node) => {
         let model = node.getModel();
         let res = realNodeMap[e.id].parents.indexOf(model.id)
@@ -493,7 +498,7 @@ export default {
       else if(this.current[0] == "conditional"){
         infoEle.style.display='none';
       }
-      this.clearFocusAndHover(graph)
+      this.clearAllState(graph)
     },
     onSearch() {
       this.searchDataList=[];
@@ -1682,7 +1687,7 @@ export default {
         }
       });
     
-      G6.Util.processParallelEdges(edges, 20, 'custom-quadratic', 'custom-line');
+      G6.Util.processParallelEdges(edges, 20, 'custom-quadratic', 'custom-line', 'custom-loop');
       return {
         maxDegree,
         edges,
@@ -2083,30 +2088,9 @@ export default {
       this.clearEdgeState(graph,state);
     },
 
-    //取消所有点和边的悬浮状态
-    // clearFocusItemState(graph){
-    //   if (!graph) return;
-    //   selectedNum = 0;
-    //   selectedNode1 = {};
-    //   selectedNode2 = {};
-    //   this.isDisable = true;
-    //   this.unionUrl = 'unable';
-    //   this.interUrl = 'unable';
-    //   this.compUrl = 'unable';
-    //   this.clearFocusNodeState(graph);
-    //   this.clearFocusEdgeState(graph);
-    // },
-
-    // 取消所有点和边的悬浮状态
-    // clearHoverItemState(graph){
-    //   this.clearHoverNodeState(graph)
-    //   this.clearHoverEdgeState(graph)
-    // },
-
-
     //清除图上所有节点的指定状态及相应样式
     clearNodeState(graph,state){
-      if(state=='hover')keepHoverNodes = []
+      if(state=='related') keepRelatedNodes = []
       const stateNodes = graph.findAllByState('node', state);
       stateNodes.forEach((fnode) => {
         graph.setItemState(fnode, state, false); // false
@@ -2115,7 +2099,7 @@ export default {
     
     //清除图上所有边的指定状态及相应样式
     clearEdgeState(graph,state){
-      if(state=='hover')keepHoverEdges = []
+      if(state=='related')keepRelatedEdges = []
       selectedEdge = null;
       const stateEdges = graph.findAllByState('edge', state);
       stateEdges.forEach((fedge) => {
@@ -2127,7 +2111,7 @@ export default {
             autoRotate: true,
             refY:7,
             style: {
-              fill: global.edge.labelCfg.style.fill,
+              fill: defaultEdgeColor,
               ineWidth: 4,
               fontSize: 12,
               fontWeight:400,
@@ -2138,81 +2122,12 @@ export default {
       });
     },
 
-    // // 清除图上所有节点的 hover 状态及相应样式
-    // clearFocusNodeState(graph){
-    //   const focusNodes = graph.findAllByState('node', 'hover');
-    //   focusNodes.forEach((hnode) => {
-    //     graph.setItemState(hnode, 'hover', false); // false
-    //   });
-    // },
-    
-    // // 清除图上所有边的 hover 状态及相应样式
-    // clearFocusEdgeState(graph){
-    //   selectedEdge = null;
-    //   let focusEdges = graph.findAllByState('edge', 'focus');
-    //   focusEdges.forEach((fedge) => {
-    //     graph.setItemState(fedge, 'focus', false);
-    //     fedge.update({
-    //       //label: model.oriLabel,
-    //       state:'',
-    //       labelCfg :{
-    //         autoRotate: true,
-    //         refY:7,
-    //         style: {
-    //           fill: global.edge.labelCfg.style.fill,
-    //           ineWidth: 4,
-    //           fontSize: 12,
-    //           fontWeight:400,
-    //           opacity: LabelVisible,
-    //         },
-    //       }
-    //     });
-    //   });
-    // },
-
-    // // 清除图上所有节点的 hover 状态及相应样式
-    // clearHoverNodeState(graph){
-    //   keepHoverNodes = []
-    //   const hoverNodes = graph.findAllByState('node', 'hover');
-    //   hoverNodes.forEach((hnode) => {
-    //     graph.setItemState(hnode, 'hover', false); // false
-    //   });
-    // },
-    
-    // // 清除图上所有边的 hover 状态及相应样式
-    // clearHoverEdgeState(graph){
-    //   selectedEdge = null;
-    //   keepHoverEdges = []
-    //   let hoverEdges = graph.findAllByState('edge', 'hover');
-    //   hoverEdges.forEach((fedge) => {
-    //     graph.setItemState(fedge, 'hover', false);
-    //     fedge.update({
-    //       //label: model.oriLabel,
-    //       state:'',
-    //       labelCfg :{
-    //         autoRotate: true,
-    //         refY:7,
-    //         style: {
-    //           fill: global.edge.labelCfg.style.fill,
-    //           ineWidth: 4,
-    //           fontSize: 12,
-    //           fontWeight:400,
-    //           opacity: LabelVisible,
-    //         },
-    //       }
-    //     });
-    //   });
-    // },
-    
-
-    // 清除所有聚焦和悬浮
-    clearFocusAndHover(graph){
+    // 清除所有状态
+    clearAllState(graph){
       // 取消所有聚焦状态
       this.clearItemState(graph,'focus')
       this.clearItemState(graph,'hover')
       this.clearItemState(graph,'related')
-      // this.clearFocusItemState(graph)
-      // this.clearHoverItemState(graph)
     },
     
     //G6相关功能
@@ -2248,12 +2163,14 @@ export default {
         });
         model.oriLabel = currentLabel;
 
+        // 当前点置为 hover
+        graph.setItemState(item, 'hover', true);
+        // 每条边及相关点置为 related
         const relatedEdges = item.getEdges();
         relatedEdges.forEach((edge) => {
           let sourceNode = edge.getSource()
           let targetNode = edge.getTarget()
-          // graph.setItemState(edge, 'focus', false);
-          graph.setItemState(edge, 'hover', true);            
+          graph.setItemState(edge, 'related', true);          
           const model = edge.getModel();
           if(relatedEdges.length <= 20 && model.state != 'click'){
             edge.update({
@@ -2262,7 +2179,7 @@ export default {
                 autoRotate: true,
                 refY:7,
                 style: {
-                  fill:'#363b40',
+                  fill: relatedEdgeColor,
                   fontSize: 16,
                   fontWeight:600,
                   opacity: 1,
@@ -2274,12 +2191,13 @@ export default {
           edge.toFront();
           edge.getTarget().toFront();
           edge.getSource().toFront();
-          graph.setItemState(sourceNode, 'related', true);
+          graph.setItemState(sourceNode, 'related', true)
           graph.setItemState(targetNode, 'related', true)
         });
-        graph.setItemState(item, 'hover', true);
         item.toFront();
       });
+
+      
       // 鼠标移出节点
       graph.on('node:mouseleave', (evt) => {
         const { item } = evt;
@@ -2290,14 +2208,16 @@ export default {
         });
         model.oriLabel = currentLabel;
         const relatedEdges = item.getEdges();
+        // 去除节点本身的 hover
+        graph.setItemState(item, 'hover', false);
 
         // 节点相关的边逐条处理
         relatedEdges.forEach((edge) => {
           let sourceNode = edge.getSource()
           let targetNode = edge.getTarget()
           
-          if (!keepHoverEdges.includes(edge._cfg.id)){
-            graph.setItemState(edge, 'hover', false);
+          if (!keepRelatedEdges.includes(edge._cfg.id)){
+            graph.setItemState(edge, 'related', false);
             // 恢复默认边标签样式
             const model = edge.getModel();
             if(model.state != 'click'){
@@ -2308,7 +2228,7 @@ export default {
                   autoRotate: true,
                   refY:7,
                   style: {
-                    fill:global.edge.labelCfg.style.fill,
+                    fill: defaultEdgeColor,
                     fontSize: 12,
                     fontWeight:400,
                     opacity: LabelVisible,
@@ -2317,16 +2237,19 @@ export default {
               });
             }
           }
-          if (!keepHoverNodes.includes(sourceNode._cfg.id)){
-            graph.setItemState(sourceNode, 'hover', false)
+          if (!keepRelatedNodes.includes(sourceNode._cfg.id)){
+            graph.setItemState(sourceNode, 'related', false)
           }
-          if (!keepHoverNodes.includes(targetNode._cfg.id)){
-            graph.setItemState(targetNode, 'hover', false)
+          if (!keepRelatedNodes.includes(targetNode._cfg.id)){
+            graph.setItemState(targetNode, 'related', false)
           }
         });
       });
+
+
       // 鼠标移入边
       graph.on('edge:mouseenter', (evt) => {
+        // 边置为hover
         graph.setItemState(evt.item, 'hover', true);
         const { item } = evt;
         const model = item.getModel();
@@ -2337,7 +2260,7 @@ export default {
               autoRotate: true,
               refY:7,
               style: {
-                fill:'#363b40',
+                fill: hoverEdgeColor,
                 fontSize: 16,
                 fontWeight:600,
                 opacity: 1,
@@ -2356,8 +2279,29 @@ export default {
       // 鼠标移出边
       graph.on('edge:mouseleave', (evt) => {
         const { item } = evt;
-        if (!keepHoverEdges.includes(item._cfg.id)){
-          graph.setItemState(item, 'hover', false);
+        graph.setItemState(item, 'hover', false);
+        if (keepRelatedEdges.includes(item._cfg.id)){
+          graph.setItemState(item, 'related', true);   
+          // 保持related样式
+          const model = item.getModel();
+          if(model.state != 'click'){
+            item.update({
+              //label: model.oriLabel,
+              state:'',
+              labelCfg : {
+                autoRotate: true,
+                refY:7,
+                style: {
+                  fill: relatedEdgeColor,
+                  fontSize: 16,
+                  fontWeight:600,
+                  opacity: LabelVisible,
+                },
+              },
+            });
+          }
+        } else {
+          graph.setItemState(item, 'related', false);   
           // 恢复默认边标签样式
           const model = item.getModel();
           if(model.state != 'click'){
@@ -2368,7 +2312,7 @@ export default {
                 autoRotate: true,
                 refY:7,
                 style: {
-                  fill:global.edge.labelCfg.style.fill,
+                  fill: defaultEdgeColor,
                   fontSize: 12,
                   fontWeight:400,
                   opacity: LabelVisible,
@@ -2377,11 +2321,11 @@ export default {
             });
           }
         }
-        if (!keepHoverNodes.includes(item.getSource()._cfg.id)){
-          graph.setItemState(item.getSource(), 'hover', false)
+        if (!keepRelatedNodes.includes(item.getSource()._cfg.id)){
+          graph.setItemState(item.getSource(), 'related', false)
         }
-        if (!keepHoverNodes.includes(item.getTarget()._cfg.id)){
-          graph.setItemState(item.getTarget(), 'hover', false)
+        if (!keepRelatedNodes.includes(item.getTarget()._cfg.id)){
+          graph.setItemState(item.getTarget(), 'related', false)
         }
         
       });
@@ -2395,57 +2339,71 @@ export default {
         //this.findRealData(model)
         if(model.new == true)model.new = false;
 
-        // shift 和 超过两点 判断
-        if (!shiftKeydown || selectedNum>=2){
+        // selectedNum 为 0 时，无论是否按下 shift，都会选中一个点，selectedNum++
+        if (selectedNum == 0){
           // 此时只有一个点会处于选中状态，首先将所有选中状态清除
-          this.clearFocusAndHover(graph);
+          this.clearAllState(graph);
           selectedNum = 1;
           selectedNode1 = model;
-        }
-        else {
-          // 此时应该有两个点被选中，先将边选中清除
-          // this.clearFocusEdgeState(graph);
-          // this.clearHoverItemState(graph);
-          this.clearEdgeState(graph,'focus');
-          this.clearItemState(graph,'hover');
-          selectedNode2 = model;
-          selectedNum = 2;
+        } else if (selectedNum == 1){
+          // selectedNum 为 1 时，按下 shift 可以双选
+          if (shiftKeydown){
+            // 此时应该有两个点被选中，先将边选中清除
+            this.clearEdgeState(graph,'focus');
+            this.clearItemState(graph,'hover');
+            selectedNode2 = model;
+            selectedNum = 2;
+          }
+          // 不按 shift 为单选
+          else {
+            // 此时只有一个点会处于选中状态，首先将所有选中状态清除
+            this.clearAllState(graph);
+            selectedNum = 1;
+            selectedNode1 = model;
+          }
+        } else {
+          // 超过两个点，此时重置为只有一个点会处于选中状态
+          // 首先将所有选中状态清除
+          this.clearAllState(graph);
+          selectedNum = 1;
+          selectedNode1 = model;
         }
 
         // highlight the clicked node, it is down by click-select
         graph.setItemState(item, 'focus', true);
 
-        // 单独一个点被选中时
-        if (selectedNum == 1) {
-          // 将相关边及相关点也悬浮
-          const relatedEdges = item.getEdges();
-          keepHoverEdges = []
-          keepHoverNodes = []
-          relatedEdges.forEach((edge) => {
-            graph.setItemState(edge, 'focus', true);
-            const model = edge.getModel();
-            if(model.state != 'click'){
-              edge.update({
-                //label: model.oriLabel,
-                labelCfg :{
-                  autoRotate: true,
-                  refY:7,
-                  style: {
-                    fill:'#5F95FF',
-                    fontSize: 16,
-                    fontWeight:600,
-                    opacity: 1,
-                  },
-                }
-              });
-            }
-            keepHoverEdges.push(edge._cfg.id)
+        
+        // 将相关边及相关点也 related
+        const relatedEdges = item.getEdges();
+        relatedEdges.forEach((edge) => {
+          graph.setItemState(edge, 'related', true);
+          const model = edge.getModel();
+          if(model.state != 'click'){
+            edge.update({
+              //label: model.oriLabel,
+              labelCfg :{
+                autoRotate: true,
+                refY:7,
+                style: {
+                  fill: relatedEdgeColor,
+                  fontSize: 16,
+                  fontWeight:600,
+                  opacity: 1,
+                },
+              }
+            });
+          }
+          keepRelatedEdges.push(edge._cfg.id)
+          if (item._cfg.id != edge.getSource()._cfg.id){
             graph.setItemState(edge.getSource(), 'related', true);
+            keepRelatedNodes.push(edge.getSource()._cfg.id)
+          }
+          if (item._cfg.id != edge.getTarget()._cfg.id){
             graph.setItemState(edge.getTarget(), 'related', true);
-            keepHoverNodes.push(edge.getSource()._cfg.id)
-            keepHoverNodes.push(edge.getTarget()._cfg.id)
-          });
-        }else if(selectedNum == 2){
+            keepRelatedNodes.push(edge.getTarget()._cfg.id)
+          }
+        });
+        if (selectedNum == 2) {
           this.isDisable = false;
           this.unionUrl = 'default';
           this.interUrl = 'default';
@@ -2456,15 +2414,15 @@ export default {
       // 点击边
       graph.on('edge:click', (evt) => {
         this.stopLayout();
-        // 清空聚焦和悬浮信息
-        this.clearFocusAndHover(graph)
+        // 清空所有节点和边的状态信息
+        this.clearAllState(graph)
         const { item } = evt;
         selectedEdge = item
         graph.setItemState(item, 'focus', true);
         graph.setItemState(item.getSource(), 'related', true);
-        graph.setItemState(item.getTarget(), 'hover', true);
-        keepHoverNodes.push(item.getSource()._cfg.id)
-        keepHoverNodes.push(item.getTarget()._cfg.id)
+        graph.setItemState(item.getTarget(), 'related', true);
+        keepRelatedNodes.push(item.getSource()._cfg.id)
+        keepRelatedNodes.push(item.getTarget()._cfg.id)
         item.update({
           //label: model.oriLabel,
           state:'click',
@@ -2472,7 +2430,7 @@ export default {
             autoRotate: true,
             refY:7,
             style: {
-              fill: '#5F95FF',
+              fill: focusEdgeColor,
               fontSize: 16,
               opacity: 1,
               fontWeight: 600
@@ -2486,7 +2444,7 @@ export default {
     
       // 点击空白画布
       graph.on('canvas:click', (evt) => {
-        this.clearFocusAndHover(graph)
+        this.clearAllState(graph)
       });
     },
     G6registor(){
@@ -2715,6 +2673,29 @@ export default {
               const labelShape = group.find((e) => e.get('name') === 'text-shape');
               if (labelShape) labelShape.set('visible', true);
             } 
+            else if (name === 'related') {
+              if (item.hasState('focus') || item.hasState('hover')) {
+                return;
+              }
+              const text = group.find((e) => e.get('name') === 'count-shape');
+              const htext = group.find((e) => e.get('name') === 'related-text');
+              const stroke = group.find((e) => e.get('name') === 'related-shape');
+              const keyShape = item.getKeyShape();
+              const colorSet = item.getModel().colorSet || colorSets[0];
+              if (value) {
+                stroke && stroke.show();
+                text && text.hide();
+                htext && htext.show();
+                keyShape.hide();
+                keyShape.attr('fill', colorSet.selectedFill);
+              } else {
+                stroke && stroke.hide();
+                text && text.show();
+                htext && htext.hide();
+                keyShape.show();
+                keyShape.attr('fill', colorSet.mainFill);
+              }
+            }
             else if (name === 'hover') {
               if (item.hasState('focus')) {
                 return;
@@ -2761,7 +2742,8 @@ export default {
         },
         'single-node',
       );
-
+      
+      
       G6.registerEdge(
         'custom-quadratic',
         {
@@ -2784,11 +2766,11 @@ export default {
                 keyShape.attr({
                   strokeOpacity: animateOpacity,
                   opacity: animateOpacity,
-                  stroke: '#5F95FF',
+                  stroke: focusEdgeColor,
                   endArrow: {
                     ...arrow,
-                    stroke: '#5F95FF',
-                    fill: '#5F95FF',
+                    stroke: focusEdgeColor,
+                    fill: focusEdgeColor,
                   },
                 });
                 if (model.isReal) {
@@ -2845,7 +2827,7 @@ export default {
                 }
               } else {
                 keyShape.stopAnimate();
-                const stroke = '#acaeaf';
+                const stroke = defaultEdgeColor;
                 const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
                 keyShape.attr({
                   stroke,
@@ -2878,12 +2860,12 @@ export default {
                 keyShape.attr({
                   strokeOpacity: animateOpacity,
                   opacity: animateOpacity,
-                  stroke: '#000',
+                  stroke: hoverEdgeColor,
                   //lineWidth:3,
                   endArrow: {
                     ...arrow,
-                    stroke: '#000',
-                    fill: '#000',
+                    stroke: hoverEdgeColor,
+                    fill: hoverEdgeColor,
                   },
                 });
                 if (model.isReal) {
@@ -2940,7 +2922,102 @@ export default {
                 }
               } else {
                 keyShape.stopAnimate();
-                const stroke = '#acaeaf';
+                const stroke = defaultEdgeColor;
+                const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
+                keyShape.attr({
+                  stroke,
+                  strokeOpacity: opacity,
+                  opacity:realEdgeOpacity,
+                  endArrow: {
+                    ...arrow,
+                    stroke,
+                    fill: stroke,
+                  },
+                });
+              }
+            }
+            else if (name === 'related') {
+              if (item.hasState('focus') || item.hasState('hover')) {
+                return;
+              }
+              const back = group.find((ele) => ele.get('name') === 'back-line');
+              if (back) {
+                back.stopAnimate();
+                back.remove();
+                back.destroy();
+              }
+              const keyShape = group.find((ele) => ele.get('name') === 'edge-shape');
+              const arrow = model.style.endArrow;
+              if (value) {
+                if (keyShape.cfg.animation) {
+                  keyShape.stopAnimate(true);
+                }
+                keyShape.attr({
+                  strokeOpacity: animateOpacity,
+                  opacity: animateOpacity,
+                  stroke: relatedEdgeColor,
+                  //lineWidth:3,
+                  endArrow: {
+                    ...arrow,
+                    stroke: relatedEdgeColor,
+                    fill: relatedEdgeColor,
+                  },
+                });
+                if (model.isReal) {
+                  const { lineWidth, path, endArrow, stroke } = keyShape.attr();
+                  const back = group.addShape('path', {
+                    attrs: {
+                      lineWidth,
+                      path,
+                      stroke,
+                      endArrow,
+                      opacity: animateBackOpacity,
+                    },
+                    name: 'back-line',
+                  });
+                  back.toBack();
+                  const length = keyShape.getTotalLength();
+                  keyShape.animate(
+                    (ratio) => {
+                      // the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
+                      const startLen = ratio * length;
+                      // Calculate the lineDash
+                      const cfg = {
+                        lineDash: [startLen, length - startLen],
+                      };
+                      return cfg;
+                    },
+                    {
+                      repeat: true, // Whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                } else {
+                  let index = 0;
+                  const lineDash = keyShape.attr('lineDash');
+                  const totalLength = lineDash[0] + lineDash[1];
+                  keyShape.animate(
+                    () => {
+                      index++;
+                      if (index > totalLength) {
+                        index = 0;
+                      }
+                      const res = {
+                        lineDash,
+                        lineDashOffset: -index,
+                      };
+                      // returns the modified configurations here, lineDash and lineDashOffset here
+                      return res;
+                    },
+                    {
+                      repeat: true, // whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                }
+              } else {
+                keyShape.stopAnimate();
+                const stroke = defaultEdgeColor;
                 const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
                 keyShape.attr({
                   stroke,
@@ -2982,11 +3059,11 @@ export default {
                 keyShape.attr({
                   strokeOpacity: animateOpacity,
                   opacity: animateOpacity,
-                  stroke: '#5F95FF',
+                  stroke: focusEdgeColor,
                   endArrow: {
                     ...arrow,
-                    stroke: '#5F95FF',
-                    fill: '#5F95FF',
+                    stroke: focusEdgeColor,
+                    fill: focusEdgeColor,
                   },
                 });
                 if (model.isReal) {
@@ -3042,7 +3119,7 @@ export default {
                 }
               } else {
                 keyShape.stopAnimate();
-                const stroke = '#acaeaf';
+                const stroke = defaultEdgeColor;
                 const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
                 keyShape.attr({
                   stroke,
@@ -3075,11 +3152,11 @@ export default {
                 keyShape.attr({
                   strokeOpacity: animateOpacity,
                   opacity: animateOpacity,
-                  stroke: '#000',
+                  stroke: hoverEdgeColor,
                   endArrow: {
                     ...arrow,
-                    stroke: '#000',
-                    fill: '#000',
+                    stroke: hoverEdgeColor,
+                    fill: hoverEdgeColor,
                   },
                 });
                 if (model.isReal) {
@@ -3135,7 +3212,7 @@ export default {
                 }
               } else {
                 keyShape.stopAnimate();
-                const stroke = '#acaeaf';
+                const stroke = defaultEdgeColor;
                 const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
                 keyShape.attr({
                   stroke,
@@ -3149,9 +3226,362 @@ export default {
                 });
               }
             }
+            else if (name === 'related') {
+              if (item.hasState('focus') || item.hasState('hover')) {
+                return;
+              }
+              const back = group.find((ele) => ele.get('name') === 'back-line');
+              if (back) {
+                back.stopAnimate();
+                back.remove();
+                back.destroy();
+              }
+              const keyShape = group.find((ele) => ele.get('name') === 'edge-shape');
+              const arrow = model.style.endArrow;
+              if (value) {
+                if (keyShape.cfg.animation) {
+                  keyShape.stopAnimate(true);
+                }
+                keyShape.attr({
+                  strokeOpacity: animateOpacity,
+                  opacity: animateOpacity,
+                  stroke: relatedEdgeColor,
+                  //lineWidth:3,
+                  endArrow: {
+                    ...arrow,
+                    stroke: relatedEdgeColor,
+                    fill: relatedEdgeColor,
+                  },
+                });
+                if (model.isReal) {
+                  const { lineWidth, path, endArrow, stroke } = keyShape.attr();
+                  const back = group.addShape('path', {
+                    attrs: {
+                      lineWidth,
+                      path,
+                      stroke,
+                      endArrow,
+                      opacity: animateBackOpacity,
+                    },
+                    name: 'back-line',
+                  });
+                  back.toBack();
+                  const length = keyShape.getTotalLength();
+                  keyShape.animate(
+                    (ratio) => {
+                      // the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
+                      const startLen = ratio * length;
+                      // Calculate the lineDash
+                      const cfg = {
+                        lineDash: [startLen, length - startLen],
+                      };
+                      return cfg;
+                    },
+                    {
+                      repeat: true, // Whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                } else {
+                  let index = 0;
+                  const lineDash = keyShape.attr('lineDash');
+                  const totalLength = lineDash[0] + lineDash[1];
+                  keyShape.animate(
+                    () => {
+                      index++;
+                      if (index > totalLength) {
+                        index = 0;
+                      }
+                      const res = {
+                        lineDash,
+                        lineDashOffset: -index,
+                      };
+                      // returns the modified configurations here, lineDash and lineDashOffset here
+                      return res;
+                    },
+                    {
+                      repeat: true, // whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                }
+              } else {
+                keyShape.stopAnimate();
+                const stroke = defaultEdgeColor;
+                const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
+                keyShape.attr({
+                  stroke,
+                  strokeOpacity: opacity,
+                  opacity:realEdgeOpacity,
+                  endArrow: {
+                    ...arrow,
+                    stroke,
+                    fill: stroke,
+                  },
+                });
+              }
+            }
           },
         },
-        'single-edge',
+        'line',
+      );
+
+      G6.registerEdge(
+        'custom-loop',
+        {
+          setState: (name, value, item) => {
+            const group = item.get('group');
+            const model = item.getModel();
+            if (name === 'focus') {
+              const keyShape = group.find((ele) => ele.get('name') === 'edge-shape');
+              const back = group.find((ele) => ele.get('name') === 'back-line');
+              if (back) {
+                back.stopAnimate();
+                back.remove();
+                back.destroy();
+              }
+              const arrow = model.style.endArrow;
+              if (value) {
+                if (keyShape.cfg.animation) {
+                  keyShape.stopAnimate(true);
+                }
+                keyShape.attr({
+                  strokeOpacity: animateOpacity,
+                  opacity: animateOpacity,
+                  stroke: focusEdgeColor,
+                });
+                if (model.isReal) {
+                  const { path, stroke, lineWidth } = keyShape.attr();
+                  const back = group.addShape('path', {
+                    attrs: {
+                      path,
+                      stroke,
+                      lineWidth,
+                      opacity: animateBackOpacity,
+                    },
+                    name: 'back-line',
+                  });
+                  back.toBack();
+                  const length = keyShape.getTotalLength();
+                  keyShape.animate(
+                    (ratio) => {
+                      // the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
+                      const startLen = ratio * length;
+                      // Calculate the lineDash
+                      const cfg = {
+                        lineDash: [startLen, length - startLen],
+                      };
+                      return cfg;
+                    },
+                    {
+                      repeat: true, // Whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                } else {
+                  const lineDash = keyShape.attr('lineDash');
+                  const totalLength = lineDash[0] + lineDash[1];
+                  let index = 0;
+                  keyShape.animate(
+                    () => {
+                      index++;
+                      if (index > totalLength) {
+                        index = 0;
+                      }
+                      const res = {
+                        lineDash,
+                        lineDashOffset: -index,
+                      };
+                      // returns the modified configurations here, lineDash and lineDashOffset here
+                      return res;
+                    },
+                    {
+                      repeat: true, // whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                }
+              } else {
+                keyShape.stopAnimate();
+                const stroke = defaultEdgeColor;
+                const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
+                keyShape.attr({
+                  stroke,
+                  strokeOpacity: opacity,
+                  opacity: opacity,
+                });
+              }
+            }
+            else if (name === 'hover') {
+              if (item.hasState('focus')) {
+                return;
+              }
+              const keyShape = group.find((ele) => ele.get('name') === 'edge-shape');
+              const back = group.find((ele) => ele.get('name') === 'back-line');
+              if (back) {
+                back.stopAnimate();
+                back.remove();
+                back.destroy();
+              }
+              const arrow = model.style.endArrow;
+              if (value) {
+                if (keyShape.cfg.animation) {
+                  keyShape.stopAnimate(true);
+                }
+                keyShape.attr({
+                  strokeOpacity: animateOpacity,
+                  opacity: animateOpacity,
+                  stroke: hoverEdgeColor,
+                });
+                if (model.isReal) {
+                  const { path, stroke, lineWidth } = keyShape.attr();
+                  const back = group.addShape('path', {
+                    attrs: {
+                      path,
+                      stroke,
+                      lineWidth,
+                      opacity: animateBackOpacity,
+                    },
+                    name: 'back-line',
+                  });
+                  back.toBack();
+                  const length = keyShape.getTotalLength();
+                  keyShape.animate(
+                    (ratio) => {
+                      // the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
+                      const startLen = ratio * length;
+                      // Calculate the lineDash
+                      const cfg = {
+                        lineDash: [startLen, length - startLen],
+                      };
+                      return cfg;
+                    },
+                    {
+                      repeat: true, // Whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                } else {
+                  const lineDash = keyShape.attr('lineDash');
+                  const totalLength = lineDash[0] + lineDash[1];
+                  let index = 0;
+                  keyShape.animate(
+                    () => {
+                      index++;
+                      if (index > totalLength) {
+                        index = 0;
+                      }
+                      const res = {
+                        lineDash,
+                        lineDashOffset: -index,
+                      };
+                      // returns the modified configurations here, lineDash and lineDashOffset here
+                      return res;
+                    },
+                    {
+                      repeat: true, // whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                }
+              } else {
+                keyShape.stopAnimate();
+                const stroke = defaultEdgeColor;
+                const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
+                keyShape.attr({
+                  stroke,
+                  strokeOpacity: opacity,
+                  opacity: opacity,
+                });
+              }
+            }
+            else if (name === 'related') {
+              if (item.hasState('focus') || item.hasState('hover')) {
+                return;
+              }
+              const back = group.find((ele) => ele.get('name') === 'back-line');
+              if (back) {
+                back.stopAnimate();
+                back.remove();
+                back.destroy();
+              }
+              const keyShape = group.find((ele) => ele.get('name') === 'edge-shape');
+              const arrow = model.style.endArrow;
+              if (value) {
+                if (keyShape.cfg.animation) {
+                  keyShape.stopAnimate(true);
+                }
+                keyShape.attr({
+                  strokeOpacity: animateOpacity,
+                  opacity: animateOpacity,
+                  stroke: relatedEdgeColor,
+                  //lineWidth:3,
+                });
+                if (model.isReal) {
+                  const { lineWidth, path, stroke } = keyShape.attr();
+                  const back = group.addShape('path', {
+                    attrs: {
+                      lineWidth,
+                      path,
+                      stroke,
+                      opacity: animateBackOpacity,
+                    },
+                    name: 'back-line',
+                  });
+                  back.toBack();
+                  const length = keyShape.getTotalLength();
+                  keyShape.animate(
+                    (ratio) => {
+                      // the operations in each frame. Ratio ranges from 0 to 1 indicating the prograss of the animation. Returns the modified configurations
+                      const startLen = ratio * length;
+                      // Calculate the lineDash
+                      const cfg = {
+                        lineDash: [startLen, length - startLen],
+                      };
+                      return cfg;
+                    },
+                    {
+                      repeat: true, // Whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                } else {
+                  let index = 0;
+                  const lineDash = keyShape.attr('lineDash');
+                  const totalLength = lineDash[0] + lineDash[1];
+                  keyShape.animate(
+                    () => {
+                      index++;
+                      if (index > totalLength) {
+                        index = 0;
+                      }
+                      const res = {
+                        lineDash,
+                        lineDashOffset: -index,
+                      };
+                      // returns the modified configurations here, lineDash and lineDashOffset here
+                      return res;
+                    },
+                    {
+                      repeat: true, // whether executes the animation repeatly
+                      duration, // the duration for executing once
+                    },
+                  );
+                }
+              } else {
+                keyShape.stopAnimate();
+                const stroke = defaultEdgeColor;
+                const opacity = model.isReal ? realEdgeOpacity : virtualEdgeOpacity;
+                keyShape.attr({
+                  stroke,
+                  strokeOpacity: opacity,
+                  opacity:realEdgeOpacity,
+                });
+              }
+            }
+          },
+        },
+        'loop',
       );
 
     },
