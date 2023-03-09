@@ -468,3 +468,7 @@
   padding: 0px;
 }
 
+.ant-select-dropdown{
+  max-width:300px;
+}
+

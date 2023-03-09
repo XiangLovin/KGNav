@@ -738,24 +738,44 @@ export default {
     candidateCondValue(index,flag) {
       if(flag == 'in'){
         var valueIn = [];
+        let asFirstStr = '^'+this.IndegreeItems[index].value+'.*';
         let str = '.*'+this.IndegreeItems[index].value+'.*';
-        this.oridata.nodes.forEach((node)=>{
-          let reg = new RegExp(str,'ig');
-          if(reg.test(node.value)){
+        let reg0 = new RegExp(asFirstStr,'ig');
+        let reg = new RegExp(str,'ig');
+        this.oridata.nodes.forEach(node=>{
+          if(reg0.test(node.value)){
             valueIn.push(node.value);
           }
         })
-        this.valueInList[index] = valueIn;
+        valueIn.sort();
+        var valueInRest = [];
+        this.oridata.nodes.forEach((node)=>{
+          if(reg.test(node.value)){
+            valueInRest.push(node.value);
+          }
+        })
+        valueInRest = valueInRest.filter(item => valueIn.indexOf(item) == -1).sort();
+        this.valueInList[index] = valueIn.concat(valueInRest.sort())
       }else if(flag == 'out'){
         var valueOut = [];
+        let asFirstStr = '^'+this.OutdegreeItems[index].value+'.*';
         let str = '.*'+this.OutdegreeItems[index].value+'.*';
-        this.oridata.nodes.forEach((node)=>{
-          let reg = new RegExp(str,'ig');
-          if(reg.test(node.value)){
+        let reg0 = new RegExp(asFirstStr,'ig');
+        let reg = new RegExp(str,'ig');
+        this.oridata.nodes.forEach(node=>{
+          if(reg0.test(node.value)){
             valueOut.push(node.value);
           }
         })
-        this.valueOutList[index] = valueOut;
+        valueOut.sort();
+        var valueOutRest = [];
+        this.oridata.nodes.forEach((node)=>{
+          if(reg.test(node.value)){
+            valueOutRest.push(node.value);
+          }
+        })
+        valueOutRest = valueOutRest.filter(item => valueOut.indexOf(item) == -1).sort();
+        this.valueOutList[index] = valueOut.concat(valueOutRest.sort())
       }
       
     },

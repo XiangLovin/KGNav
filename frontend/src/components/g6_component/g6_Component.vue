@@ -10,7 +10,7 @@
           :selectedKeys="seletedTool"
           :style="{ lineHeight: '64px' }"
         >
-          <a-sub-menu class="meumFont">
+          <!-- <a-sub-menu class="meumFont">
             <span slot="title" class="submenu-title-wrapper">
             <a-icon type="setting" />Operation</span>
             <a-menu-item key="1">
@@ -19,7 +19,7 @@
             <a-menu-item key="2">
               <div @click="redo"><a-icon  type="redo" />Redo</div>
             </a-menu-item>
-          </a-sub-menu>
+          </a-sub-menu> -->
           <a-sub-menu class="meumFont">
             <span slot="title" class="submenu-title-wrapper">
               <a-icon type="gateway" />View</span>
@@ -118,6 +118,7 @@
                               v-model="IndegreeItems[index].value"
                               v-decorator="[`valueInList[${index}]`,{}]"
                               style="width: 100%;"
+                              :dropdown-match-select-width="false"
                               :default-active-first-option="false"
                               :not-found-content="null"
                               @search="(val)=>timeflashCond(val,index,'in')"
@@ -191,6 +192,7 @@
                               v-model="OutdegreeItems[index].value"
                               v-decorator="[`valueInList[${index}]`,{}]"
                               style="width: 100%;"
+                              :dropdown-match-select-width="false"
                               :default-active-first-option="false"
                               :not-found-content="null"
                               @search="(val)=>timeflashCond(val,index,'out')"
@@ -198,7 +200,7 @@
                               @blur="(val)=>timeflashCond(val,index,'out')"
                               >
                                 <a-select-option v-for="(outItem, outIndex) in valueOutList[index]" 
-                                :key="outIndex" :value="outItem">
+                                :key="outIndex" :value="outItem" >
                                   <a-tooltip placement="topLeft">
                                     <template slot="title">
                                       <span>{{ outItem }}</span>
@@ -609,68 +611,69 @@
                     </a-list-item>
                   </a-list>
                 </div>
-              </div>
-              <div id="tripleINfo" style="margin:20px -7px 0px -7px;" table-layout="fixed">
-                <a-table :data-source="tripleData" :columns="columns" 
-                bordered size="small"
-                :pagination="{ pageSize: 5 }"
-                :customRow="tripleSelection"
-                >
-                  <div
-                    slot="filterDropdown"
-                    slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
-                    style="padding: 8px"
+                <div id="tripleINfo" style="margin:20px -7px 0px -7px;" >
+                  <a-table :data-source="tripleData" :columns="columns" 
+                  bordered size="small"
+                  :pagination="{ pageSize: 5 }"
+                  :customRow="tripleSelection"
                   >
-                    <a-input
-                      v-ant-ref="c => (searchTripleInput = c)"
-                      :placeholder="`Search ${column.dataIndex}`"
-                      :value="selectedKeys[0]"
-                      style="width: 188px; margin-bottom: 8px; display: block;"
-                      @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
-                      @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-                    />
-                    <a-button
-                      type="primary"
-                      icon="search"
-                      size="small"
-                      style="width: 90px; margin-right: 8px"
-                      @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+                    <div
+                      slot="filterDropdown"
+                      slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+                      style="padding: 8px"
                     >
-                      Search
-                    </a-button>
-                    <a-button size="small" style="width: 90px" @click="() => handleReset(clearFilters)">
-                      Reset
-                    </a-button>
-                  </div>
-                  <a-icon
-                    slot="filterIcon"
-                    slot-scope="filtered"
-                    type="search"
-                    :style="{ color: filtered ? '#108ee9' : undefined }"
-                  />
-                  <template slot="customRender" slot-scope="text, record, index, column">
-                    <span v-if="searchTripleText && tripleColumn === column.dataIndex">
-                      <template
-                        v-for="(fragment, i) in text
-                          .toString()
-                          .split(new RegExp(`(?<=${searchTripleText})|(?=${searchTripleText})`, 'i'))"
+                      <a-input
+                        v-ant-ref="c => (searchTripleInput = c)"
+                        :placeholder="`Search ${column.dataIndex}`"
+                        :value="selectedKeys[0]"
+                        style="width: 188px; margin-bottom: 8px; display: block;"
+                        @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
+                        @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+                      />
+                      <a-button
+                        type="primary"
+                        icon="search"
+                        size="small"
+                        style="width: 90px; margin-right: 8px"
+                        @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
                       >
-                        <mark
-                          v-if="fragment.toLowerCase() === searchTripleText.toLowerCase()"
-                          :key="i"
-                          class="highlight"
-                          >{{ fragment }}</mark
+                        Search
+                      </a-button>
+                      <a-button size="small" style="width: 90px" @click="() => handleReset(clearFilters)">
+                        Reset
+                      </a-button>
+                    </div>
+                    <a-icon
+                      slot="filterIcon"
+                      slot-scope="filtered"
+                      type="search"
+                      :style="{ color: filtered ? '#108ee9' : undefined }"
+                    />
+                    <template slot="customRender" slot-scope="text, record, index, column">
+                      <span v-if="searchTripleText && tripleColumn === column.dataIndex">
+                        <template
+                          v-for="(fragment, i) in text
+                            .toString()
+                            .split(new RegExp(`(?<=${searchTripleText})|(?=${searchTripleText})`, 'i'))"
                         >
-                        <template v-else>{{ fragment }}</template>
+                          <mark
+                            v-if="fragment.toLowerCase() === searchTripleText.toLowerCase()"
+                            :key="i"
+                            class="highlight"
+                            >{{ fragment }}</mark
+                          >
+                          <template v-else>{{ fragment }}</template>
+                        </template>
+                      </span>
+                      <template v-else>
+                        {{ text }}
                       </template>
-                    </span>
-                    <template v-else>
-                      {{ text }}
                     </template>
-                  </template>
-                </a-table>
+                  </a-table>
 
+                </div>
               </div>
+              
             </div>
 
           </div>
