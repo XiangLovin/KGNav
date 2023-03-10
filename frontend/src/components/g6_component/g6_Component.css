@@ -124,16 +124,34 @@
 #toolmeum .ant-menu-item .anticon,#toolmeum .ant-menu-submenu-title .anticon{
   font-size: 17px;
 }
+.listTitle{
+  padding: 0;
+  margin:10px 10px 0 10px;
+  border-radius: 20px;
+}
+.ant-menu-vertical .ant-menu-item:not(:last-child), .ant-menu-vertical-left .ant-menu-item:not(:last-child), .ant-menu-vertical-right .ant-menu-item:not(:last-child), .ant-menu-inline .ant-menu-item:not(:last-child)
+{
+  margin-bottom: 0px;
+}
+.ant-menu-vertical > .ant-menu-item, .ant-menu-vertical-left > .ant-menu-item, .ant-menu-vertical-right > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title
+{
+  height:48px;
+  line-height:48px;
+}
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title
+{
+  margin:0;
+
+}
 #searchNode {
   width: 100%;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
 }
 
 #filterSelector {
   width: 100%;
   padding: 15px 15px 0 15px;
 }
-
 #searchList-1,
 #searchList-2 {
   width: 100%;

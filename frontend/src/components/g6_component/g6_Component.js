@@ -79,7 +79,7 @@ const global = {
     },
   },
 };
-let opColotSets = {};
+let opColorSets = {};
 //全部入边出边
 let allInOption = [];
 let allOutOption = [];
@@ -440,7 +440,7 @@ export default {
     },
     //非叶子节点处理
     ComboClick(e) {
-      // console.log(e)
+      console.log(e)
       let curMixedGraphData;
       if(this.openKeys.indexOf(e.id)==-1){
         let curmodel;
@@ -786,25 +786,20 @@ export default {
         this.OutdegreeItems[index].value = value;
       
       this.candidateCondValue(index,flag)
-      
     },
 
-    getNodeColor(id){
-      // console.log(aggregatedNodeMap);
-      let color = "";
-      // aggregatedData.nodes.forEach(node=>{
-      //   if (node.id == id){
-      //     color = node.colorSet.mainStroke
-      //   }
-      // })
-
-      for (let node in aggregatedNodeMap){
-        if (aggregatedNodeMap[node].id == id){
-          color = aggregatedNodeMap[node].colorSet.mainStroke
-          break;
-        }
-      }
-      return color
+    getNodeColor(item){
+      return item.hasOwnProperty("colorSet")?item.colorSet.mainStroke:'';
+    },
+    getTextColor(item){
+      return {
+        'color':item.hasOwnProperty("colorSet")?item.colorSet.mainStroke:'',
+        'font-size':'16px',
+        'font-weight':'550'
+      };
+    },
+    getBackColor(item){
+      return {'background-color':item.hasOwnProperty("colorSet")?item.colorSet.mainFill:''};
     },
 
 
@@ -905,6 +900,7 @@ export default {
       queryNode.forEach((node)=>{
         const newnode = {
           ...node,
+          colorSet: opColorSets[0],
           clusterId:'Q'+this.conditionSearchNum,
         };
         hyperNodes.push(newnode)
@@ -920,7 +916,7 @@ export default {
         type: 'aggregated-node',
         nodes:hyperNodes,
         count: hyperNodes.length,
-        colorSet: opColotSets[0],
+        colorSet: opColorSets[0],
         isResult:true,
         isTop:true,
       };
@@ -1380,6 +1376,7 @@ export default {
         if(!tempNodeMap[node.id]){
           const newnode = {
             ...node,
+            colorSet: opColorSets[0],
             clusterId:reId,
           };
           unionNodes.push(newnode);
@@ -1390,6 +1387,7 @@ export default {
         if(!tempNodeMap[node.id]){
           const newnode = {
             ...node,
+            colorSet: opColorSets[0],
             clusterId:reId,
           };
           unionNodes.push(newnode);
@@ -1406,7 +1404,7 @@ export default {
         type: 'aggregated-node',
         nodes:unionNodes,
         count: unionNodes.length,
-        colorSet: opColotSets[0],
+        colorSet: opColorSets[0],
         isResult:true,
         isTop:true,
       };
@@ -1422,6 +1420,7 @@ export default {
           if(n.id == node.id){
             const newnode = {
               ...node,
+              colorSet: opColorSets[0],
               clusterId:reId,
               //id:'s-'+node.id,
             };
@@ -1440,7 +1439,7 @@ export default {
         type: 'aggregated-node',
         nodes:interNodes,
         count: interNodes.length,
-        colorSet: opColotSets[0],
+        colorSet: opColorSets[0],
         isResult:true,
         isTop:true,
       };
@@ -1457,6 +1456,7 @@ export default {
         if(!tempNodeMap[node.id]){
           const newnode = {
             ...node,
+            colorSet: opColorSets[0],
             clusterId:reId,
             //id:'s-'+node.id,
           };
@@ -1474,7 +1474,7 @@ export default {
         type: 'aggregated-node',
         nodes:diffNodes,
         count: diffNodes.length,
-        colorSet: opColotSets[0],
+        colorSet: opColorSets[0],
         isResult:true,
         isTop:true,
       };
@@ -3862,6 +3862,7 @@ export default {
     },
     //主要绘制函数
     drawGraph(data){
+      console.log(data)
       //const darkBackColor = 'rgb(43, 47, 51)';
       const darkBackColor = '#fff';
       const disableColor = '#777';
@@ -3886,7 +3887,7 @@ export default {
         theme,
         disableColor,
       );
-      opColotSets = G6.Util.getColorSetsBySubjectColors(
+      opColorSets = G6.Util.getColorSetsBySubjectColors(
         ['#00bc12'],
         darkBackColor,
         theme,
@@ -3911,12 +3912,13 @@ export default {
           node.colorSet = colorSets[i%10];
           nodeMap[node.id] = node;
         });
+        cluster.colorSet = colorSets[i%10]
         const cnode = {
           ...cluster,
           type: 'aggregated-node',
           count: cluster.nodes.length,
           isTop:true,
-          colorSet: colorSets[i%10],
+          //colorSet: colorSets[i%10],
           idx: i,
         };
         aggregatedNodeMap[cluster.id] = cnode;
@@ -3975,7 +3977,7 @@ export default {
       const nodeToolTip = new G6.Tooltip({
         className:'G6tooltip',
         offsetX: -100,
-        offsetY: 10,
+        offsetY: 5,
         fixToNode: [0.5,1],
         itemTypes: ['node'],
         getContent: (e)=>{
