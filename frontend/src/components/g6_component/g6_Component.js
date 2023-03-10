@@ -311,7 +311,7 @@ export default {
             graph.getEdges().forEach(edge=>{
               let target = edge.getTarget();
               let source = edge.getSource();
-              console.log(edge,target,source)
+              // console.log(edge,target,source)
               let isSource = subject.parents.indexOf(source.getModel().id)
               let isLabel = edge.getModel().value.indexOf(predicate.value)
               let isTarget = object.parents.indexOf(target.getModel().id)
@@ -436,11 +436,11 @@ export default {
           object: realNodeMap[edge.target],
         };
       }
-      console.log(this.tripleRealData)
+      // console.log(this.tripleRealData)
     },
     //非叶子节点处理
     ComboClick(e) {
-      console.log(e)
+      // console.log(e)
       let curMixedGraphData;
       if(this.openKeys.indexOf(e.id)==-1){
         let curmodel;
@@ -455,11 +455,11 @@ export default {
       }else{
         if(e.level>1){
           const node = aggregatedNodeMap[e.id];
-          console.log("collapse",node)
+          // console.log("collapse",node)
           //delete parent in openKey
           for (let i = 0; i < this.openKeys.length; i++)
             if (this.openKeys[i] === e.id){
-              console.log("sliceP",node.value)
+              // console.log("sliceP",node.value)
               this.openKeys.splice(i, 1);
               }
           //delete brothers in openKey    
@@ -536,7 +536,7 @@ export default {
     },
     searchByNodes(value){
       this.searchStr= value;
-      console.log(value)
+      // console.log(value)
       this.onSearch();
     },
     keyDownEvent(event) {
@@ -789,6 +789,24 @@ export default {
       
     },
 
+    getNodeColor(id){
+      // console.log(aggregatedNodeMap);
+      let color = "";
+      // aggregatedData.nodes.forEach(node=>{
+      //   if (node.id == id){
+      //     color = node.colorSet.mainStroke
+      //   }
+      // })
+
+      for (let node in aggregatedNodeMap){
+        if (aggregatedNodeMap[node].id == id){
+          color = aggregatedNodeMap[node].colorSet.mainStroke
+          break;
+        }
+      }
+      return color
+    },
+
 
     changeIntro(){
       this.conditionIntro = (this.conditionLevel == 'strong')?
@@ -995,7 +1013,7 @@ export default {
 
         if(level == 'strong' && validInCond.length == inflag && validOutCond.length == outflag){
           this.conditiondata.push(node);
-          console.log(node,"------",condInMap,condOutMap)
+          // console.log(node,"------",condInMap,condOutMap)
           //console.log("强加入",node.value,"满足的标签有",inlabels,outlabels)
         }
         else if(level == 'weak'
@@ -1015,7 +1033,7 @@ export default {
     },
 
     onClean(){
-      console.log("clean")
+      // console.log("clean")
       this.region='none';
       this.OutOption=allOutOption;
       this.InOption=allInOption;
@@ -1244,11 +1262,11 @@ export default {
     showMinimap(){
       let mapEle = document.getElementById('minimap');
       if(this.mapVisible == false){
-        console.log('in')
+        // console.log('in')
         this.seletedTool.push('minimap');
         mapEle.style.display = 'block'
       }else{
-        console.log('out')
+        // console.log('out')
         mapEle.style.display = 'none';
         for (let i = 0; i < this.seletedTool.length; i++) {
           if (this.seletedTool[i]=='minimap') {
@@ -1263,11 +1281,11 @@ export default {
     showFisheye(){
       let eyeEle = document.getElementById('fisheye');
       if(this.eyeVisible == false){
-        console.log('in')
+        // console.log('in')
         this.seletedTool.push('fisheye');
         eyeEle.style.display = 'block'
       }else{
-        console.log('out')
+        // console.log('out')
         eyeEle.style.display = 'none';
         for (let i = 0; i < this.seletedTool.length; i++) {
           if (this.seletedTool[i]=='fisheye') {
@@ -1958,8 +1976,11 @@ export default {
       expandArray.forEach((expandModel) => {
         expandMap[expandModel.id] = true;
       });
+      
+      // console.log(expandMap);
 
       aggregatedData.nodes.forEach((oricluster, i) => {
+        // console.log(oricluster);
         if(oricluster.level==0)return;
         if (expandMap[oricluster.id]) {
           oricluster.nodes.forEach((cluster) => {
@@ -1982,6 +2003,7 @@ export default {
             curNodeMap[cluster.id]=cnode;
             aggregatedNodeMap[cluster.id] = cnode;
             nodes.push(cnode);
+            // console.log(cnode.count);
           });
           aggregatedNodeMap[oricluster.id].expanded = true;
         } else {
@@ -2489,17 +2511,16 @@ export default {
       });
     },
     G6registor(){
+      let that = this;
       // Custom super node
       G6.registerNode(
         'aggregated-node',
         {
           draw(cfg, group) {
-            //console.log(cfg)
             let width = 140,
               height = 35;
             const style = cfg.style || {};
             const colorSet = cfg.colorSet || colorSets[0];
-
             // 相关时点样式
             group.addShape('rect', {
               attrs: {
@@ -2580,6 +2601,8 @@ export default {
                 cursor: 'pointer',
                 radius: height / 2 || 13,
                 //lineDash: [2, 2],
+                // fillOpacity: that.setOpacity(cfg),
+                opacity: that.setOpacity(cfg)
               },
               name: 'aggregated-node-keyShape',
             });
@@ -2723,7 +2746,6 @@ export default {
               const stroke = group.find((e) => e.get('name') === 'related-shape');
               const keyShape = item.getKeyShape();
               const colorSet = item.getModel().colorSet || colorSets[0];
-              console.log(colorSet)
               if (value) {
                 stroke && stroke.show();
                 text && text.hide();
@@ -3673,6 +3695,30 @@ export default {
       // 递归结束出栈
       parents.pop()
     },
+
+    // 根据 count 设置节点透明度
+    setOpacity(cfg){
+      // let basicOp = 0;
+      // let fbMax = 10;
+      // let opacity = basicOp;
+      // let count = cfg.count
+      // let interval = [0, 1]
+
+      // for (let i = 1; i < fbMax; i++){
+      //   interval.push(interval[i]+ i)
+      // }
+      // console.log(interval);
+      // for (let i = 0; i < interval.length; i++){
+      //   if (cfg.count >= interval[i]){
+      //     opacity += (1-basicOp)/interval.length
+      //   }
+      // }
+      // console.log(opacity);
+
+      let opacity = Math.ceil(Math.log(cfg.count+1))/Math.log(50)
+      // console.log(opacity);
+      return opacity
+    },
     
     // 增加类别之间的连线
     genClusterEdges(edges){
@@ -3778,11 +3824,11 @@ export default {
     collpseNode(parentid){
       //the parent node
       const aggregatedNode = aggregatedNodeMap[parentid];
-      console.log("collapse",aggregatedNode)
+      // console.log("collapse",aggregatedNode)
       //delete parent in openKey
       for (let i = 0; i < this.openKeys.length; i++)
         if (this.openKeys[i] === aggregatedNode.id){
-          console.log("sliceP",aggregatedNode.value)
+          // console.log("sliceP",aggregatedNode.value)
           this.openKeys.splice(i, 1);
           }
       //delete brothers in openKey    
@@ -4181,7 +4227,6 @@ export default {
     // console.log("toolH",toolH)
     //tool.style.marginTop = CANVAS_HEIGHT/2-toolH/2+"px";
     this.G6registor();
-    this.getData();
-    
+    this.getData();    
   }
 }

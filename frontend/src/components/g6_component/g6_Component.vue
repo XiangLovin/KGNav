@@ -440,8 +440,8 @@
                   <!-- 一级菜单 -->
                   <a-sub-menu v-if="item1.level != 0" :key="item1.id" @titleClick="ComboClick(item1)">
                     <span v-if="!item1.isResult" slot="title">
-                      <a-icon  type="golden" theme="filled" />
-                      <a-tooltip placement="topLeft">
+                      <a-icon  type="golden" theme="filled" :style="{color: getNodeColor(item1.id)}"/>
+                      <a-tooltip placement="topLeft"  :style="{color: getNodeColor(item1.id)}">
                           <template slot="title">
                             <span>{{item1.value}}</span>
                           </template>
@@ -462,9 +462,9 @@
                       <!-- 二级菜单 -->
                       <a-sub-menu v-if="item2.level != 0" :key="item2.id" @titleClick="ComboClick(item2)">
                         <span slot="title">
-                          <a-icon type="golden" theme="filled" />
+                          <a-icon type="golden" theme="filled" :style="{color: getNodeColor(item2.id)}"/>
                           <!-- {{item2.value}} -->
-                          <a-tooltip placement="topLeft">
+                          <a-tooltip placement="topLeft"  :style="{color: getNodeColor(item2.id)}">
                             <template slot="title">
                               <span>{{item2.value}}</span>
                             </template>
@@ -475,9 +475,9 @@
                           <!-- 三级菜单 -->
                           <a-sub-menu v-if="item3.level != 0" :key="item3.id" @titleClick="ComboClick(item3)">
                             <span slot="title">
-                              <a-icon type="golden" theme="filled" />
+                              <a-icon type="golden" theme="filled" :style="{color: getNodeColor(item3.id)}"/>
                               <!-- {{item3.value}} -->
-                              <a-tooltip placement="topLeft">
+                              <a-tooltip placement="topLeft" :style="{color: getNodeColor(item3.id)}">
                                   <template slot="title">
                                     <span>{{item3.value}}</span>
                                   </template>
@@ -488,9 +488,9 @@
                               <!-- 四级菜单 -->
                               <a-sub-menu v-if="item4.level != 0" :key="item4.id" @titleClick="ComboClick(item4)">
                                 <span slot="title">
-                                  <a-icon type="golden" theme="filled" />
+                                  <a-icon type="golden" theme="filled" :style="{color: getNodeColor(item4.id)}"/>
                                   <!-- {{item4.value}} -->
-                                  <a-tooltip placement="topLeft">
+                                  <a-tooltip placement="topLeft" :style="{color: getNodeColor(item3.id)}">
                                     <template slot="title">
                                       <span>{{item4.value}}</span>
                                     </template>
@@ -501,9 +501,9 @@
                                   <!-- 五级菜单 -->
                                   <a-sub-menu v-if="item5.level != 0" :key="item5.id" @titleClick="ComboClick(item5)">
                                     <span slot="title">
-                                      <a-icon type="golden" theme="filled" />
+                                      <a-icon type="golden" theme="filled" :style="{color: getNodeColor(item5.id)}"/>
                                       <!-- {{item5.value}} -->
-                                      <a-tooltip placement="topLeft">
+                                      <a-tooltip placement="topLeft" :style="{color: getNodeColor(item5.id)}">
                                         <template slot="title">
                                           <span>{{item5.value}}</span>
                                         </template>
