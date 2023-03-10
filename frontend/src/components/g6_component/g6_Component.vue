@@ -449,7 +449,7 @@
                         </a-tooltip>
                     </span>
                     <span v-else slot="title">
-                      <a-icon type="tags" theme="filled" />
+                      <a-icon type="tags" theme="filled"/>
                       <a-tooltip placement="topLeft">
                           <template slot="title">
                             <span>{{item1.value}}</span>
