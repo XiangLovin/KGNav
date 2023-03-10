@@ -100,6 +100,7 @@ let selectListIndex = -1;
 const renameKey = 'updatable';
 let inLabelId = 1;
 let outLabelId = 1;
+let tooltipEle = {};
 
 // 边颜色设置
 const defaultEdgeColor = '#acaeaf'
@@ -436,7 +437,6 @@ export default {
           object: realNodeMap[edge.target],
         };
       }
-      console.log(this.tripleRealData)
     },
     //非叶子节点处理
     ComboClick(e) {
@@ -534,11 +534,7 @@ export default {
         }
       });
     },
-    searchByNodes(value){
-      this.searchStr= value;
-      console.log(value)
-      this.onSearch();
-    },
+    
     keyDownEvent(event) {
       var listArry = document.getElementsByClassName('searchListItem');
       if (event.keyCode == 13) {//Enter
@@ -2499,7 +2495,7 @@ export default {
               height = 35;
             const style = cfg.style || {};
             const colorSet = cfg.colorSet || colorSets[0];
-
+            
             // 相关时点样式
             group.addShape('rect', {
               attrs: {
@@ -2579,6 +2575,7 @@ export default {
                 lineWidth: 3,
                 cursor: 'pointer',
                 radius: height / 2 || 13,
+                
                 //lineDash: [2, 2],
               },
               name: 'aggregated-node-keyShape',
@@ -2723,7 +2720,6 @@ export default {
               const stroke = group.find((e) => e.get('name') === 'related-shape');
               const keyShape = item.getKeyShape();
               const colorSet = item.getModel().colorSet || colorSets[0];
-              console.log(colorSet)
               if (value) {
                 stroke && stroke.show();
                 text && text.hide();
@@ -3924,32 +3920,35 @@ export default {
       );
       const nodeToolTip = new G6.Tooltip({
         className:'G6tooltip',
-        offsetX: 0,
-        offsetY: 50,
+        offsetX: -100,
+        offsetY: 0,
+        fixToNode: [0.5,1],
         itemTypes: ['node'],
         getContent: (e)=>{
           const model = e.item.getModel();
-          let innerhtml=`<div class="tooltip-content">
-                            <div class = "tooltip-title" style="position:fixed;">This node includes:
-                              <h3 style="font-size: 6px;color: #1890ff;margin: -5px 0 0 0;">(Blue: non-data nodes)</h3>
-                            </div>`;
+          tooltipEle = model;
+          let innerhtml=`<div class="tooltip-content">`;
+                            // <div class = "tooltip-title" style="position:fixed;">This node includes:
+                            //   <h3 style="font-size: 6px;color: #1890ff;margin: -5px 0 0 0;">(Blue: non-data nodes)</h3>
+                            // </div>
           const outDiv = document.createElement('div');
           model.nodes.forEach((node) => {
             if(node.level == 0){
-              innerhtml+= `<p style="cursor:pointer" on-click="searchByNodes(${node.value})"> ${node.value}</p>`;
+              innerhtml+= `<p style="cursor:pointer" onclick='searchByNodes(\"${node.value}\")'> ${node.value}</p>`;
             }else
-            innerhtml+= `<p style="font-weight: bold;color:#1890ff">${node.value}</p>`;
+            innerhtml+= `<p style="font-weight: bold;color:#1890ff" onclick='searchByNodes(\"${node.value}\")'>${node.value}</p>`;
           });
           outDiv.innerHTML=innerhtml+`</div>`;
           return outDiv
         }
       })
-
+      //如果一条边上同时出现多个标签
       const tooltip = new G6.Tooltip({
         className:'G6tooltip',
         trigger:'click',
         offsetX: 26,
         offsetY: 0,
+        
         // 允许出现 tooltip 的 item 类型
         itemTypes: [ 'edge'],
         getContent: (e) => {
@@ -4162,9 +4161,54 @@ export default {
           graph.changeSize(CANVAS_WIDTH, CANVAS_HEIGHT);
         };
     },
+    searchByTooltip(value){
+      this.curSel = ''
+      tooltipEle.nodes.forEach(node=>{
+        if(node.value == value && node.level == 0){
+          this.NodeClick(node)
+        }
+        else if(node.value == value && node.level != 0){
+          //先展开当前tooltipEle
+          console.log(tooltipEle,node)
+          this.openKeys.push(tooltipEle.id)
+          let mixedGraphData = this.exbandNode(tooltipEle);
+          if (mixedGraphData) {
+            cachePositions = this.cacheNodePositions(graph.getNodes());
+            aggregatedData =  mixedGraphData;
+            currentUnproccessedData = mixedGraphData;
+            this.handleRefreshGraph(
+              graph,
+              currentUnproccessedData,
+              CANVAS_WIDTH,
+              CANVAS_HEIGHT,
+              largeGraphMode,
+              true,
+              false,
+            );
+          }
+          this.updateLabel();
+          //选中当前node
+          //this.curSel = node.id;
+          graph.getNodes().forEach(nodeEle=>{
+            let model = nodeEle.getModel()
+            if(model.value == node.value){
+              keepRelatedNodes.push(model.id)
+              graph.setItemState(nodeEle, 'related', true);
+              this.curSel = model.id;
+            }
+          }) 
+        }
+      })
+      // _this.searchStr= value.toString();
+      // _this.onSearch();
+    },
     
   },
   mounted() {
+    let _this = this
+    window.searchByNodes = function(value) {
+      _this.searchByTooltip(value)
+    }
     const searchList1 = document.getElementById("searchList-1");
     const infoEle = document.getElementById("infolist");
     const filterEle = document.getElementById("filterContent");

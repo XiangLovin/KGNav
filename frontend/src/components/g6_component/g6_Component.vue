@@ -440,7 +440,7 @@
                   <!-- 一级菜单 -->
                   <a-sub-menu v-if="item1.level != 0" :key="item1.id" @titleClick="ComboClick(item1)">
                     <span v-if="!item1.isResult" slot="title">
-                      <a-icon  type="golden" theme="filled" />
+                      <a-icon  type="golden" theme="filled"/>
                       <a-tooltip placement="topLeft">
                           <template slot="title">
                             <span>{{item1.value}}</span>
@@ -449,7 +449,7 @@
                         </a-tooltip>
                     </span>
                     <span v-else slot="title">
-                      <a-icon type="tags" theme="filled" />
+                      <a-icon type="tags" theme="filled"/>
                       <a-tooltip placement="topLeft">
                           <template slot="title">
                             <span>{{item1.value}}</span>
