@@ -2159,9 +2159,10 @@ export default {
     // 清除所有状态
     clearAllState(graph){
       // 取消所有聚焦状态
+      this.clearItemState(graph,'related')
       this.clearItemState(graph,'focus')
       this.clearItemState(graph,'hover')
-      this.clearItemState(graph,'related')
+      
     },
     
     //G6相关功能
@@ -2496,7 +2497,28 @@ export default {
             const style = cfg.style || {};
             const colorSet = cfg.colorSet || colorSets[0];
             
-            // 相关时点样式
+            
+            // 相关时节点样式
+            group.addShape('rect', {
+              attrs: {
+                x: -width * 0.54,
+                y: -height * 0.65,
+                width: width * 1.08,
+                height: height * 1.3,
+                shadowOffsetX: 2,
+                shadowOffsetY: 3,
+                shadowColor: '#888',
+                shadowBlur: 3,
+                fill: colorSet.mainStroke, 
+                stroke: colorSet.mainFill,
+                lineWidth:3.5,
+                lineOpacty: 0.4,
+                radius: (height / 2) * 1.3,
+              },
+              name: 'related-shape',
+              visible: false,
+            });
+            // 悬浮时点样式
             group.addShape('rect', {
               attrs: {
                 x: -width * 0.54,
@@ -2506,30 +2528,10 @@ export default {
                 shadowOffsetX: 0,
                 shadowOffsetY: 0,
                 shadowColor: colorSet.mainStroke,
-                shadowBlur: 4,
+                shadowBlur: 25,
                 fill: colorSet.mainFill, // '#3B4043',
                 stroke: colorSet.mainStroke,//'#AAB7C4',
-                lineWidth: 3,
-                lineOpacty: 0.6,
-                radius: (height / 2) * 1.3,
-              },
-              name: 'related-shape',
-              visible: false,
-            });
-            // 悬浮时节点样式
-            group.addShape('rect', {
-              attrs: {
-                x: -width * 0.54,
-                y: -height * 0.65,
-                width: width * 1.08,
-                height: height * 1.3,
-                shadowOffsetX: 2,
-                shadowOffsetY: 3,
-                shadowColor: '#888',
-                shadowBlur: 4,
-                fill: colorSet.mainStroke, 
-                stroke: colorSet.mainFill,
-                lineWidth: 5,
+                lineWidth: 4,
                 lineOpacty: 0.6,
                 radius: (height / 2) * 1.3,
               },
@@ -2539,19 +2541,19 @@ export default {
             // 点击时节点样式
             group.addShape('rect', {
               attrs: {
-                x: -width * 0.54,
-                y: -height * 0.65,
-                width: width * 1.08,
-                height: height * 1.3,
+                x: -width * 0.55,
+                y: -height * 0.7,
+                width: width * 1.1,
+                height: height * 1.4,
                 shadowOffsetX: 2,
                 shadowOffsetY: 3,
                 shadowColor: '#888',
-                shadowBlur: 4,
+                shadowBlur: 20,
                 fill: colorSet.mainStroke, // || '#3B4043',
                 stroke: colorSet.mainFill,
                 lineWidth: 5,
                 cursor: 'pointer',
-                radius: (height / 2) * 1.3,
+                radius: (height / 2) * 1.4,
                 //lineDash: [10, 2],
               },
               name: 'selected-shape',
@@ -2605,30 +2607,7 @@ export default {
               draggable: true,
             });
 
-            group.addShape('text', {
-              attrs: {
-                text: cfg.label||`${cfg.count}`,
-                x: 0,
-                y: 2,
-                textAlign: 'center',
-                textBaseline: 'middle',
-                cursor: 'pointer',
-                fontSize: 18,
-                stroke:colorSet.mainStroke,
-                lineWidth:3,
-                shadowOffsetX: 1,
-                shadowOffsetY: 1,
-                shadowColor: colorSet.mainStroke,
-                shadowBlur: 3,
-                fill: 'white',
-                opacity: 0.85,
-                fontWeight: 550,
-              },
-              name: 'hover-text',
-              className: 'hover-text',
-              visible:false,
-              draggable: true,
-            });
+            
             group.addShape('text', {
               attrs: {
                 text: cfg.label||`${cfg.count}`,
@@ -2662,14 +2641,38 @@ export default {
                 textBaseline: 'middle',
                 cursor: 'pointer',
                 fontSize: 18,
+                stroke:colorSet.mainStroke,
                 lineWidth:3,
-                shadowOffsetX: 2,
-                shadowOffsetY: 2,
-                shadowColor: '#666',
-                shadowBlur: 4,
-                fill: colorSet.mainFill,
+                shadowOffsetX: 1,
+                shadowOffsetY: 1,
+                shadowColor: colorSet.mainStroke,
+                shadowBlur: 3,
+                fill: 'white',
                 opacity: 0.85,
                 fontWeight: 550,
+              },
+              name: 'hover-text',
+              className: 'hover-text',
+              visible:false,
+              draggable: true,
+            });
+            group.addShape('text', {
+              attrs: {
+                text: cfg.label||`${cfg.count}`,
+                x: 0,
+                y: 2,
+                textAlign: 'center',
+                textBaseline: 'middle',
+                cursor: 'pointer',
+                fontSize: 20,
+                lineWidth:4,
+                shadowOffsetX: 2,
+                shadowOffsetY: 2,
+                shadowColor: '#888',
+                shadowBlur: 4,
+                fill: colorSet.mainFill,
+                opacity: 1,
+                fontWeight: 650,
               },
               name: 'selected-text',
               className: 'selected-text',
@@ -3921,7 +3924,7 @@ export default {
       const nodeToolTip = new G6.Tooltip({
         className:'G6tooltip',
         offsetX: -100,
-        offsetY: 0,
+        offsetY: 10,
         fixToNode: [0.5,1],
         itemTypes: ['node'],
         getContent: (e)=>{
@@ -4066,6 +4069,7 @@ export default {
             default:
               break;
           }
+          this.clearAllState(graph)
           if (mixedGraphData) {
             cachePositions = this.cacheNodePositions(graph.getNodes());
             aggregatedData =  mixedGraphData;
