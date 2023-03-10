@@ -31,6 +31,7 @@ let manipulatePosition = undefined;
 let LabelVisible = 1;
 let keepRelatedNodes = [];
 let keepRelatedEdges = [];
+let maxNodeSize = 0;
 
 // 用于存储节点的双亲结点
 let nodesParents;
@@ -2030,6 +2031,10 @@ export default {
         if(curNodeMap[edge.source] && curNodeMap[edge.target])
           edges.push(cedge);
       });
+      maxNodeSize = 0;
+      graph.getNodes().forEach(node => {
+        if(node.getModel().count>maxNodeSize)maxNodeSize = node.getModel().count;
+      });
       //console.log("mixed",nodes,edges)
       return { nodes, edges };
     },
@@ -2566,9 +2571,9 @@ export default {
             // 点击时节点样式
             group.addShape('rect', {
               attrs: {
-                x: -width * 0.55,
+                x: -width * 0.6,
                 y: -height * 0.7,
-                width: width * 1.1,
+                width: width * 1.2,
                 height: height * 1.4,
                 shadowOffsetX: 2,
                 shadowOffsetY: 3,
@@ -2589,7 +2594,7 @@ export default {
             const keyShape = group.addShape('rect', {
               attrs: {
                 ...style,
-                x: -width / 2,
+                x: -width /2,
                 y: -height / 2,
                 width,
                 height,
@@ -2605,9 +2610,23 @@ export default {
                 
                 //lineDash: [2, 2],
                 // fillOpacity: that.setOpacity(cfg),
-                opacity: that.setOpacity(cfg)
+                //opacity: that.setOpacity(cfg)
               },
               name: 'aggregated-node-keyShape',
+            });
+
+            group.addShape('rect', {
+              attrs: {
+                ...style,
+                x: -width * 0.53,
+                y: -height * 0.62,
+                width: width * 1.06,
+                height: height * 1.24,
+                fill: "#fff", // || '#3B4043',
+                radius: (height / 2) * 1.24,
+                opacity: that.setOpacity(cfg),//透明度越接近1，越不显示节点
+              },
+              name: 'node-shadow',
             });
 
             let labelStyle = {};
@@ -2691,7 +2710,7 @@ export default {
                 textAlign: 'center',
                 textBaseline: 'middle',
                 cursor: 'pointer',
-                fontSize: 20,
+                fontSize: 18,
                 lineWidth:4,
                 shadowOffsetX: 2,
                 shadowOffsetY: 2,
@@ -2748,18 +2767,20 @@ export default {
               const text = group.find((e) => e.get('name') === 'count-shape');
               const htext = group.find((e) => e.get('name') === 'related-text');
               const stroke = group.find((e) => e.get('name') === 'related-shape');
+              const shadow = group.find((e) => e.get('name') === 'node-shadow');
               const keyShape = item.getKeyShape();
               const colorSet = item.getModel().colorSet || colorSets[0];
               if (value) {
                 stroke && stroke.show();
                 text && text.hide();
                 htext && htext.show();
+                shadow && shadow.hide();
                 keyShape.attr('fill', colorSet.activeFill);
               } else {
                 stroke && stroke.hide();
                 text && text.show();
                 htext && htext.hide();
-
+                shadow && shadow.show();
                 keyShape.attr('fill', colorSet.mainFill);
               }
             }
@@ -2772,6 +2793,7 @@ export default {
                 return;
               }
               const text = group.find((e) => e.get('name') === 'count-shape');
+              const shadow = group.find((e) => e.get('name') === 'node-shadow');
               const halo = group.find((e) => e.get('name') === 'hover-shape');//'halo-shape');
               const htext = group.find((e) => e.get('name') === 'hover-text');
               const keyShape = item.getKeyShape();
@@ -2780,11 +2802,13 @@ export default {
                 halo && halo.show();
                 text && text.hide();
                 htext && htext.show();
+                shadow && shadow.hide();
                 keyShape.attr('fill', colorSet.activeFill);
               } else {
                 halo && halo.hide();
                 text && text.show();
                 htext && htext.hide();
+                shadow && shadow.show();
                 keyShape.attr('fill', colorSet.mainFill);
                 if(hasRelated){
                   const Rhalo = group.find((e) => e.get('name') === 'related-shape');//'halo-shape');
@@ -2792,6 +2816,7 @@ export default {
                   Rhalo && Rhalo.show();
                   text && text.hide();
                   Rhtext && Rhtext.show();
+                  shadow && shadow.hide();
                   keyShape.attr('fill', colorSet.activeFill);
                 }
                 
@@ -2799,6 +2824,7 @@ export default {
             } 
             else if (name === 'focus') {
               const text = group.find((e) => e.get('name') === 'count-shape');
+              const shadow = group.find((e) => e.get('name') === 'node-shadow');
               const htext = group.find((e) => e.get('name') === 'selected-text');
               const stroke = group.find((e) => e.get('name') === 'selected-shape');
               const keyShape = item.getKeyShape();
@@ -2807,12 +2833,14 @@ export default {
                 stroke && stroke.show();
                 text && text.hide();
                 htext && htext.show();
+                shadow && shadow.hide();
                 keyShape.hide();
                 keyShape.attr('fill', colorSet.selectedFill);
               } else {
                 stroke && stroke.hide();
                 text && text.show();
                 htext && htext.hide();
+                shadow && shadow.show();
                 keyShape.show();
                 keyShape.attr('fill', colorSet.mainFill);
               }
@@ -3702,26 +3730,16 @@ export default {
 
     // 根据 count 设置节点透明度
     setOpacity(cfg){
-      // let basicOp = 0;
-      // let fbMax = 10;
-      // let opacity = basicOp;
-      // let count = cfg.count
-      // let interval = [0, 1]
-
-      // for (let i = 1; i < fbMax; i++){
-      //   interval.push(interval[i]+ i)
-      // }
-      // console.log(interval);
-      // for (let i = 0; i < interval.length; i++){
-      //   if (cfg.count >= interval[i]){
-      //     opacity += (1-basicOp)/interval.length
-      //   }
-      // }
-      // console.log(opacity);
-
-      let opacity = Math.ceil(Math.log(cfg.count+1))/Math.log(50)
-      // console.log(opacity);
-      return opacity
+      console.log(cfg)
+      let size = cfg.count;
+      maxNodeSize = 57;////通过修改最大值获取当前最靠近最大值的部分节点让其高亮，现在问题在于如何获取当前页面全部节点中count最大值
+      graph.getNodes().forEach(node => {
+        if(node.getModel().count>maxNodeSize)maxNodeSize = node.getModel().count;
+      });
+      //将count值域映射为0-1之间，然后取差值
+      let opacity = 1 - size/maxNodeSize
+      //为了保证最小都有0.3的能见度
+      return opacity>0.7?0.7:opacity
     },
     
     // 增加类别之间的连线
