@@ -1972,13 +1972,11 @@ export default {
         edges = [];
     
       const expandMap = {};
-
+      maxNodeSize = 0;
       const curNodeMap = {};
       expandArray.forEach((expandModel) => {
         expandMap[expandModel.id] = true;
       });
-      
-      // console.log(expandMap);
 
       aggregatedData.nodes.forEach((oricluster, i) => {
         // console.log(oricluster);
@@ -2001,6 +1999,7 @@ export default {
               count: cluster.nodes.length,
               colorSet: oricluster.colorSet,
             };
+            if(cnode.count>maxNodeSize)maxNodeSize = cnode.count;
             curNodeMap[cluster.id]=cnode;
             aggregatedNodeMap[cluster.id] = cnode;
             nodes.push(cnode);
@@ -2009,6 +2008,7 @@ export default {
           aggregatedNodeMap[oricluster.id].expanded = true;
         } else {
           curNodeMap[oricluster.id]=oricluster;
+          if(oricluster.count>maxNodeSize)maxNodeSize = oricluster.count;
           nodes.push(aggregatedNodeMap[oricluster.id]);
           aggregatedNodeMap[oricluster.id].expanded = false;
         }
@@ -2031,10 +2031,7 @@ export default {
         if(curNodeMap[edge.source] && curNodeMap[edge.target])
           edges.push(cedge);
       });
-      maxNodeSize = 0;
-      graph.getNodes().forEach(node => {
-        if(node.getModel().count>maxNodeSize)maxNodeSize = node.getModel().count;
-      });
+
       //console.log("mixed",nodes,edges)
       return { nodes, edges };
     },
@@ -3730,16 +3727,15 @@ export default {
 
     // 根据 count 设置节点透明度
     setOpacity(cfg){
-      console.log(cfg)
+      // console.log(cfg.count,maxNodeSize)
       let size = cfg.count;
-      maxNodeSize = 57;////通过修改最大值获取当前最靠近最大值的部分节点让其高亮，现在问题在于如何获取当前页面全部节点中count最大值
-      graph.getNodes().forEach(node => {
-        if(node.getModel().count>maxNodeSize)maxNodeSize = node.getModel().count;
-      });
-      //将count值域映射为0-1之间，然后取差值
       let opacity = 1 - size/maxNodeSize
+      if(opacity>0.85)opacity = 0.85;
+      else if(opacity>0.6) opacity /= 1.5;
+      else opacity /= 2.5
+      console.log(opacity)
       //为了保证最小都有0.3的能见度
-      return opacity>0.7?0.7:opacity
+      return opacity
     },
     
     // 增加类别之间的连线
@@ -3939,6 +3935,9 @@ export default {
           //colorSet: colorSets[i%10],
           idx: i,
         };
+
+        if(cnode.count>maxNodeSize)maxNodeSize = cnode.count;
+        
         aggregatedNodeMap[cluster.id] = cnode;
         aggregatedData.nodes.push(cnode);
       });
