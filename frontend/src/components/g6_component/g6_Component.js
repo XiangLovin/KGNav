@@ -83,7 +83,7 @@ const global = {
     },
   },
 };
-let opColorSets = {};
+
 //全部入边出边
 let allInOption = [];
 let allOutOption = [];
@@ -106,6 +106,53 @@ let inLabelId = 1;
 let outLabelId = 1;
 let tooltipEle = {};
 
+//颜色控制
+let darkBackColor = '#001529';
+let backColor = '#fff';
+const disableColor = '#777';
+const theme = 'default';
+let subjectColorsDark = [
+  '#6666CC',
+  '#9999FF',
+  '#FFCCFF',
+  '#FFCC99',
+  '#FF9999',
+  '#CC9999',
+  '#CC6699',
+  '#CCCCCC'
+]
+let subjectColors = [
+  '#6666FF',
+  '#CC66FF',
+  '#FF66FF',
+  '#CC6666',
+  '#FF6666',
+  '#CC9966',
+  '#CCCC66',
+  '#999999'
+];
+let colorSets = {};
+let colorSetsBright = G6.Util.getColorSetsBySubjectColors(
+  subjectColors,
+  backColor,
+  theme,
+  disableColor,
+);
+let colorSetsDark = G6.Util.getColorSetsBySubjectColors(
+  subjectColorsDark,
+  darkBackColor,
+  theme,
+  disableColor,
+);
+let opColorSets = {};
+// 工具栏色
+let headerColor = '#001529'
+// 主背景色
+let bgColor = '#f0f2f5';
+// 主色
+let mainColor = '#ffffff';
+// 字体色
+let fontColor = 'rgb(0,0,0,0.65)';
 // 边颜色设置
 const defaultEdgeColor = '#acaeaf'
 const focusEdgeColor = '#fa8c45'
@@ -277,36 +324,58 @@ export default {
   methods:{
     // 切换明暗模式
     modeChange(){
-
       // 工具栏色
-      let headerColor = '#001529'
+      headerColor = '#001529'
       let headerColorDark = '#0d1117';
       // 主背景色
-      let bgColor = '#f0f2f5';
-      let bgColorDark = '#010409';
+      bgColor = '#f0f2f5';
+      //let bgColorDark = '#010409';
+      let bgColorDark = 'rgb(29 38 54)';
       // 主色
-      let mainColor = '#ffffff';
-      let mainColorDark = '#0d1117';
+      mainColor = '#ffffff';
+      let mainColorDark = '#001529';
       // 字体色
-      let fontColor = 'rgb(0,0,0,0.65)';
-      let fontColorDark = 'rgb(255,255,255,0.65)'
+      fontColor = 'rgb(0,0,0,0.65)';
+      let fontColorDark = 'rgb(255,255,255,0.8)'
       // 次要字体色
       let subFontColor = 'rgb(255,255,255,0.65)';
       let subFontColorDark = 'rgb(255,255,255,0.65)'
-
+      //console.log(fontColor)
+      //节点配色
+      
       let changeToHeaderColor = ['#layout-header-container', '#toolmeum',];
-      let changeToMainColor = ['#SearchPage', '#container', '#SearchTree','#searchList-1', '#searchList-1-ul', '#searchList-2', '#searchList-2-ul', '#toolbar','.ant-input', '.ant-input-search','.ant-input-wrapper', '.ant-input-group','.ant-btn','.ant-select-selection'];
-      let changeToBgColor = ['#layout-main-container','#layout-footer-container','.ant-alert'];
-      let changeToFontColor = ['.ant-form-item-children','.ant-form-item-label > label','.filterTitle','.ant-btn','#layout-footer-container','.ant-divider-inner-text','.ant-select-selection-selected-value','.ant-alert-message','.ant-menu-item'];
+      let changeToMainColor = ['#SearchPage', '#container', '#SearchTree','#searchList-1', '#searchList-1-ul', '#searchList-2', '#searchList-2-ul', '#infomations',
+      '#toolbar','.ant-input', '.ant-input-search','.ant-input-wrapper', '.ant-input-group','.ant-btn','.ant-select-selection','.G6tooltip',];
+      let changeToBgColor = ['#layout-main-container','#layout-footer-container','.ant-alert'
+      ];
+      let changeToFontColor = ['.ant-form-item-children','.ant-form-item-label > label','.filterTitle','.ant-btn','#layout-footer-container','.G6tooltip',
+      '.ant-divider-inner-text','.ant-select-selection-selected-value','.ant-alert-message','.infoDetails','.infoPropItemContainer'
+      ,'.ant-table-header-column','.ant-menu-sub.ant-menu-inline'];
+
       if (mode == 'light'){
         mode = 'dark'
-        headerColor = headerColorDark;
+        //headerColor = headerColorDark;
         bgColor = bgColorDark;
         mainColor = mainColorDark;
         fontColor = fontColorDark;
+        
       } else {
         mode = 'light'
       }
+      //三个操作互换
+      if(this.unionUrl == 'unable'){
+        this.unionUrl = 'default';
+        this.interUrl = 'default';
+        this.compUrl = 'default';
+        console.log("变")
+      }
+      else if(this.unionUrl == 'default'){
+        this.unionUrl = 'unable';
+        this.interUrl = 'unable';
+        this.compUrl = 'unable';
+        console.log("变2")
+      }
+
       for (let index = 0; index < changeToHeaderColor.length; index++) {
         let classes = document.querySelectorAll(changeToHeaderColor[index])
         for (let j = 0; j < classes.length; j++) {
@@ -330,26 +399,28 @@ export default {
 
       for (let index = 0; index < changeToFontColor.length; index++) {
         let classes = document.querySelectorAll(changeToFontColor[index])
-        console.log(classes);
+        //console.log(classes);
         for (let j = 0; j < classes.length; j++) {
           classes[j].style.color = fontColor
         }   
       }
       
-      this.handleRefreshGraph(
-        graph,
-        this.getMixedGraph(
-          aggregatedData,
-          this.oridata,
-          nodeMap,
-          aggregatedNodeMap,
-          expandArray,
-        ),
-        CANVAS_WIDTH,
-        CANVAS_HEIGHT,
-        largeGraphMode,
-        true,
-        false)
+      //修改全部node的colorSet
+      
+      // this.handleRefreshGraph(
+      //   graph,
+      //   this.getMixedGraph(
+      //     aggregatedData,
+      //     this.oridata,
+      //     nodeMap,
+      //     aggregatedNodeMap,
+      //     expandArray,
+      //   ),
+      //   CANVAS_WIDTH,
+      //   CANVAS_HEIGHT,
+      //   largeGraphMode,
+      //   true,
+      //   false)
     },
 
     //三元组搜索
@@ -1597,18 +1668,36 @@ export default {
       );
     },
     hoverInOp(e){
-      if(e.target.id == 'union'&& this.unionUrl != 'unable'){
+      if(mode == 'dark'){
+        if(e.target.id == 'union'&& this.unionUrl != 'default'){
           this.unionUrl = 'highlight';
-      }else if(e.target.id == 'inter'&& this.interUrl != 'unable'){
-        this.interUrl = 'highlight';
-      }else if(e.target.id == 'comp'&& this.compUrl != 'unable'){
-        this.compUrl = 'highlight';
+        }else if(e.target.id == 'inter'&& this.interUrl != 'default'){
+          this.interUrl = 'highlight';
+        }else if(e.target.id == 'comp'&& this.compUrl != 'default'){
+          this.compUrl = 'highlight';
+        }
+      }
+      else{
+        if(e.target.id == 'union'&& this.unionUrl != 'unable'){
+          this.unionUrl = 'highlight';
+        }else if(e.target.id == 'inter'&& this.interUrl != 'unable'){
+          this.interUrl = 'highlight';
+        }else if(e.target.id == 'comp'&& this.compUrl != 'unable'){
+          this.compUrl = 'highlight';
+        }
       }
     },
     hoverOutOp(){
-      this.unionUrl = 'default';
+      if(mode == 'dark'){
+        this.unionUrl = 'unable';
+        this.interUrl = 'unable';
+        this.compUrl = 'unable';
+      }
+      else{
+        this.unionUrl = 'default';
       this.interUrl = 'default';
       this.compUrl = 'default';
+      }
     },
     getClass: function () {
       return { unabled: this.isDisable, abled: !this.isDisable};
@@ -2222,9 +2311,16 @@ export default {
         selectedNode1 = {};
         selectedNode2 = {};
         this.isDisable = true;
-        this.unionUrl = 'unable';
-        this.interUrl = 'unable';
-        this.compUrl = 'unable';
+        if(mode == 'dark'){
+          this.unionUrl = 'default';
+          this.interUrl = 'default';
+          this.compUrl = 'default';
+        }
+        else{
+          this.unionUrl = 'unable';
+          this.interUrl = 'unable';
+          this.compUrl = 'unable';
+        }
       }
       this.clearNodeState(graph,state);
       this.clearEdgeState(graph,state);
@@ -2518,9 +2614,16 @@ export default {
         graph.setItemState(item, 'focus', true);
         if (selectedNum == 2) {
           this.isDisable = false;
-          this.unionUrl = 'default';
+          if(mode == 'dark'){
+            this.unionUrl = 'unable';
+            this.interUrl = 'unable';
+            this.compUrl = 'unable';
+          }
+          else{
+            this.unionUrl = 'default';
           this.interUrl = 'default';
           this.compUrl = 'default';
+          }
         }
         else{
           // 将相关边及相关点也 related
@@ -2617,7 +2720,7 @@ export default {
                 shadowColor: '#888',
                 shadowBlur: 3,
                 fill: colorSet.mainStroke, 
-                stroke: colorSet.mainFill,
+                stroke: '#f0f2f5',//colorSet.mainFill,
                 lineWidth:3.5,
                 lineOpacty: 0.4,
                 radius: (height / 2) * 1.3,
@@ -2657,7 +2760,8 @@ export default {
                 shadowColor: '#888',
                 shadowBlur: 20,
                 fill: colorSet.mainStroke, // || '#3B4043',
-                stroke: colorSet.mainFill,
+                //stroke: colorSet.mainFill,
+                stroke: '#f0f2f5',
                 lineWidth: 5,
                 cursor: 'pointer',
                 radius: (height / 2) * 1.4,
@@ -2699,7 +2803,7 @@ export default {
                 y: -height * 0.62,
                 width: width * 1.06,
                 height: height * 1.24,
-                fill: (mode=="dark"?"#0d1117":"#fff"), // || '#3B4043',
+                fill: that.setShadowColor(cfg),// || '#3B4043',
                 radius: (height / 2) * 1.24,
                 opacity: that.setOpacity(cfg),//透明度越接近1，越不显示节点
               },
@@ -2793,7 +2897,7 @@ export default {
                 shadowOffsetY: 2,
                 shadowColor: '#888',
                 shadowBlur: 4,
-                fill: colorSet.mainFill,
+                fill: '#f0f2f5',//colorSet.mainFill,
                 opacity: 1,
                 fontWeight: 650,
               },
@@ -3813,9 +3917,13 @@ export default {
       if(opacity>0.85)opacity = 0.85;
       else if(opacity>0.6) opacity /= 1.5;
       else opacity /= 2.5
-      console.log(opacity)
+      //console.log(opacity)
       //为了保证最小都有0.3的能见度
       return opacity
+    },
+    // 根据 count 设置节点透明度
+    setShadowColor(cfg){
+      return mode=="dark"?"#0d1117":"#fff"
     },
     
     // 增加类别之间的连线
@@ -3956,53 +4064,8 @@ export default {
     },
     //主要绘制函数
     drawGraph(data){
-      console.log(data)
-      let darkBackColor;
-      if (mode == 'dark'){
-        darkBackColor = 'rgb(43, 47, 51)';
-      } else {
-        darkBackColor = '#fff';
-      }
-      const disableColor = '#777';
-      const theme = 'default';
-      const subjectColors = [
-        // 初始配色
-        // '#5F95FF', // blue
-        // '#61DDAA',
-        // '#65789B',
-        // '#F6BD16',
-        // '#7262FD',
-        // '#78D3F8',
-        // '#9661BC',
-        // '#F6903D',
-        // '#008685',
-        // '#F08BB4',
-        // 韩老师配色左
-        // '#6666FF',
-        // '#CC66FF',
-        // '#FF66FF',
-        // '#CC6666',
-        // '#FF6666',
-        // '#CC9966',
-        // '#CCCC66',
-        // '#999999',
-        // 韩老师配色右
-        '#6666CC',
-        '#9999FF',
-        '#FFCCFF',
-        '#FFCC99',
-        '#FF9999',
-        '#CC9999',
-        '#CC6699',
-        '#CCCCCC'
-      ];
-
-      const colorSets = G6.Util.getColorSetsBySubjectColors(
-        subjectColors,
-        darkBackColor,
-        theme,
-        disableColor,
-      );
+      colorSets = colorSetsBright;
+      console.log(colorSets)
       opColorSets = G6.Util.getColorSetsBySubjectColors(
         ['#00bc12'],
         darkBackColor,

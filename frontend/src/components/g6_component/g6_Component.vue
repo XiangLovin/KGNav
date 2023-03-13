@@ -49,7 +49,7 @@
               <a-icon type="search" />Search
             </div>
           </a-menu-item>
-          <a-button @click="modeChange" shape="circle" icon="bulb" style="margin-left: 20px;"></a-button>
+          <!-- <a-button @click="modeChange" shape="circle" icon="bulb" style="margin-left: 20px;"></a-button> -->
         </a-menu>
         </a-layout-header>
       <a-layout id="layout-main-container">
@@ -504,7 +504,7 @@
                                     <span slot="title">
                                       <a-icon type="golden" theme="filled" :style="{color: getNodeColor(item5)}"/>
                                       <!-- {{item5.value}} -->
-                                      <a-tooltip placement="topLeft" :style="getTextColor(item5)">
+                                      <a-tooltip placement="topLeft">
                                         <template slot="title">
                                           <span>{{item5.value}}</span>
                                         </template>
@@ -513,7 +513,7 @@
                                     </span>
                                     <a-menu-item v-for="node in item5.nodes" :key="node.id" @click="NodeClick(node)"  :style="getBackColor(node)">
                                       <!-- {{node.value}} -->
-                                      <a-tooltip placement="topLeft" :style="getTextColor(node)">
+                                      <a-tooltip placement="topLeft">
                                         <template slot="title">
                                           <span>{{node.value}}</span>
                                         </template>
@@ -566,7 +566,7 @@
                     </template>
                   </a-sub-menu>
                   <a-menu-item v-if="item1.level == 0" :key="item1.id" @click="NodeClick(item1)" :style="getBackColor(item1)">
-                    <a-tooltip placement="topLeft">
+                    <a-tooltip placement="topLeft" >
                       <template slot="title">
                         <span>{{item1.value}}</span>
                       </template>
