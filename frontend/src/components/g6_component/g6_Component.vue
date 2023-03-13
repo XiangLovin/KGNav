@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <a-layout id="components-layout-demo-top" class="layout">
-      <a-layout-header>
+      <a-layout-header id="layout-header-container">
         <div class="logo">ScheNav</div>
         <a-menu
           id="toolmeum"
@@ -37,7 +37,7 @@
             </a-menu-item>
           </a-sub-menu>
           <a-menu-item class="meumFont" key="minimap">
-            <div @click="showMinimap"><a-icon  type="picture"  />MiniMap</div>
+            <div @click="showMinimap"><a-icon  type="picture"/>MiniMap</div>
           </a-menu-item>
           <!-- <a-menu-item class="meumFont" key="fisheye" >
             <div @click="showFisheye">
@@ -49,12 +49,12 @@
               <a-icon type="search" />Search
             </div>
           </a-menu-item>
-          
+          <a-button @click="modeChange" shape="circle" icon="bulb" style="margin-left: 20px;"></a-button>
         </a-menu>
-      </a-layout-header>
-      <a-layout>
+        </a-layout-header>
+      <a-layout id="layout-main-container">
         <!--左侧条件搜索-->
-        <a-layout-sider class="SearchPage" :width="FilterWidth"  theme="light">
+        <a-layout-sider id="SearchPage" :width="FilterWidth"  theme="light">
           <div class="InfoMeum" id="filter">
             <p class="filterTitle">Conditional Search
               <a-icon type="close" @click="closeFilter" style="float:right;position: relative;margin: 7px 7px 0 0;font-size: 15px;;" />
@@ -246,7 +246,7 @@
               <a-divider style="margin:0px;">Result</a-divider>
               <!--查找结果列表（5级）-->
               <div id="searchList-2" style="display:none">
-                <a-menu
+                <a-menu id="searchList-2-ul"
                   mode="inline"
                 >
                   <template v-for="item1 in conditiondata" >
@@ -406,7 +406,7 @@
           <div id="minimap" style="display:none"></div>
         </a-layout-content>
         <!--右侧搜索框-->
-        <a-layout-sider class="Info" width="300" theme="light">
+        <a-layout-sider id="SearchTree" width="300" theme="light">
           
           <!-- <a-menu id="InfoTitle"
             v-model="current"
@@ -420,7 +420,7 @@
             <div id="searchNode">
               <a-input-search v-model="searchStr" placeholder="input search text" size="large"
                               @search="onSearch" @keydown="keyDownEvent($event)" @input="timeflash()" @blur="closeSearch()" @focus="showSearch()">
-                <a-button slot="enterButton">
+                <a-button id='searchtree-button' slot="enterButton">
                   Search
                 </a-button>
               </a-input-search>
@@ -432,6 +432,7 @@
             </div>
             <div id="searchList-1">
               <a-menu
+                id="searchList-1-ul"
                 :open-keys.sync="openKeys"
                 mode="inline"
                 :selected-keys="[curSel]"
@@ -679,7 +680,7 @@
           </div>
         </a-layout-sider>
       </a-layout>
-      <a-layout-footer style="text-align: center">
+      <a-layout-footer id="layout-footer-container">
         Copyright ©2022 TJUDB Group
       </a-layout-footer>
     </a-layout>

@@ -1,6 +1,9 @@
 import G6, { registerBehavior } from '@antv/g6';
 import { clone, isString,isNumber, isArray } from '@antv/util';
 import {getEntityInfo, getEntityImgUrl} from '../../request/api.js'
+
+
+let mode = 'light';
 let graph = null;
 let currentUnproccessedData = { nodes: [], edges: [] };
 const CANVAS_WIDTH = window.innerWidth - 375-315;
@@ -272,6 +275,83 @@ export default {
     this.outform.getFieldDecorator('outKeys', { initialValue: [0], preserve: true });
   },
   methods:{
+    // 切换明暗模式
+    modeChange(){
+
+      // 工具栏色
+      let headerColor = '#001529'
+      let headerColorDark = '#0d1117';
+      // 主背景色
+      let bgColor = '#f0f2f5';
+      let bgColorDark = '#010409';
+      // 主色
+      let mainColor = '#ffffff';
+      let mainColorDark = '#0d1117';
+      // 字体色
+      let fontColor = 'rgb(0,0,0,0.65)';
+      let fontColorDark = 'rgb(255,255,255,0.65)'
+      // 次要字体色
+      let subFontColor = 'rgb(255,255,255,0.65)';
+      let subFontColorDark = 'rgb(255,255,255,0.65)'
+
+      let changeToHeaderColor = ['#layout-header-container', '#toolmeum',];
+      let changeToMainColor = ['#SearchPage', '#container', '#SearchTree','#searchList-1', '#searchList-1-ul', '#searchList-2', '#searchList-2-ul', '#toolbar','.ant-input', '.ant-input-search','.ant-input-wrapper', '.ant-input-group','.ant-btn','.ant-select-selection'];
+      let changeToBgColor = ['#layout-main-container','#layout-footer-container','.ant-alert'];
+      let changeToFontColor = ['.ant-form-item-children','.ant-form-item-label > label','.filterTitle','.ant-btn','#layout-footer-container','.ant-divider-inner-text','.ant-select-selection-selected-value','.ant-alert-message','.ant-menu-item'];
+      if (mode == 'light'){
+        mode = 'dark'
+        headerColor = headerColorDark;
+        bgColor = bgColorDark;
+        mainColor = mainColorDark;
+        fontColor = fontColorDark;
+      } else {
+        mode = 'light'
+      }
+      for (let index = 0; index < changeToHeaderColor.length; index++) {
+        let classes = document.querySelectorAll(changeToHeaderColor[index])
+        for (let j = 0; j < classes.length; j++) {
+          classes[j].style.backgroundColor=headerColor;
+        } 
+      }
+
+      for (let index = 0; index < changeToMainColor.length; index++) {
+        let classes = document.querySelectorAll(changeToMainColor[index])
+        for (let j = 0; j < classes.length; j++) {
+          classes[j].style.backgroundColor=mainColor;
+        } 
+      }
+
+      for (let index = 0; index < changeToBgColor.length; index++) {
+        let classes = document.querySelectorAll(changeToBgColor[index])
+        for (let j = 0; j < classes.length; j++) {
+          classes[j].style.backgroundColor=bgColor;
+        } 
+      }
+
+      for (let index = 0; index < changeToFontColor.length; index++) {
+        let classes = document.querySelectorAll(changeToFontColor[index])
+        console.log(classes);
+        for (let j = 0; j < classes.length; j++) {
+          classes[j].style.color = fontColor
+        }   
+      }
+      
+      this.handleRefreshGraph(
+        graph,
+        this.getMixedGraph(
+          aggregatedData,
+          this.oridata,
+          nodeMap,
+          aggregatedNodeMap,
+          expandArray,
+        ),
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        largeGraphMode,
+        true,
+        false)
+    },
+
     //三元组搜索
     handleSearch(selectedKeys, confirm, dataIndex) {
       confirm();
@@ -2619,7 +2699,7 @@ export default {
                 y: -height * 0.62,
                 width: width * 1.06,
                 height: height * 1.24,
-                fill: "#fff", // || '#3B4043',
+                fill: (mode=="dark"?"#0d1117":"#fff"), // || '#3B4043',
                 radius: (height / 2) * 1.24,
                 opacity: that.setOpacity(cfg),//透明度越接近1，越不显示节点
               },
@@ -3877,22 +3957,44 @@ export default {
     //主要绘制函数
     drawGraph(data){
       console.log(data)
-      //const darkBackColor = 'rgb(43, 47, 51)';
-      const darkBackColor = '#fff';
+      let darkBackColor;
+      if (mode == 'dark'){
+        darkBackColor = 'rgb(43, 47, 51)';
+      } else {
+        darkBackColor = '#fff';
+      }
       const disableColor = '#777';
       const theme = 'default';
       const subjectColors = [
-        '#5F95FF', // blue
-        '#61DDAA',
-        '#65789B',
-        '#F6BD16',
-        '#7262FD',
-        '#78D3F8',
-        '#9661BC',
-        '#F6903D',
-        '#008685',
-        '#F08BB4',
-
+        // 初始配色
+        // '#5F95FF', // blue
+        // '#61DDAA',
+        // '#65789B',
+        // '#F6BD16',
+        // '#7262FD',
+        // '#78D3F8',
+        // '#9661BC',
+        // '#F6903D',
+        // '#008685',
+        // '#F08BB4',
+        // 韩老师配色左
+        // '#6666FF',
+        // '#CC66FF',
+        // '#FF66FF',
+        // '#CC6666',
+        // '#FF6666',
+        // '#CC9966',
+        // '#CCCC66',
+        // '#999999',
+        // 韩老师配色右
+        '#6666CC',
+        '#9999FF',
+        '#FFCCFF',
+        '#FFCC99',
+        '#FF9999',
+        '#CC9999',
+        '#CC6699',
+        '#CCCCCC'
       ];
 
       const colorSets = G6.Util.getColorSetsBySubjectColors(
@@ -3923,10 +4025,10 @@ export default {
           node.type = '';
           node.count = node.nodes?node.nodes.length:0;
           node.clusterId = cluster.id;
-          node.colorSet = colorSets[i%10];
+          node.colorSet = colorSets[i%8];
           nodeMap[node.id] = node;
         });
-        cluster.colorSet = colorSets[i%10]
+        cluster.colorSet = colorSets[i%8]
         const cnode = {
           ...cluster,
           type: 'aggregated-node',
