@@ -5,6 +5,11 @@ import {getEntityInfo, getEntityImgUrl} from '../../request/api.js'
 
 let mode = 'light';
 let graph = null;
+let nodeToolTip = {}
+let tooltip = {}
+let contextMenu = {}
+let minimap = {};
+let fisheye = {};
 let currentUnproccessedData = { nodes: [], edges: [] };
 const CANVAS_WIDTH = window.innerWidth - 375-315;
 const CANVAS_HEIGHT =window.innerHeight - 172;
@@ -176,7 +181,8 @@ export default {
       openKeys: [],
       curSel: '',
       searchDataList:[],
-      seletedTool:['search'],
+      seletedTool:['db1','search'],
+      curDatabase:'db1',
 
       region: 'none',
       conditionLevel:'strong',
@@ -1427,14 +1433,22 @@ export default {
       
     },
     showFisheye(){
-      let eyeEle = document.getElementById('fisheye');
       if(this.eyeVisible == false){
         // console.log('in')
         this.seletedTool.push('fisheye');
-        eyeEle.style.display = 'block'
+        fisheye = new G6.Fisheye({
+          r: 300,
+          d:2.0,
+          showLabel: true,
+          delegateStyle: {
+            fill: '#333',
+            lineDash: [5, 5],
+            stroke: '#666',
+          },
+        });
+        graph.addPlugin(fisheye)
       }else{
-        // console.log('out')
-        eyeEle.style.display = 'none';
+        graph.removePlugin(fisheye)
         for (let i = 0; i < this.seletedTool.length; i++) {
           if (this.seletedTool[i]=='fisheye') {
             this.seletedTool.splice(i, 1);
@@ -1443,7 +1457,7 @@ export default {
         }
       }
       this.eyeVisible = !this.eyeVisible;
-      
+      console.log(graph)
     },
     showFilter(){
       let filterEle = document.getElementById('filter');
@@ -1602,7 +1616,7 @@ export default {
       let tempNodeMap = {};
       const {reId,reLabel } = this.getRecursiveName(node1,node2,'_');
       this.findRealData(node2).forEach((node)=>{
-        tempNodeMap[node.id]=+node.id;
+        tempNodeMap[node.id]=node.id;
       })
       this.findRealData(node1).forEach((node)=>{
         if(!tempNodeMap[node.id]){
@@ -1830,17 +1844,16 @@ export default {
         // set edges' style
         const targetNode = currentNodeMap[edge.target];
         const sourceNode = currentNodeMap[edge.source];
-
         const size = ((edge.count - minCount) / countRange) * edgeSizeRange + minEdgeSize || 1;
         edge.size = size;
     
         const arrowWidth = Math.max(size / 2 + 2, 2);
         const arrowLength = 4;
-        const arrowBeging = targetNode.size + arrowLength;
+        const arrowBeging = DEFAULTNODESIZE + arrowLength;
         let arrowPath = `M ${arrowBeging},0 L ${arrowBeging + arrowLength},-${arrowWidth} L ${
           arrowBeging + arrowLength
         },${arrowWidth} Z`;
-        let d = targetNode.size / 2 + arrowLength;
+        let d = DEFAULTNODESIZE / 2 + arrowLength;
         if (edge.source === edge.target) {
           edge.type = 'loop';
           arrowPath = undefined;
@@ -1888,8 +1901,8 @@ export default {
         // }
     
         // arrange the other nodes around the hub
-        const sourceDis = sourceNode.size / 2 + 50;
-        const targetDis = targetNode.size / 2 + 50;
+        const sourceDis = DEFAULTNODESIZE / 2 + 50;
+        const targetDis = DEFAULTNODESIZE / 2 + 50;
         if (sourceNode.x && !targetNode.x) {
           targetNode.x = sourceNode.x + sourceDis * Math.cos(Math.random() * Math.PI * 2);
         }
@@ -1935,8 +1948,8 @@ export default {
       } = configSettings || { preventOverlap: true };
     
       if (!linkDistance && linkDistance !== 0) linkDistance = 225;
-      if (!edgeStrength && edgeStrength !== 0) edgeStrength = 50;
-      if (!nodeStrength && nodeStrength !== 0) nodeStrength = 400;
+      if (!edgeStrength && edgeStrength !== 0) edgeStrength = 20;
+      if (!nodeStrength && nodeStrength !== 0) nodeStrength = 600;
       if (!nodeSpacing && nodeSpacing !== 0) nodeSpacing = 5;
     
       const config = {
@@ -2696,6 +2709,197 @@ export default {
         this.clearAllState(graph)
       });
     },
+    G6Tool(){
+      nodeToolTip = new G6.Tooltip({
+        className:'G6tooltip',
+        offsetX: -100,
+        offsetY: 5,
+        fixToNode: [0.5,1],
+        itemTypes: ['node'],
+        getContent: (e)=>{
+          const model = e.item.getModel();
+          tooltipEle = model;
+          let innerhtml=`<div class="tooltip-content">`;
+                            // <div class = "tooltip-title" style="position:fixed;">This node includes:
+                            //   <h3 style="font-size: 6px;color: #1890ff;margin: -5px 0 0 0;">(Blue: non-data nodes)</h3>
+                            // </div>
+          const outDiv = document.createElement('div');
+          model.nodes.forEach((node) => {
+            if(node.level == 0){
+              innerhtml+= `<p style="cursor:pointer" onclick='searchByNodes(\"${node.value}\")'> ${node.value}</p>`;
+            }else
+            innerhtml+= `<p style="font-weight: bold;color:#1890ff" onclick='searchByNodes(\"${node.value}\")'>${node.value}</p>`;
+          });
+          outDiv.innerHTML=innerhtml+`</div>`;
+          return outDiv
+        }
+      })
+      //如果一条边上同时出现多个标签
+      tooltip = new G6.Tooltip({
+        className:'G6tooltip',
+        trigger:'click',
+        offsetX: 26,
+        offsetY: 0,
+        
+        // 允许出现 tooltip 的 item 类型
+        itemTypes: [ 'edge'],
+        getContent: (e) => {
+          const model = e.item.getModel();
+          let innerhtml=`<div class="tooltip-content">`;
+          const outDiv = document.createElement('div');
+          model.value.forEach((label) => {
+            innerhtml+= `<p>${label}</p>`;
+          });
+          outDiv.innerHTML=innerhtml+`</div>`;
+          return outDiv;
+        },
+        shouldBegin: (e) => {
+          const model = e.item.getModel();
+          let res = true;
+          if(model.value.length == 1){
+            res = false;
+          }
+          return res;
+        },
+      });
+
+      contextMenu = new G6.Menu({
+        className:'G6Meum',
+        shouldBegin(evt) {
+          if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) return true;
+          if (evt.item) return true;
+          return false;
+        },
+        getContent(evt) {
+          const { item } = evt;          
+          if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
+            return `<ul>
+            <li id='show'>Show all Hidden Items</li>
+            <li id='collapseAll'>Collapse all Items</li>
+          </ul>`;
+          } else if (!item) return;
+          const itemType = item.getType();
+          const model = item.getModel();
+          if (itemType && model) {
+            if (itemType === 'node') {
+              if (model.level > 1) {
+                if(model.isTop){
+                  return `<ul>
+                    <li id='expand'>Expand</li>
+                    <li id='rename'>Rename</li>
+                    <li id='hide'>Hide the Node</li>
+                  </ul>`;
+                }
+                else{
+                  return `<ul>
+                    <li id='expand'>Expand</li>
+                    <li id='collapse'>Collapse</li>
+                    <li id='rename'>Rename</li>
+                    <li id='hide'>Hide the Node</li>
+                  </ul>`;
+                }
+              } else {
+                if(model.isTop){
+                  return `<ul>
+                    <li id='rename'>Rename</li>
+                    <li id='hide'>Hide the Node</li>
+                  </ul>`;
+                }
+                else{
+                  return `<ul>
+                    <li id='collapse'>Collapse</li>
+                    <li id='rename'>Rename</li>
+                    <li id='hide'>Hide the Node</li>
+                  </ul>`;
+                }
+              }
+            } else {
+              return `<ul>
+              <li id='rename'>Rename</li>
+              <li id='hide'>Hide the Edge</li>
+            </ul>`;
+            }
+          }
+        },
+        handleMenuClick: (target, item) => {
+          const model = item && item.getModel();
+          //console.log("点了：",model)
+          const liIdStrs = target.id.split('-');
+          let mixedGraphData;
+          switch (liIdStrs[0]) {
+            case 'hide':
+              graph.hideItem(item);
+              hiddenItemIds.push(model.id);
+              break;
+            case 'expand':
+              this.openKeys.push(model.id)
+              mixedGraphData = this.exbandNode(model);
+              break;
+            case 'collapse':
+              mixedGraphData = this.collpseNode(model.clusterId);
+              break;
+            case 'collapseAll':
+              expandArray = [];
+              this.openKeys=[];
+              mixedGraphData = this.getMixedGraph(
+                firstAggregatedData,
+                this.oridata,
+                nodeMap,
+                aggregatedNodeMap,
+                expandArray,
+              );
+              break;
+            case 'show':
+              this.showItems(graph);
+              break;
+            case 'rename':
+              this.renameNode(model);
+              break;
+            default:
+              break;
+          }
+          this.clearAllState(graph)
+          if (mixedGraphData) {
+            cachePositions = this.cacheNodePositions(graph.getNodes());
+            aggregatedData =  mixedGraphData;
+            currentUnproccessedData = mixedGraphData;
+            this.handleRefreshGraph(
+              graph,
+              currentUnproccessedData,
+              CANVAS_WIDTH,
+              CANVAS_HEIGHT,
+              largeGraphMode,
+              true,
+              false,
+            );
+          }
+          this.updateLabel();
+        },
+        // offsetX and offsetY include the padding of the parent container
+        // 需要加上父级容器的 padding-left 16 与自身偏移量 10
+        offsetX: 16 + 10,
+        // 需要加上父级容器的 padding-top 24 、画布兄弟元素高度、与自身偏移量 10
+        offsetY: 0,
+        // the types of items that allow the menu show up
+        // 在哪些类型的元素上响应
+        itemTypes: ['node', 'edge', 'canvas'],
+      });
+      minimap = new G6.Minimap({
+        container:'minimap',
+        size: [200, 100],
+      });
+      fisheye = new G6.Fisheye({
+        r: 300,
+        d:2.0,
+        showLabel: true,
+        delegateStyle: {
+          fill: '#333',
+          lineDash: [5, 5],
+          stroke: '#666',
+        },
+      });
+    },
+
     G6registor(){
       let that = this;
       // Custom super node
@@ -3978,6 +4182,56 @@ export default {
           
         })
     },
+    changeDatabase(db){
+      let data;
+      if(db == 'db1')
+        data = require('../../assets/data.json')
+      else if(db =='db2')
+        data = require('../../assets/data2.json')
+      else if(db == 'db3')
+        data = require('../../assets/data2.json')
+      parents = []
+      for (let i = 0; i < this.seletedTool.length; i++) {
+        if (this.seletedTool[i]== this.curDatabase) {
+          this.seletedTool[i] = db;
+          this.curDatabase = db
+          break;
+        }
+      }
+
+      nodesParents = data.nodes;
+      this.findParents(data.clusters);
+      this.genClusterEdges(data.edges)
+      data.clusterEdges = clusterEdges;
+      this.oridata=data;
+      graph.clear();
+      
+      console.log(graph.getNodes())
+      const {processedEdges} = this.dataDealing(data)
+      this.handleRefreshGraph(
+        graph,
+        currentUnproccessedData,
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        largeGraphMode,
+        true,
+        false,
+      );
+      graph.data({
+        nodes: aggregatedData.nodes,
+        edges: processedEdges
+      })
+      graph.render();
+      this.updateLabel();
+      if (typeof window !== 'undefined')
+        window.onresize = () => {
+          if (!graph || graph.get('destroyed')) return;
+          if (!container || !container.scrollWidth || !container.scrollHeight) return;
+          graph.changeSize(CANVAS_WIDTH, CANVAS_HEIGHT);
+        };
+      
+    },
+    
     getData(){
       //fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/relations.json')
       let data = require('../../assets/data.json')
@@ -3988,9 +4242,112 @@ export default {
       this.genClusterEdges(data.edges)
       data.clusterEdges = clusterEdges;
       this.oridata=data;
+      
       this.drawGraph(data);
       //   });
     },
+    dataDealing(data){
+      colorSets = colorSetsBright;
+      opColorSets = G6.Util.getColorSetsBySubjectColors(
+        ['#00bc12'],
+        backColor,
+        theme,
+        disableColor,
+      );
+      nodeMap = {};
+      realNodeMap = {};
+
+      
+      currentUnproccessedData = { nodes: [], edges: [] };
+      console.log("before ",currentUnproccessedData)
+      //const clusteredData = louvain(data, false, 'weight');
+      const clusteredData = {clusters:[],clusterEdges:[]};
+      clusteredData.clusters = data.clusters;
+      clusteredData.clusterEdges = data.clusterEdges;
+      aggregatedData = { nodes: [], edges: [] };
+      aggregatedNodeMap = {};
+      //处理聚类数据
+      clusteredData.clusters.forEach((cluster, i) => {
+        //cluster.nodes = cluster.nodes?cluster.nodes:[];
+        if(cluster.level == 0)return;
+        cluster.nodes.forEach((node) => {
+          node.label = node.value;
+          node.type = '';
+          node.count = node.nodes?node.nodes.length:0;
+          node.clusterId = cluster.id;
+          node.colorSet = colorSets[i%8];
+          nodeMap[node.id] = node;
+        });
+        cluster.colorSet = colorSets[i%8]
+        const cnode = {
+          ...cluster,
+          type: 'aggregated-node',
+          count: cluster.nodes.length,
+          isTop:true,
+          //colorSet: colorSets[i%10],
+          idx: i,
+        };
+
+        if(cnode.count>maxNodeSize)maxNodeSize = cnode.count;
+        
+        aggregatedNodeMap[cluster.id] = cnode;
+        aggregatedData.nodes.push(cnode);
+      });
+
+      clusteredData.clusterEdges.forEach((clusterEdge) => {
+        let count = clusterEdge.value.length;
+        const cedge = {
+          ...clusterEdge,
+          //size: Math.log(clusterEdge.count),
+          labelCount : count,
+          label : clusterEdge.value[0] + (count == 1? '': ' ( ' + count + ' )'),
+          id: `edge-${uniqueId()}`,
+        };
+        if (cedge.source === cedge.target) {
+          cedge.type = 'loop';
+          cedge.loopCfg = {
+            dist: 20,
+          };
+        } else cedge.type = 'line';
+        if(aggregatedNodeMap[cedge.source] && aggregatedNodeMap[cedge.target])
+          aggregatedData.edges.push(cedge);
+      });
+
+      data.nodes.forEach((node) => {
+        //直接节点保存每一个节点的入边和出边，避免因为循环导致的高复杂度
+        node.inLabel =[];
+        node.outLabel =[];
+        node.level = 0;
+        realNodeMap[node.id] = node;
+        
+      });
+
+      data.edges.forEach((edge) => {
+        edge.label = edge.value;
+        edge.id = `edge-${uniqueId()}`;
+        //console.log(realNodeMap[edge.source],edge,realNodeMap[edge.target].outLabel)
+        realNodeMap[edge.source].outLabel.push(edge);
+        realNodeMap[edge.target].inLabel.push(edge);
+      });
+
+      //console.log(realNodeMap)
+      firstAggregatedData = aggregatedData;
+      currentUnproccessedData = aggregatedData;
+      console.log("after ",currentUnproccessedData)
+      const { edges: processedEdges } = this.processNodesEdges(
+        currentUnproccessedData.nodes,
+        currentUnproccessedData.edges,
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        largeGraphMode,
+        true,
+        true,
+      );
+      return{
+        processedEdges
+      }
+    },
+
     deleteChild(parentNode){
       let isExpand = false;
       for (let i = 0; i < expandArray.length; i++) {
@@ -4064,280 +4421,9 @@ export default {
     },
     //主要绘制函数
     drawGraph(data){
-      colorSets = colorSetsBright;
-      console.log(colorSets)
-      opColorSets = G6.Util.getColorSetsBySubjectColors(
-        ['#00bc12'],
-        darkBackColor,
-        theme,
-        disableColor,
-      );
+      const {processedEdges} = this.dataDealing(data);
+      
       const container = document.getElementById('container');
-      nodeMap = {};
-      //const clusteredData = louvain(data, false, 'weight');
-      const clusteredData = {clusters:[],clusterEdges:[]};
-      clusteredData.clusters = data.clusters;
-      clusteredData.clusterEdges = data.clusterEdges;
-      aggregatedData = { nodes: [], edges: [] };
-      //处理聚类数据
-      clusteredData.clusters.forEach((cluster, i) => {
-        //cluster.nodes = cluster.nodes?cluster.nodes:[];
-        if(cluster.level == 0)return;
-        cluster.nodes.forEach((node) => {
-          node.label = node.value;
-          node.type = '';
-          node.count = node.nodes?node.nodes.length:0;
-          node.clusterId = cluster.id;
-          node.colorSet = colorSets[i%8];
-          nodeMap[node.id] = node;
-        });
-        cluster.colorSet = colorSets[i%8]
-        const cnode = {
-          ...cluster,
-          type: 'aggregated-node',
-          count: cluster.nodes.length,
-          isTop:true,
-          //colorSet: colorSets[i%10],
-          idx: i,
-        };
-
-        if(cnode.count>maxNodeSize)maxNodeSize = cnode.count;
-        
-        aggregatedNodeMap[cluster.id] = cnode;
-        aggregatedData.nodes.push(cnode);
-      });
-
-      clusteredData.clusterEdges.forEach((clusterEdge) => {
-        let count = clusterEdge.value.length;
-        const cedge = {
-          ...clusterEdge,
-          //size: Math.log(clusterEdge.count),
-          labelCount : count,
-          label : clusterEdge.value[0] + (count == 1? '': ' ( ' + count + ' )'),
-          id: `edge-${uniqueId()}`,
-        };
-        if (cedge.source === cedge.target) {
-          cedge.type = 'loop';
-          cedge.loopCfg = {
-            dist: 20,
-          };
-        } else cedge.type = 'line';
-        if(aggregatedNodeMap[cedge.source]&&aggregatedNodeMap[cedge.target])
-          aggregatedData.edges.push(cedge);
-      });
-
-      data.nodes.forEach((node) => {
-        //直接节点保存每一个节点的入边和出边，避免因为循环导致的高复杂度
-        node.inLabel =[];
-        node.outLabel =[];
-        node.level = 0;
-        realNodeMap[node.id] = node;
-        
-      });
-
-      data.edges.forEach((edge) => {
-        edge.label = edge.value;
-        edge.id = `edge-${uniqueId()}`;
-        //console.log(realNodeMap[edge.source],edge,realNodeMap[edge.target].outLabel)
-        realNodeMap[edge.source].outLabel.push(edge);
-        realNodeMap[edge.target].inLabel.push(edge);
-      });
-
-      //console.log(realNodeMap)
-      firstAggregatedData = aggregatedData;
-      currentUnproccessedData = aggregatedData;
-
-      const { edges: processedEdges } = this.processNodesEdges(
-        currentUnproccessedData.nodes,
-        currentUnproccessedData.edges,
-        CANVAS_WIDTH,
-        CANVAS_HEIGHT,
-        largeGraphMode,
-        true,
-        true,
-      );
-      const nodeToolTip = new G6.Tooltip({
-        className:'G6tooltip',
-        offsetX: -100,
-        offsetY: 5,
-        fixToNode: [0.5,1],
-        itemTypes: ['node'],
-        getContent: (e)=>{
-          const model = e.item.getModel();
-          tooltipEle = model;
-          let innerhtml=`<div class="tooltip-content">`;
-                            // <div class = "tooltip-title" style="position:fixed;">This node includes:
-                            //   <h3 style="font-size: 6px;color: #1890ff;margin: -5px 0 0 0;">(Blue: non-data nodes)</h3>
-                            // </div>
-          const outDiv = document.createElement('div');
-          model.nodes.forEach((node) => {
-            if(node.level == 0){
-              innerhtml+= `<p style="cursor:pointer" onclick='searchByNodes(\"${node.value}\")'> ${node.value}</p>`;
-            }else
-            innerhtml+= `<p style="font-weight: bold;color:#1890ff" onclick='searchByNodes(\"${node.value}\")'>${node.value}</p>`;
-          });
-          outDiv.innerHTML=innerhtml+`</div>`;
-          return outDiv
-        }
-      })
-      //如果一条边上同时出现多个标签
-      const tooltip = new G6.Tooltip({
-        className:'G6tooltip',
-        trigger:'click',
-        offsetX: 26,
-        offsetY: 0,
-        
-        // 允许出现 tooltip 的 item 类型
-        itemTypes: [ 'edge'],
-        getContent: (e) => {
-          const model = e.item.getModel();
-          let innerhtml=`<div class="tooltip-content">`;
-          const outDiv = document.createElement('div');
-          model.value.forEach((label) => {
-            innerhtml+= `<p>${label}</p>`;
-          });
-          outDiv.innerHTML=innerhtml+`</div>`;
-          return outDiv;
-        },
-        shouldBegin: (e) => {
-          const model = e.item.getModel();
-          let res = true;
-          if(model.value.length == 1){
-            res = false;
-          }
-          return res;
-        },
-      });
-
-      const contextMenu = new G6.Menu({
-        className:'G6Meum',
-        shouldBegin(evt) {
-          if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) return true;
-          if (evt.item) return true;
-          return false;
-        },
-        getContent(evt) {
-          const { item } = evt;          
-          if (evt.target && evt.target.isCanvas && evt.target.isCanvas()) {
-            return `<ul>
-            <li id='show'>Show all Hidden Items</li>
-            <li id='collapseAll'>Collapse all Items</li>
-          </ul>`;
-          } else if (!item) return;
-          const itemType = item.getType();
-          const model = item.getModel();
-          if (itemType && model) {
-            if (itemType === 'node') {
-              if (model.level > 1) {
-                if(model.isTop){
-                  return `<ul>
-                    <li id='expand'>Expand</li>
-                    <li id='rename'>Rename</li>
-                    <li id='hide'>Hide the Node</li>
-                  </ul>`;
-                }
-                else{
-                  return `<ul>
-                    <li id='expand'>Expand</li>
-                    <li id='collapse'>Collapse</li>
-                    <li id='rename'>Rename</li>
-                    <li id='hide'>Hide the Node</li>
-                  </ul>`;
-                }
-              } else {
-                if(model.isTop){
-                  return `<ul>
-                    <li id='rename'>Rename</li>
-                    <li id='hide'>Hide the Node</li>
-                  </ul>`;
-                }
-                else{
-                  return `<ul>
-                    <li id='collapse'>Collapse</li>
-                    <li id='rename'>Rename</li>
-                    <li id='hide'>Hide the Node</li>
-                  </ul>`;
-                }
-              }
-            } else {
-              return `<ul>
-              <li id='rename'>Rename</li>
-              <li id='hide'>Hide the Edge</li>
-            </ul>`;
-            }
-          }
-        },
-        handleMenuClick: (target, item) => {
-          const model = item && item.getModel();
-          //console.log("点了：",model)
-          const liIdStrs = target.id.split('-');
-          let mixedGraphData;
-          switch (liIdStrs[0]) {
-            case 'hide':
-              graph.hideItem(item);
-              hiddenItemIds.push(model.id);
-              break;
-            case 'expand':
-              this.openKeys.push(model.id)
-              mixedGraphData = this.exbandNode(model);
-              break;
-            case 'collapse':
-              mixedGraphData = this.collpseNode(model.clusterId);
-              break;
-            case 'collapseAll':
-              expandArray = [];
-              this.openKeys=[];
-              mixedGraphData = this.getMixedGraph(
-                firstAggregatedData,
-                this.oridata,
-                nodeMap,
-                aggregatedNodeMap,
-                expandArray,
-              );
-              break;
-            case 'show':
-              this.showItems(graph);
-              break;
-            case 'rename':
-              this.renameNode(model);
-              break;
-            default:
-              break;
-          }
-          this.clearAllState(graph)
-          if (mixedGraphData) {
-            cachePositions = this.cacheNodePositions(graph.getNodes());
-            aggregatedData =  mixedGraphData;
-            currentUnproccessedData = mixedGraphData;
-            this.handleRefreshGraph(
-              graph,
-              currentUnproccessedData,
-              CANVAS_WIDTH,
-              CANVAS_HEIGHT,
-              largeGraphMode,
-              true,
-              false,
-            );
-          }
-          this.updateLabel();
-        },
-        // offsetX and offsetY include the padding of the parent container
-        // 需要加上父级容器的 padding-left 16 与自身偏移量 10
-        offsetX: 16 + 10,
-        // 需要加上父级容器的 padding-top 24 、画布兄弟元素高度、与自身偏移量 10
-        offsetY: 0,
-        // the types of items that allow the menu show up
-        // 在哪些类型的元素上响应
-        itemTypes: ['node', 'edge', 'canvas'],
-      });
-      const minimap = new G6.Minimap({
-        container:'minimap',
-        size: [200, 100],
-      });
-      let fisheye = new G6.Fisheye({
-        r: 200,
-        showLabel: true,
-      });
       graph = new G6.Graph({
         container: 'container',
         width: CANVAS_WIDTH,
@@ -4372,7 +4458,7 @@ export default {
             stroke: '#acaeaf',
           },
         },
-        plugins: [contextMenu,nodeToolTip, tooltip,minimap],
+        plugins: [contextMenu , nodeToolTip, tooltip,minimap],
         enabledStack: true,
       });
       graph.get('canvas').set('localRefresh', false);
@@ -4463,6 +4549,7 @@ export default {
     // let toolH = tool.scrollHeight;
     // console.log("toolH",toolH)
     //tool.style.marginTop = CANVAS_HEIGHT/2-toolH/2+"px";
+    this.G6Tool();
     this.G6registor();
     this.getData();    
   }

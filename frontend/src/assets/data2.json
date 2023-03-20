@@ -1,0 +1,4391 @@
+{
+  "nodes": [
+    {
+      "id": "Q24814689",
+      "value": "Aemon Targaryen"
+    },
+    {
+      "id": "Q12899075",
+      "value": "Bronn"
+    },
+    {
+      "id": "Q55442011",
+      "value": "Alliser Thorne"
+    },
+    {
+      "id": "Q23747242",
+      "value": "Shireen Baratheon"
+    },
+    {
+      "id": "Q28451311",
+      "value": "Gilly"
+    },
+    {
+      "id": "Q55433629",
+      "value": "Trystane Martell"
+    },
+    {
+      "id": "Q55441953",
+      "value": "Obara Sand"
+    },
+    {
+      "id": "Q17355556",
+      "value": "Janos Slynt"
+    },
+    {
+      "id": "Q55433701",
+      "value": "Jojen Reed"
+    },
+    {
+      "id": "Q12902673",
+      "value": "Ygritte"
+    },
+    {
+      "id": "Q23782360",
+      "value": "Brynden Tully"
+    },
+    {
+      "id": "Q22253513",
+      "value": "Talisa Stark"
+    },
+    {
+      "id": "Q22254472",
+      "value": "Daario Naharis"
+    },
+    {
+      "id": "Q55441824",
+      "value": "Rodrik Cassel"
+    },
+    {
+      "id": "Q12902594",
+      "value": "Viserys Targaryen"
+    },
+    {
+      "id": "Q22253833",
+      "value": "Podrick Payne"
+    },
+    {
+      "id": "Q23748587",
+      "value": "Olenna Tyrell"
+    },
+    {
+      "id": "Q23749057",
+      "value": "Robert Arryn"
+    },
+    {
+      "id": "Q9010830",
+      "value": "Jaqen H'ghar"
+    },
+    {
+      "id": "Q12900593",
+      "value": "Jeor Mormont"
+    },
+    {
+      "id": "Q5959381",
+      "value": "Khal Drogo"
+    },
+    {
+      "id": "Q12902104",
+      "value": "Shae"
+    },
+    {
+      "id": "Q11703515",
+      "value": "Samwell Tarly"
+    },
+    {
+      "id": "Q19791067",
+      "value": "Lysa Arryn"
+    },
+    {
+      "id": "Q3948140",
+      "value": "Sandor Clegane"
+    },
+    {
+      "id": "Q3806180",
+      "value": "Jaime Lannister"
+    },
+    {
+      "id": "Q23746151",
+      "value": "Mace Tyrell"
+    },
+    {
+      "id": "Q28468107",
+      "value": "Doran Martell"
+    },
+    {
+      "id": "Q19359499",
+      "value": "Oberyn Martell"
+    },
+    {
+      "id": "Q18920105",
+      "value": "Renly Baratheon"
+    },
+    {
+      "id": "Q2076759",
+      "value": "Tyrion Lannister"
+    },
+    {
+      "id": "Q23759067",
+      "value": "Benjen Stark"
+    },
+    {
+      "id": "Q1120793",
+      "value": "Theon Greyjoy"
+    },
+    {
+      "id": "Q26899515",
+      "value": "Gregor Clegane"
+    },
+    {
+      "id": "Q3472490",
+      "value": "Sansa Stark"
+    },
+    {
+      "id": "Q4360302",
+      "value": "Petyr Baelish"
+    },
+    {
+      "id": "Q5800500",
+      "value": "Davos Seaworth"
+    },
+    {
+      "id": "Q5991029",
+      "value": "Mance Rayder"
+    },
+    {
+      "id": "Q3643599",
+      "value": "Bran Stark"
+    },
+    {
+      "id": "Q55433555",
+      "value": "Nymeria Sand"
+    },
+    {
+      "id": "Q3183235",
+      "value": "Jon Snow"
+    },
+    {
+      "id": "Q55433787",
+      "value": "Yohn Royce"
+    },
+    {
+      "id": "Q11680307",
+      "value": "Brienne of Tarth"
+    },
+    {
+      "id": "Q55433876",
+      "value": "Eddison Tollett"
+    },
+    {
+      "id": "Q23807848",
+      "value": "White Walker"
+    },
+    {
+      "id": "Q24285726",
+      "value": "Hizdahr zo Loraq"
+    },
+    {
+      "id": "Q19799430",
+      "value": "Roose Bolton"
+    },
+    {
+      "id": "Q55441721",
+      "value": "Tycho Nestoris"
+    },
+    {
+      "id": "Q23765105",
+      "value": "Lancel Lannister"
+    },
+    {
+      "id": "Q55441912",
+      "value": "Tyene Sand"
+    },
+    {
+      "id": "Q24933002",
+      "value": "Ellaria Sand"
+    },
+    {
+      "id": "Q19799435",
+      "value": "Myrcella Baratheon"
+    },
+    {
+      "id": "Q19792294",
+      "value": "Tommen Baratheon"
+    },
+    {
+      "id": "Q55237547",
+      "value": "Hodor"
+    },
+    {
+      "id": "Q26944959",
+      "value": "Gendry"
+    },
+    {
+      "id": "Q23782368",
+      "value": "Walder Frey"
+    },
+    {
+      "id": "Q19799441",
+      "value": "Asha Greyjoy"
+    },
+    {
+      "id": "Q55433838",
+      "value": "Osha"
+    },
+    {
+      "id": "Q64744078",
+      "value": "R'hllor"
+    },
+    {
+      "id": "Q12815803",
+      "value": "Rickon Stark"
+    },
+    {
+      "id": "Q18920137",
+      "value": "Loras Tyrell"
+    },
+    {
+      "id": "Q3810007",
+      "value": "Jorah Mormont"
+    },
+    {
+      "id": "Q19796006",
+      "value": "Ramsay Bolton"
+    },
+    {
+      "id": "Q13634885",
+      "value": "Robert Baratheon"
+    },
+    {
+      "id": "Q23746101",
+      "value": "Balon Greyjoy"
+    },
+    {
+      "id": "Q12900933",
+      "value": "Margaery Tyrell"
+    },
+    {
+      "id": "Q2941743",
+      "value": "Catelyn Stark"
+    },
+    {
+      "id": "Q24944284",
+      "value": "Tormund Giantsbane"
+    },
+    {
+      "id": "Q26944965",
+      "value": "Meera Reed"
+    },
+    {
+      "id": "Q3665163",
+      "value": "Cersei Lannister"
+    },
+    {
+      "id": "Q4008842",
+      "value": "Varys"
+    },
+    {
+      "id": "Q26944967",
+      "value": "Grey Worm"
+    },
+    {
+      "id": "Q13634884",
+      "value": "Robb Stark"
+    },
+    {
+      "id": "Q259818",
+      "value": "Eddard Stark"
+    },
+    {
+      "id": "Q5721186",
+      "value": "Barristan Selmy"
+    },
+    {
+      "id": "Q3624677",
+      "value": "Arya Stark"
+    },
+    {
+      "id": "Q12056060",
+      "value": "Stannis Baratheon"
+    },
+    {
+      "id": "Q27031110",
+      "value": "The High Sparrow"
+    },
+    {
+      "id": "Q24951568",
+      "value": "Missandei"
+    },
+    {
+      "id": "Q6009607",
+      "value": "Melisandre"
+    },
+    {
+      "id": "Q12902445",
+      "value": "Tywin Lannister"
+    },
+    {
+      "id": "Q2708078",
+      "value": "Daenerys Targaryen"
+    },
+    {
+      "id": "Q12900597",
+      "value": "Joffrey Baratheon"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-1",
+      "source": "Q23747242",
+      "target": "Q12056060",
+      "value": "father"
+    },
+    {
+      "id": "e-2",
+      "source": "Q23747242",
+      "target": "Q12056060",
+      "value": "killed by"
+    },
+    {
+      "id": "e-3",
+      "source": "Q23747242",
+      "target": "Q6009607",
+      "value": "killed by"
+    },
+    {
+      "id": "e-4",
+      "source": "Q28451311",
+      "target": "Q11703515",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-5",
+      "source": "Q55433629",
+      "target": "Q28468107",
+      "value": "father"
+    },
+    {
+      "id": "e-6",
+      "source": "Q55433629",
+      "target": "Q19799435",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-7",
+      "source": "Q55433629",
+      "target": "Q55441953",
+      "value": "killed by"
+    },
+    {
+      "id": "e-8",
+      "source": "Q55441953",
+      "target": "Q19359499",
+      "value": "father"
+    },
+    {
+      "id": "e-9",
+      "source": "Q55441953",
+      "target": "Q55441912",
+      "value": "sibling"
+    },
+    {
+      "id": "e-10",
+      "source": "Q55441953",
+      "target": "Q55433555",
+      "value": "sibling"
+    },
+    {
+      "id": "e-11",
+      "source": "Q17355556",
+      "target": "Q3183235",
+      "value": "killed by"
+    },
+    {
+      "id": "e-12",
+      "source": "Q55433701",
+      "target": "Q26944965",
+      "value": "sibling"
+    },
+    {
+      "id": "e-13",
+      "source": "Q55433701",
+      "target": "Q26944965",
+      "value": "killed by"
+    },
+    {
+      "id": "e-14",
+      "source": "Q12902673",
+      "target": "Q3183235",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-15",
+      "source": "Q23782360",
+      "target": "Q2941743",
+      "value": "relative"
+    },
+    {
+      "id": "e-16",
+      "source": "Q23782360",
+      "target": "Q19791067",
+      "value": "relative"
+    },
+    {
+      "id": "e-17",
+      "source": "Q22253513",
+      "target": "Q13634884",
+      "value": "spouse"
+    },
+    {
+      "id": "e-18",
+      "source": "Q22253513",
+      "target": "Q23782368",
+      "value": "killed by"
+    },
+    {
+      "id": "e-19",
+      "source": "Q22254472",
+      "target": "Q2708078",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-20",
+      "source": "Q55441824",
+      "target": "Q1120793",
+      "value": "killed by"
+    },
+    {
+      "id": "e-21",
+      "source": "Q12902594",
+      "target": "Q2708078",
+      "value": "sibling"
+    },
+    {
+      "id": "e-22",
+      "source": "Q12902594",
+      "target": "Q5959381",
+      "value": "killed by"
+    },
+    {
+      "id": "e-23",
+      "source": "Q23748587",
+      "target": "Q23746151",
+      "value": "child"
+    },
+    {
+      "id": "e-24",
+      "source": "Q23748587",
+      "target": "Q3806180",
+      "value": "killed by"
+    },
+    {
+      "id": "e-25",
+      "source": "Q23749057",
+      "target": "Q19791067",
+      "value": "mother"
+    },
+    {
+      "id": "e-26",
+      "source": "Q23749057",
+      "target": "Q4360302",
+      "value": "relative"
+    },
+    {
+      "id": "e-27",
+      "source": "Q12900593",
+      "target": "Q3810007",
+      "value": "child"
+    },
+    {
+      "id": "e-28",
+      "source": "Q5959381",
+      "target": "Q2708078",
+      "value": "spouse"
+    },
+    {
+      "id": "e-29",
+      "source": "Q5959381",
+      "target": "Q2708078",
+      "value": "killed by"
+    },
+    {
+      "id": "e-30",
+      "source": "Q12902104",
+      "target": "Q2076759",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-31",
+      "source": "Q12902104",
+      "target": "Q12902445",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-32",
+      "source": "Q12902104",
+      "target": "Q2076759",
+      "value": "killed by"
+    },
+    {
+      "id": "e-33",
+      "source": "Q11703515",
+      "target": "Q28451311",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-34",
+      "source": "Q19791067",
+      "target": "Q4360302",
+      "value": "spouse"
+    },
+    {
+      "id": "e-35",
+      "source": "Q19791067",
+      "target": "Q23749057",
+      "value": "child"
+    },
+    {
+      "id": "e-36",
+      "source": "Q19791067",
+      "target": "Q2941743",
+      "value": "sibling"
+    },
+    {
+      "id": "e-37",
+      "source": "Q19791067",
+      "target": "Q23782360",
+      "value": "relative"
+    },
+    {
+      "id": "e-38",
+      "source": "Q19791067",
+      "target": "Q4360302",
+      "value": "killed by"
+    },
+    {
+      "id": "e-39",
+      "source": "Q3948140",
+      "target": "Q26899515",
+      "value": "sibling"
+    },
+    {
+      "id": "e-40",
+      "source": "Q3948140",
+      "target": "Q26899515",
+      "value": "enemy"
+    },
+    {
+      "id": "e-41",
+      "source": "Q3806180",
+      "target": "Q12902445",
+      "value": "father"
+    },
+    {
+      "id": "e-42",
+      "source": "Q3806180",
+      "target": "Q3665163",
+      "value": "sibling"
+    },
+    {
+      "id": "e-43",
+      "source": "Q3806180",
+      "target": "Q2076759",
+      "value": "sibling"
+    },
+    {
+      "id": "e-44",
+      "source": "Q3806180",
+      "target": "Q3665163",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-45",
+      "source": "Q3806180",
+      "target": "Q12900597",
+      "value": "child"
+    },
+    {
+      "id": "e-46",
+      "source": "Q3806180",
+      "target": "Q19799435",
+      "value": "child"
+    },
+    {
+      "id": "e-47",
+      "source": "Q3806180",
+      "target": "Q19792294",
+      "value": "child"
+    },
+    {
+      "id": "e-48",
+      "source": "Q23746151",
+      "target": "Q12900933",
+      "value": "child"
+    },
+    {
+      "id": "e-49",
+      "source": "Q23746151",
+      "target": "Q18920137",
+      "value": "child"
+    },
+    {
+      "id": "e-50",
+      "source": "Q23746151",
+      "target": "Q23748587",
+      "value": "mother"
+    },
+    {
+      "id": "e-51",
+      "source": "Q23746151",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-52",
+      "source": "Q28468107",
+      "target": "Q19359499",
+      "value": "sibling"
+    },
+    {
+      "id": "e-53",
+      "source": "Q28468107",
+      "target": "Q55433629",
+      "value": "child"
+    },
+    {
+      "id": "e-54",
+      "source": "Q28468107",
+      "target": "Q24933002",
+      "value": "killed by"
+    },
+    {
+      "id": "e-55",
+      "source": "Q19359499",
+      "target": "Q28468107",
+      "value": "sibling"
+    },
+    {
+      "id": "e-56",
+      "source": "Q19359499",
+      "target": "Q24933002",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-57",
+      "source": "Q19359499",
+      "target": "Q26899515",
+      "value": "killed by"
+    },
+    {
+      "id": "e-58",
+      "source": "Q19359499",
+      "target": "Q55433555",
+      "value": "child"
+    },
+    {
+      "id": "e-59",
+      "source": "Q19359499",
+      "target": "Q55441912",
+      "value": "child"
+    },
+    {
+      "id": "e-60",
+      "source": "Q19359499",
+      "target": "Q55441953",
+      "value": "child"
+    },
+    {
+      "id": "e-61",
+      "source": "Q18920105",
+      "target": "Q18920137",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-62",
+      "source": "Q18920105",
+      "target": "Q12900933",
+      "value": "spouse"
+    },
+    {
+      "id": "e-63",
+      "source": "Q18920105",
+      "target": "Q13634885",
+      "value": "sibling"
+    },
+    {
+      "id": "e-64",
+      "source": "Q18920105",
+      "target": "Q12056060",
+      "value": "sibling"
+    },
+    {
+      "id": "e-65",
+      "source": "Q18920105",
+      "target": "Q6009607",
+      "value": "killed by"
+    },
+    {
+      "id": "e-66",
+      "source": "Q18920105",
+      "target": "Q12056060",
+      "value": "killed by"
+    },
+    {
+      "id": "e-67",
+      "source": "Q2076759",
+      "target": "Q3472490",
+      "value": "spouse"
+    },
+    {
+      "id": "e-68",
+      "source": "Q2076759",
+      "target": "Q12902445",
+      "value": "father"
+    },
+    {
+      "id": "e-69",
+      "source": "Q2076759",
+      "target": "Q12902104",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-70",
+      "source": "Q2076759",
+      "target": "Q3665163",
+      "value": "sibling"
+    },
+    {
+      "id": "e-71",
+      "source": "Q2076759",
+      "target": "Q3806180",
+      "value": "sibling"
+    },
+    {
+      "id": "e-72",
+      "source": "Q2076759",
+      "target": "Q3665163",
+      "value": "enemy"
+    },
+    {
+      "id": "e-73",
+      "source": "Q23759067",
+      "target": "Q259818",
+      "value": "sibling"
+    },
+    {
+      "id": "e-74",
+      "source": "Q23759067",
+      "target": "Q23807848",
+      "value": "killed by"
+    },
+    {
+      "id": "e-75",
+      "source": "Q1120793",
+      "target": "Q23746101",
+      "value": "father"
+    },
+    {
+      "id": "e-76",
+      "source": "Q1120793",
+      "target": "Q19799441",
+      "value": "sibling"
+    },
+    {
+      "id": "e-77",
+      "source": "Q26899515",
+      "target": "Q3948140",
+      "value": "sibling"
+    },
+    {
+      "id": "e-78",
+      "source": "Q26899515",
+      "target": "Q19359499",
+      "value": "killed by"
+    },
+    {
+      "id": "e-79",
+      "source": "Q26899515",
+      "target": "Q3948140",
+      "value": "killed by"
+    },
+    {
+      "id": "e-80",
+      "source": "Q26899515",
+      "target": "Q3948140",
+      "value": "enemy"
+    },
+    {
+      "id": "e-81",
+      "source": "Q3472490",
+      "target": "Q2076759",
+      "value": "spouse"
+    },
+    {
+      "id": "e-82",
+      "source": "Q3472490",
+      "target": "Q259818",
+      "value": "father"
+    },
+    {
+      "id": "e-83",
+      "source": "Q3472490",
+      "target": "Q2941743",
+      "value": "mother"
+    },
+    {
+      "id": "e-84",
+      "source": "Q3472490",
+      "target": "Q13634884",
+      "value": "sibling"
+    },
+    {
+      "id": "e-85",
+      "source": "Q3472490",
+      "target": "Q3624677",
+      "value": "sibling"
+    },
+    {
+      "id": "e-86",
+      "source": "Q3472490",
+      "target": "Q3643599",
+      "value": "sibling"
+    },
+    {
+      "id": "e-87",
+      "source": "Q3472490",
+      "target": "Q12815803",
+      "value": "sibling"
+    },
+    {
+      "id": "e-88",
+      "source": "Q4360302",
+      "target": "Q19791067",
+      "value": "spouse"
+    },
+    {
+      "id": "e-89",
+      "source": "Q4360302",
+      "target": "Q3624677",
+      "value": "killed by"
+    },
+    {
+      "id": "e-90",
+      "source": "Q4360302",
+      "target": "Q23749057",
+      "value": "relative"
+    },
+    {
+      "id": "e-91",
+      "source": "Q5991029",
+      "target": "Q12056060",
+      "value": "killed by"
+    },
+    {
+      "id": "e-92",
+      "source": "Q5991029",
+      "target": "Q3183235",
+      "value": "killed by"
+    },
+    {
+      "id": "e-93",
+      "source": "Q3643599",
+      "target": "Q259818",
+      "value": "father"
+    },
+    {
+      "id": "e-94",
+      "source": "Q3643599",
+      "target": "Q2941743",
+      "value": "mother"
+    },
+    {
+      "id": "e-95",
+      "source": "Q3643599",
+      "target": "Q13634884",
+      "value": "sibling"
+    },
+    {
+      "id": "e-96",
+      "source": "Q3643599",
+      "target": "Q3472490",
+      "value": "sibling"
+    },
+    {
+      "id": "e-97",
+      "source": "Q3643599",
+      "target": "Q3624677",
+      "value": "sibling"
+    },
+    {
+      "id": "e-98",
+      "source": "Q3643599",
+      "target": "Q12815803",
+      "value": "sibling"
+    },
+    {
+      "id": "e-99",
+      "source": "Q55433555",
+      "target": "Q19359499",
+      "value": "father"
+    },
+    {
+      "id": "e-100",
+      "source": "Q55433555",
+      "target": "Q55441912",
+      "value": "sibling"
+    },
+    {
+      "id": "e-101",
+      "source": "Q55433555",
+      "target": "Q55441953",
+      "value": "sibling"
+    },
+    {
+      "id": "e-102",
+      "source": "Q3183235",
+      "target": "Q12902673",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-103",
+      "source": "Q3183235",
+      "target": "Q2708078",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-104",
+      "source": "Q3183235",
+      "target": "Q259818",
+      "value": "relative"
+    },
+    {
+      "id": "e-105",
+      "source": "Q3183235",
+      "target": "Q23759067",
+      "value": "relative"
+    },
+    {
+      "id": "e-106",
+      "source": "Q3183235",
+      "target": "Q2708078",
+      "value": "relative"
+    },
+    {
+      "id": "e-107",
+      "source": "Q3183235",
+      "target": "Q12902594",
+      "value": "relative"
+    },
+    {
+      "id": "e-108",
+      "source": "Q3183235",
+      "target": "Q55442011",
+      "value": "killed by"
+    },
+    {
+      "id": "e-109",
+      "source": "Q3183235",
+      "target": "Q23807848",
+      "value": "enemy"
+    },
+    {
+      "id": "e-110",
+      "source": "Q23807848",
+      "target": "Q3183235",
+      "value": "enemy"
+    },
+    {
+      "id": "e-111",
+      "source": "Q24285726",
+      "target": "Q2708078",
+      "value": "spouse"
+    },
+    {
+      "id": "e-112",
+      "source": "Q19799430",
+      "target": "Q19796006",
+      "value": "child"
+    },
+    {
+      "id": "e-113",
+      "source": "Q19799430",
+      "target": "Q19796006",
+      "value": "killed by"
+    },
+    {
+      "id": "e-114",
+      "source": "Q23765105",
+      "target": "Q12902445",
+      "value": "relative"
+    },
+    {
+      "id": "e-115",
+      "source": "Q23765105",
+      "target": "Q3665163",
+      "value": "relative"
+    },
+    {
+      "id": "e-116",
+      "source": "Q23765105",
+      "target": "Q3806180",
+      "value": "relative"
+    },
+    {
+      "id": "e-117",
+      "source": "Q23765105",
+      "target": "Q2076759",
+      "value": "relative"
+    },
+    {
+      "id": "e-118",
+      "source": "Q23765105",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-119",
+      "source": "Q23765105",
+      "target": "Q3665163",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-120",
+      "source": "Q55441912",
+      "target": "Q19359499",
+      "value": "father"
+    },
+    {
+      "id": "e-121",
+      "source": "Q55441912",
+      "target": "Q55433555",
+      "value": "sibling"
+    },
+    {
+      "id": "e-122",
+      "source": "Q55441912",
+      "target": "Q55441953",
+      "value": "sibling"
+    },
+    {
+      "id": "e-123",
+      "source": "Q55441912",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-124",
+      "source": "Q24933002",
+      "target": "Q19359499",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-125",
+      "source": "Q19799435",
+      "target": "Q3665163",
+      "value": "mother"
+    },
+    {
+      "id": "e-126",
+      "source": "Q19799435",
+      "target": "Q3806180",
+      "value": "father"
+    },
+    {
+      "id": "e-127",
+      "source": "Q19799435",
+      "target": "Q12900597",
+      "value": "sibling"
+    },
+    {
+      "id": "e-128",
+      "source": "Q19799435",
+      "target": "Q19792294",
+      "value": "sibling"
+    },
+    {
+      "id": "e-129",
+      "source": "Q19799435",
+      "target": "Q24933002",
+      "value": "killed by"
+    },
+    {
+      "id": "e-130",
+      "source": "Q19792294",
+      "target": "Q3665163",
+      "value": "mother"
+    },
+    {
+      "id": "e-131",
+      "source": "Q19792294",
+      "target": "Q3806180",
+      "value": "father"
+    },
+    {
+      "id": "e-132",
+      "source": "Q19792294",
+      "target": "Q12900933",
+      "value": "spouse"
+    },
+    {
+      "id": "e-133",
+      "source": "Q19792294",
+      "target": "Q19799435",
+      "value": "sibling"
+    },
+    {
+      "id": "e-134",
+      "source": "Q19792294",
+      "target": "Q12900597",
+      "value": "sibling"
+    },
+    {
+      "id": "e-135",
+      "source": "Q26944959",
+      "target": "Q13634885",
+      "value": "father"
+    },
+    {
+      "id": "e-136",
+      "source": "Q23782368",
+      "target": "Q3624677",
+      "value": "killed by"
+    },
+    {
+      "id": "e-137",
+      "source": "Q19799441",
+      "target": "Q23746101",
+      "value": "father"
+    },
+    {
+      "id": "e-138",
+      "source": "Q19799441",
+      "target": "Q1120793",
+      "value": "sibling"
+    },
+    {
+      "id": "e-139",
+      "source": "Q55433838",
+      "target": "Q19796006",
+      "value": "killed by"
+    },
+    {
+      "id": "e-140",
+      "source": "Q12815803",
+      "target": "Q259818",
+      "value": "father"
+    },
+    {
+      "id": "e-141",
+      "source": "Q12815803",
+      "target": "Q2941743",
+      "value": "mother"
+    },
+    {
+      "id": "e-142",
+      "source": "Q12815803",
+      "target": "Q13634884",
+      "value": "sibling"
+    },
+    {
+      "id": "e-143",
+      "source": "Q12815803",
+      "target": "Q3472490",
+      "value": "sibling"
+    },
+    {
+      "id": "e-144",
+      "source": "Q12815803",
+      "target": "Q3624677",
+      "value": "sibling"
+    },
+    {
+      "id": "e-145",
+      "source": "Q12815803",
+      "target": "Q3643599",
+      "value": "sibling"
+    },
+    {
+      "id": "e-146",
+      "source": "Q12815803",
+      "target": "Q19796006",
+      "value": "killed by"
+    },
+    {
+      "id": "e-147",
+      "source": "Q18920137",
+      "target": "Q18920105",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-148",
+      "source": "Q18920137",
+      "target": "Q23746151",
+      "value": "father"
+    },
+    {
+      "id": "e-149",
+      "source": "Q18920137",
+      "target": "Q12900933",
+      "value": "sibling"
+    },
+    {
+      "id": "e-150",
+      "source": "Q18920137",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-151",
+      "source": "Q3810007",
+      "target": "Q12900593",
+      "value": "father"
+    },
+    {
+      "id": "e-152",
+      "source": "Q19796006",
+      "target": "Q19799430",
+      "value": "father"
+    },
+    {
+      "id": "e-153",
+      "source": "Q19796006",
+      "target": "Q3472490",
+      "value": "killed by"
+    },
+    {
+      "id": "e-154",
+      "source": "Q13634885",
+      "target": "Q3665163",
+      "value": "spouse"
+    },
+    {
+      "id": "e-155",
+      "source": "Q13634885",
+      "target": "Q26944959",
+      "value": "child"
+    },
+    {
+      "id": "e-156",
+      "source": "Q13634885",
+      "target": "Q12056060",
+      "value": "sibling"
+    },
+    {
+      "id": "e-157",
+      "source": "Q13634885",
+      "target": "Q18920105",
+      "value": "sibling"
+    },
+    {
+      "id": "e-158",
+      "source": "Q23746101",
+      "target": "Q1120793",
+      "value": "child"
+    },
+    {
+      "id": "e-159",
+      "source": "Q23746101",
+      "target": "Q19799441",
+      "value": "child"
+    },
+    {
+      "id": "e-160",
+      "source": "Q12900933",
+      "target": "Q18920105",
+      "value": "spouse"
+    },
+    {
+      "id": "e-161",
+      "source": "Q12900933",
+      "target": "Q12900597",
+      "value": "spouse"
+    },
+    {
+      "id": "e-162",
+      "source": "Q12900933",
+      "target": "Q19792294",
+      "value": "spouse"
+    },
+    {
+      "id": "e-163",
+      "source": "Q12900933",
+      "target": "Q23746151",
+      "value": "father"
+    },
+    {
+      "id": "e-164",
+      "source": "Q12900933",
+      "target": "Q18920137",
+      "value": "sibling"
+    },
+    {
+      "id": "e-165",
+      "source": "Q12900933",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-166",
+      "source": "Q2941743",
+      "target": "Q259818",
+      "value": "spouse"
+    },
+    {
+      "id": "e-167",
+      "source": "Q2941743",
+      "target": "Q3624677",
+      "value": "child"
+    },
+    {
+      "id": "e-168",
+      "source": "Q2941743",
+      "target": "Q3472490",
+      "value": "child"
+    },
+    {
+      "id": "e-169",
+      "source": "Q2941743",
+      "target": "Q13634884",
+      "value": "child"
+    },
+    {
+      "id": "e-170",
+      "source": "Q2941743",
+      "target": "Q3643599",
+      "value": "child"
+    },
+    {
+      "id": "e-171",
+      "source": "Q2941743",
+      "target": "Q12815803",
+      "value": "child"
+    },
+    {
+      "id": "e-172",
+      "source": "Q2941743",
+      "target": "Q19791067",
+      "value": "sibling"
+    },
+    {
+      "id": "e-173",
+      "source": "Q2941743",
+      "target": "Q23782360",
+      "value": "relative"
+    },
+    {
+      "id": "e-174",
+      "source": "Q2941743",
+      "target": "Q23782368",
+      "value": "killed by"
+    },
+    {
+      "id": "e-175",
+      "source": "Q26944965",
+      "target": "Q55433701",
+      "value": "sibling"
+    },
+    {
+      "id": "e-176",
+      "source": "Q3665163",
+      "target": "Q13634885",
+      "value": "spouse"
+    },
+    {
+      "id": "e-177",
+      "source": "Q3665163",
+      "target": "Q12902445",
+      "value": "father"
+    },
+    {
+      "id": "e-178",
+      "source": "Q3665163",
+      "target": "Q12900597",
+      "value": "child"
+    },
+    {
+      "id": "e-179",
+      "source": "Q3665163",
+      "target": "Q19799435",
+      "value": "child"
+    },
+    {
+      "id": "e-180",
+      "source": "Q3665163",
+      "target": "Q19792294",
+      "value": "child"
+    },
+    {
+      "id": "e-181",
+      "source": "Q3665163",
+      "target": "Q3806180",
+      "value": "sibling"
+    },
+    {
+      "id": "e-182",
+      "source": "Q3665163",
+      "target": "Q2076759",
+      "value": "sibling"
+    },
+    {
+      "id": "e-183",
+      "source": "Q3665163",
+      "target": "Q3806180",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-184",
+      "source": "Q3665163",
+      "target": "Q23765105",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-185",
+      "source": "Q3665163",
+      "target": "Q2076759",
+      "value": "enemy"
+    },
+    {
+      "id": "e-186",
+      "source": "Q4008842",
+      "target": "Q2708078",
+      "value": "killed by"
+    },
+    {
+      "id": "e-187",
+      "source": "Q26944967",
+      "target": "Q24951568",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-188",
+      "source": "Q13634884",
+      "target": "Q259818",
+      "value": "father"
+    },
+    {
+      "id": "e-189",
+      "source": "Q13634884",
+      "target": "Q2941743",
+      "value": "mother"
+    },
+    {
+      "id": "e-190",
+      "source": "Q13634884",
+      "target": "Q22253513",
+      "value": "spouse"
+    },
+    {
+      "id": "e-191",
+      "source": "Q13634884",
+      "target": "Q3472490",
+      "value": "sibling"
+    },
+    {
+      "id": "e-192",
+      "source": "Q13634884",
+      "target": "Q3624677",
+      "value": "sibling"
+    },
+    {
+      "id": "e-193",
+      "source": "Q13634884",
+      "target": "Q3643599",
+      "value": "sibling"
+    },
+    {
+      "id": "e-194",
+      "source": "Q13634884",
+      "target": "Q12815803",
+      "value": "sibling"
+    },
+    {
+      "id": "e-195",
+      "source": "Q13634884",
+      "target": "Q19799430",
+      "value": "killed by"
+    },
+    {
+      "id": "e-196",
+      "source": "Q13634884",
+      "target": "Q23782368",
+      "value": "killed by"
+    },
+    {
+      "id": "e-197",
+      "source": "Q259818",
+      "target": "Q2941743",
+      "value": "spouse"
+    },
+    {
+      "id": "e-198",
+      "source": "Q259818",
+      "target": "Q3472490",
+      "value": "child"
+    },
+    {
+      "id": "e-199",
+      "source": "Q259818",
+      "target": "Q3624677",
+      "value": "child"
+    },
+    {
+      "id": "e-200",
+      "source": "Q259818",
+      "target": "Q13634884",
+      "value": "child"
+    },
+    {
+      "id": "e-201",
+      "source": "Q259818",
+      "target": "Q3643599",
+      "value": "child"
+    },
+    {
+      "id": "e-202",
+      "source": "Q259818",
+      "target": "Q12815803",
+      "value": "child"
+    },
+    {
+      "id": "e-203",
+      "source": "Q259818",
+      "target": "Q3183235",
+      "value": "relative"
+    },
+    {
+      "id": "e-204",
+      "source": "Q259818",
+      "target": "Q23759067",
+      "value": "sibling"
+    },
+    {
+      "id": "e-205",
+      "source": "Q259818",
+      "target": "Q12900597",
+      "value": "killed by"
+    },
+    {
+      "id": "e-206",
+      "source": "Q3624677",
+      "target": "Q259818",
+      "value": "father"
+    },
+    {
+      "id": "e-207",
+      "source": "Q3624677",
+      "target": "Q2941743",
+      "value": "mother"
+    },
+    {
+      "id": "e-208",
+      "source": "Q3624677",
+      "target": "Q13634884",
+      "value": "sibling"
+    },
+    {
+      "id": "e-209",
+      "source": "Q3624677",
+      "target": "Q3472490",
+      "value": "sibling"
+    },
+    {
+      "id": "e-210",
+      "source": "Q3624677",
+      "target": "Q3643599",
+      "value": "sibling"
+    },
+    {
+      "id": "e-211",
+      "source": "Q3624677",
+      "target": "Q12815803",
+      "value": "sibling"
+    },
+    {
+      "id": "e-212",
+      "source": "Q12056060",
+      "target": "Q23747242",
+      "value": "child"
+    },
+    {
+      "id": "e-213",
+      "source": "Q12056060",
+      "target": "Q13634885",
+      "value": "sibling"
+    },
+    {
+      "id": "e-214",
+      "source": "Q12056060",
+      "target": "Q18920105",
+      "value": "sibling"
+    },
+    {
+      "id": "e-215",
+      "source": "Q12056060",
+      "target": "Q6009607",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-216",
+      "source": "Q12056060",
+      "target": "Q11680307",
+      "value": "killed by"
+    },
+    {
+      "id": "e-217",
+      "source": "Q27031110",
+      "target": "Q3665163",
+      "value": "killed by"
+    },
+    {
+      "id": "e-218",
+      "source": "Q24951568",
+      "target": "Q26944967",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-219",
+      "source": "Q24951568",
+      "target": "Q26899515",
+      "value": "killed by"
+    },
+    {
+      "id": "e-220",
+      "source": "Q6009607",
+      "target": "Q12056060",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-221",
+      "source": "Q12902445",
+      "target": "Q3665163",
+      "value": "child"
+    },
+    {
+      "id": "e-222",
+      "source": "Q12902445",
+      "target": "Q3806180",
+      "value": "child"
+    },
+    {
+      "id": "e-223",
+      "source": "Q12902445",
+      "target": "Q2076759",
+      "value": "child"
+    },
+    {
+      "id": "e-224",
+      "source": "Q12902445",
+      "target": "Q2076759",
+      "value": "killed by"
+    },
+    {
+      "id": "e-225",
+      "source": "Q2708078",
+      "target": "Q5959381",
+      "value": "spouse"
+    },
+    {
+      "id": "e-226",
+      "source": "Q2708078",
+      "target": "Q24285726",
+      "value": "spouse"
+    },
+    {
+      "id": "e-227",
+      "source": "Q2708078",
+      "target": "Q12902594",
+      "value": "sibling"
+    },
+    {
+      "id": "e-228",
+      "source": "Q2708078",
+      "target": "Q22254472",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-229",
+      "source": "Q2708078",
+      "target": "Q3183235",
+      "value": "unmarried partner"
+    },
+    {
+      "id": "e-230",
+      "source": "Q2708078",
+      "target": "Q3183235",
+      "value": "killed by"
+    },
+    {
+      "id": "e-231",
+      "source": "Q12900597",
+      "target": "Q12900933",
+      "value": "spouse"
+    },
+    {
+      "id": "e-232",
+      "source": "Q12900597",
+      "target": "Q3665163",
+      "value": "mother"
+    },
+    {
+      "id": "e-233",
+      "source": "Q12900597",
+      "target": "Q3806180",
+      "value": "father"
+    },
+    {
+      "id": "e-234",
+      "source": "Q12900597",
+      "target": "Q19799435",
+      "value": "sibling"
+    },
+    {
+      "id": "e-235",
+      "source": "Q12900597",
+      "target": "Q19792294",
+      "value": "sibling"
+    },
+    {
+      "id": "e-236",
+      "source": "Q12900597",
+      "target": "Q23748587",
+      "value": "killed by"
+    },
+    {
+      "id": "e-237",
+      "source": "Q12900597",
+      "target": "Q4360302",
+      "value": "killed by"
+    }
+  ],
+  "clusters": [
+    {
+      "value": "Game of Thrones character",
+      "nodes": [
+        {
+          "id": "Q24814689",
+          "value": "Aemon Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q12899075",
+          "value": "Bronn",
+          "level": 0
+        },
+        {
+          "id": "Q55442011",
+          "value": "Alliser Thorne",
+          "level": 0
+        },
+        {
+          "id": "Q23747242",
+          "value": "Shireen Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q28451311",
+          "value": "Gilly",
+          "level": 0
+        },
+        {
+          "id": "Q55433629",
+          "value": "Trystane Martell",
+          "level": 0
+        },
+        {
+          "id": "Q55441953",
+          "value": "Obara Sand",
+          "level": 0
+        },
+        {
+          "id": "Q17355556",
+          "value": "Janos Slynt",
+          "level": 0
+        },
+        {
+          "id": "Q55433701",
+          "value": "Jojen Reed",
+          "level": 0
+        },
+        {
+          "id": "Q12902673",
+          "value": "Ygritte",
+          "level": 0
+        },
+        {
+          "id": "Q23782360",
+          "value": "Brynden Tully",
+          "level": 0
+        },
+        {
+          "id": "Q22253513",
+          "value": "Talisa Stark",
+          "level": 0
+        },
+        {
+          "id": "Q22254472",
+          "value": "Daario Naharis",
+          "level": 0
+        },
+        {
+          "id": "Q55441824",
+          "value": "Rodrik Cassel",
+          "level": 0
+        },
+        {
+          "id": "Q12902594",
+          "value": "Viserys Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q22253833",
+          "value": "Podrick Payne",
+          "level": 0
+        },
+        {
+          "id": "Q23748587",
+          "value": "Olenna Tyrell",
+          "level": 0
+        },
+        {
+          "id": "Q23749057",
+          "value": "Robert Arryn",
+          "level": 0
+        },
+        {
+          "id": "Q9010830",
+          "value": "Jaqen H'ghar",
+          "level": 0
+        },
+        {
+          "id": "Q12900593",
+          "value": "Jeor Mormont",
+          "level": 0
+        },
+        {
+          "id": "Q5959381",
+          "value": "Khal Drogo",
+          "level": 0
+        },
+        {
+          "id": "Q12902104",
+          "value": "Shae",
+          "level": 0
+        },
+        {
+          "id": "Q11703515",
+          "value": "Samwell Tarly",
+          "level": 0
+        },
+        {
+          "id": "Q19791067",
+          "value": "Lysa Arryn",
+          "level": 0
+        },
+        {
+          "id": "Q3948140",
+          "value": "Sandor Clegane",
+          "level": 0
+        },
+        {
+          "id": "Q3806180",
+          "value": "Jaime Lannister",
+          "level": 0
+        },
+        {
+          "id": "Q23746151",
+          "value": "Mace Tyrell",
+          "level": 0
+        },
+        {
+          "id": "Q28468107",
+          "value": "Doran Martell",
+          "level": 0
+        },
+        {
+          "id": "Q19359499",
+          "value": "Oberyn Martell",
+          "level": 0
+        },
+        {
+          "id": "Q18920105",
+          "value": "Renly Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q2076759",
+          "value": "Tyrion Lannister",
+          "level": 0
+        },
+        {
+          "id": "Q23759067",
+          "value": "Benjen Stark",
+          "level": 0
+        },
+        {
+          "id": "Q1120793",
+          "value": "Theon Greyjoy",
+          "level": 0
+        },
+        {
+          "id": "Q26899515",
+          "value": "Gregor Clegane",
+          "level": 0
+        },
+        {
+          "id": "Q3472490",
+          "value": "Sansa Stark",
+          "level": 0
+        },
+        {
+          "id": "Q4360302",
+          "value": "Petyr Baelish",
+          "level": 0
+        },
+        {
+          "id": "Q5800500",
+          "value": "Davos Seaworth",
+          "level": 0
+        },
+        {
+          "id": "Q5991029",
+          "value": "Mance Rayder",
+          "level": 0
+        },
+        {
+          "id": "Q3643599",
+          "value": "Bran Stark",
+          "level": 0
+        },
+        {
+          "id": "Q55433555",
+          "value": "Nymeria Sand",
+          "level": 0
+        },
+        {
+          "id": "Q3183235",
+          "value": "Jon Snow",
+          "level": 0
+        },
+        {
+          "id": "Q55433787",
+          "value": "Yohn Royce",
+          "level": 0
+        },
+        {
+          "id": "Q11680307",
+          "value": "Brienne of Tarth",
+          "level": 0
+        },
+        {
+          "id": "Q55433876",
+          "value": "Eddison Tollett",
+          "level": 0
+        },
+        {
+          "id": "Q24285726",
+          "value": "Hizdahr zo Loraq",
+          "level": 0
+        },
+        {
+          "id": "Q19799430",
+          "value": "Roose Bolton",
+          "level": 0
+        },
+        {
+          "id": "Q55441721",
+          "value": "Tycho Nestoris",
+          "level": 0
+        },
+        {
+          "id": "Q23765105",
+          "value": "Lancel Lannister",
+          "level": 0
+        },
+        {
+          "id": "Q55441912",
+          "value": "Tyene Sand",
+          "level": 0
+        },
+        {
+          "id": "Q24933002",
+          "value": "Ellaria Sand",
+          "level": 0
+        },
+        {
+          "id": "Q19799435",
+          "value": "Myrcella Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q19792294",
+          "value": "Tommen Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q55237547",
+          "value": "Hodor",
+          "level": 0
+        },
+        {
+          "id": "Q26944959",
+          "value": "Gendry",
+          "level": 0
+        },
+        {
+          "id": "Q23782368",
+          "value": "Walder Frey",
+          "level": 0
+        },
+        {
+          "id": "Q19799441",
+          "value": "Asha Greyjoy",
+          "level": 0
+        },
+        {
+          "id": "Q55433838",
+          "value": "Osha",
+          "level": 0
+        },
+        {
+          "id": "Q64744078",
+          "value": "R'hllor",
+          "level": 0
+        },
+        {
+          "id": "Q12815803",
+          "value": "Rickon Stark",
+          "level": 0
+        },
+        {
+          "id": "Q18920137",
+          "value": "Loras Tyrell",
+          "level": 0
+        },
+        {
+          "id": "Q3810007",
+          "value": "Jorah Mormont",
+          "level": 0
+        },
+        {
+          "id": "Q19796006",
+          "value": "Ramsay Bolton",
+          "level": 0
+        },
+        {
+          "id": "Q13634885",
+          "value": "Robert Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q23746101",
+          "value": "Balon Greyjoy",
+          "level": 0
+        },
+        {
+          "id": "Q12900933",
+          "value": "Margaery Tyrell",
+          "level": 0
+        },
+        {
+          "id": "Q2941743",
+          "value": "Catelyn Stark",
+          "level": 0
+        },
+        {
+          "id": "Q24944284",
+          "value": "Tormund Giantsbane",
+          "level": 0
+        },
+        {
+          "id": "Q26944965",
+          "value": "Meera Reed",
+          "level": 0
+        },
+        {
+          "id": "Q3665163",
+          "value": "Cersei Lannister",
+          "level": 0
+        },
+        {
+          "id": "Q4008842",
+          "value": "Varys",
+          "level": 0
+        },
+        {
+          "id": "Q26944967",
+          "value": "Grey Worm",
+          "level": 0
+        },
+        {
+          "id": "Q13634884",
+          "value": "Robb Stark",
+          "level": 0
+        },
+        {
+          "id": "Q259818",
+          "value": "Eddard Stark",
+          "level": 0
+        },
+        {
+          "id": "Q5721186",
+          "value": "Barristan Selmy",
+          "level": 0
+        },
+        {
+          "id": "Q3624677",
+          "value": "Arya Stark",
+          "level": 0
+        },
+        {
+          "id": "Q12056060",
+          "value": "Stannis Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q27031110",
+          "value": "The High Sparrow",
+          "level": 0
+        },
+        {
+          "id": "Q24951568",
+          "value": "Missandei",
+          "level": 0
+        },
+        {
+          "id": "Q6009607",
+          "value": "Melisandre",
+          "level": 0
+        },
+        {
+          "id": "Q12902445",
+          "value": "Tywin Lannister",
+          "level": 0
+        },
+        {
+          "id": "Q2708078",
+          "value": "Daenerys Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q12900597",
+          "value": "Joffrey Baratheon",
+          "level": 0
+        }
+      ],
+      "id": "h-0",
+      "level": 1
+    },
+    {
+      "value": "House",
+      "nodes": [
+        {
+          "value": "family name - Lannister",
+          "nodes": [
+            {
+              "id": "Q3806180",
+              "value": "Jaime Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q2076759",
+              "value": "Tyrion Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q3472490",
+              "value": "Sansa Stark",
+              "level": 0
+            },
+            {
+              "id": "Q23765105",
+              "value": "Lancel Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q3665163",
+              "value": "Cersei Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-2"
+        },
+        {
+          "value": "family name - Snow",
+          "nodes": [
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-3"
+        },
+        {
+          "value": "family name - Stark",
+          "nodes": [
+            {
+              "id": "Q23759067",
+              "value": "Benjen Stark",
+              "level": 0
+            },
+            {
+              "id": "Q3472490",
+              "value": "Sansa Stark",
+              "level": 0
+            },
+            {
+              "id": "Q3643599",
+              "value": "Bran Stark",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q12815803",
+              "value": "Rickon Stark",
+              "level": 0
+            },
+            {
+              "id": "Q2941743",
+              "value": "Catelyn Stark",
+              "level": 0
+            },
+            {
+              "id": "Q13634884",
+              "value": "Robb Stark",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q3624677",
+              "value": "Arya Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-4"
+        },
+        {
+          "value": "family - House Targaryen",
+          "nodes": [
+            {
+              "id": "Q24814689",
+              "value": "Aemon Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q12902594",
+              "value": "Viserys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-5"
+        },
+        {
+          "value": "family - House Tully",
+          "nodes": [
+            {
+              "id": "Q23782360",
+              "value": "Brynden Tully",
+              "level": 0
+            },
+            {
+              "id": "Q19791067",
+              "value": "Lysa Arryn",
+              "level": 0
+            },
+            {
+              "id": "Q2941743",
+              "value": "Catelyn Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-6"
+        },
+        {
+          "value": "family - House Mormont",
+          "nodes": [
+            {
+              "id": "Q12900593",
+              "value": "Jeor Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-7"
+        },
+        {
+          "value": "family - House Tyrell",
+          "nodes": [
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q18920137",
+              "value": "Loras Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q12900933",
+              "value": "Margaery Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q23748587",
+              "value": "Olenna Tyrell",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-8"
+        },
+        {
+          "value": "family - House Bolton",
+          "nodes": [
+            {
+              "id": "Q19799430",
+              "value": "Roose Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-9"
+        },
+        {
+          "value": "family - House Greyjoy",
+          "nodes": [
+            {
+              "id": "Q23746101",
+              "value": "Balon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q1120793",
+              "value": "Theon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q19799441",
+              "value": "Asha Greyjoy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-10"
+        },
+        {
+          "value": "family - House Frey",
+          "nodes": [
+            {
+              "id": "Q23782368",
+              "value": "Walder Frey",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-11"
+        },
+        {
+          "value": "family - House Martell",
+          "nodes": [
+            {
+              "id": "Q55433629",
+              "value": "Trystane Martell",
+              "level": 0
+            },
+            {
+              "id": "Q28468107",
+              "value": "Doran Martell",
+              "level": 0
+            },
+            {
+              "id": "Q19359499",
+              "value": "Oberyn Martell",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-12"
+        },
+        {
+          "value": "family - House Baratheon",
+          "nodes": [
+            {
+              "id": "Q26944959",
+              "value": "Gendry",
+              "level": 0
+            },
+            {
+              "id": "Q23747242",
+              "value": "Shireen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q19799435",
+              "value": "Myrcella Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q19792294",
+              "value": "Tommen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-13"
+        }
+      ],
+      "id": "h-1",
+      "level": 2
+    },
+    {
+      "value": "Title",
+      "nodes": [
+        {
+          "value": "noble title - fictional prince",
+          "nodes": [
+            {
+              "id": "Q24814689",
+              "value": "Aemon Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q55433629",
+              "value": "Trystane Martell",
+              "level": 0
+            },
+            {
+              "id": "Q12902594",
+              "value": "Viserys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q28468107",
+              "value": "Doran Martell",
+              "level": 0
+            },
+            {
+              "id": "Q19359499",
+              "value": "Oberyn Martell",
+              "level": 0
+            },
+            {
+              "id": "Q19792294",
+              "value": "Tommen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-15"
+        },
+        {
+          "value": "noble title - knight",
+          "nodes": [
+            {
+              "id": "Q12899075",
+              "value": "Bronn",
+              "level": 0
+            },
+            {
+              "id": "Q55442011",
+              "value": "Alliser Thorne",
+              "level": 0
+            },
+            {
+              "id": "Q23782360",
+              "value": "Brynden Tully",
+              "level": 0
+            },
+            {
+              "id": "Q55441824",
+              "value": "Rodrik Cassel",
+              "level": 0
+            },
+            {
+              "id": "Q3806180",
+              "value": "Jaime Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q19359499",
+              "value": "Oberyn Martell",
+              "level": 0
+            },
+            {
+              "id": "Q26899515",
+              "value": "Gregor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q5800500",
+              "value": "Davos Seaworth",
+              "level": 0
+            },
+            {
+              "id": "Q55433787",
+              "value": "Yohn Royce",
+              "level": 0
+            },
+            {
+              "id": "Q11680307",
+              "value": "Brienne of Tarth",
+              "level": 0
+            },
+            {
+              "id": "Q23765105",
+              "value": "Lancel Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q26944959",
+              "value": "Gendry",
+              "level": 0
+            },
+            {
+              "id": "Q18920137",
+              "value": "Loras Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-16"
+        },
+        {
+          "value": "noble title - Lord",
+          "nodes": [
+            {
+              "id": "Q17355556",
+              "value": "Janos Slynt",
+              "level": 0
+            },
+            {
+              "id": "Q23749057",
+              "value": "Robert Arryn",
+              "level": 0
+            },
+            {
+              "id": "Q12900593",
+              "value": "Jeor Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q3806180",
+              "value": "Jaime Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q28468107",
+              "value": "Doran Martell",
+              "level": 0
+            },
+            {
+              "id": "Q2076759",
+              "value": "Tyrion Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q4360302",
+              "value": "Petyr Baelish",
+              "level": 0
+            },
+            {
+              "id": "Q5800500",
+              "value": "Davos Seaworth",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q55433787",
+              "value": "Yohn Royce",
+              "level": 0
+            },
+            {
+              "id": "Q19799430",
+              "value": "Roose Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q26944959",
+              "value": "Gendry",
+              "level": 0
+            },
+            {
+              "id": "Q23782368",
+              "value": "Walder Frey",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q23746101",
+              "value": "Balon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q13634884",
+              "value": "Robb Stark",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-17"
+        },
+        {
+          "value": "noble title - fictional king",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q24285726",
+              "value": "Hizdahr zo Loraq",
+              "level": 0
+            },
+            {
+              "id": "Q23746101",
+              "value": "Balon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q13634884",
+              "value": "Robb Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-18"
+        },
+        {
+          "value": "noble title - fictional princess",
+          "nodes": [
+            {
+              "id": "Q19799435",
+              "value": "Myrcella Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-19"
+        }
+      ],
+      "id": "h-14",
+      "level": 2
+    },
+    {
+      "value": "Place of Death",
+      "nodes": [
+        {
+          "value": "place of death - Kirky Hassary",
+          "nodes": [
+            {
+              "id": "Q24814689",
+              "value": "Aemon Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q55442011",
+              "value": "Alliser Thorne",
+              "level": 0
+            },
+            {
+              "id": "Q12902673",
+              "value": "Ygritte",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-21"
+        },
+        {
+          "value": "place of death - Beyond the Wall",
+          "nodes": [
+            {
+              "id": "Q55433701",
+              "value": "Jojen Reed",
+              "level": 0
+            },
+            {
+              "id": "Q12900593",
+              "value": "Jeor Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q23759067",
+              "value": "Benjen Stark",
+              "level": 0
+            },
+            {
+              "id": "Q55237547",
+              "value": "Hodor",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-22"
+        },
+        {
+          "value": "place of death - Vaes Dothrak",
+          "nodes": [
+            {
+              "id": "Q12902594",
+              "value": "Viserys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q5959381",
+              "value": "Khal Drogo",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-23"
+        },
+        {
+          "value": "place of death - Meereen",
+          "nodes": [
+            {
+              "id": "Q24285726",
+              "value": "Hizdahr zo Loraq",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-24"
+        }
+      ],
+      "id": "h-20",
+      "level": 2
+    },
+    {
+      "value": "Noble",
+      "nodes": [
+        {
+          "id": "Q24814689",
+          "value": "Aemon Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q55433701",
+          "value": "Jojen Reed",
+          "level": 0
+        },
+        {
+          "id": "Q23782360",
+          "value": "Brynden Tully",
+          "level": 0
+        },
+        {
+          "id": "Q12902594",
+          "value": "Viserys Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q19791067",
+          "value": "Lysa Arryn",
+          "level": 0
+        },
+        {
+          "id": "Q3948140",
+          "value": "Sandor Clegane",
+          "level": 0
+        },
+        {
+          "id": "Q1120793",
+          "value": "Theon Greyjoy",
+          "level": 0
+        },
+        {
+          "id": "Q3472490",
+          "value": "Sansa Stark",
+          "level": 0
+        },
+        {
+          "id": "Q5800500",
+          "value": "Davos Seaworth",
+          "level": 0
+        },
+        {
+          "id": "Q19799430",
+          "value": "Roose Bolton",
+          "level": 0
+        },
+        {
+          "id": "Q3810007",
+          "value": "Jorah Mormont",
+          "level": 0
+        },
+        {
+          "id": "Q19796006",
+          "value": "Ramsay Bolton",
+          "level": 0
+        },
+        {
+          "id": "Q23746101",
+          "value": "Balon Greyjoy",
+          "level": 0
+        },
+        {
+          "id": "Q12900933",
+          "value": "Margaery Tyrell",
+          "level": 0
+        },
+        {
+          "id": "Q26944965",
+          "value": "Meera Reed",
+          "level": 0
+        },
+        {
+          "id": "Q3624677",
+          "value": "Arya Stark",
+          "level": 0
+        },
+        {
+          "id": "Q2708078",
+          "value": "Daenerys Targaryen",
+          "level": 0
+        }
+      ],
+      "id": "h-25",
+      "level": 1
+    },
+    {
+      "value": "Occupation",
+      "nodes": [
+        {
+          "value": "occupation - warrior",
+          "nodes": [
+            {
+              "id": "Q55441953",
+              "value": "Obara Sand",
+              "level": 0
+            },
+            {
+              "id": "Q12902673",
+              "value": "Ygritte",
+              "level": 0
+            },
+            {
+              "id": "Q3948140",
+              "value": "Sandor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q55433555",
+              "value": "Nymeria Sand",
+              "level": 0
+            },
+            {
+              "id": "Q11680307",
+              "value": "Brienne of Tarth",
+              "level": 0
+            },
+            {
+              "id": "Q55441912",
+              "value": "Tyene Sand",
+              "level": 0
+            },
+            {
+              "id": "Q19799441",
+              "value": "Asha Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q55433838",
+              "value": "Osha",
+              "level": 0
+            },
+            {
+              "id": "Q24944284",
+              "value": "Tormund Giantsbane",
+              "level": 0
+            },
+            {
+              "id": "Q26944965",
+              "value": "Meera Reed",
+              "level": 0
+            },
+            {
+              "id": "Q3624677",
+              "value": "Arya Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-27"
+        },
+        {
+          "value": "occupation - prophet",
+          "nodes": [
+            {
+              "id": "Q55433701",
+              "value": "Jojen Reed",
+              "level": 0
+            },
+            {
+              "id": "Q3643599",
+              "value": "Bran Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-28"
+        },
+        {
+          "value": "occupation - squire",
+          "nodes": [
+            {
+              "id": "Q22253833",
+              "value": "Podrick Payne",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q55433876",
+              "value": "Eddison Tollett",
+              "level": 0
+            },
+            {
+              "id": "Q23765105",
+              "value": "Lancel Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-29"
+        },
+        {
+          "value": "occupation - domestic worker",
+          "nodes": [
+            {
+              "id": "Q12902104",
+              "value": "Shae",
+              "level": 0
+            },
+            {
+              "id": "Q1120793",
+              "value": "Theon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q24951568",
+              "value": "Missandei",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-30"
+        },
+        {
+          "value": "occupation - bodyguard",
+          "nodes": [
+            {
+              "id": "Q3948140",
+              "value": "Sandor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q3806180",
+              "value": "Jaime Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q26899515",
+              "value": "Gregor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q11680307",
+              "value": "Brienne of Tarth",
+              "level": 0
+            },
+            {
+              "id": "Q55237547",
+              "value": "Hodor",
+              "level": 0
+            },
+            {
+              "id": "Q18920137",
+              "value": "Loras Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-31"
+        },
+        {
+          "value": "occupation - advisor",
+          "nodes": [
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q19359499",
+              "value": "Oberyn Martell",
+              "level": 0
+            },
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q2076759",
+              "value": "Tyrion Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q4360302",
+              "value": "Petyr Baelish",
+              "level": 0
+            },
+            {
+              "id": "Q5800500",
+              "value": "Davos Seaworth",
+              "level": 0
+            },
+            {
+              "id": "Q3665163",
+              "value": "Cersei Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q4008842",
+              "value": "Varys",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q24951568",
+              "value": "Missandei",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-32"
+        },
+        {
+          "value": "occupation - politician",
+          "nodes": [
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q2076759",
+              "value": "Tyrion Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q4360302",
+              "value": "Petyr Baelish",
+              "level": 0
+            },
+            {
+              "id": "Q3665163",
+              "value": "Cersei Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q4008842",
+              "value": "Varys",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-33"
+        },
+        {
+          "value": "occupation - ruler",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q19792294",
+              "value": "Tommen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q23746101",
+              "value": "Balon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q13634884",
+              "value": "Robb Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-34"
+        },
+        {
+          "value": "occupation - spy",
+          "nodes": [
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            },
+            {
+              "id": "Q23765105",
+              "value": "Lancel Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q55441912",
+              "value": "Tyene Sand",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q4008842",
+              "value": "Varys",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-35"
+        },
+        {
+          "value": "occupation - swordfighter",
+          "nodes": [
+            {
+              "id": "Q11680307",
+              "value": "Brienne of Tarth",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q24944284",
+              "value": "Tormund Giantsbane",
+              "level": 0
+            },
+            {
+              "id": "Q13634884",
+              "value": "Robb Stark",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-36"
+        },
+        {
+          "value": "occupation - slave trader",
+          "nodes": [
+            {
+              "id": "Q24285726",
+              "value": "Hizdahr zo Loraq",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-37"
+        },
+        {
+          "value": "occupation - castellan",
+          "nodes": [
+            {
+              "id": "Q26899515",
+              "value": "Gregor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-38"
+        }
+      ],
+      "id": "h-26",
+      "level": 2
+    },
+    {
+      "value": "Conflict or War",
+      "nodes": [
+        {
+          "value": "conflict - War of the Usurper",
+          "nodes": [
+            {
+              "id": "Q55442011",
+              "value": "Alliser Thorne",
+              "level": 0
+            },
+            {
+              "id": "Q3948140",
+              "value": "Sandor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q26899515",
+              "value": "Gregor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q23782368",
+              "value": "Walder Frey",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-40"
+        },
+        {
+          "value": "conflict - Greyjoy Rebellion",
+          "nodes": [
+            {
+              "id": "Q3806180",
+              "value": "Jaime Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q26899515",
+              "value": "Gregor Clegane",
+              "level": 0
+            },
+            {
+              "id": "Q19799430",
+              "value": "Roose Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q23746101",
+              "value": "Balon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            },
+            {
+              "id": "Q5721186",
+              "value": "Barristan Selmy",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-41"
+        },
+        {
+          "value": "conflict - Sack of Winterfell",
+          "nodes": [
+            {
+              "id": "Q1120793",
+              "value": "Theon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q3643599",
+              "value": "Bran Stark",
+              "level": 0
+            },
+            {
+              "id": "Q12815803",
+              "value": "Rickon Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-42"
+        },
+        {
+          "value": "conflict - Battle of the Bastards",
+          "nodes": [
+            {
+              "id": "Q19796006",
+              "value": "Ramsay Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q24944284",
+              "value": "Tormund Giantsbane",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-43"
+        },
+        {
+          "value": "conflict - Battle of King's Landing",
+          "nodes": [
+            {
+              "id": "Q3665163",
+              "value": "Cersei Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q26944967",
+              "value": "Grey Worm",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-44"
+        }
+      ],
+      "id": "h-39",
+      "level": 2
+    },
+    {
+      "value": "The Dead",
+      "nodes": [
+        {
+          "value": "killed by - Stannis Baratheon",
+          "nodes": [
+            {
+              "id": "Q23747242",
+              "value": "Shireen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-46"
+        },
+        {
+          "value": "killed by - Jon Snow",
+          "nodes": [
+            {
+              "id": "Q17355556",
+              "value": "Janos Slynt",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-47"
+        },
+        {
+          "value": "killed by - Daenerys Targaryen",
+          "nodes": [
+            {
+              "id": "Q5959381",
+              "value": "Khal Drogo",
+              "level": 0
+            },
+            {
+              "id": "Q4008842",
+              "value": "Varys",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-48"
+        },
+        {
+          "value": "killed by - Tyrion Lannister",
+          "nodes": [
+            {
+              "id": "Q12902104",
+              "value": "Shae",
+              "level": 0
+            },
+            {
+              "id": "Q12902445",
+              "value": "Tywin Lannister",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-49"
+        },
+        {
+          "value": "killed by - Petyr Baelish",
+          "nodes": [
+            {
+              "id": "Q19791067",
+              "value": "Lysa Arryn",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-50"
+        },
+        {
+          "value": "killed by - Gregor Clegane",
+          "nodes": [
+            {
+              "id": "Q19359499",
+              "value": "Oberyn Martell",
+              "level": 0
+            },
+            {
+              "id": "Q24951568",
+              "value": "Missandei",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-51"
+        },
+        {
+          "value": "killed by - Arya Stark",
+          "nodes": [
+            {
+              "id": "Q4360302",
+              "value": "Petyr Baelish",
+              "level": 0
+            },
+            {
+              "id": "Q23782368",
+              "value": "Walder Frey",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-52"
+        },
+        {
+          "value": "killed by - Ramsay Bolton",
+          "nodes": [
+            {
+              "id": "Q19799430",
+              "value": "Roose Bolton",
+              "level": 0
+            },
+            {
+              "id": "Q55433838",
+              "value": "Osha",
+              "level": 0
+            },
+            {
+              "id": "Q12815803",
+              "value": "Rickon Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-53"
+        },
+        {
+          "value": "cause of death - explosion",
+          "nodes": [
+            {
+              "id": "Q23746151",
+              "value": "Mace Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q23765105",
+              "value": "Lancel Lannister",
+              "level": 0
+            },
+            {
+              "id": "Q18920137",
+              "value": "Loras Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q12900933",
+              "value": "Margaery Tyrell",
+              "level": 0
+            },
+            {
+              "id": "Q27031110",
+              "value": "The High Sparrow",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-54"
+        }
+      ],
+      "id": "h-45",
+      "level": 2
+    },
+    {
+      "value": "Residence",
+      "nodes": [
+        {
+          "value": "residence - Oldtown",
+          "nodes": [
+            {
+              "id": "Q28451311",
+              "value": "Gilly",
+              "level": 0
+            },
+            {
+              "id": "Q11703515",
+              "value": "Samwell Tarly",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-56"
+        },
+        {
+          "value": "residence - Beyond the Wall",
+          "nodes": [
+            {
+              "id": "Q12902673",
+              "value": "Ygritte",
+              "level": 0
+            },
+            {
+              "id": "Q23759067",
+              "value": "Benjen Stark",
+              "level": 0
+            },
+            {
+              "id": "Q5991029",
+              "value": "Mance Rayder",
+              "level": 0
+            },
+            {
+              "id": "Q55433838",
+              "value": "Osha",
+              "level": 0
+            },
+            {
+              "id": "Q24944284",
+              "value": "Tormund Giantsbane",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-57"
+        },
+        {
+          "value": "residence - Eyrie",
+          "nodes": [
+            {
+              "id": "Q23749057",
+              "value": "Robert Arryn",
+              "level": 0
+            },
+            {
+              "id": "Q19791067",
+              "value": "Lysa Arryn",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-58"
+        }
+      ],
+      "id": "h-55",
+      "level": 2
+    },
+    {
+      "value": "People with siblings",
+      "nodes": [
+        {
+          "value": "sibling - Tyene Sand",
+          "nodes": [
+            {
+              "id": "Q55441953",
+              "value": "Obara Sand",
+              "level": 0
+            },
+            {
+              "id": "Q55433555",
+              "value": "Nymeria Sand",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-60"
+        },
+        {
+          "value": "sibling - Rhaegar Targaryen",
+          "nodes": [
+            {
+              "id": "Q12902594",
+              "value": "Viserys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-61"
+        },
+        {
+          "value": "sibling - Robert Baratheon",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-62"
+        },
+        {
+          "value": "sibling - Stannis Baratheon",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-63"
+        },
+        {
+          "value": "sibling - Obara Sand",
+          "nodes": [
+            {
+              "id": "Q55433555",
+              "value": "Nymeria Sand",
+              "level": 0
+            },
+            {
+              "id": "Q55441912",
+              "value": "Tyene Sand",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-64"
+        },
+        {
+          "value": "sibling - Myrcella Baratheon",
+          "nodes": [
+            {
+              "id": "Q19792294",
+              "value": "Tommen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-65"
+        }
+      ],
+      "id": "h-59",
+      "level": 2
+    },
+    {
+      "value": "People with Father",
+      "nodes": [
+        {
+          "value": "father - Howland Reed",
+          "nodes": [
+            {
+              "id": "Q55433701",
+              "value": "Jojen Reed",
+              "level": 0
+            },
+            {
+              "id": "Q26944965",
+              "value": "Meera Reed",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-67"
+        },
+        {
+          "value": "father - Aerys II Targaryen",
+          "nodes": [
+            {
+              "id": "Q12902594",
+              "value": "Viserys Targaryen",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-68"
+        },
+        {
+          "value": "father - Hoster Tully",
+          "nodes": [
+            {
+              "id": "Q19791067",
+              "value": "Lysa Arryn",
+              "level": 0
+            },
+            {
+              "id": "Q2941743",
+              "value": "Catelyn Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-69"
+        },
+        {
+          "value": "father - Steffon Baratheon",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-70"
+        },
+        {
+          "value": "father - Balon Greyjoy",
+          "nodes": [
+            {
+              "id": "Q1120793",
+              "value": "Theon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q19799441",
+              "value": "Asha Greyjoy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-71"
+        },
+        {
+          "value": "father - Jaime Lannister",
+          "nodes": [
+            {
+              "id": "Q19799435",
+              "value": "Myrcella Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q19792294",
+              "value": "Tommen Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12900597",
+              "value": "Joffrey Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-72"
+        }
+      ],
+      "id": "h-66",
+      "level": 2
+    },
+    {
+      "value": "People with Unmarried partner",
+      "nodes": [
+        {
+          "value": "unmarried partner - Jon Snow",
+          "nodes": [
+            {
+              "id": "Q12902673",
+              "value": "Ygritte",
+              "level": 0
+            },
+            {
+              "id": "Q2708078",
+              "value": "Daenerys Targaryen",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-74"
+        },
+        {
+          "value": "unmarried partner - Daenerys Targaryen",
+          "nodes": [
+            {
+              "id": "Q22254472",
+              "value": "Daario Naharis",
+              "level": 0
+            },
+            {
+              "id": "Q3183235",
+              "value": "Jon Snow",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-75"
+        }
+      ],
+      "id": "h-73",
+      "level": 2
+    },
+    {
+      "value": "Member of",
+      "nodes": [
+        {
+          "value": "member of - The Second Sons",
+          "nodes": [
+            {
+              "id": "Q22254472",
+              "value": "Daario Naharis",
+              "level": 0
+            },
+            {
+              "id": "Q3810007",
+              "value": "Jorah Mormont",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-77"
+        },
+        {
+          "value": "member of - Brotherhood Without Banners",
+          "nodes": [
+            {
+              "id": "Q26944959",
+              "value": "Gendry",
+              "level": 0
+            },
+            {
+              "id": "Q2941743",
+              "value": "Catelyn Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-78"
+        }
+      ],
+      "id": "h-76",
+      "level": 2
+    },
+    {
+      "value": "Spouse of Daenerys Targaryen",
+      "nodes": [
+        {
+          "id": "Q5959381",
+          "value": "Khal Drogo",
+          "level": 0
+        },
+        {
+          "id": "Q24285726",
+          "value": "Hizdahr zo Loraq",
+          "level": 0
+        }
+      ],
+      "id": "h-79",
+      "level": 1
+    },
+    {
+      "value": "Homosexuality",
+      "nodes": [
+        {
+          "id": "Q18920105",
+          "value": "Renly Baratheon",
+          "level": 0
+        },
+        {
+          "id": "Q18920137",
+          "value": "Loras Tyrell",
+          "level": 0
+        }
+      ],
+      "id": "h-80",
+      "level": 1
+    },
+    {
+      "value": "People with Mother",
+      "nodes": [
+        {
+          "value": "mother - Cassana Baratheon",
+          "nodes": [
+            {
+              "id": "Q18920105",
+              "value": "Renly Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q13634885",
+              "value": "Robert Baratheon",
+              "level": 0
+            },
+            {
+              "id": "Q12056060",
+              "value": "Stannis Baratheon",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-82"
+        },
+        {
+          "value": "mother - Lyarra Stark",
+          "nodes": [
+            {
+              "id": "Q23759067",
+              "value": "Benjen Stark",
+              "level": 0
+            },
+            {
+              "id": "Q259818",
+              "value": "Eddard Stark",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-83"
+        },
+        {
+          "value": "mother - Alannys Greyjoy",
+          "nodes": [
+            {
+              "id": "Q1120793",
+              "value": "Theon Greyjoy",
+              "level": 0
+            },
+            {
+              "id": "Q19799441",
+              "value": "Asha Greyjoy",
+              "level": 0
+            }
+          ],
+          "level": 1,
+          "id": "h-84"
+        }
+      ],
+      "id": "h-81",
+      "level": 2
+    },
+    {
+      "value": "Undead person",
+      "nodes": [
+        {
+          "id": "Q23759067",
+          "value": "Benjen Stark",
+          "level": 0
+        },
+        {
+          "id": "Q26899515",
+          "value": "Gregor Clegane",
+          "level": 0
+        }
+      ],
+      "id": "h-85",
+      "level": 1
+    },
+    {
+      "value": "Night's Watch",
+      "nodes": [
+        {
+          "id": "Q55442011",
+          "value": "Alliser Thorne",
+          "level": 0
+        },
+        {
+          "id": "Q55433876",
+          "value": "Eddison Tollett",
+          "level": 0
+        },
+        {
+          "id": "Q12900593",
+          "value": "Jeor Mormont",
+          "level": 0
+        },
+        {
+          "id": "Q24814689",
+          "value": "Aemon Targaryen",
+          "level": 0
+        },
+        {
+          "id": "Q11703515",
+          "value": "Samwell Tarly",
+          "level": 0
+        }
+      ],
+      "id": "h-86",
+      "level": 1
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   <div id="main">
     <a-layout id="components-layout-demo-top" class="layout">
       <a-layout-header id="layout-header-container">
-        <div class="logo">ScheNav</div>
+        <div class="logo">KGNav</div>
         <a-menu
           id="toolmeum"
           theme="dark"
@@ -10,6 +10,19 @@
           :selectedKeys="seletedTool"
           :style="{ lineHeight: '64px' }"
         >
+          <a-sub-menu class="meumFont">
+            <span slot="title" class="submenu-title-wrapper">
+              <a-icon type="wallet" />Database</span>
+            <a-menu-item class="meumFont" key="db1">
+              <div @click="changeDatabase('db1')"><a-icon  type="book" />Database 1</div>
+            </a-menu-item>
+            <a-menu-item class="meumFont"  key="db2">
+              <div @click="changeDatabase('db2')"><a-icon  type="book" />Database 2</div>
+            </a-menu-item>
+            <a-menu-item class="meumFont" key="db3">
+              <div @click="changeDatabase('db3')"><a-icon type="book" />Database 3</div>
+            </a-menu-item>
+          </a-sub-menu>
           <!-- <a-sub-menu class="meumFont">
             <span slot="title" class="submenu-title-wrapper">
             <a-icon type="setting" />Operation</span>
@@ -38,6 +51,9 @@
           </a-sub-menu>
           <a-menu-item class="meumFont" key="minimap">
             <div @click="showMinimap"><a-icon  type="picture"/>MiniMap</div>
+          </a-menu-item>
+          <a-menu-item class="meumFont" key="fisheye">
+            <div @click="showFisheye"><a-icon  type="eye"/>Fisheye</div>
           </a-menu-item>
           <!-- <a-menu-item class="meumFont" key="fisheye" >
             <div @click="showFisheye">
