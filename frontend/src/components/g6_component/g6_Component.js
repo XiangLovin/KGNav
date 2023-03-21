@@ -4189,7 +4189,7 @@ export default {
       else if(db =='db2')
         data = require('../../assets/data2.json')
       else if(db == 'db3')
-        data = require('../../assets/data2.json')
+        data = require('../../assets/data3.json')
       parents = []
       for (let i = 0; i < this.seletedTool.length; i++) {
         if (this.seletedTool[i]== this.curDatabase) {
