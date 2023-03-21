@@ -14,13 +14,13 @@
             <span slot="title" class="submenu-title-wrapper">
               <a-icon type="wallet" />Database</span>
             <a-menu-item class="meumFont" key="db1">
-              <div @click="changeDatabase('db1')"><a-icon  type="book" />Database 1</div>
+              <div @click="showConfirm('db1')"><a-icon  type="book" />Database 1</div>
             </a-menu-item>
             <a-menu-item class="meumFont"  key="db2">
-              <div @click="changeDatabase('db2')"><a-icon  type="book" />Database 2</div>
+              <div @click="showConfirm('db2')"><a-icon  type="book" />Database 2</div>
             </a-menu-item>
             <a-menu-item class="meumFont" key="db3">
-              <div @click="changeDatabase('db3')"><a-icon type="book" />Database 3</div>
+              <div @click="showConfirm('db3')"><a-icon type="book" />Database 3</div>
             </a-menu-item>
           </a-sub-menu>
           <!-- <a-sub-menu class="meumFont">

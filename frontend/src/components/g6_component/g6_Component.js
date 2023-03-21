@@ -24,7 +24,7 @@ const DEFAULTNODESIZE = 35;
 const DEFAULTAGGREGATEDNODESIZE = 30;
 // TODO: find a proper number for maximum node number on the canvas
 const NODE_LIMIT = 15;
-const EDGE_LIMIT = 30; 
+const EDGE_LIMIT = 60; 
 
 let nodeMap = {};
 let realNodeMap = {};
@@ -1078,7 +1078,7 @@ export default {
         isResult:true,
         isTop:true,
       };
- 
+      firstAggregatedData.nodes.push(cnode)
       aggregatedNodeMap[cnode.id] = cnode;
       aggregatedData.nodes.push(cnode);
       this.oridata.clusters.push(cnode);
@@ -1657,6 +1657,7 @@ export default {
       }else if(e.target.id == 'comp'){
         cnode = this.diffNode(node1,node2);
       }
+      firstAggregatedData.nodes.push(cnode)
       aggregatedNodeMap[cnode.id] = cnode;
       aggregatedData.nodes.push(cnode);
       this.oridata.clusters.push(cnode);
@@ -1947,9 +1948,9 @@ export default {
         alphaMin,
       } = configSettings || { preventOverlap: true };
     
-      if (!linkDistance && linkDistance !== 0) linkDistance = 225;
-      if (!edgeStrength && edgeStrength !== 0) edgeStrength = 20;
-      if (!nodeStrength && nodeStrength !== 0) nodeStrength = 600;
+      if (!linkDistance && linkDistance !== 0) linkDistance = 300;
+      if (!edgeStrength && edgeStrength !== 0) edgeStrength = 100;
+      if (!nodeStrength && nodeStrength !== 0) nodeStrength = 1000;
       if (!nodeSpacing && nodeSpacing !== 0) nodeSpacing = 5;
     
       const config = {
@@ -1972,7 +1973,8 @@ export default {
           const sourceNode = nodeMap[d.source] || aggregatedNodeMap[d.source];
           const targetNode = nodeMap[d.target] || aggregatedNodeMap[d.target];
           // 聚合节点之间的引力小
-          if (sourceNode.clusterId === targetNode.clusterId) return edgeStrength/ 2;
+          if (sourceNode.clusterId === targetNode.clusterId) return edgeStrength / 2;
+
           return edgeStrength;
         },
         nodeStrength: (d) => {
@@ -4182,8 +4184,23 @@ export default {
           
         })
     },
+    showConfirm(db) {
+      let that = this
+      this.$confirm({
+        title: 'Do you want to change current database?',
+        content: 'Please note : this operation will lose previous queries on the current database! Do you confirm the modification?',
+        okText: 'OK',
+        cancelText: 'Cancel',
+        onOk() {
+          setTimeout(that.changeDatabase(db), 1000);
+          
+        },
+        onCancel() {},
+      });
+    },
     changeDatabase(db){
       let data;
+      console.log(db)
       if(db == 'db1')
         data = require('../../assets/data.json')
       else if(db =='db2')
@@ -4191,6 +4208,7 @@ export default {
       else if(db == 'db3')
         data = require('../../assets/data3.json')
       parents = []
+      this.openKeys = []
       for (let i = 0; i < this.seletedTool.length; i++) {
         if (this.seletedTool[i]== this.curDatabase) {
           this.seletedTool[i] = db;
@@ -4259,7 +4277,6 @@ export default {
 
       
       currentUnproccessedData = { nodes: [], edges: [] };
-      console.log("before ",currentUnproccessedData)
       //const clusteredData = louvain(data, false, 'weight');
       const clusteredData = {clusters:[],clusterEdges:[]};
       clusteredData.clusters = data.clusters;
@@ -4333,7 +4350,6 @@ export default {
       //console.log(realNodeMap)
       firstAggregatedData = aggregatedData;
       currentUnproccessedData = aggregatedData;
-      console.log("after ",currentUnproccessedData)
       const { edges: processedEdges } = this.processNodesEdges(
         currentUnproccessedData.nodes,
         currentUnproccessedData.edges,
