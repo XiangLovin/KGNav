@@ -554,7 +554,7 @@ export default {
 
       const entityData = await getEntityInfo(e.value).then((res) => {
         this.entityInfo = res.data
-        this.entityInfo.imgUrl = entityImgUrl
+        // this.entityInfo.imgUrl = entityImgUrl
         this.entityInfoShow = 1
         return res.data
       }).catch((err)=>{
@@ -643,7 +643,6 @@ export default {
             aggregatedNodeMap,
             expandArray,
           );
-          
         }
         
       }
@@ -1646,6 +1645,12 @@ export default {
       };
       return cnode;
     },
+    Opwarning() {
+      this.$warning({
+        title: 'The query already exists!',
+        content: 'Please reselect the nodes.',
+      });
+    },
     clickOp(e){
       let node1 = selectedNode1;
       let node2 = selectedNode2;
@@ -1657,7 +1662,10 @@ export default {
       }else if(e.target.id == 'comp'){
         cnode = this.diffNode(node1,node2);
       }
-      firstAggregatedData.nodes.push(cnode)
+      if(aggregatedNodeMap[cnode.id]){
+        this.Opwarning()
+        return
+      }
       aggregatedNodeMap[cnode.id] = cnode;
       aggregatedData.nodes.push(cnode);
       this.oridata.clusters.push(cnode);
@@ -1752,9 +1760,6 @@ export default {
       if (!nodes || nodes.length === 0) return {};
       currentNodeMap = {};
       let maxNodeCount = -Infinity;
-      // const paddingRatio = 0.3;
-      // const paddingLeft = paddingRatio * width;
-      // const paddingTop = paddingRatio * height;
       nodes.forEach((node) => {
         node.type = 'aggregated-node';
         node.size = DEFAULTNODESIZE;
@@ -1769,9 +1774,11 @@ export default {
         node.outDegree = 0;
         if (currentNodeMap[node.id]) {
           console.warn('node exists already!', node.id);
-          node.id = `${node.id}${Math.random()}`;
+          //node.id = `${node.id}${Math.random()}`;
         }
-        currentNodeMap[node.id] = node;
+        else{
+          currentNodeMap[node.id] = node;
+        }
         if (node.count > maxNodeCount) maxNodeCount = node.count;
         const cachePosition = cachePositions ? cachePositions[node.id] : undefined;
         if (cachePosition) {
@@ -1786,7 +1793,6 @@ export default {
           }
         }
       });
-    
       let maxCount = -Infinity;
       let minCount = Infinity;
       // let maxCount = 0;
@@ -4186,6 +4192,7 @@ export default {
     },
     showConfirm(db) {
       let that = this
+      if(this.curDatabase == db)return
       this.$confirm({
         title: 'Do you want to change current database?',
         content: 'Please note : this operation will lose previous queries on the current database! Do you confirm the modification?',
@@ -4205,8 +4212,8 @@ export default {
         data = require('../../assets/data.json')
       else if(db =='db2')
         data = require('../../assets/data2.json')
-      else if(db == 'db3')
-        data = require('../../assets/data3.json')
+      // else if(db == 'db3')
+      //   data = require('../../assets/data3.json')
       parents = []
       this.openKeys = []
       for (let i = 0; i < this.seletedTool.length; i++) {
@@ -4226,6 +4233,14 @@ export default {
       
       console.log(graph.getNodes())
       const {processedEdges} = this.dataDealing(data)
+      
+      graph.data({
+        nodes: aggregatedData.nodes,
+        edges: processedEdges
+      })
+
+      graph.render();
+      this.updateLabel();
       this.handleRefreshGraph(
         graph,
         currentUnproccessedData,
@@ -4235,19 +4250,12 @@ export default {
         true,
         false,
       );
-      graph.data({
-        nodes: aggregatedData.nodes,
-        edges: processedEdges
-      })
-      graph.render();
-      this.updateLabel();
       if (typeof window !== 'undefined')
         window.onresize = () => {
           if (!graph || graph.get('destroyed')) return;
           if (!container || !container.scrollWidth || !container.scrollHeight) return;
           graph.changeSize(CANVAS_WIDTH, CANVAS_HEIGHT);
         };
-      
     },
     
     getData(){
@@ -4274,15 +4282,15 @@ export default {
       );
       nodeMap = {};
       realNodeMap = {};
+      aggregatedNodeMap = {};
 
-      
       currentUnproccessedData = { nodes: [], edges: [] };
       //const clusteredData = louvain(data, false, 'weight');
       const clusteredData = {clusters:[],clusterEdges:[]};
       clusteredData.clusters = data.clusters;
       clusteredData.clusterEdges = data.clusterEdges;
       aggregatedData = { nodes: [], edges: [] };
-      aggregatedNodeMap = {};
+      
       //处理聚类数据
       clusteredData.clusters.forEach((cluster, i) => {
         //cluster.nodes = cluster.nodes?cluster.nodes:[];
@@ -4350,6 +4358,7 @@ export default {
       //console.log(realNodeMap)
       firstAggregatedData = aggregatedData;
       currentUnproccessedData = aggregatedData;
+      
       const { edges: processedEdges } = this.processNodesEdges(
         currentUnproccessedData.nodes,
         currentUnproccessedData.edges,

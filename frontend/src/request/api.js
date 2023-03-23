@@ -1,7 +1,7 @@
 import req from './request.js'
 
 export const getEntityInfo = function (searchName) {
-  return req('get', 'http://localhost:8081/getEntityInfo', {
+  return req('get', '/koa/getEntityInfo', {
     search: searchName
   })
 }

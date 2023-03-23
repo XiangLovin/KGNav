@@ -22,6 +22,7 @@ public class JenaController {
 
     // Fuseki连接
     public static String fusekiServerURL = "http://127.0.0.1:3030/dp";
+    //public static String fusekiServerURL = "http://152.136.45.252:3030/dp";
 
     // 前缀空间
     private String kgnavPrefix = "http://www.tju.edu.cn/kgnav#";
@@ -87,9 +88,9 @@ public class JenaController {
                 majorGraph.put("code", "200");
                 majorGraph.put("nodes", nodes);
                 majorGraph.put("edges", edges);
-                //Map<String, Object> clusters = getClusters();
-                ClusterGenerator clusterGenerator = new ClusterGenerator();
-                Map<String, Object> clusters = clusterGenerator.getCluster(nodes,edges);
+                Map<String, Object> clusters = getClusters();
+//                ClusterGenerator clusterGenerator = new ClusterGenerator();
+//                Map<String, Object> clusters = clusterGenerator.getCluster(nodes,edges);
                 majorGraph.put("clusters", clusters.get("clusters"));
                 conn.commit();
             } catch (IOException e) {

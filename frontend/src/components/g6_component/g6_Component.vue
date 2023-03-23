@@ -19,9 +19,9 @@
             <a-menu-item class="meumFont"  key="db2">
               <div @click="showConfirm('db2')"><a-icon  type="book" />Database 2</div>
             </a-menu-item>
-            <a-menu-item class="meumFont" key="db3">
+            <!-- <a-menu-item class="meumFont" key="db3">
               <div @click="showConfirm('db3')"><a-icon type="book" />Database 3</div>
-            </a-menu-item>
+            </a-menu-item> -->
           </a-sub-menu>
           <!-- <a-sub-menu class="meumFont">
             <span slot="title" class="submenu-title-wrapper">
@@ -623,7 +623,13 @@
                     <a-list-item class="infoPropItemContainer" slot="renderItem" slot-scope="propValue, propKey">
                       <div class="infoPropItem" v-for="value, key in propValue" >
                         <span class="infoPropItemProp">{{key}}: &nbsp; </span>
-                        <span class="infoPropItemValue">{{value}}</span>
+                        <a-tooltip placement="left">
+                            <template slot="title">
+                              <span class="infoPropItemValue">{{value}}</span>
+                            </template>
+                            {{value}}
+                          </a-tooltip>
+                        <!-- <span class="infoPropItemValue">{{value}}</span> -->
                       </div>
                     </a-list-item>
                   </a-list>
