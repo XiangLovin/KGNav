@@ -4216,6 +4216,9 @@ export default {
       //   data = require('../../assets/data3.json')
       parents = []
       this.openKeys = []
+      this.conditiondata = []
+      this.searchStr = ''
+      this.closeInfo()
       for (let i = 0; i < this.seletedTool.length; i++) {
         if (this.seletedTool[i]== this.curDatabase) {
           this.seletedTool[i] = db;
